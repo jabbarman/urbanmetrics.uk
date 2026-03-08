@@ -16,6 +16,12 @@ type MapExplorerProps = {
   status: GeneratedStatus["layers"];
 };
 
+type LayerLoadIssue = {
+  id: string;
+  title: string;
+  message: string;
+};
+
 async function fetchLayer(layerId: string) {
   const response = await fetch(`/generated/layers/${layerId}.json`);
 
@@ -26,6 +32,14 @@ async function fetchLayer(layerId: string) {
   return (await response.json()) as GeneratedLayer;
 }
 
+function layerWarningMessage(issues: LayerLoadIssue[]) {
+  if (issues.length === 0) {
+    return null;
+  }
+
+  return `Some overlays are temporarily unavailable: ${issues.map((issue) => issue.title).join(", ")}. The remaining layers continue to work.`;
+}
+
 export function MapExplorer({ catalog, status }: MapExplorerProps) {
   const [layersById, setLayersById] = useState<Record<string, GeneratedLayer>>({});
   const [primaryLayerId, setPrimaryLayerId] = useState(catalog[0]?.id ?? "");
@@ -34,6 +48,7 @@ export function MapExplorer({ catalog, status }: MapExplorerProps) {
   const [showBoundaries, setShowBoundaries] = useState(true);
   const [selectedAreaId, setSelectedAreaId] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [layerWarning, setLayerWarning] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -42,24 +57,47 @@ export function MapExplorer({ catalog, status }: MapExplorerProps) {
     async function loadLayers() {
       setLoading(true);
       setError(null);
+      setLayerWarning(null);
 
-      try {
-        const entries = await Promise.all(catalog.map((entry) => fetchLayer(entry.id)));
-        if (cancelled) {
+      const results = await Promise.allSettled(
+        catalog.map(async (entry) => ({
+          entry,
+          layer: await fetchLayer(entry.id),
+        })),
+      );
+
+      if (cancelled) {
+        return;
+      }
+
+      const issues: LayerLoadIssue[] = [];
+      const loadedLayers: GeneratedLayer[] = [];
+
+      results.forEach((result, index) => {
+        const entry = catalog[index];
+        if (result.status === "fulfilled") {
+          loadedLayers.push(result.value.layer);
           return;
         }
 
-        const nextState = Object.fromEntries(entries.map((entry) => [entry.layer.id, entry]));
-        setLayersById(nextState);
-      } catch (caughtError) {
-        if (!cancelled) {
-          setError(caughtError instanceof Error ? caughtError.message : "Unknown layer loading error.");
-        }
-      } finally {
-        if (!cancelled) {
-          setLoading(false);
-        }
+        issues.push({
+          id: entry.id,
+          title: entry.title,
+          message: result.reason instanceof Error ? result.reason.message : `Unknown loading error for '${entry.id}'.`,
+        });
+      });
+
+      if (loadedLayers.length === 0) {
+        setLayersById({});
+        setError("No generated layers could be loaded. Check the generated artifacts and retry.");
+        setLoading(false);
+        return;
       }
+
+      const nextState = Object.fromEntries(loadedLayers.map((entry) => [entry.layer.id, entry]));
+      setLayersById(nextState);
+      setLayerWarning(layerWarningMessage(issues));
+      setLoading(false);
     }
 
     void loadLayers();
@@ -69,14 +107,38 @@ export function MapExplorer({ catalog, status }: MapExplorerProps) {
     };
   }, [catalog]);
 
+  const availableCatalog = useMemo(
+    () => catalog.filter((entry) => layersById[entry.id] !== undefined),
+    [catalog, layersById],
+  );
+
+  useEffect(() => {
+    if (availableCatalog.length === 0) {
+      return;
+    }
+
+    const primaryStillAvailable = availableCatalog.some((entry) => entry.id === primaryLayerId);
+    const nextPrimaryLayerId = primaryStillAvailable ? primaryLayerId : availableCatalog[0].id;
+    if (nextPrimaryLayerId !== primaryLayerId) {
+      setPrimaryLayerId(nextPrimaryLayerId);
+    }
+
+    const nextCompareOptions = availableCatalog.filter((entry) => entry.id !== nextPrimaryLayerId);
+    const compareStillAvailable = nextCompareOptions.some((entry) => entry.id === compareLayerId);
+    const nextCompareLayerId = compareStillAvailable ? compareLayerId : nextCompareOptions[0]?.id ?? "";
+    if (nextCompareLayerId !== compareLayerId) {
+      setCompareLayerId(nextCompareLayerId);
+    }
+  }, [availableCatalog, compareLayerId, primaryLayerId]);
+
   const primaryLayer = primaryLayerId ? layersById[primaryLayerId] ?? null : null;
   const compareLayer = compareLayerId && compareLayerId !== primaryLayerId ? layersById[compareLayerId] ?? null : null;
-  const compareOptions = catalog.filter((entry) => entry.id !== primaryLayerId);
+  const compareOptions = availableCatalog.filter((entry) => entry.id !== primaryLayerId);
   const loadedLayers = Object.values(layersById);
 
   const selectedCatalogEntry = useMemo(
-    () => catalog.find((entry) => entry.id === primaryLayerId) ?? null,
-    [catalog, primaryLayerId],
+    () => availableCatalog.find((entry) => entry.id === primaryLayerId) ?? null,
+    [availableCatalog, primaryLayerId],
   );
 
   return (
@@ -101,15 +163,20 @@ export function MapExplorer({ catalog, status }: MapExplorerProps) {
               </label>
               <select
                 className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-sky-400"
+                disabled={availableCatalog.length === 0}
                 id="primary-layer"
                 onChange={(event) => setPrimaryLayerId(event.target.value)}
                 value={primaryLayerId}
               >
-                {catalog.map((entry) => (
-                  <option key={entry.id} value={entry.id}>
-                    {entry.title}
-                  </option>
-                ))}
+                {availableCatalog.length > 0 ? (
+                  availableCatalog.map((entry) => (
+                    <option key={entry.id} value={entry.id}>
+                      {entry.title}
+                    </option>
+                  ))
+                ) : (
+                  <option value="">No layers available</option>
+                )}
               </select>
             </div>
 
@@ -119,15 +186,20 @@ export function MapExplorer({ catalog, status }: MapExplorerProps) {
               </label>
               <select
                 className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-sky-400"
+                disabled={compareOptions.length === 0}
                 id="compare-layer"
                 onChange={(event) => setCompareLayerId(event.target.value)}
                 value={compareLayerId}
               >
-                {compareOptions.map((entry) => (
-                  <option key={entry.id} value={entry.id}>
-                    {entry.title}
-                  </option>
-                ))}
+                {compareOptions.length > 0 ? (
+                  compareOptions.map((entry) => (
+                    <option key={entry.id} value={entry.id}>
+                      {entry.title}
+                    </option>
+                  ))
+                ) : (
+                  <option value="">No compare layer available</option>
+                )}
               </select>
             </div>
 
@@ -200,6 +272,11 @@ export function MapExplorer({ catalog, status }: MapExplorerProps) {
           {loading ? (
             <div className="rounded-[1.75rem] border border-slate-200/80 bg-white p-6 shadow-[0_12px_40px_rgba(15,23,42,0.08)]">
               <p className="text-sm text-slate-600">Loading generated layers.</p>
+            </div>
+          ) : null}
+          {layerWarning ? (
+            <div className="rounded-[1.75rem] border border-amber-200 bg-amber-50 p-6 text-sm text-amber-800 shadow-[0_12px_40px_rgba(15,23,42,0.08)]">
+              {layerWarning}
             </div>
           ) : null}
           {error ? (
