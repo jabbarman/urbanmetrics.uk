@@ -4,7 +4,7 @@ import path from "node:path";
 import type { Feature, FeatureCollection, Geometry } from "geojson";
 
 import { layerDefinitions } from "../src/server/datasets/catalog";
-import { evaluateFreshness, formatValue, mean, median, quantileBreaks } from "../src/server/datasets/utils";
+import { evaluateFreshness, formatValue, mean, median, quantileBreaks, sourceDateSortWeight } from "../src/server/datasets/utils";
 import type { GeneratedFeatureProperties, GeneratedLayer, GeneratedStatus, LayerDefinition } from "../src/server/datasets/types";
 
 const dataGeneratedDir = path.join(process.cwd(), "data", "generated");
@@ -40,20 +40,6 @@ function assertNumber(value: unknown, fieldName: string) {
   }
 
   return value;
-}
-
-function parseDateWeight(value: string) {
-  if (/^\d{4}-\d{2}$/.test(value)) {
-    const [year, month] = value.split("-").map(Number);
-    return year * 100 + month;
-  }
-
-  if (/^\d{4}$/.test(value)) {
-    return Number(value) * 100;
-  }
-
-  const parsed = Date.parse(value);
-  return Number.isNaN(parsed) ? 0 : parsed;
 }
 
 function centroidFrom(record: RawRecord, definition: LayerDefinition) {
@@ -108,7 +94,7 @@ function selectLatestRecords(records: RawRecord[], definition: LayerDefinition) 
     }
 
     const currentDate = assertString(current[definition.fields.date], definition.fields.date);
-    if (parseDateWeight(rawDate) >= parseDateWeight(currentDate)) {
+    if (sourceDateSortWeight(rawDate) >= sourceDateSortWeight(currentDate)) {
       latestByArea.set(areaId, record);
     }
   }
@@ -219,7 +205,7 @@ function buildLayer(
 
   const latestSourceDate = records
     .map((record) => assertString(record[definition.fields.date], definition.fields.date))
-    .sort((left, right) => parseDateWeight(right) - parseDateWeight(left))[0];
+    .sort((left, right) => sourceDateSortWeight(right) - sourceDateSortWeight(left))[0];
 
   const geojson: FeatureCollection<Geometry, GeneratedFeatureProperties> = {
     type: "FeatureCollection",
@@ -304,7 +290,7 @@ async function main() {
   const status: GeneratedStatus = {
     generatedAt: new Date().toISOString(),
     layers: generatedLayers.map((layer) => {
-      const freshness = evaluateFreshness(layer.layer.freshnessPolicy, layer.layer.source.dataProcessedAt);
+      const freshness = evaluateFreshness(layer.layer.freshnessPolicy, layer.layer.source.latestSourceDate);
       return {
         id: layer.layer.id,
         title: layer.layer.title,

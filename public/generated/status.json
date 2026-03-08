@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-03-07T22:47:34.924Z",
+  "generatedAt": "2026-03-08T04:15:07.173Z",
   "layers": [
     {
       "id": "uc-in-work-rate",
       "title": "Universal Credit Claimants In Employment",
-      "status": "ok",
+      "status": "stale",
       "dataProcessedAt": "2026-03-04T00:01:40+00:00",
       "latestSourceDate": "2025-12",
       "updateFrequency": "MONTHLY",
       "recordsFetched": 192,
-      "message": "Source refreshed within 60 days."
+      "message": "Latest source period exceeded 60 days (66 days observed)."
     },
     {
       "id": "imd-employment-score",
@@ -24,22 +24,22 @@
     {
       "id": "fuel-poverty-rate",
       "title": "Households In Fuel Poverty",
-      "status": "ok",
+      "status": "stale",
       "dataProcessedAt": "2026-03-04T02:05:15+00:00",
       "latestSourceDate": "2023",
       "updateFrequency": "ANNUAL",
       "recordsFetched": 192,
-      "message": "Source refreshed within 450 days."
+      "message": "Latest source period exceeded 450 days (797 days observed)."
     },
     {
       "id": "gva-all-industries",
       "title": "Gross Value Added: All Industries",
-      "status": "ok",
+      "status": "stale",
       "dataProcessedAt": "2026-03-04T00:02:54+00:00",
       "latestSourceDate": "2023",
       "updateFrequency": "ANNUAL",
       "recordsFetched": 192,
-      "message": "Source refreshed within 450 days."
+      "message": "Latest source period exceeded 450 days (797 days observed)."
     },
     {
       "id": "travel-to-work-bicycle-rate",

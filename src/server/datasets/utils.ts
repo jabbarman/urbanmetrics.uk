@@ -41,22 +41,62 @@ export function median(values: number[]) {
     : sorted[middle];
 }
 
-export function evaluateFreshness(policy: FreshnessPolicy, isoTimestamp: string) {
+export function sourceDateSortWeight(value: string) {
+  if (/^\d{4}-\d{2}$/.test(value)) {
+    const [year, month] = value.split("-").map(Number);
+    return year * 100 + month;
+  }
+
+  if (/^\d{4}$/.test(value)) {
+    return Number(value) * 100;
+  }
+
+  const parsed = Date.parse(value);
+  return Number.isNaN(parsed) ? 0 : parsed;
+}
+
+export function sourceDateToTimestamp(value: string) {
+  if (/^\d{4}-\d{2}$/.test(value)) {
+    const [year, month] = value.split("-").map(Number);
+    return Date.UTC(year, month, 0, 23, 59, 59, 999);
+  }
+
+  if (/^\d{4}-\d{2}-\d{2}$/.test(value)) {
+    const [year, month, day] = value.split("-").map(Number);
+    return Date.UTC(year, month - 1, day, 23, 59, 59, 999);
+  }
+
+  if (/^\d{4}$/.test(value)) {
+    return Date.UTC(Number(value), 12, 0, 23, 59, 59, 999);
+  }
+
+  const parsed = Date.parse(value);
+  return Number.isNaN(parsed) ? null : parsed;
+}
+
+export function evaluateFreshness(policy: FreshnessPolicy, sourceDate: string) {
   if (policy.kind === "referenceOnly") {
     return { status: "warning" as const, message: "Reference dataset; freshness tracked for visibility only." };
   }
 
-  const processedAt = new Date(isoTimestamp);
-  const ageMs = Date.now() - processedAt.getTime();
+  const sourceTimestamp = sourceDateToTimestamp(sourceDate);
+  if (sourceTimestamp === null) {
+    return {
+      status: "warning" as const,
+      message: `Unable to evaluate freshness from source period '${sourceDate}'.`,
+    };
+  }
+
+  const ageMs = Date.now() - sourceTimestamp;
   const ageDays = ageMs / (1000 * 60 * 60 * 24);
 
   if (ageDays <= policy.days) {
-    return { status: "ok" as const, message: `Source refreshed within ${policy.days} days.` };
+    return { status: "ok" as const, message: `Latest source period is within ${policy.days} days.` };
   }
 
   return {
     status: "stale" as const,
-    message: `Source freshness exceeded ${policy.days} days (${Math.round(ageDays)} days observed).`,
+    message: `Latest source period exceeded ${policy.days} days (${Math.round(ageDays)} days observed).`,
   };
 }
 

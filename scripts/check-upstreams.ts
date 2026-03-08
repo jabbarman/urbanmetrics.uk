@@ -1,5 +1,9 @@
 import { layerDefinitions } from "../src/server/datasets/catalog";
-import { evaluateFreshness } from "../src/server/datasets/utils";
+import { evaluateFreshness, sourceDateSortWeight } from "../src/server/datasets/utils";
+
+const pageSize = 100;
+
+type RawRecord = Record<string, unknown>;
 
 async function fetchJson<T>(url: string) {
   const response = await fetch(url, {
@@ -16,20 +20,45 @@ async function fetchJson<T>(url: string) {
   return (await response.json()) as T;
 }
 
+async function fetchAllRecords(datasetApiUrl: string) {
+  const records: RawRecord[] = [];
+  let offset = 0;
+  let totalCount = Infinity;
+
+  while (offset < totalCount) {
+    const url = new URL(`${datasetApiUrl}/records`);
+    url.searchParams.set("limit", String(pageSize));
+    url.searchParams.set("offset", String(offset));
+
+    const page = await fetchJson<{ total_count: number; results: RawRecord[] }>(url.toString());
+    totalCount = page.total_count;
+    records.push(...page.results);
+    offset += pageSize;
+  }
+
+  return records;
+}
+
+function latestSourceDate(records: RawRecord[], dateField: string) {
+  const dates = records
+    .map((record) => record[dateField])
+    .filter((value): value is string => typeof value === "string" && value.length > 0)
+    .sort((left, right) => sourceDateSortWeight(right) - sourceDateSortWeight(left));
+
+  return dates[0] ?? null;
+}
+
 async function main() {
   const failures: string[] = [];
 
   for (const definition of layerDefinitions) {
-    const metadata = await fetchJson<{
+    await fetchJson<{
       dataset_id: string;
       metas: { default: { data_processed: string; title: string; update_frequency: string } };
     }>(definition.source.datasetApiUrl);
 
-    const sample = await fetchJson<{ results: Record<string, unknown>[] }>(
-      `${definition.source.datasetApiUrl}/records?limit=1`,
-    );
-
-    const sampleRecord = sample.results[0];
+    const records = await fetchAllRecords(definition.source.datasetApiUrl);
+    const sampleRecord = records[0];
     if (!sampleRecord) {
       failures.push(`${definition.id}: no sample records returned`);
       continue;
@@ -41,7 +70,13 @@ async function main() {
       }
     }
 
-    const freshness = evaluateFreshness(definition.freshnessPolicy, metadata.metas.default.data_processed);
+    const latestDate = latestSourceDate(records, definition.fields.date);
+    if (!latestDate) {
+      failures.push(`${definition.id}: no valid source period values returned`);
+      continue;
+    }
+
+    const freshness = evaluateFreshness(definition.freshnessPolicy, latestDate);
     if (freshness.status === "stale") {
       failures.push(`${definition.id}: ${freshness.message}`);
     }
