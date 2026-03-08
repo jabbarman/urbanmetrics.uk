@@ -10,8 +10,8 @@ Fallback path: `Cloudflare Pages/Workers + GitHub Actions`
 
 - best operational fit for a Next.js-first app
 - preview deployments and rollback flow are straightforward
-- no extra application runtime is needed for scheduled ingestion if GitHub Actions owns refresh jobs
 - environment variables, logs, and deployment checks are easy for future Codex sessions to reason about
+- pushing refreshed generated artifacts to `main` triggers the production deployment without adding extra hosting components
 
 ## Why Cloudflare is the fallback
 
@@ -49,7 +49,7 @@ Cons:
 
 - Vercel Hobby or Pro: `£0 to ~£16-£20+ per month` depending on traffic and whether Pro is chosen
 - GitHub Actions on a public repo: typically `£0`
-- Discord/Slack webhook alerting: `£0`
+- Discord webhook alerting: `£0`
 - optional uptime monitor: `£0 to low single digits`
 
 Expected v1 total: comfortably inside `£20-£40/month`
@@ -62,8 +62,10 @@ Expected v1 total: comfortably inside `£20-£40/month`
 ## Operational architecture
 
 - host the web app on Vercel
-- keep normalized data artifacts in the repo or attached build output for v1
+- keep normalized data artifacts in the repository for v1
 - run scheduled refresh and monitoring jobs in GitHub Actions
+- let the refresh workflow commit validated `data/generated` and `public/generated` changes back to `main`
+- rely on that commit to trigger a fresh Vercel production deployment with the new artifacts
 - send alerts to a Discord webhook first because it is low-friction and cheap
 - expose `/status` and `/api/health` from the app for human and automated checks
 
@@ -76,6 +78,15 @@ Expected v1 total: comfortably inside `£20-£40/month`
 - install command: `npm ci`
 - build command: `npm run build`
 - output directory: leave unset so Vercel uses the native Next.js output
+
+## Refresh publication flow
+
+1. GitHub Actions runs `npm run data:sync`
+2. if schema and coverage validation pass, the workflow commits generated artifacts back to `main`
+3. GitHub push triggers a Vercel production deployment
+4. scheduled smoke checks validate the deployed site and `/api/health`
+
+This avoids the original failure mode where refreshed artifacts only existed as workflow artifacts and never reached production.
 
 ## `DEPLOYMENT_NOT_FOUND` runbook
 
@@ -96,7 +107,7 @@ If `urbanmetrics.uk`, `www.urbanmetrics.uk`, and `urbanmetricsuk.vercel.app` all
    - framework preset is `Next.js`
    - root directory is empty or `/`
    - output directory override is disabled
-3. In `Project -> Deployments`, confirm there is at least one successful production deployment for commit `78d033e` or later.
+3. In `Project -> Deployments`, confirm there is at least one successful production deployment for the latest `main` commit.
 4. In `Project -> Settings -> Domains`, confirm:
    - `urbanmetrics.uk` is attached to this project
    - `www.urbanmetrics.uk` is attached to this project

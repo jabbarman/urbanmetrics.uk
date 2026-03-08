@@ -2,7 +2,7 @@
 
 ## Discovery Gate
 
-Status: prepared, awaiting human approval if a formal gate process is required
+Status: prepared
 
 Evidence:
 - `docs/discovery-report.md`
@@ -14,7 +14,7 @@ Evidence:
 
 ## Foundation Gate
 
-Status: technically satisfied and published to GitHub, awaiting formal human sign-off if required
+Status: satisfied
 
 Evidence:
 - `docs/qa/evidence/phase-2-validation.md`
@@ -24,5 +24,22 @@ Evidence:
 - `.github/workflows/ci.yml`
 - remote repository: `git@github.com:jabbarman/urbanmetrics.uk.git`
 
+## Review Remediation Gate
+
+Status: locally satisfied, awaiting live validation
+
+Evidence:
+- `docs/qa/evidence/review-remediation-validation.md`
+- `.github/workflows/refresh-data.yml`
+- `.github/workflows/monitor-upstreams.yml`
+- `scripts/sync-data.ts`
+- `scripts/check-upstreams.ts`
+- `scripts/check-site.ts`
+- `src/features/map/map-explorer.tsx`
+- `src/features/map/legend.tsx`
+- `tests/e2e/smoke.spec.ts`
+
 Notes:
-- production deployment evidence does not exist yet because no hosting credentials are configured
+- local validation passes for lint, typecheck, unit tests, build, and Playwright smoke coverage
+- operational monitors now fail correctly when source freshness is genuinely degraded
+- first-release sign-off depends on live deployment validation and an explicit decision on the degraded freshness state

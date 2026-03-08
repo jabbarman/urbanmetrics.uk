@@ -2,27 +2,33 @@
 
 ## Current stage
 
-`Phase 3: MVP shell and operational baseline`
+`Phase 4: release hardening and live validation`
 
 ## Completed
 
-- discovery and architecture documents
-- repository, deployment, monitoring, and layer-onboarding docs
-- Next.js TypeScript app scaffold
-- generated data pipeline for 5 WMCA ward layers
-- interactive map with primary and compare overlays
-- click-through area summary panel
+- discovery, architecture, and operational docs
+- Next.js TypeScript map application scaffold
+- generated WMCA ward overlay pipeline
+- interactive primary/compare map workspace
 - status page and `/api/health` endpoint
-- CI and scheduled workflow scaffolding
-- local validation and runtime walkthrough
-- initial GitHub publication to `git@github.com:jabbarman/urbanmetrics.uk.git`
+- CI, upstream monitoring, refresh automation, and live smoke checks
+- review-remediation fixes for refresh publication, freshness logic, coverage validation, graceful layer degradation, actionable alerts, legend clarity, and end-to-end smoke coverage
 
 ## In progress
 
-- deployment to a real hosting target
-- transport layer expansion beyond the v1 census-based transport signal
-- further dashboard depth and UX polish
+- pushing the remediation batch to production
+- validating the Vercel deployment on `urbanmetrics.uk`
+- deciding first-release readiness with the corrected health gate
+
+## Known operational signal
+
+Under the corrected source-period freshness logic, three shipped layers are currently stale from the source itself:
+- Universal Credit claimants in employment
+- households in fuel poverty
+- gross value added
+
+That is an upstream data-age issue, not a remaining implementation defect.
 
 ## Next step
 
-Connect the GitHub repository to Vercel, set `SITE_URL` and `DISCORD_WEBHOOK_URL`, and run the first hosted deployment plus scheduled workflows.
+Deploy the remediation batch to production, validate `/status` and `/api/health`, and only cut the first release if the live release gate is acceptable.

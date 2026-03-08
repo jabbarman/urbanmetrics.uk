@@ -2,15 +2,16 @@
 
 ## Integrator role in this iteration
 
-- attached the project to the GitHub remote
-- created the initial code commit and published it
-- is updating governance and live-status artifacts to reflect the published baseline
+- implemented the review-remediation batch directly in the primary workspace
+- kept each substantial finding as a separate commit with local validation
+- updated operational documentation and gate evidence before the production push
 
 ## Delegation status
 
-- no parallel sub-agents used because repo publication, state updates, and validation were tightly coupled
+- no parallel sub-agents used because the workflow, generated-artifact, and deployment changes were tightly coupled
 
 ## Next delegation candidates
 
-- hosted smoke verification after deployment
-- follow-on transport adapter work for TfWM or NaPTAN-backed overlays
+- source replacement work for the currently stale layers
+- transport adapter expansion for TfWM or NaPTAN-backed overlays
+- deeper hosted QA across mobile and accessibility scenarios
