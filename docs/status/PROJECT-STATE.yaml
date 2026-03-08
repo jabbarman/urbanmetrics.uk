@@ -1,0 +1,18 @@
+project: west-midland-signals
+phase: phase-3-mvp-shell
+status: in_progress
+summary: >-
+  The planning baseline, application scaffold, generated data pipeline, and monitoring workflows are
+  implemented and the first application commit has been published to GitHub. The next stage is live
+  deployment and secret configuration.
+last_updated: 2026-03-08
+current_focus:
+  - connect the GitHub repository to the chosen hosting platform
+  - configure workflow secrets for site smoke checks and alerting
+  - expand transport coverage beyond the v1 behaviour-based overlay
+next_executable_step: connect GitHub to Vercel and configure SITE_URL and DISCORD_WEBHOOK_URL secrets
+blockers:
+  - no hosting credentials or deployment target are configured in this workspace
+risks:
+  - Birmingham City Observatory remains a dependency concentration risk for v1
+  - live TfWM transport overlays still need direct integration and credential handling
