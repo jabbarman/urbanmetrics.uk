@@ -5,12 +5,21 @@ on:
     - cron: "5 5 * * *"
   workflow_dispatch:
 
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-data
+  cancel-in-progress: false
+
 jobs:
   refresh:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -24,6 +33,9 @@ jobs:
       - name: Sync generated data
         run: npm run data:sync
 
+      - name: Build with refreshed data
+        run: npm run build
+
       - name: Upload generated artifacts
         uses: actions/upload-artifact@v4
         with:
@@ -32,8 +44,26 @@ jobs:
             data/generated
             public/generated
 
-      - name: Build with refreshed data
-        run: npm run build
+      - name: Detect generated artifact changes
+        id: generated_changes
+        run: |
+          git add data/generated public/generated
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit refreshed artifacts
+        if: steps.generated_changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore(data): refresh generated artifacts"
+
+      - name: Push refreshed artifacts
+        if: steps.generated_changes.outputs.changed == 'true'
+        run: git push origin HEAD:main
 
       - name: Notify Discord on failure
         if: failure() && env.DISCORD_WEBHOOK_URL != ''
@@ -42,4 +72,4 @@ jobs:
         run: |
           curl -sS -X POST "$DISCORD_WEBHOOK_URL" \
             -H 'Content-Type: application/json' \
-            -d '{"content":"West Midlands Signals data refresh failed. Inspect the Refresh Data Artifacts workflow run for details."}'
+            -d '{"content":"Urban Metrics UK data refresh failed. Inspect the Refresh Data Artifacts workflow run for details."}'
