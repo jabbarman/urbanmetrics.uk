@@ -66,3 +66,57 @@ Expected v1 total: comfortably inside `£20-£40/month`
 - run scheduled refresh and monitoring jobs in GitHub Actions
 - send alerts to a Discord webhook first because it is low-friction and cheap
 - expose `/status` and `/api/health` from the app for human and automated checks
+
+## Required Vercel settings for this repo
+
+- project repository: `jabbarman/urbanmetrics.uk`
+- production branch: `main`
+- framework preset: `Next.js`
+- root directory: repository root `/`
+- install command: `npm ci`
+- build command: `npm run build`
+- output directory: leave unset so Vercel uses the native Next.js output
+
+## `DEPLOYMENT_NOT_FOUND` runbook
+
+If `urbanmetrics.uk`, `www.urbanmetrics.uk`, and `urbanmetricsuk.vercel.app` all return Vercel `404` with `x-vercel-error: NOT_FOUND`, treat it as a deployment-alias problem before touching application code.
+
+### What this usually means
+
+- the project has no successful production deployment yet
+- the Vercel project is linked to the wrong repository
+- the project `Root Directory` is wrong, so Vercel is building the wrong folder
+- the production branch is not `main`
+- the domain or `vercel.app` alias is attached to a project that is not serving the intended deployment
+
+### What to verify
+
+1. In `Project -> Settings -> Git`, confirm the connected repository is `jabbarman/urbanmetrics.uk` and the production branch is `main`.
+2. In `Project -> Settings -> Build and Deployment`, confirm:
+   - framework preset is `Next.js`
+   - root directory is empty or `/`
+   - output directory override is disabled
+3. In `Project -> Deployments`, confirm there is at least one successful production deployment for commit `78d033e` or later.
+4. In `Project -> Settings -> Domains`, confirm:
+   - `urbanmetrics.uk` is attached to this project
+   - `www.urbanmetrics.uk` is attached to this project
+   - only one redirect rule exists between apex and `www`
+5. After any settings change, trigger a fresh production deployment. Domain changes alone do not fix a missing production alias.
+
+### Fast verification sequence
+
+1. Open `https://urbanmetricsuk.vercel.app/`
+2. If that returns Vercel `NOT_FOUND`, fix the project/deployment first
+3. Only check `urbanmetrics.uk` after the `vercel.app` hostname serves the app
+
+### Local proof point
+
+This repository currently builds and serves `/` locally with:
+
+```bash
+npm ci
+npm run build
+npm run start
+```
+
+That means a Vercel edge `NOT_FOUND` is more likely to be a deployment mapping problem than a missing Next.js route.
