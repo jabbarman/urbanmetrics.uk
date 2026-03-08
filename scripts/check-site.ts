@@ -3,7 +3,7 @@ const baseUrl = process.env.SITE_URL ?? "http://127.0.0.1:3000";
 async function ensureStatus(url: string, expectedText?: RegExp) {
   const response = await fetch(url, {
     headers: {
-      "User-Agent": "west-midland-signals-site-monitor/0.1",
+      "User-Agent": "urbanmetrics-uk-site-monitor/0.1",
     },
   });
 
@@ -20,7 +20,7 @@ async function ensureStatus(url: string, expectedText?: RegExp) {
 }
 
 async function main() {
-  await ensureStatus(baseUrl, /West Midlands Signals/i);
+  await ensureStatus(baseUrl, /Urban Metrics UK/i);
   await ensureStatus(`${baseUrl}/status`, /Service status|Operational status/i);
   await ensureStatus(`${baseUrl}/api/health`, /ok|warning|degraded/i);
   console.log(`Smoke checks passed for ${baseUrl}`);

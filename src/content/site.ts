@@ -1,5 +1,5 @@
 export const siteCopy = {
-  title: "West Midlands Signals",
+  title: "Urban Metrics UK",
   strapline: "Economic and civic indicators for Birmingham and the wider city-region.",
   description:
     "A map-first regional intelligence site for exploring how labour, deprivation, civic pressure, and transport behaviour intersect across the West Midlands.",

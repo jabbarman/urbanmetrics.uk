@@ -120,7 +120,7 @@ async function fetchJson<T>(url: string) {
   const response = await fetch(url, {
     headers: {
       Accept: "application/json",
-      "User-Agent": "west-midland-signals-data-sync/0.1",
+      "User-Agent": "urbanmetrics-uk-data-sync/0.1",
     },
   });
 

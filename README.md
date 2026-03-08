@@ -1,4 +1,4 @@
-# West Midlands Signals
+# Urban Metrics UK
 
 Public-facing West Midlands economic indicator website with interactive map overlays, source metadata, freshness monitoring, and AI-friendly extension rules.
 

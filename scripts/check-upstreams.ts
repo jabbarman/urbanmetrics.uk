@@ -5,7 +5,7 @@ async function fetchJson<T>(url: string) {
   const response = await fetch(url, {
     headers: {
       Accept: "application/json",
-      "User-Agent": "west-midland-signals-monitor/0.1",
+      "User-Agent": "urbanmetrics-uk-monitor/0.1",
     },
   });
 

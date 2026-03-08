@@ -1,32 +1,41 @@
 # Domain And Branding
 
-## Naming direction
+## Chosen identity
 
-The product should feel regional, credible, and analytical rather than startup-generic or purely Birmingham-only.
+- domain: `urbanmetrics.uk`
+- public brand: `Urban Metrics UK`
+- current product scope: West Midlands and Birmingham economic/civic indicators
 
-## Shortlist
+## Positioning
 
-1. `West Midlands Signals`
-2. `Midlands Signal Atlas`
-3. `West Midlands Lens`
-4. `Metro Signals UK`
-5. `Region Signals`
+The brand is broader than the first regional release, which is useful.
 
-## Recommended working name
+Why this is the right fit:
+- it supports future expansion beyond one city-region
+- it sounds analytical and credible rather than campaign-like
+- it works for maps, dashboards, status pages, and data-source documentation
 
-`West Midlands Signals`
+## Usage guidance
 
-Why:
-- broad enough for future dashboards beyond one map
-- regionally grounded without sounding bureaucratic
-- works for a map, status page, and wider data product
+Use `Urban Metrics UK` for:
+- the site title
+- repository-facing documentation titles where the product identity matters
+- deployment and monitoring references
 
-## Domain suggestions
+Use `urbanmetrics.uk` for:
+- repository and local directory naming
+- package/repo metadata where an exact identifier is useful
+- domain and environment configuration
 
-- `westmidlandssignals.uk`
-- `wm-signals.uk`
-- `midlandssignals.uk`
-- `westmidlandslens.uk`
-- `metrosignals.uk`
+## Regional product language
 
-Live availability was not verified from this document and should be checked before purchase.
+The product itself should still be explicit about its current scope.
+
+Recommended supporting language:
+- "Economic and civic indicators for Birmingham and the wider city-region"
+- "West Midlands regional intelligence platform"
+- "Map-first view of regional economic, civic, and transport signals"
+
+## Future naming rule
+
+If the product later expands geographically, keep the core brand unchanged and update only the scope language in navigation, metadata, and landing-page copy.
