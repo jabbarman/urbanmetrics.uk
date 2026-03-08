@@ -22,13 +22,52 @@ jobs:
         run: npm ci
 
       - name: Check upstreams
-        run: npm run monitor:upstreams
+        id: upstream_check
+        continue-on-error: true
+        run: |
+          set +e
+          npm run monitor:upstreams > upstream-monitor.log 2>&1
+          exit_code=$?
+          cat upstream-monitor.log
+          echo "exit_code=$exit_code" >> "$GITHUB_OUTPUT"
+          echo "summary<<EOF" >> "$GITHUB_OUTPUT"
+          sed -n '1,8p' upstream-monitor.log >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
+          failure_class=$(grep -o '\[[^]]\+\]' upstream-monitor.log | head -n 1 | tr -d '[]')
+          if [ -z "$failure_class" ]; then
+            failure_class="unknown"
+          fi
+          echo "failure_class=$failure_class" >> "$GITHUB_OUTPUT"
+
+      - name: Mark job failed when upstream checks fail
+        if: steps.upstream_check.outputs.exit_code != '0'
+        run: exit 1
 
       - name: Notify Discord on failure
-        if: failure() && env.DISCORD_WEBHOOK_URL != ''
+        if: steps.upstream_check.outputs.exit_code != '0' && env.DISCORD_WEBHOOK_URL != ''
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: |
+          case "${{ steps.upstream_check.outputs.failure_class }}" in
+            freshness)
+              remediation="Check whether the latest source period has advanced upstream. If not, review whether the freshness policy is still appropriate."
+              ;;
+            schema)
+              remediation="Inspect the named dataset fields and ward coverage, then rerun npm run data:sync locally."
+              ;;
+            request)
+              remediation="Check upstream availability, response status, and any rate-limit or outage signals, then rerun npm run monitor:upstreams locally."
+              ;;
+            *)
+              remediation="Open the workflow log, inspect the first failing dataset line, and rerun npm run monitor:upstreams locally."
+              ;;
+          esac
+          payload=$(jq -Rn \
+            --arg failure_class "${{ steps.upstream_check.outputs.failure_class }}" \
+            --arg summary "${{ steps.upstream_check.outputs.summary }}" \
+            --arg remediation "$remediation" \
+            --arg run_url "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
+            '{content: ("Urban Metrics UK upstream monitoring failed.\nFailure class: " + $failure_class + "\nSummary:\n" + $summary + "\nFirst remediation step: " + $remediation + "\nRun: " + $run_url)}')
           curl -sS -X POST "$DISCORD_WEBHOOK_URL" \
             -H 'Content-Type: application/json' \
-            -d '{"content":"West Midlands Signals upstream monitoring failed. Inspect the Monitor Upstreams workflow run for details."}'
+            -d "$payload"

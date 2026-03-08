@@ -11,6 +11,8 @@ import { evaluateFreshness, sourceDateSortWeight } from "../src/server/datasets/
 
 const pageSize = 100;
 
+type FailureClass = "freshness" | "schema" | "request" | "runtime";
+
 async function fetchJson<T>(url: string) {
   const response = await fetch(url, {
     headers: {
@@ -54,6 +56,22 @@ function latestSourceDate(records: RawRecord[], dateField: string) {
   return dates[0] ?? null;
 }
 
+function classifyError(message: string): FailureClass {
+  if (message.includes("coverage mismatch") || message.includes("latest record") || message.includes("source period")) {
+    return "schema";
+  }
+
+  if (message.includes("Request failed")) {
+    return "request";
+  }
+
+  return "runtime";
+}
+
+function formatFailure(layerId: string, failureClass: FailureClass, message: string) {
+  return `${layerId} [${failureClass}]: ${message}`;
+}
+
 async function main() {
   const failures: string[] = [];
 
@@ -68,6 +86,7 @@ async function main() {
       const expectedAreaIds =
         expectedAreaIdsByCompareGroup[definition.compareGroup as keyof typeof expectedAreaIdsByCompareGroup];
       const records = selectLatestRecordsByArea(allRecords, definition, expectedAreaIds);
+
       if (expectedAreaIds) {
         const coverage = compareAreaCoverage(
           expectedAreaIds,
@@ -75,23 +94,24 @@ async function main() {
         );
 
         if (hasCoverageIssues(coverage)) {
-          failures.push(`${definition.id}: ${formatCoverageIssues(definition.compareGroup, coverage)}`);
+          failures.push(formatFailure(definition.id, "schema", formatCoverageIssues(definition.compareGroup, coverage)));
           continue;
         }
       }
 
       const latestDate = latestSourceDate(records, definition.fields.date);
       if (!latestDate) {
-        failures.push(`${definition.id}: no valid source period values returned`);
+        failures.push(formatFailure(definition.id, "schema", "No valid source period values returned."));
         continue;
       }
 
       const freshness = evaluateFreshness(definition.freshnessPolicy, latestDate);
       if (freshness.status === "stale") {
-        failures.push(`${definition.id}: ${freshness.message}`);
+        failures.push(formatFailure(definition.id, "freshness", freshness.message));
       }
     } catch (error) {
-      failures.push(`${definition.id}: ${error instanceof Error ? error.message : String(error)}`);
+      const message = error instanceof Error ? error.message : String(error);
+      failures.push(formatFailure(definition.id, classifyError(message), message));
     }
   }
 
