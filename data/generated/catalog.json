@@ -41,7 +41,7 @@
       "updateFrequency": "MONTHLY",
       "recordsFetched": 192,
       "latestSourceDate": "2025-12",
-      "fetchedAt": "2026-03-08T04:14:54.974Z"
+      "fetchedAt": "2026-03-08T04:23:35.860Z"
     },
     "summary": {
       "min": 18.4,
@@ -145,7 +145,7 @@
       "updateFrequency": "IRREG",
       "recordsFetched": 192,
       "latestSourceDate": "2025",
-      "fetchedAt": "2026-03-08T04:14:56.318Z"
+      "fetchedAt": "2026-03-08T04:23:36.942Z"
     },
     "summary": {
       "min": 4.4,
@@ -250,7 +250,7 @@
       "updateFrequency": "ANNUAL",
       "recordsFetched": 192,
       "latestSourceDate": "2023",
-      "fetchedAt": "2026-03-08T04:14:59.440Z"
+      "fetchedAt": "2026-03-08T04:23:39.591Z"
     },
     "summary": {
       "min": 6,
@@ -355,7 +355,7 @@
       "updateFrequency": "ANNUAL",
       "recordsFetched": 192,
       "latestSourceDate": "2023",
-      "fetchedAt": "2026-03-08T04:15:05.994Z"
+      "fetchedAt": "2026-03-08T04:23:44.193Z"
     },
     "summary": {
       "min": 46,
@@ -459,7 +459,7 @@
       "updateFrequency": "DECENNIAL",
       "recordsFetched": 192,
       "latestSourceDate": "2021",
-      "fetchedAt": "2026-03-08T04:15:07.163Z"
+      "fetchedAt": "2026-03-08T04:23:45.087Z"
     },
     "summary": {
       "min": 0.4,

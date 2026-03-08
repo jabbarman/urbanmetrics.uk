@@ -1,9 +1,15 @@
 import { layerDefinitions } from "../src/server/datasets/catalog";
+import { expectedAreaIdsByCompareGroup } from "../src/server/datasets/coverage";
+import {
+  compareAreaCoverage,
+  formatCoverageIssues,
+  hasCoverageIssues,
+  selectLatestRecordsByArea,
+  type RawRecord,
+} from "../src/server/datasets/normalization";
 import { evaluateFreshness, sourceDateSortWeight } from "../src/server/datasets/utils";
 
 const pageSize = 100;
-
-type RawRecord = Record<string, unknown>;
 
 async function fetchJson<T>(url: string) {
   const response = await fetch(url, {
@@ -52,33 +58,40 @@ async function main() {
   const failures: string[] = [];
 
   for (const definition of layerDefinitions) {
-    await fetchJson<{
-      dataset_id: string;
-      metas: { default: { data_processed: string; title: string; update_frequency: string } };
-    }>(definition.source.datasetApiUrl);
+    try {
+      await fetchJson<{
+        dataset_id: string;
+        metas: { default: { data_processed: string; title: string; update_frequency: string } };
+      }>(definition.source.datasetApiUrl);
 
-    const records = await fetchAllRecords(definition.source.datasetApiUrl);
-    const sampleRecord = records[0];
-    if (!sampleRecord) {
-      failures.push(`${definition.id}: no sample records returned`);
-      continue;
-    }
+      const allRecords = await fetchAllRecords(definition.source.datasetApiUrl);
+      const expectedAreaIds =
+        expectedAreaIdsByCompareGroup[definition.compareGroup as keyof typeof expectedAreaIdsByCompareGroup];
+      const records = selectLatestRecordsByArea(allRecords, definition, expectedAreaIds);
+      if (expectedAreaIds) {
+        const coverage = compareAreaCoverage(
+          expectedAreaIds,
+          records.map((record) => record[definition.fields.areaId] as string),
+        );
 
-    for (const field of Object.values(definition.fields)) {
-      if (!(field in sampleRecord)) {
-        failures.push(`${definition.id}: missing expected field '${field}'`);
+        if (hasCoverageIssues(coverage)) {
+          failures.push(`${definition.id}: ${formatCoverageIssues(definition.compareGroup, coverage)}`);
+          continue;
+        }
       }
-    }
 
-    const latestDate = latestSourceDate(records, definition.fields.date);
-    if (!latestDate) {
-      failures.push(`${definition.id}: no valid source period values returned`);
-      continue;
-    }
+      const latestDate = latestSourceDate(records, definition.fields.date);
+      if (!latestDate) {
+        failures.push(`${definition.id}: no valid source period values returned`);
+        continue;
+      }
 
-    const freshness = evaluateFreshness(definition.freshnessPolicy, latestDate);
-    if (freshness.status === "stale") {
-      failures.push(`${definition.id}: ${freshness.message}`);
+      const freshness = evaluateFreshness(definition.freshnessPolicy, latestDate);
+      if (freshness.status === "stale") {
+        failures.push(`${definition.id}: ${freshness.message}`);
+      }
+    } catch (error) {
+      failures.push(`${definition.id}: ${error instanceof Error ? error.message : String(error)}`);
     }
   }
 

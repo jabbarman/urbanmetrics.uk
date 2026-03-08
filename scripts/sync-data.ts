@@ -4,6 +4,14 @@ import path from "node:path";
 import type { Feature, FeatureCollection, Geometry } from "geojson";
 
 import { layerDefinitions } from "../src/server/datasets/catalog";
+import { expectedAreaIdsByCompareGroup } from "../src/server/datasets/coverage";
+import {
+  compareAreaCoverage,
+  formatCoverageIssues,
+  hasCoverageIssues,
+  selectLatestRecordsByArea,
+  type RawRecord,
+} from "../src/server/datasets/normalization";
 import { evaluateFreshness, formatValue, mean, median, quantileBreaks, sourceDateSortWeight } from "../src/server/datasets/utils";
 import type { GeneratedFeatureProperties, GeneratedLayer, GeneratedStatus, LayerDefinition } from "../src/server/datasets/types";
 
@@ -12,8 +20,6 @@ const publicGeneratedDir = path.join(process.cwd(), "public", "generated");
 const sourceCacheDir = path.join(process.cwd(), "data", "source-cache");
 
 const pageSize = 100;
-
-type RawRecord = Record<string, unknown>;
 
 type DatasetMetadata = {
   dataset_id: string;
@@ -62,46 +68,6 @@ function geometryFrom(record: RawRecord, definition: LayerDefinition) {
   return geometryWrapper.geometry;
 }
 
-function selectLatestRecords(records: RawRecord[], definition: LayerDefinition) {
-  const latestByArea = new Map<string, RawRecord>();
-
-  for (const record of records) {
-    const areaId = record[definition.fields.areaId];
-    const rawValue = record[definition.fields.value];
-    const rawDate = record[definition.fields.date];
-    const geometryWrapper = record[definition.fields.geometry] as { geometry?: Geometry } | null | undefined;
-    const centroid = record[definition.fields.centroid] as { lon?: number; lat?: number } | null | undefined;
-    const localAuthorityName = record[definition.fields.localAuthorityName];
-    const localAuthorityCode = record[definition.fields.localAuthorityCode];
-
-    if (
-      typeof areaId !== "string" ||
-      typeof rawDate !== "string" ||
-      typeof rawValue !== "number" ||
-      typeof localAuthorityName !== "string" ||
-      typeof localAuthorityCode !== "string" ||
-      !geometryWrapper?.geometry ||
-      typeof centroid?.lon !== "number" ||
-      typeof centroid?.lat !== "number"
-    ) {
-      continue;
-    }
-
-    const current = latestByArea.get(areaId);
-    if (!current) {
-      latestByArea.set(areaId, record);
-      continue;
-    }
-
-    const currentDate = assertString(current[definition.fields.date], definition.fields.date);
-    if (sourceDateSortWeight(rawDate) >= sourceDateSortWeight(currentDate)) {
-      latestByArea.set(areaId, record);
-    }
-  }
-
-  return [...latestByArea.values()];
-}
-
 async function fetchJson<T>(url: string) {
   const response = await fetch(url, {
     headers: {
@@ -145,7 +111,19 @@ function buildLayer(
   metadata: DatasetMetadata,
   allRecords: RawRecord[],
 ): GeneratedLayer {
-  const records = selectLatestRecords(allRecords, definition);
+  const expectedAreaIds = expectedAreaIdsByCompareGroup[definition.compareGroup as keyof typeof expectedAreaIdsByCompareGroup];
+  const records = selectLatestRecordsByArea(allRecords, definition, expectedAreaIds);
+  if (expectedAreaIds) {
+    const coverage = compareAreaCoverage(
+      expectedAreaIds,
+      records.map((record) => assertString(record[definition.fields.areaId], definition.fields.areaId)),
+    );
+
+    if (hasCoverageIssues(coverage)) {
+      throw new Error(`${definition.id}: ${formatCoverageIssues(definition.compareGroup, coverage)}`);
+    }
+  }
+
   const values: number[] = [];
   const features: Array<Feature<Geometry, GeneratedFeatureProperties>> = [];
 
