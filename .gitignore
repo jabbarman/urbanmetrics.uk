@@ -1,0 +1,16 @@
+node_modules/
+.next/
+out/
+.env
+.env.local
+.env.*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+playwright-report/
+test-results/
+coverage/
+.DS_Store
+data/source-cache/
+tsconfig.tsbuildinfo

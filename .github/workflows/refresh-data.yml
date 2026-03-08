@@ -1,0 +1,45 @@
+name: Refresh Data Artifacts
+
+on:
+  schedule:
+    - cron: "5 5 * * *"
+  workflow_dispatch:
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Sync generated data
+        run: npm run data:sync
+
+      - name: Upload generated artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: generated-data
+          path: |
+            data/generated
+            public/generated
+
+      - name: Build with refreshed data
+        run: npm run build
+
+      - name: Notify Discord on failure
+        if: failure() && env.DISCORD_WEBHOOK_URL != ''
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          curl -sS -X POST "$DISCORD_WEBHOOK_URL" \
+            -H 'Content-Type: application/json' \
+            -d '{"content":"West Midlands Signals data refresh failed. Inspect the Refresh Data Artifacts workflow run for details."}'

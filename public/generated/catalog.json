@@ -1,0 +1,525 @@
+[
+  {
+    "id": "uc-in-work-rate",
+    "title": "Universal Credit Claimants In Employment",
+    "shortLabel": "UC in work",
+    "description": "Share of Universal Credit claimants who are in employment. Useful as a monthly economic stress and labour-market participation signal.",
+    "compareGroup": "wmca-ward",
+    "geographyLabel": "WMCA ward",
+    "geographyVintage": "ward 2025",
+    "unit": "%",
+    "precision": 1,
+    "cadenceLabel": "Monthly",
+    "freshnessPolicy": {
+      "kind": "maxAgeDays",
+      "days": 60
+    },
+    "palette": [
+      "#edf7fb",
+      "#c8e4ef",
+      "#88c6dc",
+      "#2f89b8",
+      "#0d4f76"
+    ],
+    "legendBreaks": [
+      26.9,
+      29.4,
+      30.9,
+      32.7
+    ],
+    "source": {
+      "provider": "Birmingham City Observatory API",
+      "publisher": "Department for Work and Pensions",
+      "apiBaseUrl": "https://www.cityobservatory.birmingham.gov.uk/api/explore/v2.1/catalog/datasets",
+      "datasetId": "percentage-universal-credit-claimants-in-employment-wmca-wards-2025",
+      "datasetUrl": "https://www.cityobservatory.birmingham.gov.uk/explore/dataset/percentage-universal-credit-claimants-in-employment-wmca-wards-2025/",
+      "datasetApiUrl": "https://www.cityobservatory.birmingham.gov.uk/api/explore/v2.1/catalog/datasets/percentage-universal-credit-claimants-in-employment-wmca-wards-2025",
+      "licence": "Open Government Licence v3.0 via Birmingham City Observatory metadata",
+      "caveat": "This is a claimant-based rate, not a share of the total working-age population.",
+      "datasetTitle": "Percentage Universal Credit claimants in employment - WMCA Wards (2025)",
+      "dataProcessedAt": "2026-03-04T00:01:40+00:00",
+      "updateFrequency": "MONTHLY",
+      "recordsFetched": 192,
+      "latestSourceDate": "2025-12",
+      "fetchedAt": "2026-03-07T22:47:25.542Z"
+    },
+    "summary": {
+      "min": 18.4,
+      "max": 43.1,
+      "mean": 29.97552083333333,
+      "median": 30,
+      "topAreas": [
+        {
+          "areaId": "E05001313",
+          "areaName": "Pheasey Park Farm",
+          "value": 43.1
+        },
+        {
+          "areaId": "E05001285",
+          "areaName": "Blythe",
+          "value": 39.7
+        },
+        {
+          "areaId": "E05001298",
+          "areaName": "Shirley West",
+          "value": 38.4
+        },
+        {
+          "areaId": "E05015926",
+          "areaName": "Wordsley North",
+          "value": 37.5
+        },
+        {
+          "areaId": "E05001260",
+          "areaName": "Abbey",
+          "value": 37.4
+        }
+      ],
+      "bottomAreas": [
+        {
+          "areaId": "E05011128",
+          "areaName": "Bournbrook & Selly Park",
+          "value": 18.4
+        },
+        {
+          "areaId": "E05011154",
+          "areaName": "Moseley",
+          "value": 22.1
+        },
+        {
+          "areaId": "E05011170",
+          "areaName": "Sparkbrook & Balsall Heath East",
+          "value": 22.5
+        },
+        {
+          "areaId": "E05011139",
+          "areaName": "Gravelly Hill",
+          "value": 22.5
+        },
+        {
+          "areaId": "E05011120",
+          "areaName": "Alum Rock",
+          "value": 22.6
+        }
+      ]
+    }
+  },
+  {
+    "id": "imd-employment-score",
+    "title": "IMD Employment Score",
+    "shortLabel": "IMD employment",
+    "description": "Employment deprivation score from the Indices of Multiple Deprivation, surfaced at WMCA ward geography for visual comparison.",
+    "compareGroup": "wmca-ward",
+    "geographyLabel": "WMCA ward",
+    "geographyVintage": "ward 2025",
+    "unit": "%",
+    "precision": 1,
+    "cadenceLabel": "Irregular",
+    "freshnessPolicy": {
+      "kind": "referenceOnly"
+    },
+    "palette": [
+      "#f9efe8",
+      "#f1d3bf",
+      "#e29c6d",
+      "#bf5a2a",
+      "#7b2d15"
+    ],
+    "legendBreaks": [
+      12.1,
+      17.2,
+      21.3,
+      24.8
+    ],
+    "source": {
+      "provider": "Birmingham City Observatory API",
+      "publisher": "Department for Levelling Up, Housing & Communities",
+      "apiBaseUrl": "https://www.cityobservatory.birmingham.gov.uk/api/explore/v2.1/catalog/datasets",
+      "datasetId": "imd-employment-score-wmca-wards-2025",
+      "datasetUrl": "https://www.cityobservatory.birmingham.gov.uk/explore/dataset/imd-employment-score-wmca-wards-2025/",
+      "datasetApiUrl": "https://www.cityobservatory.birmingham.gov.uk/api/explore/v2.1/catalog/datasets/imd-employment-score-wmca-wards-2025",
+      "licence": "Open Government Licence v3.0 via Birmingham City Observatory metadata",
+      "caveat": "IMD is a relative deprivation measure. Higher values indicate stronger employment deprivation and should not be read as a direct unemployment rate.",
+      "datasetTitle": "IMD - Employment - score (%) - WMCA Wards (2025)",
+      "dataProcessedAt": "2026-02-10T08:08:31+00:00",
+      "updateFrequency": "IRREG",
+      "recordsFetched": 192,
+      "latestSourceDate": "2025",
+      "fetchedAt": "2026-03-07T22:47:27.708Z"
+    },
+    "summary": {
+      "min": 4.4,
+      "max": 32.7,
+      "mean": 18.74322916666667,
+      "median": 18.9,
+      "topAreas": [
+        {
+          "areaId": "E05011142",
+          "areaName": "Handsworth",
+          "value": 32.7
+        },
+        {
+          "areaId": "E05011132",
+          "areaName": "Castle Vale",
+          "value": 32.7
+        },
+        {
+          "areaId": "E05011125",
+          "areaName": "Birchfield",
+          "value": 32.3
+        },
+        {
+          "areaId": "E05011170",
+          "areaName": "Sparkbrook & Balsall Heath East",
+          "value": 31
+        },
+        {
+          "areaId": "E05001287",
+          "areaName": "Chelmsley Wood",
+          "value": 30.8
+        }
+      ],
+      "bottomAreas": [
+        {
+          "areaId": "E05001231",
+          "areaName": "Wainbody",
+          "value": 4.4
+        },
+        {
+          "areaId": "E05001295",
+          "areaName": "St Alphege",
+          "value": 4.6
+        },
+        {
+          "areaId": "E05001288",
+          "areaName": "Dorridge and Hockley Heath",
+          "value": 4.9
+        },
+        {
+          "areaId": "E05001291",
+          "areaName": "Knowle",
+          "value": 5.5
+        },
+        {
+          "areaId": "E05001318",
+          "areaName": "Streetly",
+          "value": 5.7
+        }
+      ]
+    }
+  },
+  {
+    "id": "fuel-poverty-rate",
+    "title": "Households In Fuel Poverty",
+    "shortLabel": "Fuel poverty",
+    "description": "Estimated share of households in fuel poverty. Strong social-context overlay for comparison against labour and deprivation signals.",
+    "compareGroup": "wmca-ward",
+    "geographyLabel": "WMCA ward",
+    "geographyVintage": "ward 2025",
+    "unit": "%",
+    "precision": 1,
+    "cadenceLabel": "Annual",
+    "freshnessPolicy": {
+      "kind": "maxAgeDays",
+      "days": 450
+    },
+    "palette": [
+      "#fff3d9",
+      "#f8d98b",
+      "#ecb347",
+      "#c97817",
+      "#86460d"
+    ],
+    "legendBreaks": [
+      13.7,
+      16.1,
+      18.1,
+      21
+    ],
+    "source": {
+      "provider": "Birmingham City Observatory API",
+      "publisher": "Department for Business, Energy & Industrial Strategy",
+      "apiBaseUrl": "https://www.cityobservatory.birmingham.gov.uk/api/explore/v2.1/catalog/datasets",
+      "datasetId": "percentage-households-in-fuel-poverty-wmca-wards",
+      "datasetUrl": "https://www.cityobservatory.birmingham.gov.uk/explore/dataset/percentage-households-in-fuel-poverty-wmca-wards/",
+      "datasetApiUrl": "https://www.cityobservatory.birmingham.gov.uk/api/explore/v2.1/catalog/datasets/percentage-households-in-fuel-poverty-wmca-wards",
+      "licence": "Open Government Licence v3.0 via Birmingham City Observatory metadata",
+      "caveat": "Annual fuel-poverty estimates can lag current energy conditions and should be read as structural context rather than a real-time signal.",
+      "datasetTitle": "Percentage households in fuel poverty - WMCA Wards",
+      "dataProcessedAt": "2026-03-04T02:05:15+00:00",
+      "updateFrequency": "ANNUAL",
+      "recordsFetched": 192,
+      "latestSourceDate": "2023",
+      "fetchedAt": "2026-03-07T22:47:29.664Z"
+    },
+    "summary": {
+      "min": 6,
+      "max": 42.3,
+      "mean": 17.807291666666657,
+      "median": 17.05,
+      "topAreas": [
+        {
+          "areaId": "E05011128",
+          "areaName": "Bournbrook & Selly Park",
+          "value": 42.3
+        },
+        {
+          "areaId": "E05001228",
+          "areaName": "St Michael's",
+          "value": 32.7
+        },
+        {
+          "areaId": "E05011167",
+          "areaName": "Small Heath",
+          "value": 29.9
+        },
+        {
+          "areaId": "E05011171",
+          "areaName": "Sparkhill",
+          "value": 29.7
+        },
+        {
+          "areaId": "E05011170",
+          "areaName": "Sparkbrook & Balsall Heath East",
+          "value": 29.6
+        }
+      ],
+      "bottomAreas": [
+        {
+          "areaId": "E05001285",
+          "areaName": "Blythe",
+          "value": 6
+        },
+        {
+          "areaId": "E05001295",
+          "areaName": "St Alphege",
+          "value": 7.3
+        },
+        {
+          "areaId": "E05011180",
+          "areaName": "Sutton Walmley & Minworth",
+          "value": 8.6
+        },
+        {
+          "areaId": "E05001288",
+          "areaName": "Dorridge and Hockley Heath",
+          "value": 8.8
+        },
+        {
+          "areaId": "E05011177",
+          "areaName": "Sutton Roughley",
+          "value": 9.6
+        }
+      ]
+    }
+  },
+  {
+    "id": "gva-all-industries",
+    "title": "Gross Value Added: All Industries",
+    "shortLabel": "GVA",
+    "description": "Smoothed gross value added at ward level, useful as a productivity and commercial intensity proxy.",
+    "compareGroup": "wmca-ward",
+    "geographyLabel": "WMCA ward",
+    "geographyVintage": "ward 2025",
+    "unit": "GBP million",
+    "precision": 0,
+    "cadenceLabel": "Annual",
+    "freshnessPolicy": {
+      "kind": "maxAgeDays",
+      "days": 450
+    },
+    "palette": [
+      "#edf4e7",
+      "#c9dfb3",
+      "#8dbe74",
+      "#4b8f41",
+      "#24552d"
+    ],
+    "legendBreaks": [
+      112,
+      171,
+      286,
+      550
+    ],
+    "source": {
+      "provider": "Birmingham City Observatory API",
+      "publisher": "Office for National Statistics",
+      "apiBaseUrl": "https://www.cityobservatory.birmingham.gov.uk/api/explore/v2.1/catalog/datasets",
+      "datasetId": "gross-value-added-gva-all-industries-wmca-wards-2025",
+      "datasetUrl": "https://www.cityobservatory.birmingham.gov.uk/explore/dataset/gross-value-added-gva-all-industries-wmca-wards-2025/",
+      "datasetApiUrl": "https://www.cityobservatory.birmingham.gov.uk/api/explore/v2.1/catalog/datasets/gross-value-added-gva-all-industries-wmca-wards-2025",
+      "licence": "Open Government Licence v3.0 via Birmingham City Observatory metadata",
+      "caveat": "Ward-level GVA is modelled and smoothed. It should be used as indicative economic context, not as a precise local-business ledger.",
+      "datasetTitle": "Gross value added (GVA): All industries - WMCA Wards (2025)",
+      "dataProcessedAt": "2026-03-04T00:02:54+00:00",
+      "updateFrequency": "ANNUAL",
+      "recordsFetched": 192,
+      "latestSourceDate": "2023",
+      "fetchedAt": "2026-03-07T22:47:34.055Z"
+    },
+    "summary": {
+      "min": 46,
+      "max": 8729,
+      "mean": 434.1822916666667,
+      "median": 224.5,
+      "topAreas": [
+        {
+          "areaId": "E05011151",
+          "areaName": "Ladywood",
+          "value": 8729
+        },
+        {
+          "areaId": "E05011155",
+          "areaName": "Nechells",
+          "value": 4128
+        },
+        {
+          "areaId": "E05001284",
+          "areaName": "Bickenhill",
+          "value": 2984
+        },
+        {
+          "areaId": "E05001228",
+          "areaName": "St Michael's",
+          "value": 2335
+        },
+        {
+          "areaId": "E05011168",
+          "areaName": "Soho & Jewellery Quarter",
+          "value": 1838
+        }
+      ],
+      "bottomAreas": [
+        {
+          "areaId": "E05011141",
+          "areaName": "Hall Green South",
+          "value": 46
+        },
+        {
+          "areaId": "E05011153",
+          "areaName": "Lozells",
+          "value": 52
+        },
+        {
+          "areaId": "E05001312",
+          "areaName": "Pelsall",
+          "value": 57
+        },
+        {
+          "areaId": "E05001280",
+          "areaName": "Tividale",
+          "value": 59
+        },
+        {
+          "areaId": "E05001271",
+          "areaName": "Newton",
+          "value": 60
+        }
+      ]
+    }
+  },
+  {
+    "id": "travel-to-work-bicycle-rate",
+    "title": "Travel To Work By Bicycle",
+    "shortLabel": "Cycle commute",
+    "description": "Share of residents aged 16 to 74 who travel to work by bicycle. A transport-related overlay suitable for v1 while live TfWM layers remain phase 2 work.",
+    "compareGroup": "wmca-ward",
+    "geographyLabel": "WMCA ward",
+    "geographyVintage": "ward 2025",
+    "unit": "%",
+    "precision": 1,
+    "cadenceLabel": "Decennial",
+    "freshnessPolicy": {
+      "kind": "referenceOnly"
+    },
+    "palette": [
+      "#ecfaf2",
+      "#bfe8cb",
+      "#7cc596",
+      "#2f8b64",
+      "#14503a"
+    ],
+    "legendBreaks": [
+      0.8,
+      1,
+      1.3,
+      1.8
+    ],
+    "source": {
+      "provider": "Birmingham City Observatory API",
+      "publisher": "Office for National Statistics",
+      "apiBaseUrl": "https://www.cityobservatory.birmingham.gov.uk/api/explore/v2.1/catalog/datasets",
+      "datasetId": "travel-to-work-by-bicycle-percentage-of-pop-aged-16-74-wmca-wards-2025",
+      "datasetUrl": "https://www.cityobservatory.birmingham.gov.uk/explore/dataset/travel-to-work-by-bicycle-percentage-of-pop-aged-16-74-wmca-wards-2025/",
+      "datasetApiUrl": "https://www.cityobservatory.birmingham.gov.uk/api/explore/v2.1/catalog/datasets/travel-to-work-by-bicycle-percentage-of-pop-aged-16-74-wmca-wards-2025",
+      "licence": "Open Government Licence v3.0 via Birmingham City Observatory metadata",
+      "caveat": "This is a Census travel-to-work indicator, not a live transport-services feed. It captures transport behaviour rather than service performance.",
+      "datasetTitle": "Travel to work by bicycle (Percentage of pop. aged 16-74) - WMCA Wards (2025)",
+      "dataProcessedAt": "2025-08-05T07:06:54+00:00",
+      "updateFrequency": "DECENNIAL",
+      "recordsFetched": 192,
+      "latestSourceDate": "2021",
+      "fetchedAt": "2026-03-07T22:47:34.913Z"
+    },
+    "summary": {
+      "min": 0.4,
+      "max": 2.8,
+      "mean": 1.2666666666666664,
+      "median": 1.15,
+      "topAreas": [
+        {
+          "areaId": "E05011132",
+          "areaName": "Castle Vale",
+          "value": 2.8
+        },
+        {
+          "areaId": "E05011128",
+          "areaName": "Bournbrook & Selly Park",
+          "value": 2.7
+        },
+        {
+          "areaId": "E05001233",
+          "areaName": "Whoberley",
+          "value": 2.5
+        },
+        {
+          "areaId": "E05011172",
+          "areaName": "Stirchley",
+          "value": 2.5
+        },
+        {
+          "areaId": "E05011130",
+          "areaName": "Brandwood & King's Heath",
+          "value": 2.5
+        }
+      ],
+      "bottomAreas": [
+        {
+          "areaId": "E05001313",
+          "areaName": "Pheasey Park Farm",
+          "value": 0.4
+        },
+        {
+          "areaId": "E05001318",
+          "areaName": "Streetly",
+          "value": 0.4
+        },
+        {
+          "areaId": "E05011175",
+          "areaName": "Sutton Mere Green",
+          "value": 0.4
+        },
+        {
+          "areaId": "E05015913",
+          "areaName": "Hayley Green & Cradley South",
+          "value": 0.4
+        },
+        {
+          "areaId": "E05011174",
+          "areaName": "Sutton Four Oaks",
+          "value": 0.4
+        }
+      ]
+    }
+  }
+]

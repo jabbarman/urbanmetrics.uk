@@ -1,0 +1,53 @@
+{
+  "name": "west-midland-signals",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "data:sync": "tsx scripts/sync-data.ts",
+    "monitor:upstreams": "tsx scripts/check-upstreams.ts",
+    "monitor:site": "tsx scripts/check-site.ts"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.511.0",
+    "maplibre-gl": "^5.11.0",
+    "next": "^15.3.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-map-gl": "^8.1.0",
+    "recharts": "^2.15.3",
+    "tailwind-merge": "^3.3.0",
+    "zod": "^3.24.4"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.52.0",
+    "@tailwindcss/postcss": "^4.1.6",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/geojson": "^7946.0.16",
+    "@types/node": "^22.15.3",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "eslint": "^9.25.1",
+    "eslint-config-next": "^15.3.1",
+    "jsdom": "^26.1.0",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^4.1.6",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.1"
+  }
+}
