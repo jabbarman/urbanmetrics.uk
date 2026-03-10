@@ -67,3 +67,7 @@ jobs:
           curl -sS -X POST "$DISCORD_WEBHOOK_URL" \
             -H 'Content-Type: application/json' \
             -d "$payload"
+
+      - name: Mark job failed when upstream checks fail
+        if: steps.upstream_check.outputs.exit_code != '0'
+        run: exit 1
