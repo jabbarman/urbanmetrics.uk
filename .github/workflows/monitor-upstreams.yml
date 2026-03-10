@@ -8,6 +8,8 @@ on:
 jobs:
   monitor:
     runs-on: ubuntu-latest
+    env:
+      DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -45,8 +47,6 @@ jobs:
 
       - name: Notify Discord on failure
         if: steps.upstream_check.outputs.exit_code != '0' && env.DISCORD_WEBHOOK_URL != ''
-        env:
-          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: |
           case "${{ steps.upstream_check.outputs.failure_class }}" in
             freshness)
