@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-09T05:34:37.423Z",
+  "generatedAt": "2026-03-10T05:28:26.811Z",
   "layers": [
     {
       "id": "uc-in-work-rate",
@@ -9,7 +9,7 @@
       "latestSourceDate": "2025-12",
       "updateFrequency": "MONTHLY",
       "recordsFetched": 192,
-      "message": "Latest source period exceeded 60 days (67 days observed)."
+      "message": "Latest source period exceeded 60 days (68 days observed)."
     },
     {
       "id": "imd-employment-score",
@@ -29,7 +29,7 @@
       "latestSourceDate": "2023",
       "updateFrequency": "ANNUAL",
       "recordsFetched": 192,
-      "message": "Latest source period exceeded 450 days (798 days observed)."
+      "message": "Latest source period exceeded 450 days (799 days observed)."
     },
     {
       "id": "gva-all-industries",
@@ -39,7 +39,7 @@
       "latestSourceDate": "2023",
       "updateFrequency": "ANNUAL",
       "recordsFetched": 192,
-      "message": "Latest source period exceeded 450 days (798 days observed)."
+      "message": "Latest source period exceeded 450 days (799 days observed)."
     },
     {
       "id": "travel-to-work-bicycle-rate",
