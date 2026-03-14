@@ -9,7 +9,8 @@ type MetricCardsProps = {
 
 export function MetricCards({ catalog, status, activeLayer }: MetricCardsProps) {
   const okCount = status.filter((layer) => layer.status === "ok").length;
-  const warningCount = status.filter((layer) => layer.status !== "ok").length;
+  const warningCount = status.filter((layer) => layer.status === "warning").length;
+  const staleCount = status.filter((layer) => layer.status === "stale").length;
 
   return (
     <div className="grid gap-3 md:grid-cols-4">
@@ -19,9 +20,11 @@ export function MetricCards({ catalog, status, activeLayer }: MetricCardsProps) 
         <p className="mt-2 text-sm text-slate-600">Ward-scale compare layers generated for the map workspace.</p>
       </article>
       <article className="rounded-[1.5rem] border border-slate-200/80 bg-white p-5 shadow-[0_12px_40px_rgba(15,23,42,0.08)]">
-        <p className="text-xs uppercase tracking-[0.24em] text-slate-500">Healthy upstreams</p>
+        <p className="text-xs uppercase tracking-[0.24em] text-slate-500">Layer status</p>
         <p className="mt-3 text-3xl font-semibold text-slate-950">{okCount}</p>
-        <p className="mt-2 text-sm text-slate-600">{warningCount} layers are reference-only or need operator attention.</p>
+        <p className="mt-2 text-sm text-slate-600">
+          {okCount} current, {warningCount} reference-only, {staleCount} stale.
+        </p>
       </article>
       <article className="rounded-[1.5rem] border border-slate-200/80 bg-white p-5 shadow-[0_12px_40px_rgba(15,23,42,0.08)]">
         <p className="text-xs uppercase tracking-[0.24em] text-slate-500">Primary geography</p>
