@@ -54,6 +54,7 @@ export function Legend({ primaryLayer, compareLayer }: LegendProps) {
         <div>
           <p className="text-xs uppercase tracking-[0.24em] text-slate-500">Primary legend</p>
           <h2 className="mt-2 text-lg font-semibold text-slate-950">{primaryLayer.title}</h2>
+          <p className="mt-2 text-sm leading-6 text-slate-600">{primaryLayer.interpretation.higherValuesMean}</p>
           <div className="mt-4 grid gap-2">
             {legendRows(primaryLayer).map((row) => (
               <div key={`${primaryLayer.id}-${row.label}`} className="flex items-center gap-3 text-sm text-slate-700">
@@ -74,6 +75,7 @@ export function Legend({ primaryLayer, compareLayer }: LegendProps) {
               <p className="mt-4 text-sm leading-6 text-slate-600">
                 The compare layer renders as centroid bubbles over the primary fill so users can spot where strong and weak signals overlap without losing the base geography.
               </p>
+              <p className="mt-2 text-sm leading-6 text-slate-600">{compareLayer.interpretation.higherValuesMean}</p>
               <div className="mt-5 rounded-[1.35rem] border border-slate-200 bg-slate-50/80 p-4">
                 <p className="text-xs uppercase tracking-[0.22em] text-slate-500">Bubble size scale</p>
                 <div className="mt-4 flex items-end gap-5">

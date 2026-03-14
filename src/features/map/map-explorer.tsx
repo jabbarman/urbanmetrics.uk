@@ -288,7 +288,16 @@ export function MapExplorer({ catalog, status }: MapExplorerProps) {
           <section className="rounded-[1.75rem] border border-slate-200/80 bg-white p-6 shadow-[0_12px_40px_rgba(15,23,42,0.08)]">
             <p className="text-xs uppercase tracking-[0.24em] text-slate-500">Active layer notes</p>
             <h2 className="mt-2 text-lg font-semibold text-slate-950">{primaryLayer?.layer.title ?? "Waiting for data"}</h2>
+            <p className="mt-3 text-sm leading-6 text-slate-600">{primaryLayer?.layer.description ?? "-"}</p>
             <dl className="mt-5 space-y-4 text-sm text-slate-600">
+              <div>
+                <dt className="font-medium text-slate-900">How to read it</dt>
+                <dd>{primaryLayer?.layer.interpretation.summary ?? "-"}</dd>
+              </div>
+              <div>
+                <dt className="font-medium text-slate-900">Higher values</dt>
+                <dd>{primaryLayer?.layer.interpretation.higherValuesMean ?? "-"}</dd>
+              </div>
               <div>
                 <dt className="font-medium text-slate-900">Source</dt>
                 <dd>{primaryLayer?.layer.source.publisher ?? "-"}</dd>

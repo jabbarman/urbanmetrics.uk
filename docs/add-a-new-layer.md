@@ -11,9 +11,10 @@ Add a new layer without weakening source transparency, tests, or operational che
 3. define schema validation for the source payload
 4. normalize to the internal layer contract
 5. add user-facing metadata, legend logic, and caveats
-6. add or update tests and fixtures
-7. add freshness and schema checks to monitoring config
-8. update docs if the layer changes deployment or operational assumptions
+6. add plain-English interpretation guidance for what the metric means and how higher values should be read
+7. add or update tests and fixtures
+8. add freshness and schema checks to monitoring config
+9. update docs if the layer changes deployment or operational assumptions
 
 ## Minimum layer contract
 
@@ -23,6 +24,7 @@ A layer is not complete unless it includes:
 - update cadence or freshness rule
 - geography level and geography vintage
 - units and legend label
+- plain-English interpretation guidance
 - caveats
 - fallback behaviour when unavailable
 

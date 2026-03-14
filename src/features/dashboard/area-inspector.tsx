@@ -39,12 +39,16 @@ export function AreaInspector({ selectedAreaId, layers }: AreaInspectorProps) {
       <div className="mt-6 space-y-3">
         {records.map(({ layer, feature }) => (
           <div key={layer.layer.id} className="rounded-2xl border border-slate-200/80 bg-slate-50/80 p-4">
-            <div className="flex items-center justify-between gap-3">
+            <div className="flex items-start justify-between gap-3">
               <div>
                 <p className="text-sm font-medium text-slate-900">{layer.layer.title}</p>
                 <p className="text-xs text-slate-500">{layer.layer.source.latestSourceDate} · {layer.layer.cadenceLabel}</p>
+                <p className="mt-2 text-xs leading-5 text-slate-600">{layer.layer.interpretation.higherValuesMean}</p>
               </div>
-              <p className="text-lg font-semibold text-slate-950">{feature.properties.formattedValue}</p>
+              <div className="text-right">
+                <p className="text-lg font-semibold text-slate-950">{feature.properties.formattedValue}</p>
+                <p className="mt-1 text-xs text-slate-500">{feature.properties.valueLabel}</p>
+              </div>
             </div>
           </div>
         ))}

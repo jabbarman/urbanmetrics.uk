@@ -31,6 +31,11 @@ function makeCatalogEntry(id: string, title: string): CatalogEntry {
     title,
     shortLabel: title,
     description: `${title} description`,
+    interpretation: {
+      summary: `${title} summary`,
+      higherValuesMean: `${title} higher values meaning`,
+      rankingTitle: `${title} rankings`,
+    },
     compareGroup: "wmca-ward",
     geographyLabel: "WMCA ward",
     geographyVintage: "ward 2025",

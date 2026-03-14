@@ -1,11 +1,16 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-03-14T05:27:19.944Z",
+  "generatedAt": "2026-03-14T21:17:38.996Z",
   "layer": {
     "id": "gva-all-industries",
     "title": "Gross Value Added: All Industries",
     "shortLabel": "GVA",
     "description": "Smoothed gross value added at ward level, useful as a productivity and commercial intensity proxy.",
+    "interpretation": {
+      "summary": "Shows estimated gross value added, a proxy for local economic output rather than a direct business ledger.",
+      "higherValuesMean": "Higher values mean higher estimated economic output.",
+      "rankingTitle": "Areas with the highest estimated GVA"
+    },
     "compareGroup": "wmca-ward",
     "geographyLabel": "WMCA ward",
     "geographyVintage": "ward 2025",
@@ -43,7 +48,7 @@
       "updateFrequency": "ANNUAL",
       "recordsFetched": 192,
       "latestSourceDate": "2023",
-      "fetchedAt": "2026-03-14T05:27:19.944Z"
+      "fetchedAt": "2026-03-14T21:17:38.996Z"
     },
     "summary": {
       "min": 46,

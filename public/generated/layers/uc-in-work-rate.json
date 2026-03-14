@@ -1,11 +1,16 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-03-14T05:27:05.190Z",
+  "generatedAt": "2026-03-14T21:17:30.854Z",
   "layer": {
     "id": "uc-in-work-rate",
     "title": "Universal Credit Claimants In Employment",
     "shortLabel": "UC in work",
     "description": "Share of Universal Credit claimants who are in employment. Useful as a monthly economic stress and labour-market participation signal.",
+    "interpretation": {
+      "summary": "Shows the share of Universal Credit claimants who are already in employment.",
+      "higherValuesMean": "Higher values mean a larger share of claimants are in work.",
+      "rankingTitle": "Areas with the highest share of claimants in work"
+    },
     "compareGroup": "wmca-ward",
     "geographyLabel": "WMCA ward",
     "geographyVintage": "ward 2025",
@@ -43,7 +48,7 @@
       "updateFrequency": "MONTHLY",
       "recordsFetched": 192,
       "latestSourceDate": "2025-12",
-      "fetchedAt": "2026-03-14T05:27:05.190Z"
+      "fetchedAt": "2026-03-14T21:17:30.854Z"
     },
     "summary": {
       "min": 18.4,

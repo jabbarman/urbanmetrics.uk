@@ -198,6 +198,7 @@ function buildLayer(
       title: definition.title,
       shortLabel: definition.shortLabel,
       description: definition.description,
+      interpretation: definition.interpretation,
       compareGroup: definition.compareGroup,
       geographyLabel: definition.geographyLabel,
       geographyVintage: definition.geographyVintage,

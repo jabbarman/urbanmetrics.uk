@@ -1,6 +1,5 @@
+import { formatValue } from "@/server/datasets/utils";
 import type { CatalogEntry, GeneratedStatus } from "@/server/datasets/types";
-
-const numberFormatter = new Intl.NumberFormat("en-GB", { maximumFractionDigits: 1 });
 
 type MetricCardsProps = {
   catalog: CatalogEntry[];
@@ -34,7 +33,11 @@ export function MetricCards({ catalog, status, activeLayer }: MetricCardsProps) 
         <p className="mt-3 text-lg font-semibold text-slate-950">{activeLayer?.title ?? "Loading layer"}</p>
         <p className="mt-2 text-sm text-slate-600">
           {activeLayer
-            ? `Median value ${numberFormatter.format(activeLayer.summary.median)}${activeLayer.unit === "%" ? "%" : ""}.`
+            ? `${activeLayer.interpretation.higherValuesMean} Median ${formatValue(
+                activeLayer.summary.median,
+                activeLayer.unit,
+                activeLayer.precision,
+              )}.`
             : "Waiting for the first layer to load."}
         </p>
       </article>

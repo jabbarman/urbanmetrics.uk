@@ -17,6 +17,11 @@ export const layerDefinitions: LayerDefinition[] = [
     shortLabel: "UC in work",
     description:
       "Share of Universal Credit claimants who are in employment. Useful as a monthly economic stress and labour-market participation signal.",
+    interpretation: {
+      summary: "Shows the share of Universal Credit claimants who are already in employment.",
+      higherValuesMean: "Higher values mean a larger share of claimants are in work.",
+      rankingTitle: "Areas with the highest share of claimants in work",
+    },
     compareGroup: "wmca-ward",
     geographyLabel: "WMCA ward",
     geographyVintage: "ward 2025",
@@ -52,6 +57,11 @@ export const layerDefinitions: LayerDefinition[] = [
     shortLabel: "IMD employment",
     description:
       "Employment deprivation score from the Indices of Multiple Deprivation, surfaced at WMCA ward geography for visual comparison.",
+    interpretation: {
+      summary: "IMD stands for Indices of Multiple Deprivation. This employment score is a relative deprivation measure, not a direct unemployment rate.",
+      higherValuesMean: "Higher values mean greater employment deprivation.",
+      rankingTitle: "Most employment-deprived areas",
+    },
     compareGroup: "wmca-ward",
     geographyLabel: "WMCA ward",
     geographyVintage: "ward 2025",
@@ -87,6 +97,11 @@ export const layerDefinitions: LayerDefinition[] = [
     shortLabel: "Fuel poverty",
     description:
       "Estimated share of households in fuel poverty. Strong social-context overlay for comparison against labour and deprivation signals.",
+    interpretation: {
+      summary: "Shows the estimated share of households living in fuel poverty.",
+      higherValuesMean: "Higher values mean a larger share of households are in fuel poverty.",
+      rankingTitle: "Areas with the highest estimated fuel poverty",
+    },
     compareGroup: "wmca-ward",
     geographyLabel: "WMCA ward",
     geographyVintage: "ward 2025",
@@ -122,6 +137,11 @@ export const layerDefinitions: LayerDefinition[] = [
     shortLabel: "GVA",
     description:
       "Smoothed gross value added at ward level, useful as a productivity and commercial intensity proxy.",
+    interpretation: {
+      summary: "Shows estimated gross value added, a proxy for local economic output rather than a direct business ledger.",
+      higherValuesMean: "Higher values mean higher estimated economic output.",
+      rankingTitle: "Areas with the highest estimated GVA",
+    },
     compareGroup: "wmca-ward",
     geographyLabel: "WMCA ward",
     geographyVintage: "ward 2025",
@@ -157,6 +177,11 @@ export const layerDefinitions: LayerDefinition[] = [
     shortLabel: "Cycle commute",
     description:
       "Share of residents aged 16 to 74 who travel to work by bicycle. A transport-related overlay suitable for v1 while live TfWM layers remain phase 2 work.",
+    interpretation: {
+      summary: "Shows the share of residents aged 16 to 74 who usually travel to work by bicycle.",
+      higherValuesMean: "Higher values mean a larger share of residents cycle to work.",
+      rankingTitle: "Areas with the highest cycle-to-work share",
+    },
     compareGroup: "wmca-ward",
     geographyLabel: "WMCA ward",
     geographyVintage: "ward 2025",

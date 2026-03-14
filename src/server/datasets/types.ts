@@ -4,11 +4,18 @@ export type FreshnessPolicy =
   | { kind: "maxAgeDays"; days: number }
   | { kind: "referenceOnly" };
 
+export type LayerInterpretation = {
+  summary: string;
+  higherValuesMean: string;
+  rankingTitle: string;
+};
+
 export type LayerDefinition = {
   id: string;
   title: string;
   shortLabel: string;
   description: string;
+  interpretation: LayerInterpretation;
   compareGroup: string;
   geographyLabel: string;
   geographyVintage: string;
@@ -59,6 +66,7 @@ export type GeneratedLayer = {
     title: string;
     shortLabel: string;
     description: string;
+    interpretation: LayerInterpretation;
     compareGroup: string;
     geographyLabel: string;
     geographyVintage: string;

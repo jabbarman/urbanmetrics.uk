@@ -8,6 +8,11 @@ const definition: LayerDefinition = {
   title: "Test Layer",
   shortLabel: "Test",
   description: "Test layer for normalization",
+  interpretation: {
+    summary: "Test summary",
+    higherValuesMean: "Higher values mean more test output.",
+    rankingTitle: "Highest test values",
+  },
   compareGroup: "test-group",
   geographyLabel: "Test geography",
   geographyVintage: "2025",
