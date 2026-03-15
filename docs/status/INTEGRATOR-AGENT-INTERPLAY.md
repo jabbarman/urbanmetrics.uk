@@ -2,16 +2,16 @@
 
 ## Integrator role in this iteration
 
-- implemented the review-remediation batch directly in the primary workspace
-- kept each substantial finding as a separate commit with local validation
-- updated operational documentation and gate evidence before the production push
+- assessed the post-v1 strategic brief against the live production architecture
+- shortlisted feasible Phase 1 health/service sources
+- produced the next-stage implementation plan directly in the primary workspace
 
 ## Delegation status
 
-- no parallel sub-agents used because the workflow, generated-artifact, and deployment changes were tightly coupled
+- no parallel sub-agents used because the planning, architecture assessment, and documentation updates were tightly coupled
 
 ## Next delegation candidates
 
-- source replacement work for the currently stale layers
-- transport adapter expansion for TfWM or NaPTAN-backed overlays
-- deeper hosted QA across mobile and accessibility scenarios
+- source-file verification for NHS Talking Therapies and Mental Health Services Monthly Statistics
+- adapter implementation for CSV/download ingestion
+- geometry and QA verification for the new ICB compare group

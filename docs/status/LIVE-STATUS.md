@@ -2,33 +2,28 @@
 
 ## Current stage
 
-`Phase 4: release hardening and live validation`
+`Post-v1 planning: Phase 1 health and workforce expansion`
 
 ## Completed
 
-- discovery, architecture, and operational docs
-- Next.js TypeScript map application scaffold
-- generated WMCA ward overlay pipeline
-- interactive primary/compare map workspace
-- status page and `/api/health` endpoint
-- CI, upstream monitoring, refresh automation, and live smoke checks
-- review-remediation fixes for refresh publication, freshness logic, coverage validation, graceful layer degradation, actionable alerts, legend clarity, and end-to-end smoke coverage
+- live v1 release is deployed
+- generated WMCA ward overlay pipeline is in production
+- CI, upstream monitoring, refresh automation, and live smoke checks are in place
+- workflow maintenance and clarity improvements were released as `v0.1.1`
+- strategic direction has shifted from transport-led exploration toward a broader regional observatory model
 
 ## In progress
 
-- pushing the remediation batch to production
-- validating the Vercel deployment on `urbanmetrics.uk`
-- deciding first-release readiness with the corrected health gate
+- assessing health and workforce source feasibility for the next delivery stage
+- defining the first non-BCO adapter path for CSV/download-based official datasets
+- planning the first ICB-geography implementation slice
 
 ## Known operational signal
 
-Under the corrected source-period freshness logic, three shipped layers are currently stale from the source itself:
-- Universal Credit claimants in employment
-- households in fuel poverty
-- gross value added
+The current live platform remains operational, but several shipped source datasets are stale under their declared freshness rules.
 
-That is an upstream data-age issue, not a remaining implementation defect.
+That is still an upstream data-age issue, not a blocking application defect.
 
 ## Next step
 
-Deploy the remediation batch to production, validate `/status` and `/api/health`, and only cut the first release if the live release gate is acceptable.
+Confirm the exact Phase 1 publication files and geography fields for the first health/service datasets, then implement the source-adapter and geometry-join groundwork needed for ICB overlays.

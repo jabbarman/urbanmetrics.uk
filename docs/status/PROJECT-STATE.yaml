@@ -1,18 +1,18 @@
 project: urbanmetrics.uk
-phase: phase-4-release-hardening
+phase: phase-1-health-workforce-planning
 status: in_progress
 summary: >-
-  Review-remediation work is implemented locally and validated. The immediate next step is to push the
-  refreshed artifacts and workflow changes, validate the Vercel deployment, and decide the first release
-  outcome against the corrected health gate.
-last_updated: 2026-03-08
+  The live v1 platform is deployed and tagged at v0.1.1. The next delivery stage is Phase 1 health and workforce
+  expansion, with planning now focused on introducing official health/service data through a non-BCO adapter path
+  and a new ICB-level geography flow.
+last_updated: 2026-03-15
 current_focus:
-  - push review remediation and refreshed generated artifacts to main
-  - validate the Vercel production deployment on urbanmetrics.uk
-  - assess release readiness with the corrected freshness-based health model
-next_executable_step: push main, wait for Vercel, and run live validation against urbanmetrics.uk
+  - confirm exact publication files for NHS Talking Therapies and Mental Health Services Monthly Statistics
+  - define the source-adapter abstraction for CSV/download-based official datasets
+  - prepare ICB geometry and compare-group support without destabilizing the live ward-based stack
+next_executable_step: confirm the first Phase 1 source files and geography keys, then implement the adapter contract and ICB geometry groundwork
 blockers:
-  - three currently shipped source datasets are genuinely stale under their declared freshness policies
+  - final Phase 1 indicator choice depends on exact publication-level geography fields in the selected NHS datasets
 risks:
-  - the corrected freshness model may put the live site into degraded status until fresher layers replace or supersede the stale datasets
-  - refresh automation now blocks silent partial-layer publication, which is safer but may expose upstream schema breakage more often
+  - some desired workforce datasets may only be usable at provider/trust geography, which is not suitable for a resident-area choropleth without extra methodology
+  - supporting multiple geography groups increases UI and validation complexity and must not enable misleading comparisons
