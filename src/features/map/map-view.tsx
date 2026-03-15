@@ -48,6 +48,7 @@ function buildComparePoints(layer: GeneratedLayer): FeatureCollection<Point> {
 
 export function MapView({ primaryLayer, compareLayer, opacity, showBoundaries, selectedAreaId, onSelectArea }: MapViewProps) {
   const comparePoints = useMemo(() => (compareLayer ? buildComparePoints(compareLayer) : null), [compareLayer]);
+  const baseGeometryLabel = primaryLayer?.layer.geographyLabel ?? "Selected layer geography";
 
   const primaryFill = useMemo<SourceFreeFillLayer | null>(() => {
     if (!primaryLayer) {
@@ -114,7 +115,7 @@ export function MapView({ primaryLayer, compareLayer, opacity, showBoundaries, s
     <div className="overflow-hidden rounded-[2rem] border border-slate-200/80 bg-slate-950 shadow-[0_25px_80px_rgba(15,23,42,0.18)]">
       <div className="flex items-center justify-between border-b border-white/10 px-5 py-3 text-xs uppercase tracking-[0.24em] text-slate-300">
         <span>Interactive comparison map</span>
-        <span>Base geometry: WMCA wards</span>
+        <span>Base geometry: {baseGeometryLabel}</span>
       </div>
       <div className="h-[34rem] w-full">
         <Map

@@ -94,4 +94,16 @@ describe("MetricCards", () => {
     expect(screen.getByText("Layer status")).toBeInTheDocument();
     expect(screen.getByText("1 current, 1 reference-only, 1 stale.")).toBeInTheDocument();
   });
+
+  it("shows the active layer geography instead of a fixed ward label", () => {
+    const activeLayer = {
+      ...makeCatalogEntry(),
+      geographyLabel: "Sub ICB area",
+    };
+
+    render(<MetricCards activeLayer={activeLayer} catalog={[activeLayer]} status={[]} />);
+
+    expect(screen.getByText("Primary geography")).toBeInTheDocument();
+    expect(screen.getByText("Sub ICB area")).toBeInTheDocument();
+  });
 });

@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen, waitFor, within } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor, within } from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import { MapExplorer } from "@/features/map/map-explorer";
@@ -18,11 +18,19 @@ vi.mock("@/features/dashboard/ranking-chart", () => ({
 }));
 
 vi.mock("@/features/map/legend", () => ({
-  Legend: () => <div>legend</div>,
+  Legend: ({ compareLayer, primaryLayer }: { compareLayer: { title: string } | null; primaryLayer: { title: string } | null }) => (
+    <div>
+      legend:{primaryLayer?.title ?? "none"}:{compareLayer?.title ?? "none"}
+    </div>
+  ),
 }));
 
 vi.mock("@/features/map/map-view", () => ({
-  MapView: () => <div>map view</div>,
+  MapView: ({ compareLayer, primaryLayer }: { compareLayer: { layer: { title: string } } | null; primaryLayer: { layer: { title: string } } | null }) => (
+    <div>
+      map view:{primaryLayer?.layer.title ?? "none"}:{compareLayer?.layer.title ?? "none"}
+    </div>
+  ),
 }));
 
 function makeCatalogEntry(id: string, title: string, compareGroup = "wmca-ward"): CatalogEntry {
@@ -117,7 +125,7 @@ describe("MapExplorer", () => {
     });
 
     expect(screen.getByText(/remaining layers continue to work/i)).toBeInTheDocument();
-    expect(screen.getByText("map view")).toBeInTheDocument();
+    expect(screen.getByText("map view:Layer A:none")).toBeInTheDocument();
 
     const primaryLayerSelect = screen.getByLabelText(/primary fill layer/i);
     expect(within(primaryLayerSelect).getByRole("option", { name: "Layer A" })).toBeInTheDocument();
@@ -157,11 +165,66 @@ describe("MapExplorer", () => {
     render(<MapExplorer catalog={[wardLayer, icbLayer, wardCompareLayer]} status={status} />);
 
     await waitFor(() => {
-      expect(screen.getByText("map view")).toBeInTheDocument();
+      expect(screen.getByText("map view:Ward Layer:Ward Compare Layer")).toBeInTheDocument();
     });
 
     const compareLayerSelect = screen.getByLabelText(/secondary compare layer/i);
     expect(within(compareLayerSelect).getByRole("option", { name: "Ward Compare Layer" })).toBeInTheDocument();
     expect(within(compareLayerSelect).queryByRole("option", { name: "ICB Layer" })).not.toBeInTheDocument();
+  });
+
+  it("resets the active compare layer when the primary layer changes to a different compare group", async () => {
+    const wardLayer = makeCatalogEntry("layer-a", "Ward Layer", "wmca-ward");
+    const wardCompareLayer = makeCatalogEntry("layer-b", "Ward Compare Layer", "wmca-ward");
+    const subIcbLayer = makeCatalogEntry("layer-c", "SubICB Layer", "sub-icb");
+    const subIcbCompareLayer = makeCatalogEntry("layer-d", "SubICB Compare Layer", "sub-icb");
+
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async (input: string) => {
+        if (input.includes("layer-a")) {
+          return new Response(JSON.stringify(makeGeneratedLayer(wardLayer)), {
+            status: 200,
+            headers: { "Content-Type": "application/json" },
+          });
+        }
+
+        if (input.includes("layer-b")) {
+          return new Response(JSON.stringify(makeGeneratedLayer(wardCompareLayer)), {
+            status: 200,
+            headers: { "Content-Type": "application/json" },
+          });
+        }
+
+        if (input.includes("layer-c")) {
+          return new Response(JSON.stringify(makeGeneratedLayer(subIcbLayer)), {
+            status: 200,
+            headers: { "Content-Type": "application/json" },
+          });
+        }
+
+        return new Response(JSON.stringify(makeGeneratedLayer(subIcbCompareLayer)), {
+          status: 200,
+          headers: { "Content-Type": "application/json" },
+        });
+      }),
+    );
+
+    render(<MapExplorer catalog={[wardLayer, wardCompareLayer, subIcbLayer, subIcbCompareLayer]} status={status} />);
+
+    await waitFor(() => {
+      expect(screen.getByText("map view:Ward Layer:Ward Compare Layer")).toBeInTheDocument();
+    });
+
+    fireEvent.change(screen.getByLabelText(/primary fill layer/i), {
+      target: { value: "layer-c" },
+    });
+
+    await waitFor(() => {
+      expect(screen.getByLabelText(/secondary compare layer/i)).toHaveValue("layer-d");
+    });
+
+    expect(screen.getByText("legend:SubICB Layer:SubICB Compare Layer")).toBeInTheDocument();
+    expect(screen.getByText("map view:SubICB Layer:SubICB Compare Layer")).toBeInTheDocument();
   });
 });

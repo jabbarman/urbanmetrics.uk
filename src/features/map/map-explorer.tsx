@@ -40,6 +40,10 @@ function layerWarningMessage(issues: LayerLoadIssue[]) {
   return `Some overlays are temporarily unavailable: ${issues.map((issue) => issue.title).join(", ")}. The remaining layers continue to work.`;
 }
 
+function compareOptionsForPrimary(catalog: CatalogEntry[], primaryLayerId: string, compareGroup: string | undefined) {
+  return catalog.filter((entry) => entry.id !== primaryLayerId && entry.compareGroup === compareGroup);
+}
+
 export function MapExplorer({ catalog, status }: MapExplorerProps) {
   const [layersById, setLayersById] = useState<Record<string, GeneratedLayer>>({});
   const [primaryLayerId, setPrimaryLayerId] = useState(catalog[0]?.id ?? "");
@@ -123,7 +127,12 @@ export function MapExplorer({ catalog, status }: MapExplorerProps) {
       setPrimaryLayerId(nextPrimaryLayerId);
     }
 
-    const nextCompareOptions = availableCatalog.filter((entry) => entry.id !== nextPrimaryLayerId);
+    const nextPrimaryEntry = availableCatalog.find((entry) => entry.id === nextPrimaryLayerId);
+    const nextCompareOptions = compareOptionsForPrimary(
+      availableCatalog,
+      nextPrimaryLayerId,
+      nextPrimaryEntry?.compareGroup,
+    );
     const compareStillAvailable = nextCompareOptions.some((entry) => entry.id === compareLayerId);
     const nextCompareLayerId = compareStillAvailable ? compareLayerId : nextCompareOptions[0]?.id ?? "";
     if (nextCompareLayerId !== compareLayerId) {
@@ -132,10 +141,13 @@ export function MapExplorer({ catalog, status }: MapExplorerProps) {
   }, [availableCatalog, compareLayerId, primaryLayerId]);
 
   const primaryLayer = primaryLayerId ? layersById[primaryLayerId] ?? null : null;
-  const compareLayer = compareLayerId && compareLayerId !== primaryLayerId ? layersById[compareLayerId] ?? null : null;
-  const compareOptions = availableCatalog.filter(
-    (entry) => entry.id !== primaryLayerId && entry.compareGroup === primaryLayer?.layer.compareGroup,
+  const compareOptions = compareOptionsForPrimary(
+    availableCatalog,
+    primaryLayerId,
+    primaryLayer?.layer.compareGroup,
   );
+  const compareLayer =
+    compareLayerId && compareOptions.some((entry) => entry.id === compareLayerId) ? layersById[compareLayerId] ?? null : null;
   const loadedLayers = Object.values(layersById);
 
   const selectedCatalogEntry = useMemo(

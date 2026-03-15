@@ -47,7 +47,7 @@
       "updateFrequency": "MONTHLY",
       "recordsFetched": 192,
       "latestSourceDate": "2025-12",
-      "fetchedAt": "2026-03-15T16:46:44.031Z"
+      "fetchedAt": "2026-03-15T17:20:48.154Z"
     },
     "summary": {
       "min": 18.4,
@@ -157,7 +157,7 @@
       "updateFrequency": "IRREG",
       "recordsFetched": 192,
       "latestSourceDate": "2025",
-      "fetchedAt": "2026-03-15T16:46:46.568Z"
+      "fetchedAt": "2026-03-15T17:20:49.357Z"
     },
     "summary": {
       "min": 4.4,
@@ -268,7 +268,7 @@
       "updateFrequency": "ANNUAL",
       "recordsFetched": 192,
       "latestSourceDate": "2023",
-      "fetchedAt": "2026-03-15T16:46:50.009Z"
+      "fetchedAt": "2026-03-15T17:20:52.038Z"
     },
     "summary": {
       "min": 6,
@@ -379,7 +379,7 @@
       "updateFrequency": "ANNUAL",
       "recordsFetched": 192,
       "latestSourceDate": "2023",
-      "fetchedAt": "2026-03-15T16:46:53.200Z"
+      "fetchedAt": "2026-03-15T17:20:56.114Z"
     },
     "summary": {
       "min": 46,
@@ -489,7 +489,7 @@
       "updateFrequency": "DECENNIAL",
       "recordsFetched": 192,
       "latestSourceDate": "2021",
-      "fetchedAt": "2026-03-15T16:46:54.159Z"
+      "fetchedAt": "2026-03-15T17:20:57.550Z"
     },
     "summary": {
       "min": 0.4,
@@ -580,10 +580,10 @@
       "#224763"
     ],
     "legendBreaks": [
-      15.7,
-      22.7,
-      29.9,
-      38.8
+      20.4,
+      38.5,
+      45,
+      49.3
     ],
     "source": {
       "kind": "csv_download",
@@ -607,68 +607,68 @@
       "measureId": "M048",
       "licence": "Open Government Licence v3.0 unless stated otherwise by the publisher",
       "caveat": "This is a mean wait measure at Sub ICB geography, not a person-level guarantee. Local suppression and monthly operational variation can affect interpretation.",
-      "dataProcessedAt": "2026-03-15T16:47:03.043Z",
-      "recordsFetched": 106,
+      "dataProcessedAt": "2026-03-15T17:21:12.549Z",
+      "recordsFetched": 10,
       "latestSourceDate": "2026-01-31",
-      "fetchedAt": "2026-03-15T16:47:03.068Z"
+      "fetchedAt": "2026-03-15T17:21:12.593Z"
     },
     "summary": {
-      "min": 3.9,
-      "max": 79.4,
-      "mean": 28.059433962264148,
-      "median": 25.799999999999997,
+      "min": 14.5,
+      "max": 53.5,
+      "mean": 39.05,
+      "median": 42.3,
       "topAreas": [
-        {
-          "areaId": "E38000080",
-          "areaName": "NHS Greater Manchester ICB - 01D",
-          "value": 79.4
-        },
-        {
-          "areaId": "E38000257",
-          "areaName": "NHS Shropshire, Telford and Wrekin ICB - M2L0M",
-          "value": 78.6
-        },
-        {
-          "areaId": "E38000208",
-          "areaName": "NHS Cheshire and Merseyside ICB - 12F",
-          "value": 67.1
-        },
         {
           "areaId": "E38000259",
           "areaName": "NHS Black Country ICB - D2P2L",
           "value": 53.5
         },
         {
-          "areaId": "E38000187",
-          "areaName": "NHS Greater Manchester ICB - 02A",
-          "value": 52.9
+          "areaId": "E38000173",
+          "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 05V",
+          "value": 51.3
+        },
+        {
+          "areaId": "E38000028",
+          "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 04Y",
+          "value": 49.3
+        },
+        {
+          "areaId": "E38000153",
+          "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 05Q",
+          "value": 47.2
+        },
+        {
+          "areaId": "E38000053",
+          "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 05D",
+          "value": 45
         }
       ],
       "bottomAreas": [
         {
-          "areaId": "E38000172",
-          "areaName": "NHS Cheshire and Merseyside ICB - 01X",
-          "value": 3.9
+          "areaId": "E38000251",
+          "areaName": "NHS Coventry and Warwickshire ICB - B2M3M",
+          "value": 14.5
         },
         {
-          "areaId": "E38000117",
-          "areaName": "NHS Suffolk and North East Essex ICB - 06T",
-          "value": 4.3
+          "areaId": "E38000258",
+          "areaName": "NHS Birmingham and Solihull ICB - 15E",
+          "value": 20.4
         },
         {
-          "areaId": "E38000185",
-          "areaName": "NHS Mid and South Essex ICB - 07G",
-          "value": 5.5
+          "areaId": "E38000236",
+          "areaName": "NHS Herefordshire and Worcestershire ICB - 18C",
+          "value": 31.2
         },
         {
-          "areaId": "E38000223",
-          "areaName": "NHS Buckinghamshire, Oxfordshire and Berkshire West ICB - 14Y",
-          "value": 6.2
+          "areaId": "E38000175",
+          "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 05W",
+          "value": 38.5
         },
         {
-          "areaId": "E38000234",
-          "areaName": "NHS North East and North Cumbria ICB - 84H",
-          "value": 6.2
+          "areaId": "E38000126",
+          "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 05G",
+          "value": 39.6
         }
       ]
     }
@@ -701,10 +701,10 @@
       "#185138"
     ],
     "legendBreaks": [
-      78,
-      88,
-      95,
-      98
+      53,
+      56,
+      77,
+      90
     ],
     "source": {
       "kind": "csv_download",
@@ -728,59 +728,44 @@
       "measureId": "M053",
       "licence": "Open Government Licence v3.0 unless stated otherwise by the publisher",
       "caveat": "This percentage is based on referrals completing a course of treatment in the month. It is a service-access performance indicator, not a population coverage rate.",
-      "dataProcessedAt": "2026-03-15T16:47:11.913Z",
-      "recordsFetched": 106,
+      "dataProcessedAt": "2026-03-15T17:21:23.933Z",
+      "recordsFetched": 10,
       "latestSourceDate": "2026-01-31",
-      "fetchedAt": "2026-03-15T16:47:11.948Z"
+      "fetchedAt": "2026-03-15T17:21:23.966Z"
     },
     "summary": {
-      "min": 41,
-      "max": 100,
-      "mean": 87.14150943396227,
-      "median": 92.5,
+      "min": 53,
+      "max": 97,
+      "mean": 73.3,
+      "median": 73,
       "topAreas": [
         {
-          "areaId": "E38000254",
-          "areaName": "NHS West Yorkshire ICB - X2C4Y",
-          "value": 100
+          "areaId": "E38000251",
+          "areaName": "NHS Coventry and Warwickshire ICB - B2M3M",
+          "value": 97
         },
         {
-          "areaId": "E38000007",
-          "areaName": "NHS Mid and South Essex ICB - 99E",
-          "value": 100
+          "areaId": "E38000175",
+          "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 05W",
+          "value": 97
         },
         {
-          "areaId": "E38000264",
-          "areaName": "NHS Surrey Heartlands ICB - 92A",
-          "value": 100
+          "areaId": "E38000258",
+          "areaName": "NHS Birmingham and Solihull ICB - 15E",
+          "value": 90
         },
         {
-          "areaId": "E38000172",
-          "areaName": "NHS Cheshire and Merseyside ICB - 01X",
-          "value": 100
+          "areaId": "E38000236",
+          "areaName": "NHS Herefordshire and Worcestershire ICB - 18C",
+          "value": 87
         },
         {
-          "areaId": "E38000168",
-          "areaName": "NHS Mid and South Essex ICB - 99G",
-          "value": 99
+          "areaId": "E38000126",
+          "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 05G",
+          "value": 77
         }
       ],
       "bottomAreas": [
-        {
-          "areaId": "E38000080",
-          "areaName": "NHS Greater Manchester ICB - 01D",
-          "value": 41
-        },
-        {
-          "areaId": "E38000257",
-          "areaName": "NHS Shropshire, Telford and Wrekin ICB - M2L0M",
-          "value": 41
-        },
-        {
-          "areaId": "E38000208",
-          "areaName": "NHS Cheshire and Merseyside ICB - 12F",
-          "value": 42
-        },
         {
           "areaId": "E38000153",
           "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 05Q",
@@ -790,6 +775,21 @@
           "areaId": "E38000173",
           "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 05V",
           "value": 53
+        },
+        {
+          "areaId": "E38000053",
+          "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 05D",
+          "value": 54
+        },
+        {
+          "areaId": "E38000028",
+          "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 04Y",
+          "value": 56
+        },
+        {
+          "areaId": "E38000259",
+          "areaName": "NHS Black Country ICB - D2P2L",
+          "value": 69
         }
       ]
     }

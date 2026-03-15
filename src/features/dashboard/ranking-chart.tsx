@@ -31,7 +31,9 @@ export function RankingChart({ layer }: RankingChartProps) {
           <p className="text-xs uppercase tracking-[0.24em] text-slate-500">Rankings</p>
           <h2 className="mt-2 text-lg font-semibold text-slate-950">{layer.layer.interpretation.rankingTitle}</h2>
         </div>
-        <p className="max-w-[15rem] text-right text-xs text-slate-500">Top five wards by the active primary layer. Use the compare selector to switch the ranking context.</p>
+        <p className="max-w-[15rem] text-right text-xs text-slate-500">
+          Top five areas in the active regional footprint for this layer.
+        </p>
       </div>
       <div className="mt-6 h-72 w-full">
         <ResponsiveContainer>

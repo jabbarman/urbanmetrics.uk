@@ -84,4 +84,15 @@ describe("dataset normalization", () => {
     expect(hasCoverageIssues(coverage)).toBe(true);
     expect(coverage.missingAreaIds).toEqual(["B"]);
   });
+
+  it("filters out areas outside the expected footprint", () => {
+    const selected = selectLatestRecordsByArea(
+      [record({ areaId: "A", areaName: "Area A" }), record({ areaId: "B", areaName: "Area B" })],
+      definition,
+      ["A"],
+    );
+
+    expect(selected).toHaveLength(1);
+    expect(selected[0].areaId).toBe("A");
+  });
 });
