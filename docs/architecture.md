@@ -12,6 +12,7 @@ The architecture now supports more than one ingestion shape:
 
 - geometry-rich API datasets such as Birmingham City Observatory
 - downloaded CSV-based official statistics joined onto reference boundary geometry
+- supporting non-map context artifacts for annual or non-map-ready official publications
 
 ## Runtime components
 

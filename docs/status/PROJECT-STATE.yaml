@@ -5,15 +5,15 @@ summary: >-
   The live v1 platform is deployed and tagged at v0.1.1. The next delivery stage is Phase 1 health and workforce
   expansion. Official Phase 1 source files have been confirmed, adapter-aware ingestion groundwork is implemented,
   SubICB reference geometry is generated locally, and the first Talking Therapies SubICB slice now builds successfully
-  with two current health layers.
+  with two current health layers plus a Midlands annual therapy-type companion panel.
 last_updated: 2026-03-15
 current_focus:
-  - validate the first Talking Therapies SubICB slice against UX and operational expectations
-  - prepare the code/docs commit boundary for the first Phase 1 implementation push
+  - validate the first Talking Therapies companion context against UX and interpretability expectations
   - select the next health/service source after the initial Talking Therapies pair
-next_executable_step: commit and push the validated first Talking Therapies SubICB implementation slice
+  - keep the SubICB path stable while adding the next official source
+next_executable_step: select and implement the next Phase 1 health/service layer on the SubICB path
 blockers:
-  - no implementation blocker; the main remaining decision is release scope and sequencing
+  - no implementation blocker; the main remaining decision is which follow-on health/service source to prioritize
 risks:
   - some desired workforce datasets may only be usable at provider/trust geography, which is not suitable for a resident-area choropleth without extra methodology
   - supporting multiple geography groups increases UI and validation complexity and must not enable misleading comparisons

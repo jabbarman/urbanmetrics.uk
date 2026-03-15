@@ -16,11 +16,11 @@
 - compare-layer selection now respects compare-group boundaries in the UI
 - SubICB reference geometry and lookup artifacts are generated locally
 - two local health layers are implemented from NHS Talking Therapies monthly data
+- Midlands annual therapy-type context is generated and shown as a supporting panel for Talking Therapies layers
 
 ## In progress
 
-- validating the first SubICB health slice for production readiness
-- deciding whether the current two-layer Talking Therapies slice is sufficient for the first Phase 1 push
+- deciding whether to extend Talking Therapies with more supporting context or move directly to the next health/service source
 - preparing the next health/service source after the initial Talking Therapies pair
 
 ## Known operational signal
@@ -31,4 +31,4 @@ That is still an upstream data-age issue, not a blocking application defect.
 
 ## Next step
 
-Commit and push the validated first Talking Therapies SubICB slice, then decide the next health/service source for the following phase-1 increment.
+Decide the next Phase 1 increment after the Talking Therapies slice: likely MHSDS or another health/service-pressure layer on the same SubICB path.
