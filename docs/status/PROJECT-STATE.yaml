@@ -3,16 +3,17 @@ phase: phase-1-health-workforce-planning
 status: in_progress
 summary: >-
   The live v1 platform is deployed and tagged at v0.1.1. The next delivery stage is Phase 1 health and workforce
-  expansion, with planning now focused on introducing official health/service data through a non-BCO adapter path
-  and a new ICB-level geography flow.
+  expansion. Official Phase 1 source files have been confirmed, adapter-aware ingestion groundwork is implemented,
+  SubICB reference geometry is generated locally, and the first Talking Therapies SubICB slice now builds successfully
+  with two current health layers.
 last_updated: 2026-03-15
 current_focus:
-  - confirm exact publication files for NHS Talking Therapies and Mental Health Services Monthly Statistics
-  - define the source-adapter abstraction for CSV/download-based official datasets
-  - prepare ICB geometry and compare-group support without destabilizing the live ward-based stack
-next_executable_step: confirm the first Phase 1 source files and geography keys, then implement the adapter contract and ICB geometry groundwork
+  - validate the first Talking Therapies SubICB slice against UX and operational expectations
+  - prepare the code/docs commit boundary for the first Phase 1 implementation push
+  - select the next health/service source after the initial Talking Therapies pair
+next_executable_step: commit and push the validated first Talking Therapies SubICB implementation slice
 blockers:
-  - final Phase 1 indicator choice depends on exact publication-level geography fields in the selected NHS datasets
+  - no implementation blocker; the main remaining decision is release scope and sequencing
 risks:
   - some desired workforce datasets may only be usable at provider/trust geography, which is not suitable for a resident-area choropleth without extra methodology
   - supporting multiple geography groups increases UI and validation complexity and must not enable misleading comparisons

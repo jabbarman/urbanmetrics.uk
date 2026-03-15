@@ -24,11 +24,11 @@ The first implementation slice should target:
 1. one service-pressure layer from NHS Talking Therapies monthly statistics
 2. one mental-health demand or activity layer from Mental Health Services Monthly Statistics
 3. denominator support for rate calculations where needed
-4. a new health-service geography layer group at ICB level
+4. a new health-service geography layer group at SubICB level
 
-This is the safest route because these sources are official, structured, and plausibly available at a consistent subnational geography.
+This is the safest route because these sources are official, structured, and both expose a workable monthly SubICB geography.
 
-## Why ICB geography is the right first target
+## Why SubICB geography is the right first target
 
 The current platform is built around WMCA ward overlays with geometry supplied by Birmingham City Observatory.
 
@@ -38,12 +38,17 @@ That does not cleanly transfer to Phase 1 health sources because:
 - trust-level data is not a resident-area geography and would be misleading as a choropleth without extra modelling
 - some desired datasets are available as CSV or spreadsheet files rather than geometry-rich APIs
 
-ICB geography is the best first compromise because it is:
+The inspected health publication files show that the strongest shared monthly geography is `SubICB`, not `ICB`.
+
+SubICB geography is the best first compromise because it is:
 
 - official and stable
 - available with open boundaries
+- present in both candidate monthly source files
 - appropriate for service capacity and access context
 - compatible with a map overlay model without inventing false ward precision
+
+ICB remains a useful secondary geography for some dashboard-style files, but it is not the recommended starting point for the first implementation slice.
 
 ## Candidate source set
 
@@ -54,11 +59,31 @@ Recommended use:
 - access / waiting-pressure indicator
 - employment-support context where suitable
 
+Confirmed file:
+
+- `https://files.digital.nhs.uk/D8/C94D7C/nhstalkingtherapies_month_mar_2025_activity_performance.csv`
+
+Confirmed schema fields:
+
+- `GROUP_TYPE`
+- `ORG_CODE1`
+- `ORG_NAME1`
+- `ORG_CODE2`
+- `ORG_NAME2`
+- `MEASURE_ID`
+- `MEASURE_NAME`
+- `MEASURE_VALUE_SUPPRESSED`
+
+Confirmed geography:
+
+- `GROUP_TYPE = SubICB`
+- example key pair: `ORG_CODE1 = 15E`, `ORG_NAME1 = NHS BIRMINGHAM AND SOLIHULL ICB - 15E`
+
 Expected fit:
 
 - structured official publication
 - monthly cadence
-- likely suitable for ICB-level or related health geography aggregation
+- suitable for SubICB geography
 
 Why first:
 
@@ -70,11 +95,35 @@ Recommended use:
 
 - demand / caseload / contact / activity pressure indicator
 
+Confirmed file:
+
+- `https://files.digital.nhs.uk/73/127797/MHSDS%20Data_JanPerf_2026.zip`
+- internal CSV: `MHSDS Data_JanPerf_2026/MHSDS Data_JanPerf_2026.csv`
+
+Confirmed schema fields:
+
+- `REPORTING_PERIOD_START`
+- `REPORTING_PERIOD_END`
+- `STATUS`
+- `BREAKDOWN`
+- `PRIMARY_LEVEL`
+- `PRIMARY_LEVEL_DESCRIPTION`
+- `SECONDARY_LEVEL`
+- `SECONDARY_LEVEL_DESCRIPTION`
+- `MEASURE_ID`
+- `MEASURE_NAME`
+- `MEASURE_VALUE`
+
+Confirmed geography:
+
+- `BREAKDOWN = Sub ICB - GP Practice or Residence`
+- example key pair: `PRIMARY_LEVEL = 84H`, `PRIMARY_LEVEL_DESCRIPTION = NHS NORTH EAST AND NORTH CUMBRIA ICB - 84H`
+
 Expected fit:
 
 - structured official publication
 - monthly cadence
-- likely suitable for subnational health geography outputs
+- suitable for SubICB geography
 
 Why second:
 
@@ -91,11 +140,21 @@ Why needed:
 
 - workforce or demand counts are more interpretable when normalized
 
-### Boundary support: ICB boundaries
+### Boundary support: health geography boundaries
 
 Recommended use:
 
 - geometry for the first health/workforce compare group
+
+Confirmed files:
+
+- ICB GeoJSON: `https://open-geography-portalx-ons.hub.arcgis.com/api/download/v1/items/76dad7f9577147b2b636d4f95345d28d/geojson?layers=0`
+- SubICB GeoJSON: `https://open-geography-portalx-ons.hub.arcgis.com/api/download/v1/items/fe17bb9ca66446b6b8faf992b5d24274/geojson?layers=0`
+
+Confirmed geometry properties:
+
+- ICB: `ICB23CD`, `ICB23NM`
+- SubICB: `SICBL23CD`, `SICBL23NM`
 
 Why needed:
 
@@ -147,7 +206,7 @@ The platform currently assumes `wmca-ward`.
 
 Add a new compare group for the first health phase:
 
-- `icb`
+- `sub-icb`
 
 Each layer must declare:
 
@@ -169,6 +228,25 @@ Phase 1 monitoring should support:
 - freshness checks from publication period fields
 - geometry-join coverage validation
 
+### 5. NHS identifier lookup
+
+The inspected health publications and ONS boundary files do not share the same primary codes.
+
+Observed mismatch:
+
+- NHS Talking Therapies uses `ORG_CODE1` values such as `15E` and `D2P2L`
+- MHSDS monthly uses `PRIMARY_LEVEL` values such as `84H`
+- SubICB boundaries expose `SICBL23CD` values such as `E38000006`
+- ICB boundaries expose `ICB23CD` values such as `E54000008`
+
+Observed alignment:
+
+- the human-readable geography names in the NHS files match the ONS boundary naming pattern closely, for example `NHS BIRMINGHAM AND SOLIHULL ICB - 15E`
+
+Phase 1 therefore needs a documented lookup or normalization step between NHS publication identifiers and ONS boundary identifiers.
+
+This should be treated as a first-class adapter concern, not a UI-layer string join.
+
 ## Implementation sequence
 
 ### Step 1: groundwork
@@ -176,9 +254,10 @@ Phase 1 monitoring should support:
 Deliverables:
 
 - source shortlist confirmed against exact publication files
-- chosen ICB boundary source documented
-- compare-group design updated to include `icb`
+- chosen SubICB boundary source documented
+- compare-group design updated to include `sub-icb`
 - source adapter contract drafted
+- code-lookup strategy drafted for NHS geography identifiers to boundary identifiers
 
 Validation:
 
@@ -204,13 +283,13 @@ Validation:
 
 Deliverables:
 
-- reference geometry artifact for ICBs
+- reference geometry artifact for SubICBs
 - join utility for metric records to reference geometry
-- compare-group handling updated for `icb`
+- compare-group handling updated for `sub-icb`
 
 Validation:
 
-- coverage tests for ICB geometry IDs
+- coverage tests for SubICB geometry IDs
 - negative-path tests for missing join keys
 - local build and map smoke check
 
@@ -245,10 +324,10 @@ Validation:
 
 The first concrete pair should be:
 
-1. Talking Therapies access or waiting-pressure indicator at ICB geography
-2. Mental health service demand/activity indicator at ICB geography
+1. Talking Therapies access or waiting-pressure indicator at SubICB geography
+2. Mental health service demand/activity indicator at SubICB geography
 
-These are better first candidates than `psychologists per population` because they are more likely to be published in a usable structured format with a clear subnational geography.
+These are better first candidates than `psychologists per population` because they are already published in usable monthly files with a shared subnational geography.
 
 Psychological professions workforce layers should remain a Phase 1b candidate pending confirmation of a reliable structured source.
 
@@ -281,7 +360,7 @@ Some desired workforce datasets may only be usable at trust level.
 Mitigation:
 
 - do not fake ward-level precision
-- prefer ICB or other resident-facing geographies first
+- prefer SubICB or other resident-facing geographies first
 
 ### Source-format risk
 
@@ -307,17 +386,11 @@ Mitigation:
 Phase 1 is complete when:
 
 - the platform supports at least one non-BCO adapter path
-- ICB geography overlays can be rendered and monitored
+- SubICB geography overlays can be rendered and monitored
 - at least two health/service layers are live with clear metadata and caveats
 - deployment, status, and monitoring behavior remain production-safe
 - documentation is updated to reflect the new operating model
 
 ## Exact next step
 
-Confirm the exact publication files and geography fields for:
-
-- NHS Talking Therapies monthly statistics
-- Mental Health Services Monthly Statistics
-- the chosen ICB boundary source
-
-Then implement the adapter contract and geometry-join groundwork before building the first health layer.
+Implement the adapter contract, NHS-code lookup, and SubICB geometry groundwork before building the first health layer.

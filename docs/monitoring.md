@@ -16,9 +16,11 @@ Catch these failures automatically:
 
 Run on a schedule in GitHub Actions:
 - fetch each active v1 dataset endpoint
+- fetch each active file-download source or generated boundary dependency
 - verify the required fields still exist on the records that matter for the map
 - verify the latest source period for each layer is within that layer's threshold
 - verify geometry-bearing datasets still provide the full expected WMCA ward coverage
+- verify reference-geometry joins still resolve every expected mapped area for file-based health layers
 - classify failures as `freshness`, `schema`, `request`, or `runtime`
 
 ### Data refresh checks
@@ -81,6 +83,13 @@ Examples:
 1. freeze publication of refreshed artifacts
 2. attach the unexpected field or coverage summary to the workflow output
 3. update the adapter only after reviewing the source change
+
+### File-download or lookup failure
+
+1. verify the publication file URL still resolves
+2. verify the expected geography and measure fields still exist
+3. inspect unmatched geography names before relaxing any lookup rules
+4. keep the previous artifact live until the join path is corrected
 
 ### Stale data
 
