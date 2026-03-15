@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-03-15T05:38:13.863Z",
+  "generatedAt": "2026-03-15T16:46:53.200Z",
   "layer": {
     "id": "gva-all-industries",
     "title": "Gross Value Added: All Industries",
@@ -35,6 +35,7 @@
       550
     ],
     "source": {
+      "kind": "bco_api",
       "provider": "Birmingham City Observatory API",
       "publisher": "Office for National Statistics",
       "apiBaseUrl": "https://www.cityobservatory.birmingham.gov.uk/api/explore/v2.1/catalog/datasets",
@@ -48,7 +49,7 @@
       "updateFrequency": "ANNUAL",
       "recordsFetched": 192,
       "latestSourceDate": "2023",
-      "fetchedAt": "2026-03-15T05:38:13.863Z"
+      "fetchedAt": "2026-03-15T16:46:53.200Z"
     },
     "summary": {
       "min": 46,

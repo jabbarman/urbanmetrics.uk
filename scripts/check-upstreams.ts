@@ -5,47 +5,12 @@ import {
   formatCoverageIssues,
   hasCoverageIssues,
   selectLatestRecordsByArea,
-  type RawRecord,
 } from "../src/server/datasets/normalization";
+import { fetchSourcePayload } from "../src/server/datasets/source-adapters";
 import { evaluateFreshness, sourceDateSortWeight } from "../src/server/datasets/utils";
 
-const pageSize = 100;
-
 type FailureClass = "freshness" | "schema" | "request" | "runtime";
-
-async function fetchJson<T>(url: string) {
-  const response = await fetch(url, {
-    headers: {
-      Accept: "application/json",
-      "User-Agent": "urbanmetrics-uk-monitor/0.1",
-    },
-  });
-
-  if (!response.ok) {
-    throw new Error(`Request failed (${response.status}) for ${url}`);
-  }
-
-  return (await response.json()) as T;
-}
-
-async function fetchAllRecords(datasetApiUrl: string) {
-  const records: RawRecord[] = [];
-  let offset = 0;
-  let totalCount = Infinity;
-
-  while (offset < totalCount) {
-    const url = new URL(`${datasetApiUrl}/records`);
-    url.searchParams.set("limit", String(pageSize));
-    url.searchParams.set("offset", String(offset));
-
-    const page = await fetchJson<{ total_count: number; results: RawRecord[] }>(url.toString());
-    totalCount = page.total_count;
-    records.push(...page.results);
-    offset += pageSize;
-  }
-
-  return records;
-}
+import type { RawRecord } from "../src/server/datasets/normalization";
 
 function latestSourceDate(records: RawRecord[], dateField: string) {
   const dates = records
@@ -77,15 +42,10 @@ async function main() {
 
   for (const definition of layerDefinitions) {
     try {
-      await fetchJson<{
-        dataset_id: string;
-        metas: { default: { data_processed: string; title: string; update_frequency: string } };
-      }>(definition.source.datasetApiUrl);
-
-      const allRecords = await fetchAllRecords(definition.source.datasetApiUrl);
+      const sourcePayload = await fetchSourcePayload(definition, "urbanmetrics-uk-monitor/0.1");
       const expectedAreaIds =
         expectedAreaIdsByCompareGroup[definition.compareGroup as keyof typeof expectedAreaIdsByCompareGroup];
-      const records = selectLatestRecordsByArea(allRecords, definition, expectedAreaIds);
+      const records = selectLatestRecordsByArea(sourcePayload.records, definition, expectedAreaIds);
 
       if (expectedAreaIds) {
         const coverage = compareAreaCoverage(

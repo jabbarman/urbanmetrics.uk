@@ -22,6 +22,7 @@ const definition: LayerDefinition = {
   freshnessPolicy: { kind: "maxAgeDays", days: 60 },
   palette: ["#000000"],
   source: {
+    kind: "bco_api",
     provider: "Test",
     publisher: "Test",
     apiBaseUrl: "https://example.com",

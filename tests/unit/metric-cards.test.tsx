@@ -26,6 +26,7 @@ function makeCatalogEntry(): CatalogEntry {
     palette: ["#ffffff"],
     legendBreaks: [10],
     source: {
+      kind: "bco_api",
       provider: "Test",
       publisher: "Test Publisher",
       apiBaseUrl: "https://example.com",

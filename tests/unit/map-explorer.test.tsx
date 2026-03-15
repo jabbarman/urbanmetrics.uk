@@ -25,7 +25,7 @@ vi.mock("@/features/map/map-view", () => ({
   MapView: () => <div>map view</div>,
 }));
 
-function makeCatalogEntry(id: string, title: string): CatalogEntry {
+function makeCatalogEntry(id: string, title: string, compareGroup = "wmca-ward"): CatalogEntry {
   return {
     id,
     title,
@@ -36,7 +36,7 @@ function makeCatalogEntry(id: string, title: string): CatalogEntry {
       higherValuesMean: `${title} higher values meaning`,
       rankingTitle: `${title} rankings`,
     },
-    compareGroup: "wmca-ward",
+    compareGroup,
     geographyLabel: "WMCA ward",
     geographyVintage: "ward 2025",
     unit: "%",
@@ -46,6 +46,7 @@ function makeCatalogEntry(id: string, title: string): CatalogEntry {
     palette: ["#ffffff"],
     legendBreaks: [10],
     source: {
+      kind: "bco_api",
       provider: "Test",
       publisher: "Test Publisher",
       apiBaseUrl: "https://example.com",
@@ -122,5 +123,45 @@ describe("MapExplorer", () => {
     expect(within(primaryLayerSelect).getByRole("option", { name: "Layer A" })).toBeInTheDocument();
     expect(primaryLayerSelect).toHaveValue("layer-a");
     expect(screen.queryByRole("option", { name: "Layer B" })).not.toBeInTheDocument();
+  });
+
+  it("limits compare options to the active layer compare group", async () => {
+    const wardLayer = makeCatalogEntry("layer-a", "Ward Layer", "wmca-ward");
+    const icbLayer = makeCatalogEntry("layer-b", "ICB Layer", "sub-icb");
+    const wardCompareLayer = makeCatalogEntry("layer-c", "Ward Compare Layer", "wmca-ward");
+
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async (input: string) => {
+        if (input.includes("layer-a")) {
+          return new Response(JSON.stringify(makeGeneratedLayer(wardLayer)), {
+            status: 200,
+            headers: { "Content-Type": "application/json" },
+          });
+        }
+
+        if (input.includes("layer-b")) {
+          return new Response(JSON.stringify(makeGeneratedLayer(icbLayer)), {
+            status: 200,
+            headers: { "Content-Type": "application/json" },
+          });
+        }
+
+        return new Response(JSON.stringify(makeGeneratedLayer(wardCompareLayer)), {
+          status: 200,
+          headers: { "Content-Type": "application/json" },
+        });
+      }),
+    );
+
+    render(<MapExplorer catalog={[wardLayer, icbLayer, wardCompareLayer]} status={status} />);
+
+    await waitFor(() => {
+      expect(screen.getByText("map view")).toBeInTheDocument();
+    });
+
+    const compareLayerSelect = screen.getByLabelText(/secondary compare layer/i);
+    expect(within(compareLayerSelect).getByRole("option", { name: "Ward Compare Layer" })).toBeInTheDocument();
+    expect(within(compareLayerSelect).queryByRole("option", { name: "ICB Layer" })).not.toBeInTheDocument();
   });
 });

@@ -133,7 +133,9 @@ export function MapExplorer({ catalog, status }: MapExplorerProps) {
 
   const primaryLayer = primaryLayerId ? layersById[primaryLayerId] ?? null : null;
   const compareLayer = compareLayerId && compareLayerId !== primaryLayerId ? layersById[compareLayerId] ?? null : null;
-  const compareOptions = availableCatalog.filter((entry) => entry.id !== primaryLayerId);
+  const compareOptions = availableCatalog.filter(
+    (entry) => entry.id !== primaryLayerId && entry.compareGroup === primaryLayer?.layer.compareGroup,
+  );
   const loadedLayers = Object.values(layersById);
 
   const selectedCatalogEntry = useMemo(

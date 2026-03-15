@@ -1,4 +1,4 @@
-import type { FeatureCollection, Geometry } from "geojson";
+import type { FeatureCollection, Geometry, Polygon, MultiPolygon } from "geojson";
 
 export type FreshnessPolicy =
   | { kind: "maxAgeDays"; days: number }
@@ -9,6 +9,42 @@ export type LayerInterpretation = {
   higherValuesMean: string;
   rankingTitle: string;
 };
+
+export type BcoApiSourceDefinition = {
+  kind: "bco_api";
+  provider: string;
+  publisher: string;
+  apiBaseUrl: string;
+  datasetId: string;
+  datasetUrl: string;
+  datasetApiUrl: string;
+  licence: string;
+  caveat: string;
+};
+
+export type CsvDownloadSourceDefinition = {
+  kind: "csv_download";
+  provider: string;
+  publisher: string;
+  publicationUrl: string;
+  fileUrl: string;
+  fileFormat: "csv" | "zip_csv";
+  datasetTitle: string;
+  updateFrequency: string;
+  geographyId: "sub-icb";
+  geographyField: string;
+  geographyValue: string;
+  areaNameField: string;
+  sourceDateField: string;
+  valueField: string;
+  suppressedValues?: string[];
+  measureIdField: string;
+  measureId: string;
+  licence: string;
+  caveat: string;
+};
+
+export type LayerSourceDefinition = BcoApiSourceDefinition | CsvDownloadSourceDefinition;
 
 export type LayerDefinition = {
   id: string;
@@ -24,16 +60,7 @@ export type LayerDefinition = {
   cadenceLabel: string;
   freshnessPolicy: FreshnessPolicy;
   palette: string[];
-  source: {
-    provider: string;
-    publisher: string;
-    apiBaseUrl: string;
-    datasetId: string;
-    datasetUrl: string;
-    datasetApiUrl: string;
-    licence: string;
-    caveat: string;
-  };
+  source: LayerSourceDefinition;
   fields: {
     areaId: string;
     areaName: string;
@@ -76,7 +103,7 @@ export type GeneratedLayer = {
     freshnessPolicy: FreshnessPolicy;
     palette: string[];
     legendBreaks: number[];
-    source: LayerDefinition["source"] & {
+    source: LayerSourceDefinition & {
       datasetTitle: string;
       dataProcessedAt: string;
       updateFrequency: string;
@@ -109,5 +136,37 @@ export type GeneratedStatus = {
     updateFrequency: string;
     recordsFetched: number;
     message: string;
+  }>;
+};
+
+export type ReferenceGeographyFeatureProperties = {
+  areaId: string;
+  areaName: string;
+  centroid: { lon: number; lat: number };
+};
+
+export type ReferenceGeography = {
+  schemaVersion: 1;
+  generatedAt: string;
+  geography: {
+    id: string;
+    title: string;
+    sourceUrl: string;
+    codeField: string;
+    nameField: string;
+  };
+  geojson: FeatureCollection<Polygon | MultiPolygon, ReferenceGeographyFeatureProperties>;
+};
+
+export type ReferenceGeographyLookup = {
+  schemaVersion: 1;
+  generatedAt: string;
+  geographyId: string;
+  lookupField: string;
+  items: Array<{
+    lookupValue: string;
+    normalizedLookupValue: string;
+    areaId: string;
+    areaName: string;
   }>;
 };

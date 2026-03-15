@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-03-15T05:38:15.344Z",
+  "generatedAt": "2026-03-15T16:46:54.159Z",
   "layer": {
     "id": "travel-to-work-bicycle-rate",
     "title": "Travel To Work By Bicycle",
@@ -34,6 +34,7 @@
       1.8
     ],
     "source": {
+      "kind": "bco_api",
       "provider": "Birmingham City Observatory API",
       "publisher": "Office for National Statistics",
       "apiBaseUrl": "https://www.cityobservatory.birmingham.gov.uk/api/explore/v2.1/catalog/datasets",
@@ -47,7 +48,7 @@
       "updateFrequency": "DECENNIAL",
       "recordsFetched": 192,
       "latestSourceDate": "2021",
-      "fetchedAt": "2026-03-15T05:38:15.344Z"
+      "fetchedAt": "2026-03-15T16:46:54.159Z"
     },
     "summary": {
       "min": 0.4,

@@ -12,25 +12,16 @@ import {
   selectLatestRecordsByArea,
   type RawRecord,
 } from "../src/server/datasets/normalization";
+import { fetchSourcePayload, type BcoDatasetMetadata } from "../src/server/datasets/source-adapters";
+import { buildReferenceGeographyLookup, fetchSubIcbReferenceGeography } from "../src/server/datasets/reference-geographies";
 import { evaluateFreshness, formatValue, mean, median, quantileBreaks, sourceDateSortWeight } from "../src/server/datasets/utils";
 import type { GeneratedFeatureProperties, GeneratedLayer, GeneratedStatus, LayerDefinition } from "../src/server/datasets/types";
 
 const dataGeneratedDir = path.join(process.cwd(), "data", "generated");
 const publicGeneratedDir = path.join(process.cwd(), "public", "generated");
 const sourceCacheDir = path.join(process.cwd(), "data", "source-cache");
-
-const pageSize = 100;
-
-type DatasetMetadata = {
-  dataset_id: string;
-  metas: {
-    default: {
-      title: string;
-      data_processed: string;
-      update_frequency: string;
-    };
-  };
-};
+const referenceGeographiesDir = path.join(dataGeneratedDir, "reference-geographies");
+const publicReferenceGeographiesDir = path.join(publicGeneratedDir, "reference-geographies");
 
 function assertString(value: unknown, fieldName: string) {
   if (typeof value !== "string" || value.length === 0) {
@@ -68,47 +59,9 @@ function geometryFrom(record: RawRecord, definition: LayerDefinition) {
   return geometryWrapper.geometry;
 }
 
-async function fetchJson<T>(url: string) {
-  const response = await fetch(url, {
-    headers: {
-      Accept: "application/json",
-      "User-Agent": "urbanmetrics-uk-data-sync/0.1",
-    },
-  });
-
-  if (!response.ok) {
-    throw new Error(`Request failed (${response.status}) for ${url}`);
-  }
-
-  return (await response.json()) as T;
-}
-
-async function fetchDatasetMetadata(definition: LayerDefinition) {
-  return fetchJson<DatasetMetadata>(definition.source.datasetApiUrl);
-}
-
-async function fetchAllRecords(definition: LayerDefinition) {
-  const records: RawRecord[] = [];
-  let offset = 0;
-  let totalCount = Infinity;
-
-  while (offset < totalCount) {
-    const url = new URL(`${definition.source.datasetApiUrl}/records`);
-    url.searchParams.set("limit", String(pageSize));
-    url.searchParams.set("offset", String(offset));
-
-    const page = await fetchJson<{ total_count: number; results: RawRecord[] }>(url.toString());
-    totalCount = page.total_count;
-    records.push(...page.results);
-    offset += pageSize;
-  }
-
-  return records;
-}
-
 function buildLayer(
   definition: LayerDefinition,
-  metadata: DatasetMetadata,
+  metadata: BcoDatasetMetadata,
   allRecords: RawRecord[],
 ): GeneratedLayer {
   const expectedAreaIds = expectedAreaIdsByCompareGroup[definition.compareGroup as keyof typeof expectedAreaIdsByCompareGroup];
@@ -233,7 +186,9 @@ function buildLayer(
 async function ensureDirectories() {
   await Promise.all([
     mkdir(path.join(dataGeneratedDir, "layers"), { recursive: true }),
+    mkdir(referenceGeographiesDir, { recursive: true }),
     mkdir(path.join(publicGeneratedDir, "layers"), { recursive: true }),
+    mkdir(publicReferenceGeographiesDir, { recursive: true }),
     mkdir(sourceCacheDir, { recursive: true }),
   ]);
 }
@@ -245,19 +200,32 @@ async function writeJson(filePath: string, value: unknown) {
 async function main() {
   await ensureDirectories();
 
+  const subIcbReferenceGeography = await fetchSubIcbReferenceGeography();
+  const subIcbLookup = buildReferenceGeographyLookup(
+    subIcbReferenceGeography.geography.id,
+    "areaName",
+    subIcbReferenceGeography.geojson.features,
+  );
+
+  await Promise.all([
+    writeJson(path.join(referenceGeographiesDir, "sub-icb.geojson"), subIcbReferenceGeography.geojson),
+    writeJson(path.join(referenceGeographiesDir, "sub-icb.lookup.json"), subIcbLookup),
+    writeJson(path.join(publicReferenceGeographiesDir, "sub-icb.geojson"), subIcbReferenceGeography.geojson),
+    writeJson(path.join(publicReferenceGeographiesDir, "sub-icb.lookup.json"), subIcbLookup),
+  ]);
+
   const generatedLayers: GeneratedLayer[] = [];
 
   for (const definition of layerDefinitions) {
-    const metadata = await fetchDatasetMetadata(definition);
-    const records = await fetchAllRecords(definition);
+    const sourcePayload = await fetchSourcePayload(definition, "urbanmetrics-uk-data-sync/0.1");
 
-    await writeJson(path.join(sourceCacheDir, `${definition.source.datasetId}.json`), {
+    await writeJson(path.join(sourceCacheDir, `${sourcePayload.cacheKey}.json`), {
       fetchedAt: new Date().toISOString(),
-      metadata,
-      records,
+      metadata: sourcePayload.metadata,
+      records: sourcePayload.records,
     });
 
-    const generated = buildLayer(definition, metadata, records);
+    const generated = buildLayer(definition, sourcePayload.metadata, sourcePayload.records);
     generatedLayers.push(generated);
 
     const layerOutput = path.join(dataGeneratedDir, "layers", `${definition.id}.json`);
