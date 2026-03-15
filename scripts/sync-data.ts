@@ -14,6 +14,7 @@ import {
 } from "../src/server/datasets/normalization";
 import { fetchSourcePayload, type BcoDatasetMetadata } from "../src/server/datasets/source-adapters";
 import { buildReferenceGeographyLookup, fetchSubIcbReferenceGeography } from "../src/server/datasets/reference-geographies";
+import { buildTalkingTherapiesTherapyTypeContext } from "../src/server/datasets/talking-therapies-therapy-types";
 import { evaluateFreshness, formatValue, mean, median, quantileBreaks, sourceDateSortWeight } from "../src/server/datasets/utils";
 import type { GeneratedFeatureProperties, GeneratedLayer, GeneratedStatus, LayerDefinition } from "../src/server/datasets/types";
 
@@ -22,6 +23,8 @@ const publicGeneratedDir = path.join(process.cwd(), "public", "generated");
 const sourceCacheDir = path.join(process.cwd(), "data", "source-cache");
 const referenceGeographiesDir = path.join(dataGeneratedDir, "reference-geographies");
 const publicReferenceGeographiesDir = path.join(publicGeneratedDir, "reference-geographies");
+const supportingDataDir = path.join(dataGeneratedDir, "supporting");
+const publicSupportingDataDir = path.join(publicGeneratedDir, "supporting");
 
 function assertString(value: unknown, fieldName: string) {
   if (typeof value !== "string" || value.length === 0) {
@@ -187,8 +190,10 @@ async function ensureDirectories() {
   await Promise.all([
     mkdir(path.join(dataGeneratedDir, "layers"), { recursive: true }),
     mkdir(referenceGeographiesDir, { recursive: true }),
+    mkdir(supportingDataDir, { recursive: true }),
     mkdir(path.join(publicGeneratedDir, "layers"), { recursive: true }),
     mkdir(publicReferenceGeographiesDir, { recursive: true }),
+    mkdir(publicSupportingDataDir, { recursive: true }),
     mkdir(sourceCacheDir, { recursive: true }),
   ]);
 }
@@ -212,6 +217,22 @@ async function main() {
     writeJson(path.join(referenceGeographiesDir, "sub-icb.lookup.json"), subIcbLookup),
     writeJson(path.join(publicReferenceGeographiesDir, "sub-icb.geojson"), subIcbReferenceGeography.geojson),
     writeJson(path.join(publicReferenceGeographiesDir, "sub-icb.lookup.json"), subIcbLookup),
+  ]);
+
+  const talkingTherapiesTherapyTypeContext = await buildTalkingTherapiesTherapyTypeContext(
+    sourceCacheDir,
+    "urbanmetrics-uk-data-sync/0.1",
+  );
+
+  await Promise.all([
+    writeJson(
+      path.join(supportingDataDir, "talking-therapies-therapy-types.json"),
+      talkingTherapiesTherapyTypeContext,
+    ),
+    writeJson(
+      path.join(publicSupportingDataDir, "talking-therapies-therapy-types.json"),
+      talkingTherapiesTherapyTypeContext,
+    ),
   ]);
 
   const generatedLayers: GeneratedLayer[] = [];

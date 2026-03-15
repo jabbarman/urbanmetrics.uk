@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-03-15T17:55:14.761Z",
+  "id": "talking-therapies-therapy-types",
+  "title": "Talking Therapies therapy-type context",
+  "reportingPeriod": "2024-25",
+  "geographyLabel": "Midlands Commissioning Region",
+  "source": {
+    "publisher": "NHS England",
+    "publicationUrl": "https://digital.nhs.uk/data-and-information/publications/statistical/nhs-talking-therapies-for-anxiety-and-depression-annual-reports/2024-25/therapy-based-outcomes",
+    "fileUrl": "https://files.digital.nhs.uk/B7/464F54/ther-based-outcomes2425-2.zip",
+    "datasetTitle": "Therapy Based Outcomes Table 4-2.csv",
+    "updateFrequency": "ANNUAL",
+    "latestSourceDate": "2024-25",
+    "dataProcessedAt": "2026-03-15T17:55:13.897Z",
+    "fetchedAt": "2026-03-15T17:55:13.897Z",
+    "caveat": "Annual therapy-based outcomes for courses of therapy in the Midlands Commissioning Region. This is regional context, not a Sub ICB breakdown, and it is not directly comparable with the monthly access and wait layers."
+  },
+  "therapies": [
+    {
+      "therapyType": "Cognitive Behaviour Therapy (CBT)",
+      "coursesOfTherapy": 53725,
+      "finishingCourseTreatment": 63615,
+      "recoveryRate": 47,
+      "improvementRate": 64
+    },
+    {
+      "therapyType": "Counselling for Depression",
+      "coursesOfTherapy": 18920,
+      "finishingCourseTreatment": 21160,
+      "recoveryRate": 51,
+      "improvementRate": 65
+    },
+    {
+      "therapyType": "Guided Self Help (Book)",
+      "coursesOfTherapy": 18175,
+      "finishingCourseTreatment": 31940,
+      "recoveryRate": 38,
+      "improvementRate": 55
+    },
+    {
+      "therapyType": "Psychoeducational peer support",
+      "coursesOfTherapy": 7100,
+      "finishingCourseTreatment": 17530,
+      "recoveryRate": 36,
+      "improvementRate": 48
+    },
+    {
+      "therapyType": "Eye Movement Desensitisation Reprocessing",
+      "coursesOfTherapy": 2030,
+      "finishingCourseTreatment": 2420,
+      "recoveryRate": 46,
+      "improvementRate": 65
+    },
+    {
+      "therapyType": "Interpersonal Psycho therapy (IPT)",
+      "coursesOfTherapy": 1835,
+      "finishingCourseTreatment": 2215,
+      "recoveryRate": 49,
+      "improvementRate": 66
+    },
+    {
+      "therapyType": "Guided Self Help (Computer)",
+      "coursesOfTherapy": 1800,
+      "finishingCourseTreatment": 6815,
+      "recoveryRate": 41,
+      "improvementRate": 53
+    },
+    {
+      "therapyType": "Non-guided Self Help (Book)",
+      "coursesOfTherapy": 1635,
+      "finishingCourseTreatment": 4330,
+      "recoveryRate": 22,
+      "improvementRate": 35
+    },
+    {
+      "therapyType": "Couples Therapy for Depression",
+      "coursesOfTherapy": 790,
+      "finishingCourseTreatment": 1295,
+      "recoveryRate": 51,
+      "improvementRate": 46
+    },
+    {
+      "therapyType": "Collaborative care",
+      "coursesOfTherapy": 465,
+      "finishingCourseTreatment": 1950,
+      "recoveryRate": 45,
+      "improvementRate": 60
+    },
+    {
+      "therapyType": "Brief psychodynamic psychotherapy",
+      "coursesOfTherapy": 155,
+      "finishingCourseTreatment": 280,
+      "recoveryRate": 54,
+      "improvementRate": 67
+    },
+    {
+      "therapyType": "Mindfulness",
+      "coursesOfTherapy": 90,
+      "finishingCourseTreatment": 220,
+      "recoveryRate": 43,
+      "improvementRate": 46
+    },
+    {
+      "therapyType": "Non-Guided Self Help (Computer)",
+      "coursesOfTherapy": 80,
+      "finishingCourseTreatment": 610,
+      "recoveryRate": 21,
+      "improvementRate": 28
+    },
+    {
+      "therapyType": "Applied relaxation",
+      "coursesOfTherapy": 25,
+      "finishingCourseTreatment": 80,
+      "recoveryRate": 39,
+      "improvementRate": 52
+    }
+  ]
+}

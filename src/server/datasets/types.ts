@@ -139,6 +139,33 @@ export type GeneratedStatus = {
   }>;
 };
 
+export type TalkingTherapiesTherapyTypeContext = {
+  schemaVersion: 1;
+  generatedAt: string;
+  id: "talking-therapies-therapy-types";
+  title: string;
+  reportingPeriod: string;
+  geographyLabel: string;
+  source: {
+    publisher: string;
+    publicationUrl: string;
+    fileUrl: string;
+    datasetTitle: string;
+    updateFrequency: string;
+    latestSourceDate: string;
+    dataProcessedAt: string;
+    fetchedAt: string;
+    caveat: string;
+  };
+  therapies: Array<{
+    therapyType: string;
+    coursesOfTherapy: number;
+    finishingCourseTreatment: number;
+    recoveryRate: number;
+    improvementRate: number;
+  }>;
+};
+
 export type ReferenceGeographyFeatureProperties = {
   areaId: string;
   areaName: string;

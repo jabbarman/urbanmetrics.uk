@@ -6,10 +6,11 @@ import Link from "next/link";
 import { AreaInspector } from "@/features/dashboard/area-inspector";
 import { MetricCards } from "@/features/dashboard/metric-cards";
 import { RankingChart } from "@/features/dashboard/ranking-chart";
+import { TalkingTherapiesContextCard } from "@/features/dashboard/talking-therapies-context-card";
 import { Legend } from "@/features/map/legend";
 import { MapView } from "@/features/map/map-view";
 import { cn } from "@/components/cn";
-import type { CatalogEntry, GeneratedLayer, GeneratedStatus } from "@/server/datasets/types";
+import type { CatalogEntry, GeneratedLayer, GeneratedStatus, TalkingTherapiesTherapyTypeContext } from "@/server/datasets/types";
 
 type MapExplorerProps = {
   catalog: CatalogEntry[];
@@ -30,6 +31,16 @@ async function fetchLayer(layerId: string) {
   }
 
   return (await response.json()) as GeneratedLayer;
+}
+
+async function fetchTalkingTherapiesContext() {
+  const response = await fetch("/generated/supporting/talking-therapies-therapy-types.json");
+
+  if (!response.ok) {
+    throw new Error("Failed to load Talking Therapies therapy-type context.");
+  }
+
+  return (await response.json()) as TalkingTherapiesTherapyTypeContext;
 }
 
 function layerWarningMessage(issues: LayerLoadIssue[]) {
@@ -53,6 +64,7 @@ export function MapExplorer({ catalog, status }: MapExplorerProps) {
   const [selectedAreaId, setSelectedAreaId] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [layerWarning, setLayerWarning] = useState<string | null>(null);
+  const [talkingTherapiesContext, setTalkingTherapiesContext] = useState<TalkingTherapiesTherapyTypeContext | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -154,6 +166,36 @@ export function MapExplorer({ catalog, status }: MapExplorerProps) {
     () => availableCatalog.find((entry) => entry.id === primaryLayerId) ?? null,
     [availableCatalog, primaryLayerId],
   );
+  const showTalkingTherapiesContext = primaryLayer?.layer.id.startsWith("nhs-talking-therapies-") ?? false;
+
+  useEffect(() => {
+    if (!showTalkingTherapiesContext) {
+      return;
+    }
+
+    let cancelled = false;
+
+    async function loadTalkingTherapiesContext() {
+      try {
+        const nextContext = await fetchTalkingTherapiesContext();
+        if (!cancelled) {
+          setTalkingTherapiesContext(nextContext);
+        }
+      } catch {
+        if (!cancelled) {
+          setTalkingTherapiesContext(null);
+        }
+      }
+    }
+
+    if (!talkingTherapiesContext) {
+      void loadTalkingTherapiesContext();
+    }
+
+    return () => {
+      cancelled = true;
+    };
+  }, [showTalkingTherapiesContext, talkingTherapiesContext]);
 
   return (
     <div className="space-y-6">
@@ -330,6 +372,9 @@ export function MapExplorer({ catalog, status }: MapExplorerProps) {
               </div>
             </dl>
           </section>
+          {showTalkingTherapiesContext && talkingTherapiesContext ? (
+            <TalkingTherapiesContextCard context={talkingTherapiesContext} />
+          ) : null}
         </div>
       </div>
     </div>
