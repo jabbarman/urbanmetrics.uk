@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-27T05:41:17.413Z",
+  "generatedAt": "2026-03-28T05:34:44.633Z",
   "layers": [
     {
       "id": "uc-in-work-rate",
@@ -9,7 +9,7 @@
       "latestSourceDate": "2025-12",
       "updateFrequency": "MONTHLY",
       "recordsFetched": 192,
-      "message": "Latest source period exceeded 60 days (85 days observed)."
+      "message": "Latest source period exceeded 60 days (86 days observed)."
     },
     {
       "id": "imd-employment-score",
@@ -29,7 +29,7 @@
       "latestSourceDate": "2023",
       "updateFrequency": "ANNUAL",
       "recordsFetched": 192,
-      "message": "Latest source period exceeded 450 days (816 days observed)."
+      "message": "Latest source period exceeded 450 days (817 days observed)."
     },
     {
       "id": "gva-all-industries",
@@ -39,7 +39,7 @@
       "latestSourceDate": "2023",
       "updateFrequency": "ANNUAL",
       "recordsFetched": 192,
-      "message": "Latest source period exceeded 450 days (816 days observed)."
+      "message": "Latest source period exceeded 450 days (817 days observed)."
     },
     {
       "id": "travel-to-work-bicycle-rate",
@@ -55,7 +55,7 @@
       "id": "nhs-talking-therapies-wait-time",
       "title": "Talking Therapies Mean Wait",
       "status": "ok",
-      "dataProcessedAt": "2026-03-27T05:41:11.144Z",
+      "dataProcessedAt": "2026-03-28T05:34:34.065Z",
       "latestSourceDate": "2026-01-31",
       "updateFrequency": "MONTHLY",
       "recordsFetched": 10,
@@ -65,7 +65,7 @@
       "id": "nhs-talking-therapies-six-week-access",
       "title": "Talking Therapies Access Within 6 Weeks",
       "status": "ok",
-      "dataProcessedAt": "2026-03-27T05:41:17.390Z",
+      "dataProcessedAt": "2026-03-28T05:34:44.613Z",
       "latestSourceDate": "2026-01-31",
       "updateFrequency": "MONTHLY",
       "recordsFetched": 10,
