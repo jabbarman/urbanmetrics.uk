@@ -47,12 +47,12 @@
       "updateFrequency": "MONTHLY",
       "recordsFetched": 192,
       "latestSourceDate": "2025-12",
-      "fetchedAt": "2026-04-01T05:47:07.747Z"
+      "fetchedAt": "2026-04-02T05:39:56.097Z"
     },
     "summary": {
       "min": 18.4,
       "max": 43.1,
-      "mean": 29.97552083333332,
+      "mean": 29.97552083333333,
       "median": 30,
       "topAreas": [
         {
@@ -157,7 +157,7 @@
       "updateFrequency": "IRREG",
       "recordsFetched": 192,
       "latestSourceDate": "2025",
-      "fetchedAt": "2026-04-01T05:47:09.071Z"
+      "fetchedAt": "2026-04-02T05:39:57.858Z"
     },
     "summary": {
       "min": 4.4,
@@ -268,7 +268,7 @@
       "updateFrequency": "ANNUAL",
       "recordsFetched": 192,
       "latestSourceDate": "2023",
-      "fetchedAt": "2026-04-01T05:47:11.246Z"
+      "fetchedAt": "2026-04-02T05:40:00.839Z"
     },
     "summary": {
       "min": 6,
@@ -379,7 +379,7 @@
       "updateFrequency": "ANNUAL",
       "recordsFetched": 192,
       "latestSourceDate": "2023",
-      "fetchedAt": "2026-04-01T05:47:15.087Z"
+      "fetchedAt": "2026-04-02T05:40:08.946Z"
     },
     "summary": {
       "min": 46,
@@ -489,7 +489,7 @@
       "updateFrequency": "DECENNIAL",
       "recordsFetched": 192,
       "latestSourceDate": "2021",
-      "fetchedAt": "2026-04-01T05:47:16.771Z"
+      "fetchedAt": "2026-04-02T05:40:10.562Z"
     },
     "summary": {
       "min": 0.4,
@@ -607,10 +607,10 @@
       "measureId": "M048",
       "licence": "Open Government Licence v3.0 unless stated otherwise by the publisher",
       "caveat": "This is a mean wait measure at Sub ICB geography, not a person-level guarantee. Local suppression and monthly operational variation can affect interpretation.",
-      "dataProcessedAt": "2026-04-01T05:47:22.655Z",
+      "dataProcessedAt": "2026-04-02T05:40:26.210Z",
       "recordsFetched": 10,
       "latestSourceDate": "2026-01-31",
-      "fetchedAt": "2026-04-01T05:47:22.673Z"
+      "fetchedAt": "2026-04-02T05:40:26.228Z"
     },
     "summary": {
       "min": 14.5,
@@ -728,10 +728,10 @@
       "measureId": "M053",
       "licence": "Open Government Licence v3.0 unless stated otherwise by the publisher",
       "caveat": "This percentage is based on referrals completing a course of treatment in the month. It is a service-access performance indicator, not a population coverage rate.",
-      "dataProcessedAt": "2026-04-01T05:47:27.191Z",
+      "dataProcessedAt": "2026-04-02T05:40:36.942Z",
       "recordsFetched": 10,
       "latestSourceDate": "2026-01-31",
-      "fetchedAt": "2026-04-01T05:47:27.208Z"
+      "fetchedAt": "2026-04-02T05:40:36.963Z"
     },
     "summary": {
       "min": 53,
