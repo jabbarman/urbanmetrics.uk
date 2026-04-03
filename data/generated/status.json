@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-02T05:40:36.966Z",
+  "generatedAt": "2026-04-03T05:41:23.504Z",
   "layers": [
     {
       "id": "uc-in-work-rate",
@@ -9,7 +9,7 @@
       "latestSourceDate": "2025-12",
       "updateFrequency": "MONTHLY",
       "recordsFetched": 192,
-      "message": "Latest source period exceeded 60 days (91 days observed)."
+      "message": "Latest source period exceeded 60 days (92 days observed)."
     },
     {
       "id": "imd-employment-score",
@@ -25,11 +25,11 @@
       "id": "fuel-poverty-rate",
       "title": "Households In Fuel Poverty",
       "status": "stale",
-      "dataProcessedAt": "2026-03-04T02:05:15+00:00",
+      "dataProcessedAt": "2026-04-03T01:05:11+00:00",
       "latestSourceDate": "2023",
       "updateFrequency": "ANNUAL",
       "recordsFetched": 192,
-      "message": "Latest source period exceeded 450 days (822 days observed)."
+      "message": "Latest source period exceeded 450 days (823 days observed)."
     },
     {
       "id": "gva-all-industries",
@@ -39,7 +39,7 @@
       "latestSourceDate": "2023",
       "updateFrequency": "ANNUAL",
       "recordsFetched": 192,
-      "message": "Latest source period exceeded 450 days (822 days observed)."
+      "message": "Latest source period exceeded 450 days (823 days observed)."
     },
     {
       "id": "travel-to-work-bicycle-rate",
@@ -55,21 +55,21 @@
       "id": "nhs-talking-therapies-wait-time",
       "title": "Talking Therapies Mean Wait",
       "status": "stale",
-      "dataProcessedAt": "2026-04-02T05:40:26.210Z",
+      "dataProcessedAt": "2026-04-03T05:41:18.487Z",
       "latestSourceDate": "2026-01-31",
       "updateFrequency": "MONTHLY",
       "recordsFetched": 10,
-      "message": "Latest source period exceeded 60 days (60 days observed)."
+      "message": "Latest source period exceeded 60 days (61 days observed)."
     },
     {
       "id": "nhs-talking-therapies-six-week-access",
       "title": "Talking Therapies Access Within 6 Weeks",
       "status": "stale",
-      "dataProcessedAt": "2026-04-02T05:40:36.942Z",
+      "dataProcessedAt": "2026-04-03T05:41:23.484Z",
       "latestSourceDate": "2026-01-31",
       "updateFrequency": "MONTHLY",
       "recordsFetched": 10,
-      "message": "Latest source period exceeded 60 days (60 days observed)."
+      "message": "Latest source period exceeded 60 days (61 days observed)."
     }
   ]
 }
