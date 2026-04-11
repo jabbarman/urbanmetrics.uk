@@ -2,7 +2,7 @@
 
 ## Current stage
 
-`Post-v1 planning: Phase 1 health and workforce expansion`
+`Post-v1 planning: workspace separation and route split`
 
 ## Completed
 
@@ -17,11 +17,12 @@
 - SubICB reference geometry and lookup artifacts are generated locally
 - two local health layers are implemented from NHS Talking Therapies monthly data
 - Midlands annual therapy-type context is generated and shown as a supporting panel for Talking Therapies layers
+- a concrete workspace-separation proposal has been drafted to split the mixed map experience into `Regional Context` and `Health Access`
 
 ## In progress
 
-- deciding whether to extend Talking Therapies with more supporting context or move directly to the next health/service source
-- preparing the next health/service source after the initial Talking Therapies pair
+- preparing the IA and route split that will separate the original Urban Metrics workspace from the health/service workspace
+- aligning the next implementation step around a homepage index plus dedicated workspace routes
 
 ## Known operational signal
 
@@ -31,4 +32,4 @@ That is still an upstream data-age issue, not a blocking application defect.
 
 ## Next step
 
-Decide the next Phase 1 increment after the Talking Therapies slice: likely MHSDS or another health/service-pressure layer on the same SubICB path.
+If approved, implement the workspace split foundation: add a workspace registry, create `/regional-context` and `/health-access`, and convert `/` into an index page.

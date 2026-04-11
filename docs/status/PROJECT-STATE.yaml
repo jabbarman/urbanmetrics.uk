@@ -1,19 +1,22 @@
 project: urbanmetrics.uk
-phase: phase-1-health-workforce-planning
+phase: workspace-separation-planning
 status: in_progress
 summary: >-
   The live v1 platform is deployed and tagged at v0.1.1. The next delivery stage is Phase 1 health and workforce
   expansion. Official Phase 1 source files have been confirmed, adapter-aware ingestion groundwork is implemented,
   SubICB reference geometry is generated locally, and the first Talking Therapies SubICB slice now builds successfully
-  with two current health layers plus a Midlands annual therapy-type companion panel.
-last_updated: 2026-03-15
+  with two current health layers plus a Midlands annual therapy-type companion panel. User feedback now indicates that
+  the mixed homepage workspace is no longer the clearest presentation model, so a concrete proposal has been drafted to
+  split the experience into dedicated `Regional Context` and `Health Access` routes.
+last_updated: 2026-04-11
 current_focus:
-  - validate the first Talking Therapies companion context against UX and interpretability expectations
-  - select the next health/service source after the initial Talking Therapies pair
-  - keep the SubICB path stable while adding the next official source
-next_executable_step: select and implement the next Phase 1 health/service layer on the SubICB path
+  - prepare the homepage/index and route split that separates the two workspace mental models
+  - keep the shared generated-data and status architecture intact while changing only the information architecture
+  - use the approved workspace-separation proposal as the basis for implementation
+next_executable_step: implement the workspace split foundation if the proposal is approved
 blockers:
-  - no implementation blocker; the main remaining decision is which follow-on health/service source to prioritize
+  - no technical blocker; the main gating item is approval of the workspace-separation proposal as the implementation basis
 risks:
   - some desired workforce datasets may only be usable at provider/trust geography, which is not suitable for a resident-area choropleth without extra methodology
   - supporting multiple geography groups increases UI and validation complexity and must not enable misleading comparisons
+  - a weak route split could duplicate page wiring without actually clarifying the user journey, so the homepage/index design must remain intentional

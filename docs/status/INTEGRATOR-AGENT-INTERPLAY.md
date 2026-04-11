@@ -8,6 +8,7 @@
 - confirmed exact Phase 1 publication files and geography fields from official source assets
 - implemented the first adapter-aware groundwork slice directly in the primary workspace
 - implemented a Midlands annual Talking Therapies therapy-type companion artifact and panel directly in the primary workspace
+- assessed user feedback on the mixed workspace and translated it into a concrete route-split proposal for the next implementation stage
 
 ## Delegation status
 
@@ -15,6 +16,6 @@
 
 ## Next delegation candidates
 
-- source-file verification for Mental Health Services Monthly Statistics
-- follow-on SubICB layer implementation and QA
-- UI interpretation checks for additional health/service companion panels
+- route-level IA and UX verification for the workspace split
+- implementation and QA for workspace-aware catalog filtering and defaults
+- follow-on SubICB health/service layer work after the route split is in place
