@@ -1,14 +1,14 @@
 # Urban Metrics UK
 
-Public-facing West Midlands economic indicator website with interactive map overlays, source metadata, freshness monitoring, and AI-friendly extension rules.
+Public-facing West Midlands regional observatory with interactive map workspaces, source metadata, freshness monitoring, and AI-friendly extension rules.
 
 ## Current status
 
-The repository now contains:
-- discovery and implementation planning docs
-- a working Next.js TypeScript map application scaffold
-- normalized WMCA ward overlay artifacts generated from Birmingham City Observatory datasets
-- health/status endpoints and a status page
+The repository now contains a live deployed Next.js application with:
+- an overview/index page plus dedicated `Regional Context` and `Health Access` workspaces
+- normalized generated artifacts for both `WMCA ward` and `Sub Integrated Care Board` map layers
+- public source, freshness, geography, and caveat metadata for shipped overlays
+- a global status page and health endpoint
 - GitHub Actions for CI, upstream monitoring, refresh validation, and live-site smoke checks
 
 See:
@@ -42,7 +42,14 @@ npm run monitor:upstreams
 SITE_URL=http://127.0.0.1:3000 npm run monitor:site
 ```
 
-## Recommended v1 stack
+## Live routes
+
+- `/`: overview and workspace entry point
+- `/regional-context`: ward-based economic, deprivation, and civic context workspace
+- `/health-access`: SubICB Talking Therapies and future health/service-access workspace
+- `/status`: global operational status surface
+
+## Runtime stack
 
 - `Next.js` + `React` + `TypeScript`
 - `MapLibre GL JS`
@@ -51,7 +58,9 @@ SITE_URL=http://127.0.0.1:3000 npm run monitor:site
 - `GitHub Actions` for CI, scheduled checks, and refresh validation
 - `Vercel` as the primary hosting target, with `Cloudflare` as the fallback
 
-## Initial shipped overlays
+## Shipped workspaces and overlays
+
+### Regional Context
 
 - Universal Credit claimants in employment
 - IMD employment score
@@ -59,7 +68,15 @@ SITE_URL=http://127.0.0.1:3000 npm run monitor:site
 - gross value added (GVA)
 - travel to work by bicycle
 
-All are currently normalized to WMCA ward map layers through the Birmingham City Observatory API.
+These are currently normalized to `WMCA ward` geography through Birmingham City Observatory source APIs.
+
+### Health Access
+
+- Talking Therapies Mean Wait
+- Talking Therapies Access Within 6 Weeks
+- Midlands annual therapy-type context panel
+
+These currently use official NHS publication files joined to `Sub Integrated Care Board` reference geography.
 
 ## Repository shape
 

@@ -50,7 +50,7 @@ export function Legend({ primaryLayer, compareLayer }: LegendProps) {
 
   return (
     <section className="rounded-[1.5rem] border border-slate-200/80 bg-white p-5 shadow-[0_12px_40px_rgba(15,23,42,0.08)]">
-      <div className="grid gap-6 lg:grid-cols-2">
+      <div className="grid gap-6 2xl:grid-cols-2">
         <div>
           <p className="text-xs uppercase tracking-[0.24em] text-slate-500">Primary legend</p>
           <h2 className="mt-2 text-lg font-semibold text-slate-950">{primaryLayer.title}</h2>
@@ -78,9 +78,12 @@ export function Legend({ primaryLayer, compareLayer }: LegendProps) {
               <p className="mt-2 text-sm leading-6 text-slate-600">{compareLayer.interpretation.higherValuesMean}</p>
               <div className="mt-5 rounded-[1.35rem] border border-slate-200 bg-slate-50/80 p-4">
                 <p className="text-xs uppercase tracking-[0.22em] text-slate-500">Bubble size scale</p>
-                <div className="mt-4 flex items-end gap-5">
+                <div className="mt-4 flex flex-wrap items-end gap-x-5 gap-y-4">
                   {compareBubbleScale(compareLayer).map((step) => (
-                    <div key={`${compareLayer.id}-${step.value}`} className="flex min-w-[4.5rem] flex-col items-center gap-2 text-center text-xs text-slate-600">
+                    <div
+                      key={`${compareLayer.id}-${step.value}`}
+                      className="flex min-w-[3.5rem] flex-1 basis-[4.5rem] flex-col items-center gap-2 text-center text-xs text-slate-600"
+                    >
                       <span
                         className="rounded-full border border-white/80 bg-[rgba(123,45,21,0.72)] shadow-[0_8px_20px_rgba(123,45,21,0.18)]"
                         style={{ width: `${step.diameter}px`, height: `${step.diameter}px` }}

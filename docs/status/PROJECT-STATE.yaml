@@ -1,5 +1,5 @@
 project: urbanmetrics.uk
-phase: workspace-separation-implementation
+phase: workspace-separation-release
 status: in_progress
 summary: >-
   The live v1 platform is deployed and tagged at v0.1.1. The next delivery stage is Phase 1 health and workforce
@@ -10,14 +10,15 @@ summary: >-
   `/regional-context` plus `/health-access` now provide separate map workspaces with filtered catalogs, route-specific
   defaults, and shared status/navigation. In parallel, the sync path has been hardened against partial upstream source
   periods so CI can fall back to the latest complete publication while the monitor path continues to surface the
-  incomplete latest release.
+  incomplete latest release. Follow-up live verification identified a legend layout issue at standard desktop widths;
+  that has now been corrected and bundled with a documentation and versioning refresh for the `v0.2.0` release.
 last_updated: 2026-04-11
 current_focus:
-  - validate the split overview and workspace routes in the live environment after deployment
+  - validate the `v0.2.0` release in the live environment after deployment
   - keep the shared generated-data and status architecture intact while the presentation layer evolves
   - decide whether the next slice should be workspace-specific UX polish or the next SubICB health/service layer
   - keep CI and refresh behavior resilient when upstreams publish incomplete latest periods
-next_executable_step: deploy and verify the new overview plus workspace routes in production
+next_executable_step: verify the `v0.2.0` release in production and choose the next workstream
 blockers:
   - no technical blocker
 risks:

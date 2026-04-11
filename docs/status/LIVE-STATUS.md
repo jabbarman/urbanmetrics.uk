@@ -2,7 +2,7 @@
 
 ## Current stage
 
-`Post-v1 implementation: workspace separation foundation`
+`Post-v0.2 release: split workspaces and live polish`
 
 ## Completed
 
@@ -22,10 +22,12 @@
 - the mixed homepage workspace has been split into a true overview page plus dedicated `/regional-context` and `/health-access` routes
 - the shared map shell now accepts workspace-specific catalogs, default layers, and source caveat framing without changing the generated-data contract
 - a minimal shared navigation path now links overview, both workspaces, and service status
+- the compare-legend bubble size scale now stays within its panel on both workspaces at standard desktop widths
+- the workspace split and follow-up polish are being released as `v0.2.0`
 
 ## In progress
 
-- reviewing the new route split in the live environment once deployed
+- reviewing live user feedback on the split workspaces after the `v0.2.0` release
 - deciding whether the next slice should focus on workspace-specific polish or the next SubICB health/service layer
 
 ## Known operational signal
@@ -38,4 +40,4 @@ One current upstream also appears to publish a newer but incomplete source perio
 
 ## Next step
 
-Verify the split routes in production and then choose the next delivery slice: workspace-specific UX polish or the next health/service data layer.
+Assess live feedback on `Regional Context` and `Health Access`, then choose the next delivery slice: additional workspace polish or the next health/service data layer.

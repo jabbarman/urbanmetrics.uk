@@ -11,6 +11,7 @@
 - assessed user feedback on the mixed workspace and translated it into a concrete route-split proposal for the next implementation stage
 - diagnosed and fixed a CI-breaking upstream partial-release issue by hardening sync selection while preserving monitor visibility
 - implemented the approved workspace split foundation directly in the primary workspace, keeping one codebase and one generated-data architecture while separating the user-facing routes
+- validated the live route split, fixed a responsive legend overflow defect directly against production behavior, and prepared the resulting state as the `v0.2.0` release
 
 ## Delegation status
 
