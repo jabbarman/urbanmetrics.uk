@@ -69,13 +69,44 @@ describe("dataset normalization", () => {
     expect(selected[0].value).toBe(20);
   });
 
-  it("fails when the latest record for an area is structurally incomplete", () => {
+  it("falls back to the latest complete record for an area when coverage is not fixed", () => {
+    const selected = selectLatestRecordsByArea(
+      [record({ areaId: "A", date: "2025-12", value: 10 }), record({ areaId: "A", date: "2026-01", geometry: null })],
+      definition,
+    );
+
+    expect(selected).toHaveLength(1);
+    expect(selected[0].date).toBe("2025-12");
+    expect(selected[0].value).toBe(10);
+  });
+
+  it("falls back to the latest complete shared source period when coverage is fixed", () => {
+    const selected = selectLatestRecordsByArea(
+      [
+        record({ areaId: "A", areaName: "Area A", date: "2025-12", value: 10 }),
+        record({ areaId: "B", areaName: "Area B", date: "2025-12", value: 20 }),
+        record({ areaId: "A", areaName: "Area A", date: "2026-01", value: 30 }),
+        record({ areaId: "B", areaName: "Area B", date: "2026-01", geometry: null }),
+      ],
+      definition,
+      ["A", "B"],
+    );
+
+    expect(selected).toHaveLength(2);
+    expect(selected.every((item) => item.date === "2025-12")).toBe(true);
+  });
+
+  it("fails when no complete shared source period exists for the expected footprint", () => {
     expect(() =>
       selectLatestRecordsByArea(
-        [record({ areaId: "A", date: "2025-12", value: 10 }), record({ areaId: "A", date: "2026-01", geometry: null })],
+        [
+          record({ areaId: "A", areaName: "Area A", date: "2026-01", geometry: null }),
+          record({ areaId: "B", areaName: "Area B", date: "2026-01", value: 20 }),
+        ],
         definition,
+        ["A", "B"],
       ),
-    ).toThrow(/latest record for area 'A' is missing geometry/);
+    ).toThrow(/no complete source period was found/);
   });
 
   it("detects missing expected areas", () => {

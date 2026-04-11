@@ -46,6 +46,7 @@ async function main() {
       const expectedAreaIds =
         expectedAreaIdsByCompareGroup[definition.compareGroup as keyof typeof expectedAreaIdsByCompareGroup];
       const records = selectLatestRecordsByArea(sourcePayload.records, definition, expectedAreaIds);
+      const rawLatestDate = latestSourceDate(sourcePayload.records, definition.fields.date);
 
       if (expectedAreaIds) {
         const coverage = compareAreaCoverage(
@@ -62,6 +63,17 @@ async function main() {
       const latestDate = latestSourceDate(records, definition.fields.date);
       if (!latestDate) {
         failures.push(formatFailure(definition.id, "schema", "No valid source period values returned."));
+        continue;
+      }
+
+      if (rawLatestDate && rawLatestDate !== latestDate) {
+        failures.push(
+          formatFailure(
+            definition.id,
+            "schema",
+            `Latest source period '${rawLatestDate}' is incomplete; sync would fall back to '${latestDate}'.`,
+          ),
+        );
         continue;
       }
 

@@ -41,6 +41,16 @@ function missingLatestRecordFields(record: RawRecord, definition: LayerDefinitio
   return missing;
 }
 
+function sourceDatesForRecords(recordsByArea: Map<string, RawRecord[]>, definition: LayerDefinition) {
+  return [...new Set(
+    [...recordsByArea.values()].flatMap((areaRecords) =>
+      areaRecords
+        .map((record) => record[definition.fields.date])
+        .filter((value): value is string => typeof value === "string" && value.length > 0),
+    ),
+  )].sort((left, right) => sourceDateSortWeight(right) - sourceDateSortWeight(left));
+}
+
 export function selectLatestRecordsByArea(records: RawRecord[], definition: LayerDefinition, expectedAreaIds?: readonly string[]) {
   const expectedAreaIdSet = expectedAreaIds ? new Set(expectedAreaIds) : null;
   const recordsByArea = new Map<string, RawRecord[]>();
@@ -59,27 +69,65 @@ export function selectLatestRecordsByArea(records: RawRecord[], definition: Laye
 
     const areaRecords = recordsByArea.get(areaId) ?? [];
     areaRecords.push(record);
+    areaRecords.sort((left, right) => {
+      const leftDate = left[definition.fields.date] as string;
+      const rightDate = right[definition.fields.date] as string;
+      return sourceDateSortWeight(rightDate) - sourceDateSortWeight(leftDate);
+    });
     recordsByArea.set(areaId, areaRecords);
+  }
+
+  if (expectedAreaIds && expectedAreaIds.length > 0) {
+    const candidateDates = sourceDatesForRecords(recordsByArea, definition);
+
+    for (const candidateDate of candidateDates) {
+      const selectedRecords: RawRecord[] = [];
+      let incompletePeriod = false;
+
+      for (const areaId of expectedAreaIds) {
+        const recordForDate = recordsByArea
+          .get(areaId)
+          ?.find((record) => record[definition.fields.date] === candidateDate);
+
+        if (!recordForDate) {
+          incompletePeriod = true;
+          break;
+        }
+
+        const missingFields = missingLatestRecordFields(recordForDate, definition);
+        if (missingFields.length > 0) {
+          incompletePeriod = true;
+          break;
+        }
+
+        selectedRecords.push(recordForDate);
+      }
+
+      if (!incompletePeriod) {
+        return selectedRecords;
+      }
+    }
+
+    const latestDate = candidateDates[0];
+    throw new Error(
+      `${definition.id}: no complete source period was found${latestDate ? `; latest observed period '${latestDate}' is incomplete` : ""}.`,
+    );
   }
 
   const selectedRecords: RawRecord[] = [];
   const errors: string[] = [];
 
   for (const [areaId, areaRecords] of recordsByArea) {
-    areaRecords.sort((left, right) => {
-      const leftDate = left[definition.fields.date] as string;
-      const rightDate = right[definition.fields.date] as string;
-      return sourceDateSortWeight(rightDate) - sourceDateSortWeight(leftDate);
-    });
+    const latestCompleteRecord = areaRecords.find((record) => missingLatestRecordFields(record, definition).length === 0);
 
-    const latestRecord = areaRecords[0];
-    const missingFields = missingLatestRecordFields(latestRecord, definition);
-    if (missingFields.length > 0) {
-      errors.push(`latest record for area '${areaId}' is missing ${missingFields.join(", ")}`);
+    if (!latestCompleteRecord) {
+      const latestRecord = areaRecords[0];
+      const missingFields = latestRecord ? missingLatestRecordFields(latestRecord, definition) : ["source record"];
+      errors.push(`latest usable record for area '${areaId}' is missing ${missingFields.join(", ")}`);
       continue;
     }
 
-    selectedRecords.push(latestRecord);
+    selectedRecords.push(latestCompleteRecord);
   }
 
   if (errors.length > 0) {
