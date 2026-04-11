@@ -27,10 +27,12 @@ Run on a schedule in GitHub Actions:
 
 After each refresh:
 - validate generated artifact counts
-- select one latest record per ward before publishing
+- select the latest complete source period before publishing when an upstream releases a newer but incomplete period
 - fail if any expected ward drops out or loses required geometry/value fields
 - write refreshed artifacts into `data/generated` and `public/generated`
 - commit those artifacts back to `main` only when the refresh passes, so production can actually serve the new data
+
+If a newer source period exists upstream but is structurally incomplete, the refresh path may fall back to the latest complete period so publication can continue. The upstream monitor should still fail in that situation so the partial release is visible rather than hidden.
 
 ### Live-site checks
 

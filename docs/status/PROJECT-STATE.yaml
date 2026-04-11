@@ -7,12 +7,15 @@ summary: >-
   SubICB reference geometry is generated locally, and the first Talking Therapies SubICB slice now builds successfully
   with two current health layers plus a Midlands annual therapy-type companion panel. User feedback now indicates that
   the mixed homepage workspace is no longer the clearest presentation model, so a concrete proposal has been drafted to
-  split the experience into dedicated `Regional Context` and `Health Access` routes.
+  split the experience into dedicated `Regional Context` and `Health Access` routes. In parallel, the sync path has
+  been hardened against partial upstream source periods so CI can fall back to the latest complete publication while
+  the monitor path continues to surface the incomplete latest release.
 last_updated: 2026-04-11
 current_focus:
   - prepare the homepage/index and route split that separates the two workspace mental models
   - keep the shared generated-data and status architecture intact while changing only the information architecture
   - use the approved workspace-separation proposal as the basis for implementation
+  - keep CI and refresh behavior resilient when upstreams publish incomplete latest periods
 next_executable_step: implement the workspace split foundation if the proposal is approved
 blockers:
   - no technical blocker; the main gating item is approval of the workspace-separation proposal as the implementation basis

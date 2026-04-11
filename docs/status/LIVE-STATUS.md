@@ -18,6 +18,7 @@
 - two local health layers are implemented from NHS Talking Therapies monthly data
 - Midlands annual therapy-type context is generated and shown as a supporting panel for Talking Therapies layers
 - a concrete workspace-separation proposal has been drafted to split the mixed map experience into `Regional Context` and `Health Access`
+- sync and monitoring now handle partial upstream source periods more safely by falling back to the latest complete publication period while keeping monitor alerts active
 
 ## In progress
 
@@ -29,6 +30,8 @@
 The current live platform remains operational, but several shipped source datasets are stale under their declared freshness rules.
 
 That is still an upstream data-age issue, not a blocking application defect.
+
+One current upstream also appears to publish a newer but incomplete source period for the Universal Credit in-work layer. The sync path now falls back to the latest complete month, while monitoring should continue to flag the incomplete latest release.
 
 ## Next step
 

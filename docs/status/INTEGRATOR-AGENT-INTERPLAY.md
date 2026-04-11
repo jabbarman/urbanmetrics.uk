@@ -9,6 +9,7 @@
 - implemented the first adapter-aware groundwork slice directly in the primary workspace
 - implemented a Midlands annual Talking Therapies therapy-type companion artifact and panel directly in the primary workspace
 - assessed user feedback on the mixed workspace and translated it into a concrete route-split proposal for the next implementation stage
+- diagnosed and fixed a CI-breaking upstream partial-release issue by hardening sync selection while preserving monitor visibility
 
 ## Delegation status
 
