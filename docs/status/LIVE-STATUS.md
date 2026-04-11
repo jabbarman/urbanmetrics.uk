@@ -2,7 +2,7 @@
 
 ## Current stage
 
-`Post-v1 planning: workspace separation and route split`
+`Post-v1 implementation: workspace separation foundation`
 
 ## Completed
 
@@ -19,11 +19,14 @@
 - Midlands annual therapy-type context is generated and shown as a supporting panel for Talking Therapies layers
 - a concrete workspace-separation proposal has been drafted to split the mixed map experience into `Regional Context` and `Health Access`
 - sync and monitoring now handle partial upstream source periods more safely by falling back to the latest complete publication period while keeping monitor alerts active
+- the mixed homepage workspace has been split into a true overview page plus dedicated `/regional-context` and `/health-access` routes
+- the shared map shell now accepts workspace-specific catalogs, default layers, and source caveat framing without changing the generated-data contract
+- a minimal shared navigation path now links overview, both workspaces, and service status
 
 ## In progress
 
-- preparing the IA and route split that will separate the original Urban Metrics workspace from the health/service workspace
-- aligning the next implementation step around a homepage index plus dedicated workspace routes
+- reviewing the new route split in the live environment once deployed
+- deciding whether the next slice should focus on workspace-specific polish or the next SubICB health/service layer
 
 ## Known operational signal
 
@@ -35,4 +38,4 @@ One current upstream also appears to publish a newer but incomplete source perio
 
 ## Next step
 
-If approved, implement the workspace split foundation: add a workspace registry, create `/regional-context` and `/health-access`, and convert `/` into an index page.
+Verify the split routes in production and then choose the next delivery slice: workspace-specific UX polish or the next health/service data layer.

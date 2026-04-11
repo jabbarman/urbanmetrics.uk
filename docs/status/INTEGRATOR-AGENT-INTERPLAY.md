@@ -10,6 +10,7 @@
 - implemented a Midlands annual Talking Therapies therapy-type companion artifact and panel directly in the primary workspace
 - assessed user feedback on the mixed workspace and translated it into a concrete route-split proposal for the next implementation stage
 - diagnosed and fixed a CI-breaking upstream partial-release issue by hardening sync selection while preserving monitor visibility
+- implemented the approved workspace split foundation directly in the primary workspace, keeping one codebase and one generated-data architecture while separating the user-facing routes
 
 ## Delegation status
 
@@ -17,6 +18,6 @@
 
 ## Next delegation candidates
 
-- route-level IA and UX verification for the workspace split
-- implementation and QA for workspace-aware catalog filtering and defaults
+- route-level IA and UX verification for the live workspace split
+- workspace-specific copy and navigation polish if user feedback indicates remaining ambiguity
 - follow-on SubICB health/service layer work after the route split is in place

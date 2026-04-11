@@ -1,25 +1,26 @@
 project: urbanmetrics.uk
-phase: workspace-separation-planning
+phase: workspace-separation-implementation
 status: in_progress
 summary: >-
   The live v1 platform is deployed and tagged at v0.1.1. The next delivery stage is Phase 1 health and workforce
   expansion. Official Phase 1 source files have been confirmed, adapter-aware ingestion groundwork is implemented,
   SubICB reference geometry is generated locally, and the first Talking Therapies SubICB slice now builds successfully
-  with two current health layers plus a Midlands annual therapy-type companion panel. User feedback now indicates that
-  the mixed homepage workspace is no longer the clearest presentation model, so a concrete proposal has been drafted to
-  split the experience into dedicated `Regional Context` and `Health Access` routes. In parallel, the sync path has
-  been hardened against partial upstream source periods so CI can fall back to the latest complete publication while
-  the monitor path continues to surface the incomplete latest release.
+  with two current health layers plus a Midlands annual therapy-type companion panel. User feedback on the mixed
+  homepage workspace has now been translated into an implemented route split: `/` is an overview page, and
+  `/regional-context` plus `/health-access` now provide separate map workspaces with filtered catalogs, route-specific
+  defaults, and shared status/navigation. In parallel, the sync path has been hardened against partial upstream source
+  periods so CI can fall back to the latest complete publication while the monitor path continues to surface the
+  incomplete latest release.
 last_updated: 2026-04-11
 current_focus:
-  - prepare the homepage/index and route split that separates the two workspace mental models
-  - keep the shared generated-data and status architecture intact while changing only the information architecture
-  - use the approved workspace-separation proposal as the basis for implementation
+  - validate the split overview and workspace routes in the live environment after deployment
+  - keep the shared generated-data and status architecture intact while the presentation layer evolves
+  - decide whether the next slice should be workspace-specific UX polish or the next SubICB health/service layer
   - keep CI and refresh behavior resilient when upstreams publish incomplete latest periods
-next_executable_step: implement the workspace split foundation if the proposal is approved
+next_executable_step: deploy and verify the new overview plus workspace routes in production
 blockers:
-  - no technical blocker; the main gating item is approval of the workspace-separation proposal as the implementation basis
+  - no technical blocker
 risks:
   - some desired workforce datasets may only be usable at provider/trust geography, which is not suitable for a resident-area choropleth without extra methodology
   - supporting multiple geography groups increases UI and validation complexity and must not enable misleading comparisons
-  - a weak route split could duplicate page wiring without actually clarifying the user journey, so the homepage/index design must remain intentional
+  - the route split improves information architecture, but copy and navigation may still need a follow-on polish pass once users interact with the live routes
