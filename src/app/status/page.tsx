@@ -19,7 +19,7 @@ export default async function StatusPage() {
             </p>
           </div>
           <Link className="text-sm font-medium text-sky-700 hover:text-sky-900" href="/">
-            Back to map
+            Back to overview
           </Link>
         </div>
       </header>

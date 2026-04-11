@@ -94,6 +94,7 @@ function makeGeneratedLayer(layer: CatalogEntry): GeneratedLayer {
 }
 
 const status: GeneratedStatus["layers"] = [];
+const sourceCaveat = "Workspace-specific source caveat.";
 
 describe("MapExplorer", () => {
   beforeEach(() => {
@@ -118,7 +119,7 @@ describe("MapExplorer", () => {
       }),
     );
 
-    render(<MapExplorer catalog={[firstLayer, secondLayer]} status={status} />);
+    render(<MapExplorer catalog={[firstLayer, secondLayer]} sourceCaveat={sourceCaveat} status={status} />);
 
     await waitFor(() => {
       expect(screen.getByText(/some overlays are temporarily unavailable/i)).toBeInTheDocument();
@@ -162,7 +163,7 @@ describe("MapExplorer", () => {
       }),
     );
 
-    render(<MapExplorer catalog={[wardLayer, icbLayer, wardCompareLayer]} status={status} />);
+    render(<MapExplorer catalog={[wardLayer, icbLayer, wardCompareLayer]} sourceCaveat={sourceCaveat} status={status} />);
 
     await waitFor(() => {
       expect(screen.getByText("map view:Ward Layer:Ward Compare Layer")).toBeInTheDocument();
@@ -210,7 +211,13 @@ describe("MapExplorer", () => {
       }),
     );
 
-    render(<MapExplorer catalog={[wardLayer, wardCompareLayer, subIcbLayer, subIcbCompareLayer]} status={status} />);
+    render(
+      <MapExplorer
+        catalog={[wardLayer, wardCompareLayer, subIcbLayer, subIcbCompareLayer]}
+        sourceCaveat={sourceCaveat}
+        status={status}
+      />,
+    );
 
     await waitFor(() => {
       expect(screen.getByText("map view:Ward Layer:Ward Compare Layer")).toBeInTheDocument();
@@ -226,5 +233,53 @@ describe("MapExplorer", () => {
 
     expect(screen.getByText("legend:SubICB Layer:SubICB Compare Layer")).toBeInTheDocument();
     expect(screen.getByText("map view:SubICB Layer:SubICB Compare Layer")).toBeInTheDocument();
+  });
+
+  it("honors workspace default layers instead of relying on catalog order", async () => {
+    const firstLayer = makeCatalogEntry("layer-a", "Layer A", "wmca-ward");
+    const secondLayer = makeCatalogEntry("layer-b", "Layer B", "wmca-ward");
+    const thirdLayer = makeCatalogEntry("layer-c", "Layer C", "wmca-ward");
+
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async (input: string) => {
+        if (input.includes("layer-a")) {
+          return new Response(JSON.stringify(makeGeneratedLayer(firstLayer)), {
+            status: 200,
+            headers: { "Content-Type": "application/json" },
+          });
+        }
+
+        if (input.includes("layer-b")) {
+          return new Response(JSON.stringify(makeGeneratedLayer(secondLayer)), {
+            status: 200,
+            headers: { "Content-Type": "application/json" },
+          });
+        }
+
+        return new Response(JSON.stringify(makeGeneratedLayer(thirdLayer)), {
+          status: 200,
+          headers: { "Content-Type": "application/json" },
+        });
+      }),
+    );
+
+    render(
+      <MapExplorer
+        catalog={[firstLayer, secondLayer, thirdLayer]}
+        defaultCompareLayerId="layer-c"
+        defaultPrimaryLayerId="layer-b"
+        sourceCaveat={sourceCaveat}
+        status={status}
+      />,
+    );
+
+    await waitFor(() => {
+      expect(screen.getByText("map view:Layer B:Layer C")).toBeInTheDocument();
+    });
+
+    expect(screen.getByLabelText(/primary fill layer/i)).toHaveValue("layer-b");
+    expect(screen.getByLabelText(/secondary compare layer/i)).toHaveValue("layer-c");
+    expect(screen.getByText(sourceCaveat)).toBeInTheDocument();
   });
 });

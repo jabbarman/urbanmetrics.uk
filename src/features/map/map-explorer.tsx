@@ -14,6 +14,9 @@ import type { CatalogEntry, GeneratedLayer, GeneratedStatus, TalkingTherapiesThe
 
 type MapExplorerProps = {
   catalog: CatalogEntry[];
+  defaultCompareLayerId?: string;
+  defaultPrimaryLayerId?: string;
+  sourceCaveat: string;
   status: GeneratedStatus["layers"];
 };
 
@@ -55,10 +58,16 @@ function compareOptionsForPrimary(catalog: CatalogEntry[], primaryLayerId: strin
   return catalog.filter((entry) => entry.id !== primaryLayerId && entry.compareGroup === compareGroup);
 }
 
-export function MapExplorer({ catalog, status }: MapExplorerProps) {
+export function MapExplorer({
+  catalog,
+  defaultCompareLayerId,
+  defaultPrimaryLayerId,
+  sourceCaveat,
+  status,
+}: MapExplorerProps) {
   const [layersById, setLayersById] = useState<Record<string, GeneratedLayer>>({});
-  const [primaryLayerId, setPrimaryLayerId] = useState(catalog[0]?.id ?? "");
-  const [compareLayerId, setCompareLayerId] = useState(catalog[1]?.id ?? "");
+  const [primaryLayerId, setPrimaryLayerId] = useState(defaultPrimaryLayerId ?? catalog[0]?.id ?? "");
+  const [compareLayerId, setCompareLayerId] = useState(defaultCompareLayerId ?? catalog[1]?.id ?? "");
   const [opacity, setOpacity] = useState(0.78);
   const [showBoundaries, setShowBoundaries] = useState(true);
   const [selectedAreaId, setSelectedAreaId] = useState<string | null>(null);
@@ -134,7 +143,11 @@ export function MapExplorer({ catalog, status }: MapExplorerProps) {
     }
 
     const primaryStillAvailable = availableCatalog.some((entry) => entry.id === primaryLayerId);
-    const nextPrimaryLayerId = primaryStillAvailable ? primaryLayerId : availableCatalog[0].id;
+    const preferredPrimaryLayerId =
+      defaultPrimaryLayerId && availableCatalog.some((entry) => entry.id === defaultPrimaryLayerId)
+        ? defaultPrimaryLayerId
+        : availableCatalog[0].id;
+    const nextPrimaryLayerId = primaryStillAvailable ? primaryLayerId : preferredPrimaryLayerId;
     if (nextPrimaryLayerId !== primaryLayerId) {
       setPrimaryLayerId(nextPrimaryLayerId);
     }
@@ -146,11 +159,15 @@ export function MapExplorer({ catalog, status }: MapExplorerProps) {
       nextPrimaryEntry?.compareGroup,
     );
     const compareStillAvailable = nextCompareOptions.some((entry) => entry.id === compareLayerId);
-    const nextCompareLayerId = compareStillAvailable ? compareLayerId : nextCompareOptions[0]?.id ?? "";
+    const preferredCompareLayerId =
+      defaultCompareLayerId && nextCompareOptions.some((entry) => entry.id === defaultCompareLayerId)
+        ? defaultCompareLayerId
+        : nextCompareOptions[0]?.id ?? "";
+    const nextCompareLayerId = compareStillAvailable ? compareLayerId : preferredCompareLayerId;
     if (nextCompareLayerId !== compareLayerId) {
       setCompareLayerId(nextCompareLayerId);
     }
-  }, [availableCatalog, compareLayerId, primaryLayerId]);
+  }, [availableCatalog, compareLayerId, defaultCompareLayerId, defaultPrimaryLayerId, primaryLayerId]);
 
   const primaryLayer = primaryLayerId ? layersById[primaryLayerId] ?? null : null;
   const compareOptions = compareOptionsForPrimary(
@@ -277,15 +294,13 @@ export function MapExplorer({ catalog, status }: MapExplorerProps) {
             </div>
 
             <label className="flex items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700">
-              <span>Show ward boundaries</span>
+              <span>Show area boundaries</span>
               <input checked={showBoundaries} onChange={(event) => setShowBoundaries(event.target.checked)} type="checkbox" />
             </label>
 
             <div className="space-y-2 rounded-[1.5rem] border border-slate-200 bg-slate-50/80 p-4">
               <p className="text-xs uppercase tracking-[0.24em] text-slate-500">Source caveat</p>
-              <p className="text-sm leading-6 text-slate-600">
-                This v1 uses geometry-rich Birmingham City Observatory datasets to keep the first release robust and cheap. Live TfWM service overlays are planned once credentials and rate-limit handling are in place.
-              </p>
+              <p className="text-sm leading-6 text-slate-600">{sourceCaveat}</p>
             </div>
 
             <div className="space-y-3">

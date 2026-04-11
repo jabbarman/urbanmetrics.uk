@@ -1,11 +1,12 @@
 export const siteCopy = {
   title: "Urban Metrics UK",
-  strapline: "Economic and civic indicators for Birmingham and the wider city-region.",
+  strapline: "Regional context and health access signals for the West Midlands.",
   description:
-    "A map-first regional intelligence site for exploring how labour, deprivation, civic pressure, and transport behaviour intersect across the West Midlands.",
+    "A map-first West Midlands observatory for exploring regional context and health access through focused workspaces with explicit source, freshness, geography, and caveat metadata.",
   highlights: [
     "Typed source adapters and generated artifacts rather than brittle raw client fetches.",
-    "Public-facing source, freshness, and caveat metadata for every shipped layer.",
-    "Operational status endpoint and scheduled monitoring built in from the start.",
+    "Separate workspaces keep ward-based regional context and Sub ICB health access views interpretable.",
+    "Public-facing source, freshness, geography, and caveat metadata remain visible for every shipped layer.",
+    "Operational status endpoint and scheduled monitoring stay global across the whole product.",
   ],
 };
