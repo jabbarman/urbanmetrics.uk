@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-04-12T05:45:50.878Z",
+  "generatedAt": "2026-04-12T15:55:28.370Z",
   "layer": {
     "id": "fuel-poverty-rate",
     "title": "Households In Fuel Poverty",
@@ -18,8 +18,7 @@
     "precision": 1,
     "cadenceLabel": "Annual",
     "freshnessPolicy": {
-      "kind": "maxAgeDays",
-      "days": 450
+      "kind": "referenceOnly"
     },
     "palette": [
       "#fff3d9",
@@ -43,13 +42,13 @@
       "datasetUrl": "https://www.cityobservatory.birmingham.gov.uk/explore/dataset/percentage-households-in-fuel-poverty-wmca-wards/",
       "datasetApiUrl": "https://www.cityobservatory.birmingham.gov.uk/api/explore/v2.1/catalog/datasets/percentage-households-in-fuel-poverty-wmca-wards",
       "licence": "Open Government Licence v3.0 via Birmingham City Observatory metadata",
-      "caveat": "Annual fuel-poverty estimates can lag current energy conditions and should be read as structural context rather than a real-time signal.",
+      "caveat": "Annual fuel-poverty estimates can lag current energy conditions and should be read as structural context rather than a real-time signal. Freshness is tracked for visibility rather than treated as an operational defect.",
       "datasetTitle": "Percentage households in fuel poverty - WMCA Wards",
       "dataProcessedAt": "2026-04-04T01:05:15+00:00",
       "updateFrequency": "ANNUAL",
       "recordsFetched": 192,
       "latestSourceDate": "2023",
-      "fetchedAt": "2026-04-12T05:45:50.878Z"
+      "fetchedAt": "2026-04-12T15:55:28.370Z"
     },
     "summary": {
       "min": 6,

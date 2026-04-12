@@ -1,6 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
-import { evaluateFreshness, formatValue, quantileBreaks } from "@/server/datasets/utils";
+import { evaluateFreshness, formatValue, overallStatusHealth, quantileBreaks } from "@/server/datasets/utils";
 
 describe("dataset utilities", () => {
   beforeEach(() => {
@@ -33,10 +33,38 @@ describe("dataset utilities", () => {
     expect(fresh.status).toBe("ok");
   });
 
+  it("allows for publication lag on monthly official statistics when the threshold is wider", () => {
+    vi.setSystemTime(new Date("2026-04-12T00:00:00Z"));
+
+    const fresh = evaluateFreshness({ kind: "maxAgeDays", days: 90 }, "2026-01-31");
+
+    expect(fresh.status).toBe("ok");
+  });
+
   it("warns when the source period cannot be parsed", () => {
     const warning = evaluateFreshness({ kind: "maxAgeDays", days: 60 }, "FY2025/26");
 
     expect(warning.status).toBe("warning");
     expect(warning.message).toMatch(/Unable to evaluate freshness/);
+  });
+
+  it("derives workspace health from the supplied layer subset", () => {
+    expect(
+      overallStatusHealth({
+        generatedAt: "2026-04-12T00:00:00Z",
+        layers: [
+          {
+            id: "layer-a",
+            title: "Layer A",
+            status: "warning",
+            dataProcessedAt: "2026-04-12T00:00:00Z",
+            latestSourceDate: "2025",
+            updateFrequency: "IRREG",
+            recordsFetched: 1,
+            message: "Reference dataset; freshness tracked for visibility only.",
+          },
+        ],
+      }),
+    ).toBe("warning");
   });
 });

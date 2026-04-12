@@ -47,7 +47,7 @@
       "updateFrequency": "MONTHLY",
       "recordsFetched": 192,
       "latestSourceDate": "2025-12",
-      "fetchedAt": "2026-04-12T05:45:46.260Z"
+      "fetchedAt": "2026-04-12T15:55:22.250Z"
     },
     "summary": {
       "min": 18.4,
@@ -157,7 +157,7 @@
       "updateFrequency": "IRREG",
       "recordsFetched": 192,
       "latestSourceDate": "2025",
-      "fetchedAt": "2026-04-12T05:45:47.595Z"
+      "fetchedAt": "2026-04-12T15:55:23.572Z"
     },
     "summary": {
       "min": 4.4,
@@ -237,8 +237,7 @@
     "precision": 1,
     "cadenceLabel": "Annual",
     "freshnessPolicy": {
-      "kind": "maxAgeDays",
-      "days": 450
+      "kind": "referenceOnly"
     },
     "palette": [
       "#fff3d9",
@@ -262,13 +261,13 @@
       "datasetUrl": "https://www.cityobservatory.birmingham.gov.uk/explore/dataset/percentage-households-in-fuel-poverty-wmca-wards/",
       "datasetApiUrl": "https://www.cityobservatory.birmingham.gov.uk/api/explore/v2.1/catalog/datasets/percentage-households-in-fuel-poverty-wmca-wards",
       "licence": "Open Government Licence v3.0 via Birmingham City Observatory metadata",
-      "caveat": "Annual fuel-poverty estimates can lag current energy conditions and should be read as structural context rather than a real-time signal.",
+      "caveat": "Annual fuel-poverty estimates can lag current energy conditions and should be read as structural context rather than a real-time signal. Freshness is tracked for visibility rather than treated as an operational defect.",
       "datasetTitle": "Percentage households in fuel poverty - WMCA Wards",
       "dataProcessedAt": "2026-04-04T01:05:15+00:00",
       "updateFrequency": "ANNUAL",
       "recordsFetched": 192,
       "latestSourceDate": "2023",
-      "fetchedAt": "2026-04-12T05:45:50.878Z"
+      "fetchedAt": "2026-04-12T15:55:28.370Z"
     },
     "summary": {
       "min": 6,
@@ -348,8 +347,7 @@
     "precision": 0,
     "cadenceLabel": "Annual",
     "freshnessPolicy": {
-      "kind": "maxAgeDays",
-      "days": 450
+      "kind": "referenceOnly"
     },
     "palette": [
       "#edf4e7",
@@ -373,13 +371,13 @@
       "datasetUrl": "https://www.cityobservatory.birmingham.gov.uk/explore/dataset/gross-value-added-gva-all-industries-wmca-wards-2025/",
       "datasetApiUrl": "https://www.cityobservatory.birmingham.gov.uk/api/explore/v2.1/catalog/datasets/gross-value-added-gva-all-industries-wmca-wards-2025",
       "licence": "Open Government Licence v3.0 via Birmingham City Observatory metadata",
-      "caveat": "Ward-level GVA is modelled and smoothed. It should be used as indicative economic context, not as a precise local-business ledger.",
+      "caveat": "Ward-level GVA is modelled and smoothed. It should be used as indicative economic context, not as a precise local-business ledger. Freshness is tracked for visibility rather than treated as an operational defect.",
       "datasetTitle": "Gross value added (GVA): All industries - WMCA Wards (2025)",
       "dataProcessedAt": "2026-04-03T23:01:46+00:00",
       "updateFrequency": "ANNUAL",
       "recordsFetched": 192,
       "latestSourceDate": "2023",
-      "fetchedAt": "2026-04-12T05:45:56.325Z"
+      "fetchedAt": "2026-04-12T15:55:35.652Z"
     },
     "summary": {
       "min": 46,
@@ -489,7 +487,7 @@
       "updateFrequency": "DECENNIAL",
       "recordsFetched": 192,
       "latestSourceDate": "2021",
-      "fetchedAt": "2026-04-12T05:45:58.032Z"
+      "fetchedAt": "2026-04-12T15:55:36.683Z"
     },
     "summary": {
       "min": 0.4,
@@ -570,7 +568,7 @@
     "cadenceLabel": "Monthly",
     "freshnessPolicy": {
       "kind": "maxAgeDays",
-      "days": 60
+      "days": 90
     },
     "palette": [
       "#eef5fb",
@@ -607,10 +605,10 @@
       "measureId": "M048",
       "licence": "Open Government Licence v3.0 unless stated otherwise by the publisher",
       "caveat": "This is a mean wait measure at Sub ICB geography, not a person-level guarantee. Local suppression and monthly operational variation can affect interpretation.",
-      "dataProcessedAt": "2026-04-12T05:46:06.397Z",
+      "dataProcessedAt": "2026-04-12T15:55:47.691Z",
       "recordsFetched": 10,
       "latestSourceDate": "2026-01-31",
-      "fetchedAt": "2026-04-12T05:46:06.420Z"
+      "fetchedAt": "2026-04-12T15:55:47.718Z"
     },
     "summary": {
       "min": 14.5,
@@ -691,7 +689,7 @@
     "cadenceLabel": "Monthly",
     "freshnessPolicy": {
       "kind": "maxAgeDays",
-      "days": 60
+      "days": 90
     },
     "palette": [
       "#effaf4",
@@ -728,10 +726,10 @@
       "measureId": "M053",
       "licence": "Open Government Licence v3.0 unless stated otherwise by the publisher",
       "caveat": "This percentage is based on referrals completing a course of treatment in the month. It is a service-access performance indicator, not a population coverage rate.",
-      "dataProcessedAt": "2026-04-12T05:46:10.938Z",
+      "dataProcessedAt": "2026-04-12T15:55:56.142Z",
       "recordsFetched": 10,
       "latestSourceDate": "2026-01-31",
-      "fetchedAt": "2026-04-12T05:46:10.960Z"
+      "fetchedAt": "2026-04-12T15:55:56.167Z"
     },
     "summary": {
       "min": 53,

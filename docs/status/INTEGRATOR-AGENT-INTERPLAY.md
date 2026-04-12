@@ -12,6 +12,7 @@
 - diagnosed and fixed a CI-breaking upstream partial-release issue by hardening sync selection while preserving monitor visibility
 - implemented the approved workspace split foundation directly in the primary workspace, keeping one codebase and one generated-data architecture while separating the user-facing routes
 - validated the live route split, fixed a responsive legend overflow defect directly against production behavior, and prepared the resulting state as the `v0.2.0` release
+- investigated live degraded-status feedback against the official source publication schedules and adjusted workspace scoping plus freshness policy where the previous behavior overstated operational degradation
 
 ## Delegation status
 

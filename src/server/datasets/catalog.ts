@@ -110,7 +110,7 @@ export const layerDefinitions: LayerDefinition[] = [
     unit: "%",
     precision: 1,
     cadenceLabel: "Annual",
-    freshnessPolicy: { kind: "maxAgeDays", days: 450 },
+    freshnessPolicy: { kind: "referenceOnly" },
     palette: ["#fff3d9", "#f8d98b", "#ecb347", "#c97817", "#86460d"],
     source: {
       kind: "bco_api",
@@ -121,7 +121,7 @@ export const layerDefinitions: LayerDefinition[] = [
       ...datasetUrls("percentage-households-in-fuel-poverty-wmca-wards"),
       licence: "Open Government Licence v3.0 via Birmingham City Observatory metadata",
       caveat:
-        "Annual fuel-poverty estimates can lag current energy conditions and should be read as structural context rather than a real-time signal.",
+        "Annual fuel-poverty estimates can lag current energy conditions and should be read as structural context rather than a real-time signal. Freshness is tracked for visibility rather than treated as an operational defect.",
     },
     fields: {
       areaId: "areaidentifier",
@@ -151,7 +151,7 @@ export const layerDefinitions: LayerDefinition[] = [
     unit: "GBP million",
     precision: 0,
     cadenceLabel: "Annual",
-    freshnessPolicy: { kind: "maxAgeDays", days: 450 },
+    freshnessPolicy: { kind: "referenceOnly" },
     palette: ["#edf4e7", "#c9dfb3", "#8dbe74", "#4b8f41", "#24552d"],
     source: {
       kind: "bco_api",
@@ -162,7 +162,7 @@ export const layerDefinitions: LayerDefinition[] = [
       ...datasetUrls("gross-value-added-gva-all-industries-wmca-wards-2025"),
       licence: "Open Government Licence v3.0 via Birmingham City Observatory metadata",
       caveat:
-        "Ward-level GVA is modelled and smoothed. It should be used as indicative economic context, not as a precise local-business ledger.",
+        "Ward-level GVA is modelled and smoothed. It should be used as indicative economic context, not as a precise local-business ledger. Freshness is tracked for visibility rather than treated as an operational defect.",
     },
     fields: {
       areaId: "areaidentifier",
@@ -233,7 +233,7 @@ export const layerDefinitions: LayerDefinition[] = [
     unit: "days",
     precision: 1,
     cadenceLabel: "Monthly",
-    freshnessPolicy: { kind: "maxAgeDays", days: 60 },
+    freshnessPolicy: { kind: "maxAgeDays", days: 90 },
     palette: ["#eef5fb", "#cadef0", "#89b7df", "#487dad", "#224763"],
     source: {
       kind: "csv_download",
@@ -287,7 +287,7 @@ export const layerDefinitions: LayerDefinition[] = [
     unit: "%",
     precision: 1,
     cadenceLabel: "Monthly",
-    freshnessPolicy: { kind: "maxAgeDays", days: 60 },
+    freshnessPolicy: { kind: "maxAgeDays", days: 90 },
     palette: ["#effaf4", "#cfe9d8", "#8bc7a0", "#3d9362", "#185138"],
     source: {
       kind: "csv_download",

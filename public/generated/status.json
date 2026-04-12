@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-12T05:46:10.963Z",
+  "generatedAt": "2026-04-12T15:55:56.170Z",
   "layers": [
     {
       "id": "uc-in-work-rate",
@@ -9,7 +9,7 @@
       "latestSourceDate": "2025-12",
       "updateFrequency": "MONTHLY",
       "recordsFetched": 192,
-      "message": "Latest source period exceeded 60 days (101 days observed)."
+      "message": "Latest source period exceeded 60 days (102 days observed)."
     },
     {
       "id": "imd-employment-score",
@@ -24,22 +24,22 @@
     {
       "id": "fuel-poverty-rate",
       "title": "Households In Fuel Poverty",
-      "status": "stale",
+      "status": "warning",
       "dataProcessedAt": "2026-04-04T01:05:15+00:00",
       "latestSourceDate": "2023",
       "updateFrequency": "ANNUAL",
       "recordsFetched": 192,
-      "message": "Latest source period exceeded 450 days (832 days observed)."
+      "message": "Reference dataset; freshness tracked for visibility only."
     },
     {
       "id": "gva-all-industries",
       "title": "Gross Value Added: All Industries",
-      "status": "stale",
+      "status": "warning",
       "dataProcessedAt": "2026-04-03T23:01:46+00:00",
       "latestSourceDate": "2023",
       "updateFrequency": "ANNUAL",
       "recordsFetched": 192,
-      "message": "Latest source period exceeded 450 days (832 days observed)."
+      "message": "Reference dataset; freshness tracked for visibility only."
     },
     {
       "id": "travel-to-work-bicycle-rate",
@@ -54,22 +54,22 @@
     {
       "id": "nhs-talking-therapies-wait-time",
       "title": "Talking Therapies Mean Wait",
-      "status": "stale",
-      "dataProcessedAt": "2026-04-12T05:46:06.397Z",
+      "status": "ok",
+      "dataProcessedAt": "2026-04-12T15:55:47.691Z",
       "latestSourceDate": "2026-01-31",
       "updateFrequency": "MONTHLY",
       "recordsFetched": 10,
-      "message": "Latest source period exceeded 60 days (70 days observed)."
+      "message": "Latest source period is within 90 days."
     },
     {
       "id": "nhs-talking-therapies-six-week-access",
       "title": "Talking Therapies Access Within 6 Weeks",
-      "status": "stale",
-      "dataProcessedAt": "2026-04-12T05:46:10.938Z",
+      "status": "ok",
+      "dataProcessedAt": "2026-04-12T15:55:56.142Z",
       "latestSourceDate": "2026-01-31",
       "updateFrequency": "MONTHLY",
       "recordsFetched": 10,
-      "message": "Latest source period exceeded 60 days (70 days observed)."
+      "message": "Latest source period is within 90 days."
     }
   ]
 }

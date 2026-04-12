@@ -67,10 +67,12 @@ Layer metadata should declare one of:
 Monitoring thresholds are defined per layer, not globally, and they are evaluated from the source period (`latestSourceDate`) rather than Birmingham City Observatory's `data_processed` timestamp.
 
 Examples:
-- monthly layer: alert after 45-60 days without a new source period unless the source itself is documented as paused
+- monthly layer: alert after 45-90 days without a new source period depending on the publication lag of the source, unless the source itself is documented as paused
 - quarterly layer: alert after 120 days
 - annual layer: alert after 450 days
 - irregular layer: alert when the source becomes unavailable or schema changes, not just because no new issue has been published
+
+For some structurally lagged context layers, the source period is expected to trail the publication year by a substantial margin. In those cases, the layer may be treated as `referenceOnly` so it remains visible to users without forcing the overall operational status into `degraded`.
 
 ## Runbooks
 

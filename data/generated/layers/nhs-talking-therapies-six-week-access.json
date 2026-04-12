@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-04-12T05:46:10.960Z",
+  "generatedAt": "2026-04-12T15:55:56.167Z",
   "layer": {
     "id": "nhs-talking-therapies-six-week-access",
     "title": "Talking Therapies Access Within 6 Weeks",
@@ -19,7 +19,7 @@
     "cadenceLabel": "Monthly",
     "freshnessPolicy": {
       "kind": "maxAgeDays",
-      "days": 60
+      "days": 90
     },
     "palette": [
       "#effaf4",
@@ -56,10 +56,10 @@
       "measureId": "M053",
       "licence": "Open Government Licence v3.0 unless stated otherwise by the publisher",
       "caveat": "This percentage is based on referrals completing a course of treatment in the month. It is a service-access performance indicator, not a population coverage rate.",
-      "dataProcessedAt": "2026-04-12T05:46:10.938Z",
+      "dataProcessedAt": "2026-04-12T15:55:56.142Z",
       "recordsFetched": 10,
       "latestSourceDate": "2026-01-31",
-      "fetchedAt": "2026-04-12T05:46:10.960Z"
+      "fetchedAt": "2026-04-12T15:55:56.167Z"
     },
     "summary": {
       "min": 53,

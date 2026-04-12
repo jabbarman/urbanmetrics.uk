@@ -24,6 +24,9 @@
 - a minimal shared navigation path now links overview, both workspaces, and service status
 - the compare-legend bubble size scale now stays within its panel on both workspaces at standard desktop widths
 - the workspace split and follow-up polish are being released as `v0.2.0`
+- workspace header status is now scoped to the active workspace rather than inheriting the whole-product global status
+- Talking Therapies monthly layers now allow for publication lag before being treated as stale
+- GVA and fuel-poverty layers are now treated as structurally lagged context layers, with freshness tracked for visibility rather than as an operational defect
 
 ## In progress
 
@@ -32,12 +35,12 @@
 
 ## Known operational signal
 
-The current live platform remains operational, but several shipped source datasets are stale under their declared freshness rules.
+The current live platform remains operational.
 
-That is still an upstream data-age issue, not a blocking application defect.
+The main active degradation is now narrower: the Universal Credit in-work layer still depends on an upstream source that is publishing an incomplete latest month.
 
 One current upstream also appears to publish a newer but incomplete source period for the Universal Credit in-work layer. The sync path now falls back to the latest complete month, while monitoring should continue to flag the incomplete latest release.
 
 ## Next step
 
-Assess live feedback on `Regional Context` and `Health Access`, then choose the next delivery slice: additional workspace polish or the next health/service data layer.
+Assess live feedback on the workspace-scoped status behavior, then choose the next delivery slice: additional workspace polish or the next health/service data layer.

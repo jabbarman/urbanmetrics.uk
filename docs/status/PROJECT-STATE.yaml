@@ -11,17 +11,21 @@ summary: >-
   defaults, and shared status/navigation. In parallel, the sync path has been hardened against partial upstream source
   periods so CI can fall back to the latest complete publication while the monitor path continues to surface the
   incomplete latest release. Follow-up live verification identified a legend layout issue at standard desktop widths;
-  that has now been corrected and bundled with a documentation and versioning refresh for the `v0.2.0` release.
+  that has now been corrected and bundled with a documentation and versioning refresh for the `v0.2.0` release. A
+  post-release investigation then distinguished real upstream degradation from freshness-policy mismatch: workspace
+  headers are now scoped to their own layer subsets, Talking Therapies monthly layers now allow for publication lag,
+  and structurally lagged annual context layers are tracked for visibility rather than driving degraded status.
 last_updated: 2026-04-11
 current_focus:
-  - validate the `v0.2.0` release in the live environment after deployment
+  - validate the workspace-scoped status behavior in the live environment after deployment
   - keep the shared generated-data and status architecture intact while the presentation layer evolves
   - decide whether the next slice should be workspace-specific UX polish or the next SubICB health/service layer
   - keep CI and refresh behavior resilient when upstreams publish incomplete latest periods
-next_executable_step: verify the `v0.2.0` release in production and choose the next workstream
+next_executable_step: verify the post-release status behavior in production and choose the next workstream
 blockers:
   - no technical blocker
 risks:
   - some desired workforce datasets may only be usable at provider/trust geography, which is not suitable for a resident-area choropleth without extra methodology
   - supporting multiple geography groups increases UI and validation complexity and must not enable misleading comparisons
   - the route split improves information architecture, but copy and navigation may still need a follow-on polish pass once users interact with the live routes
+  - freshness policy remains partly judgment-based for lagged official statistics, so thresholds will need occasional review against real publication timetables

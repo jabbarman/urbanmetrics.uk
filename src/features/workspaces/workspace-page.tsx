@@ -20,7 +20,10 @@ export async function WorkspacePage({ workspaceId }: WorkspacePageProps) {
   const allowedLayerIds = new Set(workspace.allowedLayerIds);
   const workspaceCatalog = catalog.filter((entry) => allowedLayerIds.has(entry.id));
   const workspaceStatus = status.layers.filter((entry) => allowedLayerIds.has(entry.id));
-  const serviceHealth = overallStatusHealth(status);
+  const serviceHealth = overallStatusHealth({
+    generatedAt: status.generatedAt,
+    layers: workspaceStatus,
+  });
   const siblingWorkspaces = workspaceDefinitions.filter((entry) => entry.id !== workspace.id);
 
   return (
@@ -72,7 +75,9 @@ export async function WorkspacePage({ workspaceId }: WorkspacePageProps) {
             <div className="rounded-[1.5rem] border border-slate-200/80 bg-white/85 p-5">
               <p className="text-xs uppercase tracking-[0.22em] text-slate-500">Operational status</p>
               <p className="mt-2 text-xl font-semibold capitalize text-slate-950">{serviceHealth}</p>
-              <p className="mt-2 text-sm text-slate-600">Monitoring and freshness checks remain shared across both workspaces.</p>
+              <p className="mt-2 text-sm text-slate-600">
+                This summary reflects the layers in this workspace. The full cross-product operational view remains on the service status page.
+              </p>
             </div>
           </div>
         </div>
