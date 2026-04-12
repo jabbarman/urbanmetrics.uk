@@ -43,16 +43,16 @@
       "licence": "Open Government Licence v3.0 via Birmingham City Observatory metadata",
       "caveat": "This is a claimant-based rate, not a share of the total working-age population.",
       "datasetTitle": "Percentage Universal Credit claimants in employment - WMCA Wards (2025)",
-      "dataProcessedAt": "2026-03-04T00:01:40+00:00",
+      "dataProcessedAt": "2026-04-03T23:01:04+00:00",
       "updateFrequency": "MONTHLY",
       "recordsFetched": 192,
       "latestSourceDate": "2025-12",
-      "fetchedAt": "2026-04-03T05:40:39.191Z"
+      "fetchedAt": "2026-04-12T05:45:46.260Z"
     },
     "summary": {
       "min": 18.4,
       "max": 43.1,
-      "mean": 29.97552083333332,
+      "mean": 29.975520833333338,
       "median": 30,
       "topAreas": [
         {
@@ -93,13 +93,13 @@
           "value": 22.1
         },
         {
-          "areaId": "E05011170",
-          "areaName": "Sparkbrook & Balsall Heath East",
+          "areaId": "E05011139",
+          "areaName": "Gravelly Hill",
           "value": 22.5
         },
         {
-          "areaId": "E05011139",
-          "areaName": "Gravelly Hill",
+          "areaId": "E05011170",
+          "areaName": "Sparkbrook & Balsall Heath East",
           "value": 22.5
         },
         {
@@ -157,7 +157,7 @@
       "updateFrequency": "IRREG",
       "recordsFetched": 192,
       "latestSourceDate": "2025",
-      "fetchedAt": "2026-04-03T05:40:42.082Z"
+      "fetchedAt": "2026-04-12T05:45:47.595Z"
     },
     "summary": {
       "min": 4.4,
@@ -264,16 +264,16 @@
       "licence": "Open Government Licence v3.0 via Birmingham City Observatory metadata",
       "caveat": "Annual fuel-poverty estimates can lag current energy conditions and should be read as structural context rather than a real-time signal.",
       "datasetTitle": "Percentage households in fuel poverty - WMCA Wards",
-      "dataProcessedAt": "2026-04-03T01:05:11+00:00",
+      "dataProcessedAt": "2026-04-04T01:05:15+00:00",
       "updateFrequency": "ANNUAL",
       "recordsFetched": 192,
       "latestSourceDate": "2023",
-      "fetchedAt": "2026-04-03T05:40:53.091Z"
+      "fetchedAt": "2026-04-12T05:45:50.878Z"
     },
     "summary": {
       "min": 6,
       "max": 42.3,
-      "mean": 17.807291666666657,
+      "mean": 17.807291666666664,
       "median": 17.05,
       "topAreas": [
         {
@@ -375,11 +375,11 @@
       "licence": "Open Government Licence v3.0 via Birmingham City Observatory metadata",
       "caveat": "Ward-level GVA is modelled and smoothed. It should be used as indicative economic context, not as a precise local-business ledger.",
       "datasetTitle": "Gross value added (GVA): All industries - WMCA Wards (2025)",
-      "dataProcessedAt": "2026-03-04T00:02:54+00:00",
+      "dataProcessedAt": "2026-04-03T23:01:46+00:00",
       "updateFrequency": "ANNUAL",
       "recordsFetched": 192,
       "latestSourceDate": "2023",
-      "fetchedAt": "2026-04-03T05:41:06.305Z"
+      "fetchedAt": "2026-04-12T05:45:56.325Z"
     },
     "summary": {
       "min": 46,
@@ -489,12 +489,12 @@
       "updateFrequency": "DECENNIAL",
       "recordsFetched": 192,
       "latestSourceDate": "2021",
-      "fetchedAt": "2026-04-03T05:41:09.764Z"
+      "fetchedAt": "2026-04-12T05:45:58.032Z"
     },
     "summary": {
       "min": 0.4,
       "max": 2.8,
-      "mean": 1.2666666666666664,
+      "mean": 1.2666666666666662,
       "median": 1.15,
       "topAreas": [
         {
@@ -508,11 +508,6 @@
           "value": 2.7
         },
         {
-          "areaId": "E05001233",
-          "areaName": "Whoberley",
-          "value": 2.5
-        },
-        {
           "areaId": "E05011172",
           "areaName": "Stirchley",
           "value": 2.5
@@ -520,6 +515,11 @@
         {
           "areaId": "E05011130",
           "areaName": "Brandwood & King's Heath",
+          "value": 2.5
+        },
+        {
+          "areaId": "E05001233",
+          "areaName": "Whoberley",
           "value": 2.5
         }
       ],
@@ -535,6 +535,11 @@
           "value": 0.4
         },
         {
+          "areaId": "E05011174",
+          "areaName": "Sutton Four Oaks",
+          "value": 0.4
+        },
+        {
           "areaId": "E05011175",
           "areaName": "Sutton Mere Green",
           "value": 0.4
@@ -542,11 +547,6 @@
         {
           "areaId": "E05015913",
           "areaName": "Hayley Green & Cradley South",
-          "value": 0.4
-        },
-        {
-          "areaId": "E05011174",
-          "areaName": "Sutton Four Oaks",
           "value": 0.4
         }
       ]
@@ -607,10 +607,10 @@
       "measureId": "M048",
       "licence": "Open Government Licence v3.0 unless stated otherwise by the publisher",
       "caveat": "This is a mean wait measure at Sub ICB geography, not a person-level guarantee. Local suppression and monthly operational variation can affect interpretation.",
-      "dataProcessedAt": "2026-04-03T05:41:18.487Z",
+      "dataProcessedAt": "2026-04-12T05:46:06.397Z",
       "recordsFetched": 10,
       "latestSourceDate": "2026-01-31",
-      "fetchedAt": "2026-04-03T05:41:18.509Z"
+      "fetchedAt": "2026-04-12T05:46:06.420Z"
     },
     "summary": {
       "min": 14.5,
@@ -728,10 +728,10 @@
       "measureId": "M053",
       "licence": "Open Government Licence v3.0 unless stated otherwise by the publisher",
       "caveat": "This percentage is based on referrals completing a course of treatment in the month. It is a service-access performance indicator, not a population coverage rate.",
-      "dataProcessedAt": "2026-04-03T05:41:23.484Z",
+      "dataProcessedAt": "2026-04-12T05:46:10.938Z",
       "recordsFetched": 10,
       "latestSourceDate": "2026-01-31",
-      "fetchedAt": "2026-04-03T05:41:23.501Z"
+      "fetchedAt": "2026-04-12T05:46:10.960Z"
     },
     "summary": {
       "min": 53,
