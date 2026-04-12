@@ -111,3 +111,27 @@ export function overallStatusHealth(status: GeneratedStatus) {
 
   return "ok" as const;
 }
+
+export function describeStatusHealth(status: ReturnType<typeof overallStatusHealth>) {
+  if (status === "degraded") {
+    return {
+      label: "Upstream delay",
+      summary:
+        "At least one source in this workspace is delayed or incomplete upstream. The layers remain available, and the full cross-product operational view remains on the service status page.",
+    };
+  }
+
+  if (status === "warning") {
+    return {
+      label: "Reference context",
+      summary:
+        "This workspace currently relies on reference-style context layers whose freshness is tracked for visibility rather than as a live operational issue.",
+    };
+  }
+
+  return {
+    label: "Current",
+    summary:
+      "All layers in this workspace are currently within their expected freshness window. The full cross-product operational view remains on the service status page.",
+  };
+}

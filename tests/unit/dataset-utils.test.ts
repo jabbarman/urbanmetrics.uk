@@ -1,6 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
-import { evaluateFreshness, formatValue, overallStatusHealth, quantileBreaks } from "@/server/datasets/utils";
+import { describeStatusHealth, evaluateFreshness, formatValue, overallStatusHealth, quantileBreaks } from "@/server/datasets/utils";
 
 describe("dataset utilities", () => {
   beforeEach(() => {
@@ -66,5 +66,13 @@ describe("dataset utilities", () => {
         ],
       }),
     ).toBe("warning");
+  });
+
+  it("softens degraded status wording for workspace headers", () => {
+    expect(describeStatusHealth("degraded")).toEqual({
+      label: "Upstream delay",
+      summary:
+        "At least one source in this workspace is delayed or incomplete upstream. The layers remain available, and the full cross-product operational view remains on the service status page.",
+    });
   });
 });

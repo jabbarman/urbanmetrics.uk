@@ -3,7 +3,7 @@ import Link from "next/link";
 import { getWorkspaceDefinition, workspaceDefinitions, type WorkspaceId } from "@/content/workspaces";
 import { MapExplorer } from "@/features/map/map-explorer";
 import { loadCatalog, loadStatus } from "@/server/datasets/load-generated";
-import { overallStatusHealth } from "@/server/datasets/utils";
+import { describeStatusHealth, overallStatusHealth } from "@/server/datasets/utils";
 
 type WorkspacePageProps = {
   workspaceId: WorkspaceId;
@@ -24,6 +24,7 @@ export async function WorkspacePage({ workspaceId }: WorkspacePageProps) {
     generatedAt: status.generatedAt,
     layers: workspaceStatus,
   });
+  const serviceHealthPresentation = describeStatusHealth(serviceHealth);
   const siblingWorkspaces = workspaceDefinitions.filter((entry) => entry.id !== workspace.id);
 
   return (
@@ -74,10 +75,8 @@ export async function WorkspacePage({ workspaceId }: WorkspacePageProps) {
             </div>
             <div className="rounded-[1.5rem] border border-slate-200/80 bg-white/85 p-5">
               <p className="text-xs uppercase tracking-[0.22em] text-slate-500">Operational status</p>
-              <p className="mt-2 text-xl font-semibold capitalize text-slate-950">{serviceHealth}</p>
-              <p className="mt-2 text-sm text-slate-600">
-                This summary reflects the layers in this workspace. The full cross-product operational view remains on the service status page.
-              </p>
+              <p className="mt-2 text-xl font-semibold text-slate-950">{serviceHealthPresentation.label}</p>
+              <p className="mt-2 text-sm text-slate-600">{serviceHealthPresentation.summary}</p>
             </div>
           </div>
         </div>
