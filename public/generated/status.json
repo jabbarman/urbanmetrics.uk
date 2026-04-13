@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-12T15:55:56.170Z",
+  "generatedAt": "2026-04-13T05:59:15.861Z",
   "layers": [
     {
       "id": "uc-in-work-rate",
@@ -55,7 +55,7 @@
       "id": "nhs-talking-therapies-wait-time",
       "title": "Talking Therapies Mean Wait",
       "status": "ok",
-      "dataProcessedAt": "2026-04-12T15:55:47.691Z",
+      "dataProcessedAt": "2026-04-13T05:59:07.267Z",
       "latestSourceDate": "2026-01-31",
       "updateFrequency": "MONTHLY",
       "recordsFetched": 10,
@@ -65,7 +65,7 @@
       "id": "nhs-talking-therapies-six-week-access",
       "title": "Talking Therapies Access Within 6 Weeks",
       "status": "ok",
-      "dataProcessedAt": "2026-04-12T15:55:56.142Z",
+      "dataProcessedAt": "2026-04-13T05:59:15.839Z",
       "latestSourceDate": "2026-01-31",
       "updateFrequency": "MONTHLY",
       "recordsFetched": 10,
