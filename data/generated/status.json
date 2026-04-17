@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-16T05:51:28.317Z",
+  "generatedAt": "2026-04-17T05:50:30.785Z",
   "layers": [
     {
       "id": "uc-in-work-rate",
@@ -9,7 +9,7 @@
       "latestSourceDate": "2025-12",
       "updateFrequency": "MONTHLY",
       "recordsFetched": 192,
-      "message": "Latest source period exceeded 60 days (105 days observed)."
+      "message": "Latest source period exceeded 60 days (106 days observed)."
     },
     {
       "id": "imd-employment-score",
@@ -55,7 +55,7 @@
       "id": "nhs-talking-therapies-wait-time",
       "title": "Talking Therapies Mean Wait",
       "status": "ok",
-      "dataProcessedAt": "2026-04-16T05:51:20.198Z",
+      "dataProcessedAt": "2026-04-17T05:50:23.374Z",
       "latestSourceDate": "2026-01-31",
       "updateFrequency": "MONTHLY",
       "recordsFetched": 10,
@@ -65,7 +65,7 @@
       "id": "nhs-talking-therapies-six-week-access",
       "title": "Talking Therapies Access Within 6 Weeks",
       "status": "ok",
-      "dataProcessedAt": "2026-04-16T05:51:28.297Z",
+      "dataProcessedAt": "2026-04-17T05:50:30.763Z",
       "latestSourceDate": "2026-01-31",
       "updateFrequency": "MONTHLY",
       "recordsFetched": 10,
