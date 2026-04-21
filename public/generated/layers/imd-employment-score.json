@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-04-20T05:58:47.029Z",
+  "generatedAt": "2026-04-21T05:50:12.787Z",
   "layer": {
     "id": "imd-employment-score",
     "title": "IMD Employment Score",
@@ -44,11 +44,11 @@
       "licence": "Open Government Licence v3.0 via Birmingham City Observatory metadata",
       "caveat": "IMD is a relative deprivation measure. Higher values indicate stronger employment deprivation and should not be read as a direct unemployment rate.",
       "datasetTitle": "IMD - Employment - score (%) - WMCA Wards (2025)",
-      "dataProcessedAt": "2026-02-10T08:08:31+00:00",
+      "dataProcessedAt": "2026-04-20T10:22:49+00:00",
       "updateFrequency": "IRREG",
       "recordsFetched": 192,
       "latestSourceDate": "2025",
-      "fetchedAt": "2026-04-20T05:58:47.029Z"
+      "fetchedAt": "2026-04-21T05:50:12.787Z"
     },
     "summary": {
       "min": 4.4,
