@@ -47,7 +47,7 @@
       "updateFrequency": "MONTHLY",
       "recordsFetched": 192,
       "latestSourceDate": "2025-12",
-      "fetchedAt": "2026-04-21T05:50:11.034Z"
+      "fetchedAt": "2026-04-22T05:50:04.022Z"
     },
     "summary": {
       "min": 18.4,
@@ -157,7 +157,7 @@
       "updateFrequency": "IRREG",
       "recordsFetched": 192,
       "latestSourceDate": "2025",
-      "fetchedAt": "2026-04-21T05:50:12.787Z"
+      "fetchedAt": "2026-04-22T05:50:05.768Z"
     },
     "summary": {
       "min": 4.4,
@@ -267,7 +267,7 @@
       "updateFrequency": "ANNUAL",
       "recordsFetched": 192,
       "latestSourceDate": "2023",
-      "fetchedAt": "2026-04-21T05:50:16.430Z"
+      "fetchedAt": "2026-04-22T05:50:09.560Z"
     },
     "summary": {
       "min": 6,
@@ -377,7 +377,7 @@
       "updateFrequency": "ANNUAL",
       "recordsFetched": 192,
       "latestSourceDate": "2023",
-      "fetchedAt": "2026-04-21T05:50:20.665Z"
+      "fetchedAt": "2026-04-22T05:50:14.772Z"
     },
     "summary": {
       "min": 46,
@@ -487,7 +487,7 @@
       "updateFrequency": "DECENNIAL",
       "recordsFetched": 192,
       "latestSourceDate": "2021",
-      "fetchedAt": "2026-04-21T05:50:21.787Z"
+      "fetchedAt": "2026-04-22T05:50:16.607Z"
     },
     "summary": {
       "min": 0.4,
@@ -605,10 +605,10 @@
       "measureId": "M048",
       "licence": "Open Government Licence v3.0 unless stated otherwise by the publisher",
       "caveat": "This is a mean wait measure at Sub ICB geography, not a person-level guarantee. Local suppression and monthly operational variation can affect interpretation.",
-      "dataProcessedAt": "2026-04-21T05:50:33.260Z",
+      "dataProcessedAt": "2026-04-22T05:50:29.872Z",
       "recordsFetched": 10,
       "latestSourceDate": "2026-01-31",
-      "fetchedAt": "2026-04-21T05:50:33.274Z"
+      "fetchedAt": "2026-04-22T05:50:29.890Z"
     },
     "summary": {
       "min": 14.5,
@@ -726,10 +726,10 @@
       "measureId": "M053",
       "licence": "Open Government Licence v3.0 unless stated otherwise by the publisher",
       "caveat": "This percentage is based on referrals completing a course of treatment in the month. It is a service-access performance indicator, not a population coverage rate.",
-      "dataProcessedAt": "2026-04-21T05:50:38.820Z",
+      "dataProcessedAt": "2026-04-22T05:50:35.618Z",
       "recordsFetched": 10,
       "latestSourceDate": "2026-01-31",
-      "fetchedAt": "2026-04-21T05:50:38.834Z"
+      "fetchedAt": "2026-04-22T05:50:35.640Z"
     },
     "summary": {
       "min": 53,
