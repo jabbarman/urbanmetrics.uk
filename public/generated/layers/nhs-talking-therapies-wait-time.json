@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-05-01T06:09:41.907Z",
+  "generatedAt": "2026-05-02T05:54:25.368Z",
   "layer": {
     "id": "nhs-talking-therapies-wait-time",
     "title": "Talking Therapies Mean Wait",
@@ -56,10 +56,10 @@
       "measureId": "M048",
       "licence": "Open Government Licence v3.0 unless stated otherwise by the publisher",
       "caveat": "This is a mean wait measure at Sub ICB geography, not a person-level guarantee. Local suppression and monthly operational variation can affect interpretation.",
-      "dataProcessedAt": "2026-05-01T06:09:41.885Z",
+      "dataProcessedAt": "2026-05-02T05:54:25.350Z",
       "recordsFetched": 10,
       "latestSourceDate": "2026-01-31",
-      "fetchedAt": "2026-05-01T06:09:41.907Z"
+      "fetchedAt": "2026-05-02T05:54:25.368Z"
     },
     "summary": {
       "min": 14.5,
