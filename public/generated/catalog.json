@@ -47,7 +47,7 @@
       "updateFrequency": "MONTHLY",
       "recordsFetched": 192,
       "latestSourceDate": "2025-12",
-      "fetchedAt": "2026-05-02T05:53:51.892Z"
+      "fetchedAt": "2026-05-03T06:07:38.413Z"
     },
     "summary": {
       "min": 18.4,
@@ -157,7 +157,7 @@
       "updateFrequency": "IRREG",
       "recordsFetched": 192,
       "latestSourceDate": "2025",
-      "fetchedAt": "2026-05-02T05:53:54.300Z"
+      "fetchedAt": "2026-05-03T06:07:40.072Z"
     },
     "summary": {
       "min": 4.4,
@@ -263,11 +263,11 @@
       "licence": "Open Government Licence v3.0 via Birmingham City Observatory metadata",
       "caveat": "Annual fuel-poverty estimates can lag current energy conditions and should be read as structural context rather than a real-time signal. Freshness is tracked for visibility rather than treated as an operational defect.",
       "datasetTitle": "Percentage households in fuel poverty - WMCA Wards",
-      "dataProcessedAt": "2026-04-20T10:18:04+00:00",
+      "dataProcessedAt": "2026-05-03T01:05:11+00:00",
       "updateFrequency": "ANNUAL",
       "recordsFetched": 192,
       "latestSourceDate": "2023",
-      "fetchedAt": "2026-05-02T05:54:02.287Z"
+      "fetchedAt": "2026-05-03T06:07:43.608Z"
     },
     "summary": {
       "min": 6,
@@ -377,7 +377,7 @@
       "updateFrequency": "ANNUAL",
       "recordsFetched": 192,
       "latestSourceDate": "2023",
-      "fetchedAt": "2026-05-02T05:54:11.461Z"
+      "fetchedAt": "2026-05-03T06:07:49.118Z"
     },
     "summary": {
       "min": 46,
@@ -487,7 +487,7 @@
       "updateFrequency": "DECENNIAL",
       "recordsFetched": 192,
       "latestSourceDate": "2021",
-      "fetchedAt": "2026-05-02T05:54:13.347Z"
+      "fetchedAt": "2026-05-03T06:07:50.393Z"
     },
     "summary": {
       "min": 0.4,
@@ -605,10 +605,10 @@
       "measureId": "M048",
       "licence": "Open Government Licence v3.0 unless stated otherwise by the publisher",
       "caveat": "This is a mean wait measure at Sub ICB geography, not a person-level guarantee. Local suppression and monthly operational variation can affect interpretation.",
-      "dataProcessedAt": "2026-05-02T05:54:25.350Z",
+      "dataProcessedAt": "2026-05-03T06:07:57.226Z",
       "recordsFetched": 10,
       "latestSourceDate": "2026-01-31",
-      "fetchedAt": "2026-05-02T05:54:25.368Z"
+      "fetchedAt": "2026-05-03T06:07:57.248Z"
     },
     "summary": {
       "min": 14.5,
@@ -726,10 +726,10 @@
       "measureId": "M053",
       "licence": "Open Government Licence v3.0 unless stated otherwise by the publisher",
       "caveat": "This percentage is based on referrals completing a course of treatment in the month. It is a service-access performance indicator, not a population coverage rate.",
-      "dataProcessedAt": "2026-05-02T05:54:36.732Z",
+      "dataProcessedAt": "2026-05-03T06:08:07.203Z",
       "recordsFetched": 10,
       "latestSourceDate": "2026-01-31",
-      "fetchedAt": "2026-05-02T05:54:36.750Z"
+      "fetchedAt": "2026-05-03T06:08:07.222Z"
     },
     "summary": {
       "min": 53,
