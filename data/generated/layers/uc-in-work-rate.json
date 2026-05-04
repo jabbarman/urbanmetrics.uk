@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-05-03T06:07:38.413Z",
+  "generatedAt": "2026-05-04T06:09:16.872Z",
   "layer": {
     "id": "uc-in-work-rate",
     "title": "Universal Credit Claimants In Employment",
@@ -29,10 +29,10 @@
       "#0d4f76"
     ],
     "legendBreaks": [
-      26.9,
+      25.4,
+      27.9,
       29.4,
-      30.9,
-      32.7
+      31.5
     ],
     "source": {
       "kind": "bco_api",
@@ -45,69 +45,69 @@
       "licence": "Open Government Licence v3.0 via Birmingham City Observatory metadata",
       "caveat": "This is a claimant-based rate, not a share of the total working-age population.",
       "datasetTitle": "Percentage Universal Credit claimants in employment - WMCA Wards (2025)",
-      "dataProcessedAt": "2026-04-20T10:18:45+00:00",
+      "dataProcessedAt": "2026-05-03T23:00:42+00:00",
       "updateFrequency": "MONTHLY",
       "recordsFetched": 192,
-      "latestSourceDate": "2025-12",
-      "fetchedAt": "2026-05-03T06:07:38.413Z"
+      "latestSourceDate": "2026-02",
+      "fetchedAt": "2026-05-04T06:09:16.872Z"
     },
     "summary": {
-      "min": 18.4,
-      "max": 43.1,
-      "mean": 29.975520833333338,
-      "median": 30,
+      "min": 16.8,
+      "max": 40.5,
+      "mean": 28.509374999999995,
+      "median": 28.8,
       "topAreas": [
         {
           "areaId": "E05001313",
           "areaName": "Pheasey Park Farm",
-          "value": 43.1
+          "value": 40.5
         },
         {
           "areaId": "E05001285",
           "areaName": "Blythe",
-          "value": 39.7
+          "value": 37.5
         },
         {
-          "areaId": "E05001298",
-          "areaName": "Shirley West",
-          "value": 38.4
+          "areaId": "E05001318",
+          "areaName": "Streetly",
+          "value": 36.7
+        },
+        {
+          "areaId": "E05011177",
+          "areaName": "Sutton Roughley",
+          "value": 36.3
         },
         {
           "areaId": "E05015926",
           "areaName": "Wordsley North",
-          "value": 37.5
-        },
-        {
-          "areaId": "E05001260",
-          "areaName": "Abbey",
-          "value": 37.4
+          "value": 35.2
         }
       ],
       "bottomAreas": [
         {
           "areaId": "E05011128",
           "areaName": "Bournbrook & Selly Park",
-          "value": 18.4
+          "value": 16.8
         },
         {
-          "areaId": "E05011154",
-          "areaName": "Moseley",
-          "value": 22.1
+          "areaId": "E05011142",
+          "areaName": "Handsworth",
+          "value": 20.7
         },
         {
           "areaId": "E05011139",
           "areaName": "Gravelly Hill",
-          "value": 22.5
+          "value": 20.9
         },
         {
-          "areaId": "E05011170",
-          "areaName": "Sparkbrook & Balsall Heath East",
-          "value": 22.5
+          "areaId": "E05011154",
+          "areaName": "Moseley",
+          "value": 21.2
         },
         {
           "areaId": "E05011120",
           "areaName": "Alum Rock",
-          "value": 22.6
+          "value": 21.3
         }
       ]
     }
@@ -517,10 +517,10 @@
           "areaName": "Bablake",
           "localAuthorityName": "Coventry",
           "localAuthorityCode": "E08000026",
-          "value": 36.4,
-          "formattedValue": "36.4%",
+          "value": 34.2,
+          "formattedValue": "34.2%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.565270846486557,
             "lat": 52.43934302427814
@@ -613,10 +613,10 @@
           "areaName": "Binley and Willenhall",
           "localAuthorityName": "Coventry",
           "localAuthorityCode": "E08000026",
-          "value": 28.8,
-          "formattedValue": "28.8%",
+          "value": 27.4,
+          "formattedValue": "27.4%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.457055328355936,
             "lat": 52.391736159648296
@@ -769,10 +769,10 @@
           "areaName": "Cheylesmore",
           "localAuthorityName": "Coventry",
           "localAuthorityCode": "E08000026",
-          "value": 31.5,
-          "formattedValue": "31.5%",
+          "value": 29.8,
+          "formattedValue": "29.8%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.4921098429009052,
             "lat": 52.38716194552469
@@ -953,10 +953,10 @@
           "areaName": "Earlsdon",
           "localAuthorityName": "Coventry",
           "localAuthorityCode": "E08000026",
-          "value": 34.9,
-          "formattedValue": "34.9%",
+          "value": 30,
+          "formattedValue": "30.0%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.5319699007724934,
             "lat": 52.393885394239696
@@ -1065,10 +1065,10 @@
           "areaName": "Foleshill",
           "localAuthorityName": "Coventry",
           "localAuthorityCode": "E08000026",
-          "value": 30.9,
-          "formattedValue": "30.9%",
+          "value": 27.8,
+          "formattedValue": "27.8%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.4974685368516303,
             "lat": 52.42831277010293
@@ -1249,10 +1249,10 @@
           "areaName": "Henley",
           "localAuthorityName": "Coventry",
           "localAuthorityCode": "E08000026",
-          "value": 31.1,
-          "formattedValue": "31.1%",
+          "value": 29.2,
+          "formattedValue": "29.2%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.4490009911996884,
             "lat": 52.43388555458697
@@ -1385,10 +1385,10 @@
           "areaName": "Holbrook",
           "localAuthorityName": "Coventry",
           "localAuthorityCode": "E08000026",
-          "value": 35.5,
-          "formattedValue": "35.5%",
+          "value": 32.8,
+          "formattedValue": "32.8%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.5135048419127453,
             "lat": 52.44350422112508
@@ -1585,10 +1585,10 @@
           "areaName": "Longford",
           "localAuthorityName": "Coventry",
           "localAuthorityCode": "E08000026",
-          "value": 32.2,
-          "formattedValue": "32.2%",
+          "value": 30,
+          "formattedValue": "30.0%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.4787634461711578,
             "lat": 52.44624013839916
@@ -1685,10 +1685,10 @@
           "areaName": "Lower Stoke",
           "localAuthorityName": "Coventry",
           "localAuthorityCode": "E08000026",
-          "value": 35.5,
-          "formattedValue": "35.5%",
+          "value": 33.5,
+          "formattedValue": "33.5%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.4737537864351469,
             "lat": 52.40438999410774
@@ -1801,10 +1801,10 @@
           "areaName": "Radford",
           "localAuthorityName": "Coventry",
           "localAuthorityCode": "E08000026",
-          "value": 32.2,
-          "formattedValue": "32.2%",
+          "value": 30.1,
+          "formattedValue": "30.1%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.5174276359812238,
             "lat": 52.42433599775693
@@ -1897,10 +1897,10 @@
           "areaName": "St Michael's",
           "localAuthorityName": "Coventry",
           "localAuthorityCode": "E08000026",
-          "value": 27,
-          "formattedValue": "27.0%",
+          "value": 23.4,
+          "formattedValue": "23.4%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.5019764032718466,
             "lat": 52.407451266735514
@@ -2065,10 +2065,10 @@
           "areaName": "Sherbourne",
           "localAuthorityName": "Coventry",
           "localAuthorityCode": "E08000026",
-          "value": 33.1,
-          "formattedValue": "33.1%",
+          "value": 30.2,
+          "formattedValue": "30.2%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.5355546709764307,
             "lat": 52.41607942883727
@@ -2205,10 +2205,10 @@
           "areaName": "Upper Stoke",
           "localAuthorityName": "Coventry",
           "localAuthorityCode": "E08000026",
-          "value": 31.9,
-          "formattedValue": "31.9%",
+          "value": 29.3,
+          "formattedValue": "29.3%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.4770826033482158,
             "lat": 52.420332301097496
@@ -2393,10 +2393,10 @@
           "areaName": "Wainbody",
           "localAuthorityName": "Coventry",
           "localAuthorityCode": "E08000026",
-          "value": 29.9,
-          "formattedValue": "29.9%",
+          "value": 29.8,
+          "formattedValue": "29.8%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.5420357007806924,
             "lat": 52.379899452620045
@@ -2593,10 +2593,10 @@
           "areaName": "Westwood",
           "localAuthorityName": "Coventry",
           "localAuthorityCode": "E08000026",
-          "value": 30.3,
-          "formattedValue": "30.3%",
+          "value": 27.9,
+          "formattedValue": "27.9%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.5793104101072055,
             "lat": 52.39616507867475
@@ -2721,10 +2721,10 @@
           "areaName": "Whoberley",
           "localAuthorityName": "Coventry",
           "localAuthorityCode": "E08000026",
-          "value": 33,
-          "formattedValue": "33.0%",
+          "value": 31,
+          "formattedValue": "31.0%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.5495109347819112,
             "lat": 52.410832729029366
@@ -2881,10 +2881,10 @@
           "areaName": "Woodlands",
           "localAuthorityName": "Coventry",
           "localAuthorityCode": "E08000026",
-          "value": 34.2,
-          "formattedValue": "34.2%",
+          "value": 31.6,
+          "formattedValue": "31.6%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.5835852372716865,
             "lat": 52.41216013710966
@@ -3045,10 +3045,10 @@
           "areaName": "Wyken",
           "localAuthorityName": "Coventry",
           "localAuthorityCode": "E08000026",
-          "value": 36.2,
-          "formattedValue": "36.2%",
+          "value": 34.3,
+          "formattedValue": "34.3%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.4486008550405727,
             "lat": 52.412569137063294
@@ -3133,10 +3133,10 @@
           "areaName": "Abbey",
           "localAuthorityName": "Sandwell",
           "localAuthorityCode": "E08000028",
-          "value": 37.4,
-          "formattedValue": "37.4%",
+          "value": 34.9,
+          "formattedValue": "34.9%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.9782240046759192,
             "lat": 52.475048129490084
@@ -3297,10 +3297,10 @@
           "areaName": "Blackheath",
           "localAuthorityName": "Sandwell",
           "localAuthorityCode": "E08000028",
-          "value": 31.7,
-          "formattedValue": "31.7%",
+          "value": 30.1,
+          "formattedValue": "30.1%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.0422203799525667,
             "lat": 52.47842001137063
@@ -3417,10 +3417,10 @@
           "areaName": "Bristnall",
           "localAuthorityName": "Sandwell",
           "localAuthorityCode": "E08000028",
-          "value": 32.4,
-          "formattedValue": "32.4%",
+          "value": 30.6,
+          "formattedValue": "30.6%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.998444665873781,
             "lat": 52.48276187144945
@@ -3577,10 +3577,10 @@
           "areaName": "Charlemont with Grove Vale",
           "localAuthorityName": "Sandwell",
           "localAuthorityCode": "E08000028",
-          "value": 30.9,
-          "formattedValue": "30.9%",
+          "value": 28.5,
+          "formattedValue": "28.5%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.9695472513582502,
             "lat": 52.54389410534004
@@ -3745,10 +3745,10 @@
           "areaName": "Cradley Heath and Old Hill",
           "localAuthorityName": "Sandwell",
           "localAuthorityCode": "E08000028",
-          "value": 29.6,
-          "formattedValue": "29.6%",
+          "value": 28.3,
+          "formattedValue": "28.3%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.0710712655738717,
             "lat": 52.46986363611387
@@ -3817,10 +3817,10 @@
           "areaName": "Friar Park",
           "localAuthorityName": "Sandwell",
           "localAuthorityCode": "E08000028",
-          "value": 29.9,
-          "formattedValue": "29.9%",
+          "value": 29.2,
+          "formattedValue": "29.2%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.9936418429905571,
             "lat": 52.55523338511962
@@ -3969,10 +3969,10 @@
           "areaName": "Great Barr with Yew Tree",
           "localAuthorityName": "Sandwell",
           "localAuthorityCode": "E08000028",
-          "value": 34.7,
-          "formattedValue": "34.7%",
+          "value": 33.3,
+          "formattedValue": "33.3%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.9472927924424324,
             "lat": 52.553865041042755
@@ -4125,10 +4125,10 @@
           "areaName": "Great Bridge",
           "localAuthorityName": "Sandwell",
           "localAuthorityCode": "E08000028",
-          "value": 29.7,
-          "formattedValue": "29.7%",
+          "value": 29.8,
+          "formattedValue": "29.8%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.0398334761865304,
             "lat": 52.53080958512655
@@ -4261,10 +4261,10 @@
           "areaName": "Greets Green and Lyng",
           "localAuthorityName": "Sandwell",
           "localAuthorityCode": "E08000028",
-          "value": 29.8,
-          "formattedValue": "29.8%",
+          "value": 27.7,
+          "formattedValue": "27.7%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.010187319675677,
             "lat": 52.51713820313775
@@ -4429,10 +4429,10 @@
           "areaName": "Hateley Heath",
           "localAuthorityName": "Sandwell",
           "localAuthorityCode": "E08000028",
-          "value": 29.6,
-          "formattedValue": "29.6%",
+          "value": 28.1,
+          "formattedValue": "28.1%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.995857651421031,
             "lat": 52.5374826704507
@@ -4589,10 +4589,10 @@
           "areaName": "Langley",
           "localAuthorityName": "Sandwell",
           "localAuthorityCode": "E08000028",
-          "value": 30.9,
-          "formattedValue": "30.9%",
+          "value": 30,
+          "formattedValue": "30.0%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.0210030742158085,
             "lat": 52.48695666437514
@@ -4685,10 +4685,10 @@
           "areaName": "Newton",
           "localAuthorityName": "Sandwell",
           "localAuthorityCode": "E08000028",
-          "value": 34.8,
-          "formattedValue": "34.8%",
+          "value": 33.6,
+          "formattedValue": "33.6%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.946995291556459,
             "lat": 52.53784466209859
@@ -4797,10 +4797,10 @@
           "areaName": "Old Warley",
           "localAuthorityName": "Sandwell",
           "localAuthorityCode": "E08000028",
-          "value": 34.1,
-          "formattedValue": "34.1%",
+          "value": 32.8,
+          "formattedValue": "32.8%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.0020068667178426,
             "lat": 52.469630315278984
@@ -4917,10 +4917,10 @@
           "areaName": "Oldbury",
           "localAuthorityName": "Sandwell",
           "localAuthorityCode": "E08000028",
-          "value": 32.8,
-          "formattedValue": "32.8%",
+          "value": 31.9,
+          "formattedValue": "31.9%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.0275869535703017,
             "lat": 52.508101887296995
@@ -5061,10 +5061,10 @@
           "areaName": "Princes End",
           "localAuthorityName": "Sandwell",
           "localAuthorityCode": "E08000028",
-          "value": 27.8,
-          "formattedValue": "27.8%",
+          "value": 26.7,
+          "formattedValue": "26.7%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.057215191294705,
             "lat": 52.54384265538224
@@ -5293,10 +5293,10 @@
           "areaName": "Rowley",
           "localAuthorityName": "Sandwell",
           "localAuthorityCode": "E08000028",
-          "value": 31.5,
-          "formattedValue": "31.5%",
+          "value": 30.4,
+          "formattedValue": "30.4%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.0546913201221653,
             "lat": 52.489348643575724
@@ -5437,10 +5437,10 @@
           "areaName": "St Pauls",
           "localAuthorityName": "Sandwell",
           "localAuthorityCode": "E08000028",
-          "value": 29,
-          "formattedValue": "29.0%",
+          "value": 27.6,
+          "formattedValue": "27.6%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.981984356836575,
             "lat": 52.50099262852555
@@ -5561,10 +5561,10 @@
           "areaName": "Smethwick",
           "localAuthorityName": "Sandwell",
           "localAuthorityCode": "E08000028",
-          "value": 29.5,
-          "formattedValue": "29.5%",
+          "value": 27.6,
+          "formattedValue": "27.6%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.979887531988752,
             "lat": 52.48929630733186
@@ -5717,10 +5717,10 @@
           "areaName": "Soho and Victoria",
           "localAuthorityName": "Sandwell",
           "localAuthorityCode": "E08000028",
-          "value": 31.2,
-          "formattedValue": "31.2%",
+          "value": 30,
+          "formattedValue": "30.0%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.9572007469933868,
             "lat": 52.49205539571391
@@ -5841,10 +5841,10 @@
           "areaName": "Tipton Green",
           "localAuthorityName": "Sandwell",
           "localAuthorityCode": "E08000028",
-          "value": 30.6,
-          "formattedValue": "30.6%",
+          "value": 29.2,
+          "formattedValue": "29.2%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.0649540576865903,
             "lat": 52.5275855544004
@@ -5993,10 +5993,10 @@
           "areaName": "Tividale",
           "localAuthorityName": "Sandwell",
           "localAuthorityCode": "E08000028",
-          "value": 31.9,
-          "formattedValue": "31.9%",
+          "value": 31,
+          "formattedValue": "31.0%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.046388670086645,
             "lat": 52.50329824890748
@@ -6097,10 +6097,10 @@
           "areaName": "Wednesbury North",
           "localAuthorityName": "Sandwell",
           "localAuthorityCode": "E08000028",
-          "value": 28.3,
-          "formattedValue": "28.3%",
+          "value": 26.9,
+          "formattedValue": "26.9%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.0206230731649115,
             "lat": 52.558614553871614
@@ -6265,10 +6265,10 @@
           "areaName": "Wednesbury South",
           "localAuthorityName": "Sandwell",
           "localAuthorityCode": "E08000028",
-          "value": 29.2,
-          "formattedValue": "29.2%",
+          "value": 28.9,
+          "formattedValue": "28.9%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.0210649652871004,
             "lat": 52.54170382458396
@@ -6429,10 +6429,10 @@
           "areaName": "West Bromwich Central",
           "localAuthorityName": "Sandwell",
           "localAuthorityCode": "E08000028",
-          "value": 27.9,
-          "formattedValue": "27.9%",
+          "value": 27.3,
+          "formattedValue": "27.3%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.979924349851469,
             "lat": 52.52150686751598
@@ -6901,10 +6901,10 @@
           "areaName": "Bickenhill",
           "localAuthorityName": "Solihull",
           "localAuthorityCode": "E08000029",
-          "value": 32.8,
-          "formattedValue": "32.8%",
+          "value": 31.5,
+          "formattedValue": "31.5%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.7199648082455108,
             "lat": 52.43244500755214
@@ -7121,10 +7121,10 @@
           "areaName": "Blythe",
           "localAuthorityName": "Solihull",
           "localAuthorityCode": "E08000029",
-          "value": 39.7,
-          "formattedValue": "39.7%",
+          "value": 37.5,
+          "formattedValue": "37.5%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.824418254613503,
             "lat": 52.38006690133907
@@ -7245,10 +7245,10 @@
           "areaName": "Castle Bromwich",
           "localAuthorityName": "Solihull",
           "localAuthorityCode": "E08000029",
-          "value": 33,
-          "formattedValue": "33.0%",
+          "value": 32.5,
+          "formattedValue": "32.5%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.7732951944077866,
             "lat": 52.50672113447892
@@ -7365,10 +7365,10 @@
           "areaName": "Chelmsley Wood",
           "localAuthorityName": "Solihull",
           "localAuthorityCode": "E08000029",
-          "value": 31,
-          "formattedValue": "31.0%",
+          "value": 29,
+          "formattedValue": "29.0%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.7323452172561136,
             "lat": 52.480306628961706
@@ -7625,10 +7625,10 @@
           "areaName": "Dorridge and Hockley Heath",
           "localAuthorityName": "Solihull",
           "localAuthorityCode": "E08000029",
-          "value": 36.7,
-          "formattedValue": "36.7%",
+          "value": 34.6,
+          "formattedValue": "34.6%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.7684819932392022,
             "lat": 52.37091308354524
@@ -7737,10 +7737,10 @@
           "areaName": "Elmdon",
           "localAuthorityName": "Solihull",
           "localAuthorityCode": "E08000029",
-          "value": 32.7,
-          "formattedValue": "32.7%",
+          "value": 32,
+          "formattedValue": "32.0%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.768042943213615,
             "lat": 52.438963747490945
@@ -7897,10 +7897,10 @@
           "areaName": "Kingshurst and Fordbridge",
           "localAuthorityName": "Solihull",
           "localAuthorityCode": "E08000029",
-          "value": 32.5,
-          "formattedValue": "32.5%",
+          "value": 31.5,
+          "formattedValue": "31.5%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.751247843148807,
             "lat": 52.485079313895355
@@ -8253,10 +8253,10 @@
           "areaName": "Knowle",
           "localAuthorityName": "Solihull",
           "localAuthorityCode": "E08000029",
-          "value": 29.5,
-          "formattedValue": "29.5%",
+          "value": 27.9,
+          "formattedValue": "27.9%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.7266959002473736,
             "lat": 52.3821776601694
@@ -8369,10 +8369,10 @@
           "areaName": "Lyndon",
           "localAuthorityName": "Solihull",
           "localAuthorityCode": "E08000029",
-          "value": 30.5,
-          "formattedValue": "30.5%",
+          "value": 30.2,
+          "formattedValue": "30.2%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.7940757773008948,
             "lat": 52.44545097661725
@@ -8997,10 +8997,10 @@
           "areaName": "Meriden",
           "localAuthorityName": "Solihull",
           "localAuthorityCode": "E08000029",
-          "value": 28.9,
-          "formattedValue": "28.9%",
+          "value": 26.3,
+          "formattedValue": "26.3%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.6442259820519698,
             "lat": 52.40608400303878
@@ -9153,10 +9153,10 @@
           "areaName": "Olton",
           "localAuthorityName": "Solihull",
           "localAuthorityCode": "E08000029",
-          "value": 30.3,
-          "formattedValue": "30.3%",
+          "value": 29.1,
+          "formattedValue": "29.1%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.808847089957277,
             "lat": 52.43113991629644
@@ -9333,10 +9333,10 @@
           "areaName": "St Alphege",
           "localAuthorityName": "Solihull",
           "localAuthorityCode": "E08000029",
-          "value": 31.2,
-          "formattedValue": "31.2%",
+          "value": 34.5,
+          "formattedValue": "34.5%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.7850822330699945,
             "lat": 52.40697346745176
@@ -9413,10 +9413,10 @@
           "areaName": "Shirley East",
           "localAuthorityName": "Solihull",
           "localAuthorityCode": "E08000029",
-          "value": 34.3,
-          "formattedValue": "34.3%",
+          "value": 31.9,
+          "formattedValue": "31.9%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.8179159226885018,
             "lat": 52.41270594810917
@@ -9545,10 +9545,10 @@
           "areaName": "Shirley South",
           "localAuthorityName": "Solihull",
           "localAuthorityCode": "E08000029",
-          "value": 34.6,
-          "formattedValue": "34.6%",
+          "value": 33,
+          "formattedValue": "33.0%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.8167067080064179,
             "lat": 52.398735881015284
@@ -9685,10 +9685,10 @@
           "areaName": "Shirley West",
           "localAuthorityName": "Solihull",
           "localAuthorityCode": "E08000029",
-          "value": 38.4,
-          "formattedValue": "38.4%",
+          "value": 34.9,
+          "formattedValue": "34.9%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.844024065930376,
             "lat": 52.40817706170209
@@ -9805,10 +9805,10 @@
           "areaName": "Silhill",
           "localAuthorityName": "Solihull",
           "localAuthorityCode": "E08000029",
-          "value": 34.2,
-          "formattedValue": "34.2%",
+          "value": 30.5,
+          "formattedValue": "30.5%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.779036008474153,
             "lat": 52.42206580118997
@@ -9917,10 +9917,10 @@
           "areaName": "Smith's Wood",
           "localAuthorityName": "Solihull",
           "localAuthorityCode": "E08000029",
-          "value": 31.8,
-          "formattedValue": "31.8%",
+          "value": 30.5,
+          "formattedValue": "30.5%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.7479080033191152,
             "lat": 52.50143115317246
@@ -10169,10 +10169,10 @@
           "areaName": "Aldridge Central and South",
           "localAuthorityName": "Walsall",
           "localAuthorityCode": "E08000030",
-          "value": 32.5,
-          "formattedValue": "32.5%",
+          "value": 31,
+          "formattedValue": "31.0%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.9152499065120099,
             "lat": 52.5995656421771
@@ -10385,10 +10385,10 @@
           "areaName": "Aldridge North and Walsall Wood",
           "localAuthorityName": "Walsall",
           "localAuthorityCode": "E08000030",
-          "value": 29.9,
-          "formattedValue": "29.9%",
+          "value": 28.7,
+          "formattedValue": "28.7%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.9242740513941266,
             "lat": 52.62923096787905
@@ -10513,10 +10513,10 @@
           "areaName": "Bentley and Darlaston North",
           "localAuthorityName": "Walsall",
           "localAuthorityCode": "E08000030",
-          "value": 30.7,
-          "formattedValue": "30.7%",
+          "value": 28.8,
+          "formattedValue": "28.8%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.0251152249883533,
             "lat": 52.58041440276497
@@ -10649,10 +10649,10 @@
           "areaName": "Birchills Leamore",
           "localAuthorityName": "Walsall",
           "localAuthorityCode": "E08000030",
-          "value": 27.8,
-          "formattedValue": "27.8%",
+          "value": 26.5,
+          "formattedValue": "26.5%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.003657533218506,
             "lat": 52.59991930947627
@@ -10765,10 +10765,10 @@
           "areaName": "Blakenall",
           "localAuthorityName": "Walsall",
           "localAuthorityCode": "E08000030",
-          "value": 31.1,
-          "formattedValue": "31.1%",
+          "value": 29.4,
+          "formattedValue": "29.4%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.9808021727172613,
             "lat": 52.60679956062
@@ -10933,10 +10933,10 @@
           "areaName": "Bloxwich East",
           "localAuthorityName": "Walsall",
           "localAuthorityCode": "E08000030",
-          "value": 27.1,
-          "formattedValue": "27.1%",
+          "value": 26.1,
+          "formattedValue": "26.1%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.9950221415503484,
             "lat": 52.62447480771838
@@ -11053,10 +11053,10 @@
           "areaName": "Bloxwich West",
           "localAuthorityName": "Walsall",
           "localAuthorityCode": "E08000030",
-          "value": 30.2,
-          "formattedValue": "30.2%",
+          "value": 29.3,
+          "formattedValue": "29.3%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.0165657235569476,
             "lat": 52.62098853679899
@@ -11205,10 +11205,10 @@
           "areaName": "Brownhills",
           "localAuthorityName": "Walsall",
           "localAuthorityCode": "E08000030",
-          "value": 30.1,
-          "formattedValue": "30.1%",
+          "value": 29.3,
+          "formattedValue": "29.3%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.93969371282757,
             "lat": 52.64897701002209
@@ -11309,10 +11309,10 @@
           "areaName": "Darlaston South",
           "localAuthorityName": "Walsall",
           "localAuthorityCode": "E08000030",
-          "value": 31.1,
-          "formattedValue": "31.1%",
+          "value": 29.8,
+          "formattedValue": "29.8%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.044111771704905,
             "lat": 52.56381630512878
@@ -11505,10 +11505,10 @@
           "areaName": "Paddock",
           "localAuthorityName": "Walsall",
           "localAuthorityCode": "E08000030",
-          "value": 31.3,
-          "formattedValue": "31.3%",
+          "value": 29.5,
+          "formattedValue": "29.5%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.9527563089140962,
             "lat": 52.57300325479149
@@ -11625,10 +11625,10 @@
           "areaName": "Palfrey",
           "localAuthorityName": "Walsall",
           "localAuthorityCode": "E08000030",
-          "value": 28.8,
-          "formattedValue": "28.8%",
+          "value": 28,
+          "formattedValue": "28.0%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.9789673316550955,
             "lat": 52.56707818605648
@@ -11817,10 +11817,10 @@
           "areaName": "Pelsall",
           "localAuthorityName": "Walsall",
           "localAuthorityCode": "E08000030",
-          "value": 34.1,
-          "formattedValue": "34.1%",
+          "value": 32.7,
+          "formattedValue": "32.7%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.969736039522992,
             "lat": 52.630619649214424
@@ -11997,10 +11997,10 @@
           "areaName": "Pheasey Park Farm",
           "localAuthorityName": "Walsall",
           "localAuthorityCode": "E08000030",
-          "value": 43.1,
-          "formattedValue": "43.1%",
+          "value": 40.5,
+          "formattedValue": "40.5%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.9215551520425427,
             "lat": 52.566935599012915
@@ -12097,10 +12097,10 @@
           "areaName": "Pleck",
           "localAuthorityName": "Walsall",
           "localAuthorityCode": "E08000030",
-          "value": 28.4,
-          "formattedValue": "28.4%",
+          "value": 26.5,
+          "formattedValue": "26.5%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.0039898876373576,
             "lat": 52.57902146995966
@@ -12265,10 +12265,10 @@
           "areaName": "Rushall-Shelfield",
           "localAuthorityName": "Walsall",
           "localAuthorityCode": "E08000030",
-          "value": 31.1,
-          "formattedValue": "31.1%",
+          "value": 29.4,
+          "formattedValue": "29.4%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.950212000342816,
             "lat": 52.61133524551476
@@ -12441,10 +12441,10 @@
           "areaName": "St Matthew's",
           "localAuthorityName": "Walsall",
           "localAuthorityCode": "E08000030",
-          "value": 25.5,
-          "formattedValue": "25.5%",
+          "value": 23.3,
+          "formattedValue": "23.3%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.9683488435956604,
             "lat": 52.58664958636588
@@ -12549,10 +12549,10 @@
           "areaName": "Short Heath",
           "localAuthorityName": "Walsall",
           "localAuthorityCode": "E08000030",
-          "value": 31.4,
-          "formattedValue": "31.4%",
+          "value": 29.1,
+          "formattedValue": "29.1%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.0370159113055895,
             "lat": 52.59976994583306
@@ -12677,10 +12677,10 @@
           "areaName": "Streetly",
           "localAuthorityName": "Walsall",
           "localAuthorityCode": "E08000030",
-          "value": 36.6,
-          "formattedValue": "36.6%",
+          "value": 36.7,
+          "formattedValue": "36.7%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.8916897859668234,
             "lat": 52.5773003827077
@@ -12773,10 +12773,10 @@
           "areaName": "Willenhall North",
           "localAuthorityName": "Walsall",
           "localAuthorityCode": "E08000030",
-          "value": 31.5,
-          "formattedValue": "31.5%",
+          "value": 31.3,
+          "formattedValue": "31.3%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.0399995104353015,
             "lat": 52.612337776489866
@@ -12941,10 +12941,10 @@
           "areaName": "Willenhall South",
           "localAuthorityName": "Walsall",
           "localAuthorityCode": "E08000030",
-          "value": 29.6,
-          "formattedValue": "29.6%",
+          "value": 28.9,
+          "formattedValue": "28.9%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.0528093852221305,
             "lat": 52.585560757367354
@@ -13057,10 +13057,10 @@
           "areaName": "Acocks Green",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 26.4,
-          "formattedValue": "26.4%",
+          "value": 25,
+          "formattedValue": "25.0%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.8236957699053,
             "lat": 52.44285968664167
@@ -13173,10 +13173,10 @@
           "areaName": "Allens Cross",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 28.9,
-          "formattedValue": "28.9%",
+          "value": 27.8,
+          "formattedValue": "27.8%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.978986443918932,
             "lat": 52.41600652449351
@@ -13245,10 +13245,10 @@
           "areaName": "Alum Rock",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 22.6,
-          "formattedValue": "22.6%",
+          "value": 21.3,
+          "formattedValue": "21.3%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.8512420145206099,
             "lat": 52.48924151924557
@@ -13337,10 +13337,10 @@
           "areaName": "Aston",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 25.2,
-          "formattedValue": "25.2%",
+          "value": 23.6,
+          "formattedValue": "23.6%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.8860947641720092,
             "lat": 52.50943728438369
@@ -13429,10 +13429,10 @@
           "areaName": "Balsall Heath West",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 23.2,
-          "formattedValue": "23.2%",
+          "value": 22.1,
+          "formattedValue": "22.1%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.8936699317600327,
             "lat": 52.45964875555836
@@ -13609,10 +13609,10 @@
           "areaName": "Bartley Green",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 26.8,
-          "formattedValue": "26.8%",
+          "value": 25.4,
+          "formattedValue": "25.4%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.9950217245443935,
             "lat": 52.43474350036621
@@ -13773,10 +13773,10 @@
           "areaName": "Billesley",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 26.9,
-          "formattedValue": "26.9%",
+          "value": 25.9,
+          "formattedValue": "25.9%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.870952431738731,
             "lat": 52.42186814222156
@@ -13873,10 +13873,10 @@
           "areaName": "Birchfield",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 24.5,
-          "formattedValue": "24.5%",
+          "value": 23.1,
+          "formattedValue": "23.1%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.912839545111227,
             "lat": 52.51007846101116
@@ -13973,10 +13973,10 @@
           "areaName": "Bordesley & Highgate",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 25.5,
-          "formattedValue": "25.5%",
+          "value": 24.9,
+          "formattedValue": "24.9%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.8779635666775831,
             "lat": 52.47506430256524
@@ -14073,10 +14073,10 @@
           "areaName": "Bordesley Green",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 26.2,
-          "formattedValue": "26.2%",
+          "value": 24,
+          "formattedValue": "24.0%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.8597267533571877,
             "lat": 52.472323207842855
@@ -14173,10 +14173,10 @@
           "areaName": "Bournbrook & Selly Park",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 18.4,
-          "formattedValue": "18.4%",
+          "value": 16.8,
+          "formattedValue": "16.8%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.9228519299899465,
             "lat": 52.440680744591965
@@ -14293,10 +14293,10 @@
           "areaName": "Bournville & Cotteridge",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 28.1,
-          "formattedValue": "28.1%",
+          "value": 27,
+          "formattedValue": "27.0%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.9412776497297213,
             "lat": 52.42452277778346
@@ -14441,10 +14441,10 @@
           "areaName": "Brandwood & King's Heath",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 25.4,
-          "formattedValue": "25.4%",
+          "value": 24.3,
+          "formattedValue": "24.3%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.8991097943282118,
             "lat": 52.425656787934486
@@ -14577,10 +14577,10 @@
           "areaName": "Bromford & Hodge Hill",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 26.5,
-          "formattedValue": "26.5%",
+          "value": 24.7,
+          "formattedValue": "24.7%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.8089954487272644,
             "lat": 52.500118666689836
@@ -14661,10 +14661,10 @@
           "areaName": "Castle Vale",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 29.5,
-          "formattedValue": "29.5%",
+          "value": 28.2,
+          "formattedValue": "28.2%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.7867470538107268,
             "lat": 52.51827599692147
@@ -14765,10 +14765,10 @@
           "areaName": "Druids Heath & Monyhull",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 22.8,
-          "formattedValue": "22.8%",
+          "value": 21.6,
+          "formattedValue": "21.6%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.9012771850482237,
             "lat": 52.40983660603672
@@ -14921,10 +14921,10 @@
           "areaName": "Edgbaston",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 23.6,
-          "formattedValue": "23.6%",
+          "value": 22.2,
+          "formattedValue": "22.2%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.9264519129004127,
             "lat": 52.460279078062186
@@ -15109,10 +15109,10 @@
           "areaName": "Erdington",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 27.5,
-          "formattedValue": "27.5%",
+          "value": 25.2,
+          "formattedValue": "25.2%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.833563952787968,
             "lat": 52.528110899098564
@@ -15285,10 +15285,10 @@
           "areaName": "Frankley Great Park",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 27.2,
-          "formattedValue": "27.2%",
+          "value": 26.2,
+          "formattedValue": "26.2%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.0077495492169852,
             "lat": 52.40438483913266
@@ -15449,10 +15449,10 @@
           "areaName": "Garretts Green",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 26,
-          "formattedValue": "26.0%",
+          "value": 24.9,
+          "formattedValue": "24.9%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.7831993888040134,
             "lat": 52.47316904138726
@@ -15637,10 +15637,10 @@
           "areaName": "Glebe Farm & Tile Cross",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 26.4,
-          "formattedValue": "26.4%",
+          "value": 24.6,
+          "formattedValue": "24.6%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.7865860891035852,
             "lat": 52.48450555681348
@@ -15713,10 +15713,10 @@
           "areaName": "Gravelly Hill",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 22.5,
-          "formattedValue": "22.5%",
+          "value": 20.9,
+          "formattedValue": "20.9%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.8458638815492774,
             "lat": 52.51189054726043
@@ -15885,10 +15885,10 @@
           "areaName": "Hall Green North",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 28.1,
-          "formattedValue": "28.1%",
+          "value": 27,
+          "formattedValue": "27.0%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.8445087173471006,
             "lat": 52.435369548490904
@@ -16013,10 +16013,10 @@
           "areaName": "Hall Green South",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 30.1,
-          "formattedValue": "30.1%",
+          "value": 28,
+          "formattedValue": "28.0%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.8471336573419461,
             "lat": 52.41973820935938
@@ -16101,10 +16101,10 @@
           "areaName": "Handsworth",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 22.7,
-          "formattedValue": "22.7%",
+          "value": 20.7,
+          "formattedValue": "20.7%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.9301753220639548,
             "lat": 52.50781251810552
@@ -16229,10 +16229,10 @@
           "areaName": "Handsworth Wood",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 26.4,
-          "formattedValue": "26.4%",
+          "value": 24.3,
+          "formattedValue": "24.3%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.9394584397660628,
             "lat": 52.52142311087237
@@ -16357,10 +16357,10 @@
           "areaName": "Harborne",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 24.3,
-          "formattedValue": "24.3%",
+          "value": 22.9,
+          "formattedValue": "22.9%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.9605729791830928,
             "lat": 52.457479480314866
@@ -16449,10 +16449,10 @@
           "areaName": "Heartlands",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 23.1,
-          "formattedValue": "23.1%",
+          "value": 22.1,
+          "formattedValue": "22.1%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.8316293628029774,
             "lat": 52.47920695099773
@@ -16553,10 +16553,10 @@
           "areaName": "Highter's Heath",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 31.3,
-          "formattedValue": "31.3%",
+          "value": 28.9,
+          "formattedValue": "28.9%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.8770144891081741,
             "lat": 52.40867398070025
@@ -16649,10 +16649,10 @@
           "areaName": "Holyhead",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 25.1,
-          "formattedValue": "25.1%",
+          "value": 23.2,
+          "formattedValue": "23.2%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.9495872875099538,
             "lat": 52.50771151180731
@@ -16845,10 +16845,10 @@
           "areaName": "King's Norton North",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 31,
-          "formattedValue": "31.0%",
+          "value": 28.8,
+          "formattedValue": "28.8%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.9386175058642592,
             "lat": 52.407512380372815
@@ -16985,10 +16985,10 @@
           "areaName": "King's Norton South",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 28.3,
-          "formattedValue": "28.3%",
+          "value": 27.1,
+          "formattedValue": "27.1%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.930650173179715,
             "lat": 52.39874291788119
@@ -17133,10 +17133,10 @@
           "areaName": "Kingstanding",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 27.3,
-          "formattedValue": "27.3%",
+          "value": 25.7,
+          "formattedValue": "25.7%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.8797528742704046,
             "lat": 52.54298714406601
@@ -17273,10 +17273,10 @@
           "areaName": "Ladywood",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 26.4,
-          "formattedValue": "26.4%",
+          "value": 24.2,
+          "formattedValue": "24.2%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.9127021053672628,
             "lat": 52.477841108558
@@ -17465,10 +17465,10 @@
           "areaName": "Longbridge & West Heath",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 28.8,
-          "formattedValue": "28.8%",
+          "value": 27.5,
+          "formattedValue": "27.5%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.9730778661104664,
             "lat": 52.39528962391202
@@ -17549,10 +17549,10 @@
           "areaName": "Lozells",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 24.3,
-          "formattedValue": "24.3%",
+          "value": 22.2,
+          "formattedValue": "22.2%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.909031782258702,
             "lat": 52.501940020625725
@@ -17769,10 +17769,10 @@
           "areaName": "Moseley",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 22.1,
-          "formattedValue": "22.1%",
+          "value": 21.2,
+          "formattedValue": "21.2%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.887294771189245,
             "lat": 52.443087925511975
@@ -17873,10 +17873,10 @@
           "areaName": "Nechells",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 27.6,
-          "formattedValue": "27.6%",
+          "value": 26.5,
+          "formattedValue": "26.5%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.871927996080733,
             "lat": 52.495692806946614
@@ -17965,10 +17965,10 @@
           "areaName": "Newtown",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 28.1,
-          "formattedValue": "28.1%",
+          "value": 26.3,
+          "formattedValue": "26.3%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.8999455879440303,
             "lat": 52.49347256967163
@@ -18109,10 +18109,10 @@
           "areaName": "North Edgbaston",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 23.4,
-          "formattedValue": "23.4%",
+          "value": 22,
+          "formattedValue": "22.0%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.9465976047712907,
             "lat": 52.479798357096165
@@ -18281,10 +18281,10 @@
           "areaName": "Northfield",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 32,
-          "formattedValue": "32.0%",
+          "value": 29.9,
+          "formattedValue": "29.9%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.975608908702706,
             "lat": 52.407910169162285
@@ -18397,10 +18397,10 @@
           "areaName": "Oscott",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 34.2,
-          "formattedValue": "34.2%",
+          "value": 32.7,
+          "formattedValue": "32.7%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.8981309555502432,
             "lat": 52.54766783261767
@@ -18513,10 +18513,10 @@
           "areaName": "Perry Barr",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 29.5,
-          "formattedValue": "29.5%",
+          "value": 26.9,
+          "formattedValue": "26.9%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.904857196007447,
             "lat": 52.528539369932794
@@ -18633,10 +18633,10 @@
           "areaName": "Perry Common",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 27.5,
-          "formattedValue": "27.5%",
+          "value": 25.7,
+          "formattedValue": "25.7%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.8606879079360519,
             "lat": 52.53754019635635
@@ -18773,10 +18773,10 @@
           "areaName": "Pype Hayes",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 30.1,
-          "formattedValue": "30.1%",
+          "value": 28.2,
+          "formattedValue": "28.2%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.8135567393079024,
             "lat": 52.51724258801871
@@ -18889,10 +18889,10 @@
           "areaName": "Quinton",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 26.3,
-          "formattedValue": "26.3%",
+          "value": 24.8,
+          "formattedValue": "24.8%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.9897675207886183,
             "lat": 52.45816235411707
@@ -19009,10 +19009,10 @@
           "areaName": "Rubery & Rednal",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 29.2,
-          "formattedValue": "29.2%",
+          "value": 27.2,
+          "formattedValue": "27.2%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.0053147359678807,
             "lat": 52.39307641514307
@@ -19145,10 +19145,10 @@
           "areaName": "Shard End",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 26.9,
-          "formattedValue": "26.9%",
+          "value": 25.9,
+          "formattedValue": "25.9%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.773045475568289,
             "lat": 52.49515202560679
@@ -19321,10 +19321,10 @@
           "areaName": "Sheldon",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 29.1,
-          "formattedValue": "29.1%",
+          "value": 28.3,
+          "formattedValue": "28.3%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.778589916792373,
             "lat": 52.45971168753317
@@ -19429,10 +19429,10 @@
           "areaName": "Small Heath",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 26.1,
-          "formattedValue": "26.1%",
+          "value": 24.9,
+          "formattedValue": "24.9%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.844919436048662,
             "lat": 52.46787450563121
@@ -19537,10 +19537,10 @@
           "areaName": "Soho & Jewellery Quarter",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 25.5,
-          "formattedValue": "25.5%",
+          "value": 23.8,
+          "formattedValue": "23.8%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.925880991693759,
             "lat": 52.49288443135019
@@ -19653,10 +19653,10 @@
           "areaName": "South Yardley",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 29,
-          "formattedValue": "29.0%",
+          "value": 29.3,
+          "formattedValue": "29.3%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.8128180006560384,
             "lat": 52.45886187896905
@@ -19817,10 +19817,10 @@
           "areaName": "Sparkbrook & Balsall Heath East",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 22.5,
-          "formattedValue": "22.5%",
+          "value": 21.5,
+          "formattedValue": "21.5%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.867018208715107,
             "lat": 52.45958729331011
@@ -19949,10 +19949,10 @@
           "areaName": "Sparkhill",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 22.7,
-          "formattedValue": "22.7%",
+          "value": 22,
+          "formattedValue": "22.0%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.8635917790538536,
             "lat": 52.447649703556756
@@ -20029,10 +20029,10 @@
           "areaName": "Stirchley",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 29.6,
-          "formattedValue": "29.6%",
+          "value": 25.6,
+          "formattedValue": "25.6%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.917017027049448,
             "lat": 52.42735551678107
@@ -20129,10 +20129,10 @@
           "areaName": "Stockland Green",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 25.8,
-          "formattedValue": "25.8%",
+          "value": 24.2,
+          "formattedValue": "24.2%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.8621155682903092,
             "lat": 52.52363543801664
@@ -20309,10 +20309,10 @@
           "areaName": "Sutton Four Oaks",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 35.2,
-          "formattedValue": "35.2%",
+          "value": 32.2,
+          "formattedValue": "32.2%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.846168082474712,
             "lat": 52.58422994018763
@@ -20529,10 +20529,10 @@
           "areaName": "Sutton Mere Green",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 31.6,
-          "formattedValue": "31.6%",
+          "value": 28.8,
+          "formattedValue": "28.8%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.829843578373381,
             "lat": 52.59617635804217
@@ -20753,10 +20753,10 @@
           "areaName": "Sutton Reddicap",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 31.4,
-          "formattedValue": "31.4%",
+          "value": 28.7,
+          "formattedValue": "28.7%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.7903508796995982,
             "lat": 52.563235534924424
@@ -20997,10 +20997,10 @@
           "areaName": "Sutton Roughley",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 37.2,
-          "formattedValue": "37.2%",
+          "value": 36.3,
+          "formattedValue": "36.3%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.8010636176673638,
             "lat": 52.58345120481661
@@ -21257,10 +21257,10 @@
           "areaName": "Sutton Trinity",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 34.8,
-          "formattedValue": "34.8%",
+          "value": 32.9,
+          "formattedValue": "32.9%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.82806994193201,
             "lat": 52.56559693227361
@@ -21505,10 +21505,10 @@
           "areaName": "Sutton Vesey",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 31.3,
-          "formattedValue": "31.3%",
+          "value": 29.4,
+          "formattedValue": "29.4%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.8578202243070991,
             "lat": 52.559979677420294
@@ -21853,10 +21853,10 @@
           "areaName": "Sutton Walmley & Minworth",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 31.8,
-          "formattedValue": "31.8%",
+          "value": 32.1,
+          "formattedValue": "32.1%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.7754126259416514,
             "lat": 52.537579849432014
@@ -21977,10 +21977,10 @@
           "areaName": "Sutton Wylde Green",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 28.3,
-          "formattedValue": "28.3%",
+          "value": 27.6,
+          "formattedValue": "27.6%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.8205787113037284,
             "lat": 52.5437575764524
@@ -22133,10 +22133,10 @@
           "areaName": "Tyseley & Hay Mills",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 25.8,
-          "formattedValue": "25.8%",
+          "value": 24.8,
+          "formattedValue": "24.8%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.8349027077276068,
             "lat": 52.45579218544632
@@ -22205,10 +22205,10 @@
           "areaName": "Ward End",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 24.2,
-          "formattedValue": "24.2%",
+          "value": 22.6,
+          "formattedValue": "22.6%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.8353118215077644,
             "lat": 52.49662990002323
@@ -22309,10 +22309,10 @@
           "areaName": "Weoley & Selly Oak",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 27.5,
-          "formattedValue": "27.5%",
+          "value": 26.3,
+          "formattedValue": "26.3%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.9601829449020618,
             "lat": 52.4362443012269
@@ -22437,10 +22437,10 @@
           "areaName": "Yardley East",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 28,
-          "formattedValue": "28.0%",
+          "value": 28.3,
+          "formattedValue": "28.3%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.8014236102957866,
             "lat": 52.47400617568681
@@ -22513,10 +22513,10 @@
           "areaName": "Yardley West & Stechford",
           "localAuthorityName": "Birmingham",
           "localAuthorityCode": "E08000025",
-          "value": 25.2,
-          "formattedValue": "25.2%",
+          "value": 24.3,
+          "formattedValue": "24.3%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -1.8151590324647506,
             "lat": 52.47536357380522
@@ -22633,10 +22633,10 @@
           "areaName": "Bilston North",
           "localAuthorityName": "Wolverhampton",
           "localAuthorityCode": "E08000031",
-          "value": 29.5,
-          "formattedValue": "29.5%",
+          "value": 28.6,
+          "formattedValue": "28.6%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.076303797632336,
             "lat": 52.57325439759543
@@ -22845,10 +22845,10 @@
           "areaName": "Bilston South",
           "localAuthorityName": "Wolverhampton",
           "localAuthorityCode": "E08000031",
-          "value": 29.6,
-          "formattedValue": "29.6%",
+          "value": 27.3,
+          "formattedValue": "27.3%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.069066288380895,
             "lat": 52.55959896243869
@@ -22972,7 +22972,7 @@
           "value": 27,
           "formattedValue": "27.0%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.129013377535477,
             "lat": 52.56670755543111
@@ -23101,10 +23101,10 @@
           "areaName": "Bushbury North",
           "localAuthorityName": "Wolverhampton",
           "localAuthorityCode": "E08000031",
-          "value": 32.6,
-          "formattedValue": "32.6%",
+          "value": 31.7,
+          "formattedValue": "31.7%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.119419827583151,
             "lat": 52.6272076346181
@@ -23185,10 +23185,10 @@
           "areaName": "Bushbury South & Low Hill",
           "localAuthorityName": "Wolverhampton",
           "localAuthorityCode": "E08000031",
-          "value": 33.2,
-          "formattedValue": "33.2%",
+          "value": 30.6,
+          "formattedValue": "30.6%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.115620907648703,
             "lat": 52.607206288333174
@@ -23297,10 +23297,10 @@
           "areaName": "East Park",
           "localAuthorityName": "Wolverhampton",
           "localAuthorityCode": "E08000031",
-          "value": 28.6,
-          "formattedValue": "28.6%",
+          "value": 27,
+          "formattedValue": "27.0%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.0944647217955,
             "lat": 52.582897278065296
@@ -23429,10 +23429,10 @@
           "areaName": "Ettingshall North",
           "localAuthorityName": "Wolverhampton",
           "localAuthorityCode": "E08000031",
-          "value": 32.6,
-          "formattedValue": "32.6%",
+          "value": 30.9,
+          "formattedValue": "30.9%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.1043549385365092,
             "lat": 52.569461528179545
@@ -23565,10 +23565,10 @@
           "areaName": "Ettingshall South & Spring Vale",
           "localAuthorityName": "Wolverhampton",
           "localAuthorityCode": "E08000031",
-          "value": 32.9,
-          "formattedValue": "32.9%",
+          "value": 31.9,
+          "formattedValue": "31.9%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.1051859899165257,
             "lat": 52.55471479071677
@@ -23661,10 +23661,10 @@
           "areaName": "Fallings Park",
           "localAuthorityName": "Wolverhampton",
           "localAuthorityCode": "E08000031",
-          "value": 29.1,
-          "formattedValue": "29.1%",
+          "value": 27.8,
+          "formattedValue": "27.8%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.097256588935091,
             "lat": 52.61311292071523
@@ -23725,10 +23725,10 @@
           "areaName": "Graiseley",
           "localAuthorityName": "Wolverhampton",
           "localAuthorityCode": "E08000031",
-          "value": 28.3,
-          "formattedValue": "28.3%",
+          "value": 26.8,
+          "formattedValue": "26.8%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.146238561525022,
             "lat": 52.576418416643634
@@ -23837,10 +23837,10 @@
           "areaName": "Heath Town",
           "localAuthorityName": "Wolverhampton",
           "localAuthorityCode": "E08000031",
-          "value": 29.4,
-          "formattedValue": "29.4%",
+          "value": 28.1,
+          "formattedValue": "28.1%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.103789995411194,
             "lat": 52.59628020327648
@@ -23949,10 +23949,10 @@
           "areaName": "Merry Hill",
           "localAuthorityName": "Wolverhampton",
           "localAuthorityCode": "E08000031",
-          "value": 30.5,
-          "formattedValue": "30.5%",
+          "value": 29.4,
+          "formattedValue": "29.4%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.1706544827818757,
             "lat": 52.5705530600653
@@ -24081,10 +24081,10 @@
           "areaName": "Oxley",
           "localAuthorityName": "Wolverhampton",
           "localAuthorityCode": "E08000031",
-          "value": 29.9,
-          "formattedValue": "29.9%",
+          "value": 27.9,
+          "formattedValue": "27.9%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.1422118467883737,
             "lat": 52.61586002682516
@@ -24217,10 +24217,10 @@
           "areaName": "Park",
           "localAuthorityName": "Wolverhampton",
           "localAuthorityCode": "E08000031",
-          "value": 27,
-          "formattedValue": "27.0%",
+          "value": 26.2,
+          "formattedValue": "26.2%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.1528440957278723,
             "lat": 52.58959257327014
@@ -24337,10 +24337,10 @@
           "areaName": "Penn",
           "localAuthorityName": "Wolverhampton",
           "localAuthorityCode": "E08000031",
-          "value": 30.8,
-          "formattedValue": "30.8%",
+          "value": 30.1,
+          "formattedValue": "30.1%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.1544349718994535,
             "lat": 52.56177081608891
@@ -24497,10 +24497,10 @@
           "areaName": "St Peters",
           "localAuthorityName": "Wolverhampton",
           "localAuthorityCode": "E08000031",
-          "value": 26.6,
-          "formattedValue": "26.6%",
+          "value": 25.1,
+          "formattedValue": "25.1%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.131444499244092,
             "lat": 52.59283605896554
@@ -24685,10 +24685,10 @@
           "areaName": "Tettenhall Regis",
           "localAuthorityName": "Wolverhampton",
           "localAuthorityCode": "E08000031",
-          "value": 32,
-          "formattedValue": "32.0%",
+          "value": 31,
+          "formattedValue": "31.0%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.1699897261228895,
             "lat": 52.60431430369046
@@ -24877,10 +24877,10 @@
           "areaName": "Tettenhall Wightwick",
           "localAuthorityName": "Wolverhampton",
           "localAuthorityCode": "E08000031",
-          "value": 33.4,
-          "formattedValue": "33.4%",
+          "value": 30.5,
+          "formattedValue": "30.5%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.181237485594383,
             "lat": 52.586184816597246
@@ -25009,10 +25009,10 @@
           "areaName": "Wednesfield North",
           "localAuthorityName": "Wolverhampton",
           "localAuthorityCode": "E08000031",
-          "value": 31.4,
-          "formattedValue": "31.4%",
+          "value": 29.7,
+          "formattedValue": "29.7%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.0626164742126796,
             "lat": 52.61334030035267
@@ -25177,10 +25177,10 @@
           "areaName": "Wednesfield South",
           "localAuthorityName": "Wolverhampton",
           "localAuthorityCode": "E08000031",
-          "value": 33.3,
-          "formattedValue": "33.3%",
+          "value": 31.8,
+          "formattedValue": "31.8%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.0750756430588644,
             "lat": 52.59905122848006
@@ -25333,10 +25333,10 @@
           "areaName": "Amblecote",
           "localAuthorityName": "Dudley",
           "localAuthorityCode": "E08000027",
-          "value": 35.4,
-          "formattedValue": "35.4%",
+          "value": 34.2,
+          "formattedValue": "34.2%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.136768581746346,
             "lat": 52.468607994276574
@@ -25565,10 +25565,10 @@
           "areaName": "Belle Vale",
           "localAuthorityName": "Dudley",
           "localAuthorityCode": "E08000027",
-          "value": 31.8,
-          "formattedValue": "31.8%",
+          "value": 30.5,
+          "formattedValue": "30.5%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.0609371222882857,
             "lat": 52.455114928359485
@@ -25697,10 +25697,10 @@
           "areaName": "Brierley Hill & Wordsley South",
           "localAuthorityName": "Dudley",
           "localAuthorityCode": "E08000027",
-          "value": 30.3,
-          "formattedValue": "30.3%",
+          "value": 28.8,
+          "formattedValue": "28.8%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.1302963050768944,
             "lat": 52.47920789301869
@@ -25885,10 +25885,10 @@
           "areaName": "Brockmoor & Pensnett",
           "localAuthorityName": "Dudley",
           "localAuthorityCode": "E08000027",
-          "value": 30.8,
-          "formattedValue": "30.8%",
+          "value": 30.4,
+          "formattedValue": "30.4%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.1339247086617177,
             "lat": 52.49862954977171
@@ -26037,10 +26037,10 @@
           "areaName": "Castle & Priory",
           "localAuthorityName": "Dudley",
           "localAuthorityCode": "E08000027",
-          "value": 30.5,
-          "formattedValue": "30.5%",
+          "value": 29.4,
+          "formattedValue": "29.4%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.090381937893067,
             "lat": 52.51989648634765
@@ -26217,10 +26217,10 @@
           "areaName": "Coseley",
           "localAuthorityName": "Dudley",
           "localAuthorityCode": "E08000027",
-          "value": 34,
-          "formattedValue": "34.0%",
+          "value": 32.1,
+          "formattedValue": "32.1%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.085075447412845,
             "lat": 52.54321234411646
@@ -26473,10 +26473,10 @@
           "areaName": "Cradley North & Wollescote",
           "localAuthorityName": "Dudley",
           "localAuthorityCode": "E08000027",
-          "value": 31.7,
-          "formattedValue": "31.7%",
+          "value": 29.8,
+          "formattedValue": "29.8%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.0975945467068233,
             "lat": 52.455464677267585
@@ -26661,10 +26661,10 @@
           "areaName": "Gornal",
           "localAuthorityName": "Dudley",
           "localAuthorityCode": "E08000027",
-          "value": 29.8,
-          "formattedValue": "29.8%",
+          "value": 30,
+          "formattedValue": "30.0%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.132292544351475,
             "lat": 52.52062007189685
@@ -26773,10 +26773,10 @@
           "areaName": "Halesowen North",
           "localAuthorityName": "Dudley",
           "localAuthorityCode": "E08000027",
-          "value": 32,
-          "formattedValue": "32.0%",
+          "value": 31.5,
+          "formattedValue": "31.5%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.0320359539518735,
             "lat": 52.4667240452904
@@ -26957,10 +26957,10 @@
           "areaName": "Halesowen South",
           "localAuthorityName": "Dudley",
           "localAuthorityCode": "E08000027",
-          "value": 33.5,
-          "formattedValue": "33.5%",
+          "value": 32.3,
+          "formattedValue": "32.3%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.0312636202043612,
             "lat": 52.44635952087376
@@ -27205,10 +27205,10 @@
           "areaName": "Hayley Green & Cradley South",
           "localAuthorityName": "Dudley",
           "localAuthorityCode": "E08000027",
-          "value": 32.7,
-          "formattedValue": "32.7%",
+          "value": 31.5,
+          "formattedValue": "31.5%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.0762893660165336,
             "lat": 52.4430256227032
@@ -27385,10 +27385,10 @@
           "areaName": "Kingswinford North & Wall Heath",
           "localAuthorityName": "Dudley",
           "localAuthorityCode": "E08000027",
-          "value": 37,
-          "formattedValue": "37.0%",
+          "value": 34.5,
+          "formattedValue": "34.5%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.1699533714262826,
             "lat": 52.50495667998773
@@ -27529,10 +27529,10 @@
           "areaName": "Kingswinford South",
           "localAuthorityName": "Dudley",
           "localAuthorityCode": "E08000027",
-          "value": 33.9,
-          "formattedValue": "33.9%",
+          "value": 33.4,
+          "formattedValue": "33.4%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.1624017751332163,
             "lat": 52.49216033800701
@@ -27753,10 +27753,10 @@
           "areaName": "Lye & Stourbridge North",
           "localAuthorityName": "Dudley",
           "localAuthorityCode": "E08000027",
-          "value": 29.6,
-          "formattedValue": "29.6%",
+          "value": 28.9,
+          "formattedValue": "28.9%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.1234256635592357,
             "lat": 52.45985998934944
@@ -27957,10 +27957,10 @@
           "areaName": "Netherton & Holly Hall",
           "localAuthorityName": "Dudley",
           "localAuthorityCode": "E08000027",
-          "value": 29.1,
-          "formattedValue": "29.1%",
+          "value": 28.7,
+          "formattedValue": "28.7%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.093117912248143,
             "lat": 52.49244909766459
@@ -28045,10 +28045,10 @@
           "areaName": "Norton",
           "localAuthorityName": "Dudley",
           "localAuthorityCode": "E08000027",
-          "value": 29.9,
-          "formattedValue": "29.9%",
+          "value": 27.6,
+          "formattedValue": "27.6%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.157219192869892,
             "lat": 52.4418813053813
@@ -28192,7 +28192,7 @@
           "value": 30.4,
           "formattedValue": "30.4%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.1285891177460914,
             "lat": 52.441560242783915
@@ -28349,10 +28349,10 @@
           "areaName": "Quarry Bank & Dudley Wood",
           "localAuthorityName": "Dudley",
           "localAuthorityCode": "E08000027",
-          "value": 32.8,
-          "formattedValue": "32.8%",
+          "value": 32.7,
+          "formattedValue": "32.7%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.0955776732200144,
             "lat": 52.47600558715636
@@ -28565,10 +28565,10 @@
           "areaName": "Sedgley",
           "localAuthorityName": "Dudley",
           "localAuthorityCode": "E08000027",
-          "value": 29.2,
-          "formattedValue": "29.2%",
+          "value": 28.6,
+          "formattedValue": "28.6%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.123841699472735,
             "lat": 52.54339505939168
@@ -28669,10 +28669,10 @@
           "areaName": "St. James's",
           "localAuthorityName": "Dudley",
           "localAuthorityCode": "E08000027",
-          "value": 25.7,
-          "formattedValue": "25.7%",
+          "value": 25.1,
+          "formattedValue": "25.1%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.1059977611676106,
             "lat": 52.509886909222054
@@ -28829,10 +28829,10 @@
           "areaName": "St. Thomas's",
           "localAuthorityName": "Dudley",
           "localAuthorityCode": "E08000027",
-          "value": 27.1,
-          "formattedValue": "27.1%",
+          "value": 26.4,
+          "formattedValue": "26.4%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.0750890676220646,
             "lat": 52.50436415687288
@@ -29009,10 +29009,10 @@
           "areaName": "Upper Gornal & Woodsetton",
           "localAuthorityName": "Dudley",
           "localAuthorityCode": "E08000027",
-          "value": 32.2,
-          "formattedValue": "32.2%",
+          "value": 29.8,
+          "formattedValue": "29.8%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.101800990097095,
             "lat": 52.53200277629672
@@ -29149,10 +29149,10 @@
           "areaName": "Wollaston & Stourbridge Town",
           "localAuthorityName": "Dudley",
           "localAuthorityCode": "E08000027",
-          "value": 30.1,
-          "formattedValue": "30.1%",
+          "value": 30.2,
+          "formattedValue": "30.2%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.1585818510107537,
             "lat": 52.45976964135782
@@ -29245,10 +29245,10 @@
           "areaName": "Wordsley North",
           "localAuthorityName": "Dudley",
           "localAuthorityCode": "E08000027",
-          "value": 37.5,
-          "formattedValue": "37.5%",
+          "value": 35.2,
+          "formattedValue": "35.2%",
           "valueLabel": "UC in work",
-          "sourceDate": "2025-12",
+          "sourceDate": "2026-02",
           "centroid": {
             "lon": -2.1583652846513663,
             "lat": 52.48179942269633

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-05-03T06:07:49.118Z",
+  "generatedAt": "2026-05-04T06:09:25.743Z",
   "layer": {
     "id": "gva-all-industries",
     "title": "Gross Value Added: All Industries",
@@ -44,11 +44,11 @@
       "licence": "Open Government Licence v3.0 via Birmingham City Observatory metadata",
       "caveat": "Ward-level GVA is modelled and smoothed. It should be used as indicative economic context, not as a precise local-business ledger. Freshness is tracked for visibility rather than treated as an operational defect.",
       "datasetTitle": "Gross value added (GVA): All industries - WMCA Wards (2025)",
-      "dataProcessedAt": "2026-04-20T10:18:15+00:00",
+      "dataProcessedAt": "2026-05-03T23:01:54+00:00",
       "updateFrequency": "ANNUAL",
       "recordsFetched": 192,
       "latestSourceDate": "2023",
-      "fetchedAt": "2026-05-03T06:07:49.118Z"
+      "fetchedAt": "2026-05-04T06:09:25.743Z"
     },
     "summary": {
       "min": 46,

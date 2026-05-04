@@ -27,10 +27,10 @@
       "#0d4f76"
     ],
     "legendBreaks": [
-      26.9,
+      25.4,
+      27.9,
       29.4,
-      30.9,
-      32.7
+      31.5
     ],
     "source": {
       "kind": "bco_api",
@@ -43,69 +43,69 @@
       "licence": "Open Government Licence v3.0 via Birmingham City Observatory metadata",
       "caveat": "This is a claimant-based rate, not a share of the total working-age population.",
       "datasetTitle": "Percentage Universal Credit claimants in employment - WMCA Wards (2025)",
-      "dataProcessedAt": "2026-04-20T10:18:45+00:00",
+      "dataProcessedAt": "2026-05-03T23:00:42+00:00",
       "updateFrequency": "MONTHLY",
       "recordsFetched": 192,
-      "latestSourceDate": "2025-12",
-      "fetchedAt": "2026-05-03T06:07:38.413Z"
+      "latestSourceDate": "2026-02",
+      "fetchedAt": "2026-05-04T06:09:16.872Z"
     },
     "summary": {
-      "min": 18.4,
-      "max": 43.1,
-      "mean": 29.975520833333338,
-      "median": 30,
+      "min": 16.8,
+      "max": 40.5,
+      "mean": 28.509374999999995,
+      "median": 28.8,
       "topAreas": [
         {
           "areaId": "E05001313",
           "areaName": "Pheasey Park Farm",
-          "value": 43.1
+          "value": 40.5
         },
         {
           "areaId": "E05001285",
           "areaName": "Blythe",
-          "value": 39.7
+          "value": 37.5
         },
         {
-          "areaId": "E05001298",
-          "areaName": "Shirley West",
-          "value": 38.4
+          "areaId": "E05001318",
+          "areaName": "Streetly",
+          "value": 36.7
+        },
+        {
+          "areaId": "E05011177",
+          "areaName": "Sutton Roughley",
+          "value": 36.3
         },
         {
           "areaId": "E05015926",
           "areaName": "Wordsley North",
-          "value": 37.5
-        },
-        {
-          "areaId": "E05001260",
-          "areaName": "Abbey",
-          "value": 37.4
+          "value": 35.2
         }
       ],
       "bottomAreas": [
         {
           "areaId": "E05011128",
           "areaName": "Bournbrook & Selly Park",
-          "value": 18.4
+          "value": 16.8
         },
         {
-          "areaId": "E05011154",
-          "areaName": "Moseley",
-          "value": 22.1
+          "areaId": "E05011142",
+          "areaName": "Handsworth",
+          "value": 20.7
         },
         {
           "areaId": "E05011139",
           "areaName": "Gravelly Hill",
-          "value": 22.5
+          "value": 20.9
         },
         {
-          "areaId": "E05011170",
-          "areaName": "Sparkbrook & Balsall Heath East",
-          "value": 22.5
+          "areaId": "E05011154",
+          "areaName": "Moseley",
+          "value": 21.2
         },
         {
           "areaId": "E05011120",
           "areaName": "Alum Rock",
-          "value": 22.6
+          "value": 21.3
         }
       ]
     }
@@ -157,7 +157,7 @@
       "updateFrequency": "IRREG",
       "recordsFetched": 192,
       "latestSourceDate": "2025",
-      "fetchedAt": "2026-05-03T06:07:40.072Z"
+      "fetchedAt": "2026-05-04T06:09:18.480Z"
     },
     "summary": {
       "min": 4.4,
@@ -263,11 +263,11 @@
       "licence": "Open Government Licence v3.0 via Birmingham City Observatory metadata",
       "caveat": "Annual fuel-poverty estimates can lag current energy conditions and should be read as structural context rather than a real-time signal. Freshness is tracked for visibility rather than treated as an operational defect.",
       "datasetTitle": "Percentage households in fuel poverty - WMCA Wards",
-      "dataProcessedAt": "2026-05-03T01:05:11+00:00",
+      "dataProcessedAt": "2026-05-04T01:05:22+00:00",
       "updateFrequency": "ANNUAL",
       "recordsFetched": 192,
       "latestSourceDate": "2023",
-      "fetchedAt": "2026-05-03T06:07:43.608Z"
+      "fetchedAt": "2026-05-04T06:09:20.984Z"
     },
     "summary": {
       "min": 6,
@@ -373,11 +373,11 @@
       "licence": "Open Government Licence v3.0 via Birmingham City Observatory metadata",
       "caveat": "Ward-level GVA is modelled and smoothed. It should be used as indicative economic context, not as a precise local-business ledger. Freshness is tracked for visibility rather than treated as an operational defect.",
       "datasetTitle": "Gross value added (GVA): All industries - WMCA Wards (2025)",
-      "dataProcessedAt": "2026-04-20T10:18:15+00:00",
+      "dataProcessedAt": "2026-05-03T23:01:54+00:00",
       "updateFrequency": "ANNUAL",
       "recordsFetched": 192,
       "latestSourceDate": "2023",
-      "fetchedAt": "2026-05-03T06:07:49.118Z"
+      "fetchedAt": "2026-05-04T06:09:25.743Z"
     },
     "summary": {
       "min": 46,
@@ -487,7 +487,7 @@
       "updateFrequency": "DECENNIAL",
       "recordsFetched": 192,
       "latestSourceDate": "2021",
-      "fetchedAt": "2026-05-03T06:07:50.393Z"
+      "fetchedAt": "2026-05-04T06:09:26.895Z"
     },
     "summary": {
       "min": 0.4,
@@ -605,10 +605,10 @@
       "measureId": "M048",
       "licence": "Open Government Licence v3.0 unless stated otherwise by the publisher",
       "caveat": "This is a mean wait measure at Sub ICB geography, not a person-level guarantee. Local suppression and monthly operational variation can affect interpretation.",
-      "dataProcessedAt": "2026-05-03T06:07:57.226Z",
+      "dataProcessedAt": "2026-05-04T06:09:40.145Z",
       "recordsFetched": 10,
       "latestSourceDate": "2026-01-31",
-      "fetchedAt": "2026-05-03T06:07:57.248Z"
+      "fetchedAt": "2026-05-04T06:09:40.162Z"
     },
     "summary": {
       "min": 14.5,
@@ -726,10 +726,10 @@
       "measureId": "M053",
       "licence": "Open Government Licence v3.0 unless stated otherwise by the publisher",
       "caveat": "This percentage is based on referrals completing a course of treatment in the month. It is a service-access performance indicator, not a population coverage rate.",
-      "dataProcessedAt": "2026-05-03T06:08:07.203Z",
+      "dataProcessedAt": "2026-05-04T06:09:47.220Z",
       "recordsFetched": 10,
       "latestSourceDate": "2026-01-31",
-      "fetchedAt": "2026-05-03T06:08:07.222Z"
+      "fetchedAt": "2026-05-04T06:09:47.236Z"
     },
     "summary": {
       "min": 53,

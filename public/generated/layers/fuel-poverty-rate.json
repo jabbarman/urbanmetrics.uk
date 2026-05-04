@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-05-03T06:07:43.608Z",
+  "generatedAt": "2026-05-04T06:09:20.983Z",
   "layer": {
     "id": "fuel-poverty-rate",
     "title": "Households In Fuel Poverty",
@@ -44,11 +44,11 @@
       "licence": "Open Government Licence v3.0 via Birmingham City Observatory metadata",
       "caveat": "Annual fuel-poverty estimates can lag current energy conditions and should be read as structural context rather than a real-time signal. Freshness is tracked for visibility rather than treated as an operational defect.",
       "datasetTitle": "Percentage households in fuel poverty - WMCA Wards",
-      "dataProcessedAt": "2026-05-03T01:05:11+00:00",
+      "dataProcessedAt": "2026-05-04T01:05:22+00:00",
       "updateFrequency": "ANNUAL",
       "recordsFetched": 192,
       "latestSourceDate": "2023",
-      "fetchedAt": "2026-05-03T06:07:43.608Z"
+      "fetchedAt": "2026-05-04T06:09:20.984Z"
     },
     "summary": {
       "min": 6,
