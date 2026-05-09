@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-05-08T05:47:15.527Z",
+  "generatedAt": "2026-05-09T06:00:11.116Z",
   "id": "talking-therapies-therapy-types",
   "title": "Talking Therapies therapy-type context",
   "reportingPeriod": "2024-25",
@@ -12,8 +12,8 @@
     "datasetTitle": "Therapy Based Outcomes Table 4-2.csv",
     "updateFrequency": "ANNUAL",
     "latestSourceDate": "2024-25",
-    "dataProcessedAt": "2026-05-08T05:47:14.815Z",
-    "fetchedAt": "2026-05-08T05:47:14.815Z",
+    "dataProcessedAt": "2026-05-09T06:00:10.337Z",
+    "fetchedAt": "2026-05-09T06:00:10.337Z",
     "caveat": "Annual therapy-based outcomes for courses of therapy in the Midlands Commissioning Region. This is regional context, not a Sub ICB breakdown, and it is not directly comparable with the monthly access and wait layers."
   },
   "therapies": [
