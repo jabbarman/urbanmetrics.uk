@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-05-09T06:00:48.332Z",
+  "generatedAt": "2026-05-10T06:08:53.188Z",
   "layer": {
     "id": "gva-all-industries",
     "title": "Gross Value Added: All Industries",
@@ -48,7 +48,7 @@
       "updateFrequency": "ANNUAL",
       "recordsFetched": 192,
       "latestSourceDate": "2023",
-      "fetchedAt": "2026-05-09T06:00:48.332Z"
+      "fetchedAt": "2026-05-10T06:08:53.188Z"
     },
     "summary": {
       "min": 46,
