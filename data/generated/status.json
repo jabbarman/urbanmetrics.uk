@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-20T06:29:50.715Z",
+  "generatedAt": "2026-05-21T06:29:56.443Z",
   "layers": [
     {
       "id": "uc-in-work-rate",
@@ -9,7 +9,7 @@
       "latestSourceDate": "2026-02",
       "updateFrequency": "MONTHLY",
       "recordsFetched": 192,
-      "message": "Latest source period exceeded 60 days (80 days observed)."
+      "message": "Latest source period exceeded 60 days (81 days observed)."
     },
     {
       "id": "imd-employment-score",
@@ -55,21 +55,21 @@
       "id": "nhs-talking-therapies-wait-time",
       "title": "Talking Therapies Mean Wait",
       "status": "stale",
-      "dataProcessedAt": "2026-05-20T06:29:45.324Z",
+      "dataProcessedAt": "2026-05-21T06:29:49.702Z",
       "latestSourceDate": "2026-01-31",
       "updateFrequency": "MONTHLY",
       "recordsFetched": 10,
-      "message": "Latest source period exceeded 90 days (108 days observed)."
+      "message": "Latest source period exceeded 90 days (109 days observed)."
     },
     {
       "id": "nhs-talking-therapies-six-week-access",
       "title": "Talking Therapies Access Within 6 Weeks",
       "status": "stale",
-      "dataProcessedAt": "2026-05-20T06:29:50.695Z",
+      "dataProcessedAt": "2026-05-21T06:29:56.414Z",
       "latestSourceDate": "2026-01-31",
       "updateFrequency": "MONTHLY",
       "recordsFetched": 10,
-      "message": "Latest source period exceeded 90 days (108 days observed)."
+      "message": "Latest source period exceeded 90 days (109 days observed)."
     }
   ]
 }
