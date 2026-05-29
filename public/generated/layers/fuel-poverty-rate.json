@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-05-28T06:31:56.404Z",
+  "generatedAt": "2026-05-29T06:32:28.250Z",
   "layer": {
     "id": "fuel-poverty-rate",
     "title": "Households In Fuel Poverty",
@@ -48,7 +48,7 @@
       "updateFrequency": "ANNUAL",
       "recordsFetched": 192,
       "latestSourceDate": "2023",
-      "fetchedAt": "2026-05-28T06:31:56.404Z"
+      "fetchedAt": "2026-05-29T06:32:28.250Z"
     },
     "summary": {
       "min": 6,
