@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-05-29T06:32:25.065Z",
+  "generatedAt": "2026-05-30T06:11:30.676Z",
   "layer": {
     "id": "imd-employment-score",
     "title": "IMD Employment Score",
@@ -48,7 +48,7 @@
       "updateFrequency": "IRREG",
       "recordsFetched": 192,
       "latestSourceDate": "2025",
-      "fetchedAt": "2026-05-29T06:32:25.065Z"
+      "fetchedAt": "2026-05-30T06:11:30.676Z"
     },
     "summary": {
       "min": 4.4,
