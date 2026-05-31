@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-05-30T06:11:29.228Z",
+  "generatedAt": "2026-05-31T06:34:15.933Z",
   "layer": {
     "id": "uc-in-work-rate",
     "title": "Universal Credit Claimants In Employment",
@@ -49,7 +49,7 @@
       "updateFrequency": "MONTHLY",
       "recordsFetched": 192,
       "latestSourceDate": "2026-02",
-      "fetchedAt": "2026-05-30T06:11:29.228Z"
+      "fetchedAt": "2026-05-31T06:34:15.934Z"
     },
     "summary": {
       "min": 16.8,
