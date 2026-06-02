@@ -240,8 +240,8 @@ export const layerDefinitions: LayerDefinition[] = [
       provider: "NHS England",
       publisher: "NHS England",
       publicationUrl:
-        "https://digital.nhs.uk/data-and-information/publications/statistical/nhs-talking-therapies-monthly-statistics-including-employment-advisors/performance-january-2026",
-      fileUrl: "https://files.digital.nhs.uk/D3/4FFE1D/nhstalkingtherapies_month_jan_2026_activity_performance.csv",
+        "https://digital.nhs.uk/data-and-information/publications/statistical/nhs-talking-therapies-monthly-statistics-including-employment-advisors/performance-march-2026-and-quarter-4-2025-26-data",
+      fileUrl: "https://files.digital.nhs.uk/C5/C280AE/nhstalkingtherapies_month_mar_2026_activity_performance.csv",
       fileFormat: "csv",
       datasetTitle: "NHS Talking Therapies monthly activity and performance",
       updateFrequency: "MONTHLY",
@@ -294,8 +294,8 @@ export const layerDefinitions: LayerDefinition[] = [
       provider: "NHS England",
       publisher: "NHS England",
       publicationUrl:
-        "https://digital.nhs.uk/data-and-information/publications/statistical/nhs-talking-therapies-monthly-statistics-including-employment-advisors/performance-january-2026",
-      fileUrl: "https://files.digital.nhs.uk/D3/4FFE1D/nhstalkingtherapies_month_jan_2026_activity_performance.csv",
+        "https://digital.nhs.uk/data-and-information/publications/statistical/nhs-talking-therapies-monthly-statistics-including-employment-advisors/performance-march-2026-and-quarter-4-2025-26-data",
+      fileUrl: "https://files.digital.nhs.uk/C5/C280AE/nhstalkingtherapies_month_mar_2026_activity_performance.csv",
       fileFormat: "csv",
       datasetTitle: "NHS Talking Therapies monthly activity and performance",
       updateFrequency: "MONTHLY",

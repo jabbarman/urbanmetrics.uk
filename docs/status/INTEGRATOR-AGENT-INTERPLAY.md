@@ -13,6 +13,7 @@
 - implemented the approved workspace split foundation directly in the primary workspace, keeping one codebase and one generated-data architecture while separating the user-facing routes
 - validated the live route split, fixed a responsive legend overflow defect directly against production behavior, and prepared the resulting state as the `v0.2.0` release
 - investigated live degraded-status feedback against the official source publication schedules and adjusted workspace scoping plus freshness policy where the previous behavior overstated operational degradation
+- checked live upstreams on June 2, 2026, identified refreshable UC and Talking Therapies updates, repointed the NHS source config to March 2026, and regenerated the published artifacts through the normal sync path
 
 ## Delegation status
 
@@ -22,4 +23,5 @@
 
 - route-level IA and UX verification for the live workspace split
 - workspace-specific copy and navigation polish if user feedback indicates remaining ambiguity
-- follow-on SubICB health/service layer work after the route split is in place
+- automated latest-publication discovery for NHS monthly downloads so future Talking Therapies updates do not require manually changing pinned CSV URLs
+- follow-on SubICB health/service layer work after the refreshed Talking Therapies layers are verified live

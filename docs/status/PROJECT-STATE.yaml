@@ -1,5 +1,5 @@
 project: urbanmetrics.uk
-phase: workspace-separation-release
+phase: source-refresh-maintenance
 status: in_progress
 summary: >-
   The live v1 platform is deployed and tagged at v0.1.1. The next delivery stage is Phase 1 health and workforce
@@ -14,14 +14,16 @@ summary: >-
   that has now been corrected and bundled with a documentation and versioning refresh for the `v0.2.0` release. A
   post-release investigation then distinguished real upstream degradation from freshness-policy mismatch: workspace
   headers are now scoped to their own layer subsets, Talking Therapies monthly layers now allow for publication lag,
-  and structurally lagged annual context layers are tracked for visibility rather than driving degraded status.
-last_updated: 2026-04-11
+  and structurally lagged annual context layers are tracked for visibility rather than driving degraded status. On
+  June 2, 2026, upstream checks found newer complete Universal Credit in-work data in BCO and newer NHS Talking
+  Therapies monthly data, so generated artifacts were refreshed to UC `2026-02` and Talking Therapies `2026-03-31`.
+last_updated: 2026-06-02
 current_focus:
-  - validate the workspace-scoped status behavior in the live environment after deployment
+  - validate the June 2026 generated-artifact refresh in the live environment after deployment
   - keep the shared generated-data and status architecture intact while the presentation layer evolves
-  - decide whether the next slice should be workspace-specific UX polish or the next SubICB health/service layer
-  - keep CI and refresh behavior resilient when upstreams publish incomplete latest periods
-next_executable_step: verify the post-release status behavior in production and choose the next workstream
+  - decide whether the next slice should automate NHS latest-publication discovery or add the next SubICB health/service layer
+  - keep CI and refresh behavior resilient when upstreams publish incomplete or delayed latest periods
+next_executable_step: verify the refreshed UC and Talking Therapies source periods in production
 blockers:
   - no technical blocker
 risks:
@@ -29,3 +31,4 @@ risks:
   - supporting multiple geography groups increases UI and validation complexity and must not enable misleading comparisons
   - the route split improves information architecture, but copy and navigation may still need a follow-on polish pass once users interact with the live routes
   - freshness policy remains partly judgment-based for lagged official statistics, so thresholds will need occasional review against real publication timetables
+  - Talking Therapies source URLs are still manually pinned, so new monthly NHS releases require either manual catalog updates or a future latest-publication discovery adapter

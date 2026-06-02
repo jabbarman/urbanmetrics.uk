@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-06-02T06:39:19.447Z",
+  "generatedAt": "2026-06-02T16:44:04.562Z",
   "layer": {
     "id": "nhs-talking-therapies-wait-time",
     "title": "Talking Therapies Mean Wait",
@@ -29,17 +29,17 @@
       "#224763"
     ],
     "legendBreaks": [
-      20.4,
-      38.5,
-      45,
-      49.3
+      21.4,
+      38.3,
+      42.1,
+      45
     ],
     "source": {
       "kind": "csv_download",
       "provider": "NHS England",
       "publisher": "NHS England",
-      "publicationUrl": "https://digital.nhs.uk/data-and-information/publications/statistical/nhs-talking-therapies-monthly-statistics-including-employment-advisors/performance-january-2026",
-      "fileUrl": "https://files.digital.nhs.uk/D3/4FFE1D/nhstalkingtherapies_month_jan_2026_activity_performance.csv",
+      "publicationUrl": "https://digital.nhs.uk/data-and-information/publications/statistical/nhs-talking-therapies-monthly-statistics-including-employment-advisors/performance-march-2026-and-quarter-4-2025-26-data",
+      "fileUrl": "https://files.digital.nhs.uk/C5/C280AE/nhstalkingtherapies_month_mar_2026_activity_performance.csv",
       "fileFormat": "csv",
       "datasetTitle": "NHS Talking Therapies monthly activity and performance",
       "updateFrequency": "MONTHLY",
@@ -56,68 +56,68 @@
       "measureId": "M048",
       "licence": "Open Government Licence v3.0 unless stated otherwise by the publisher",
       "caveat": "This is a mean wait measure at Sub ICB geography, not a person-level guarantee. Local suppression and monthly operational variation can affect interpretation.",
-      "dataProcessedAt": "2026-06-02T06:39:19.428Z",
+      "dataProcessedAt": "2026-06-02T16:44:04.540Z",
       "recordsFetched": 10,
-      "latestSourceDate": "2026-01-31",
-      "fetchedAt": "2026-06-02T06:39:19.447Z"
+      "latestSourceDate": "2026-03-31",
+      "fetchedAt": "2026-06-02T16:44:04.562Z"
     },
     "summary": {
-      "min": 14.5,
-      "max": 53.5,
-      "mean": 39.05,
-      "median": 42.3,
+      "min": 16.5,
+      "max": 54.1,
+      "mean": 37.34,
+      "median": 40.2,
       "topAreas": [
         {
           "areaId": "E38000259",
           "areaName": "NHS Black Country ICB - D2P2L",
-          "value": 53.5
+          "value": 54.1
         },
         {
           "areaId": "E38000173",
           "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 05V",
-          "value": 51.3
-        },
-        {
-          "areaId": "E38000028",
-          "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 04Y",
-          "value": 49.3
+          "value": 49.2
         },
         {
           "areaId": "E38000153",
           "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 05Q",
-          "value": 47.2
+          "value": 45
         },
         {
           "areaId": "E38000053",
           "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 05D",
-          "value": 45
+          "value": 44.4
+        },
+        {
+          "areaId": "E38000028",
+          "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 04Y",
+          "value": 42.1
         }
       ],
       "bottomAreas": [
         {
           "areaId": "E38000251",
           "areaName": "NHS Coventry and Warwickshire ICB - B2M3M",
-          "value": 14.5
+          "value": 16.5
         },
         {
           "areaId": "E38000258",
           "areaName": "NHS Birmingham and Solihull ICB - 15E",
-          "value": 20.4
+          "value": 21.4
         },
         {
           "areaId": "E38000236",
           "areaName": "NHS Herefordshire and Worcestershire ICB - 18C",
-          "value": 31.2
-        },
-        {
-          "areaId": "E38000175",
-          "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 05W",
-          "value": 38.5
+          "value": 24.1
         },
         {
           "areaId": "E38000126",
           "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 05G",
-          "value": 39.6
+          "value": 38.3
+        },
+        {
+          "areaId": "E38000175",
+          "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 05W",
+          "value": 38.3
         }
       ]
     }
@@ -527,10 +527,10 @@
           "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 04Y",
           "localAuthorityName": "Sub Integrated Care Board",
           "localAuthorityCode": "E38000028",
-          "value": 49.3,
-          "formattedValue": "49.3 days",
+          "value": 42.1,
+          "formattedValue": "42.1 days",
           "valueLabel": "Therapy wait",
-          "sourceDate": "2026-01-31",
+          "sourceDate": "2026-03-31",
           "centroid": {
             "lon": -1.98084,
             "lat": 52.70101
@@ -1459,10 +1459,10 @@
           "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 05D",
           "localAuthorityName": "Sub Integrated Care Board",
           "localAuthorityCode": "E38000053",
-          "value": 45,
-          "formattedValue": "45.0 days",
+          "value": 44.4,
+          "formattedValue": "44.4 days",
           "valueLabel": "Therapy wait",
-          "sourceDate": "2026-01-31",
+          "sourceDate": "2026-03-31",
           "centroid": {
             "lon": -1.81463,
             "lat": 52.79247
@@ -2567,10 +2567,10 @@
           "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 05G",
           "localAuthorityName": "Sub Integrated Care Board",
           "localAuthorityCode": "E38000126",
-          "value": 39.6,
-          "formattedValue": "39.6 days",
+          "value": 38.3,
+          "formattedValue": "38.3 days",
           "valueLabel": "Therapy wait",
-          "sourceDate": "2026-01-31",
+          "sourceDate": "2026-03-31",
           "centroid": {
             "lon": -1.93427,
             "lat": 53.05053
@@ -3701,10 +3701,10 @@
           "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 05Q",
           "localAuthorityName": "Sub Integrated Care Board",
           "localAuthorityCode": "E38000153",
-          "value": 47.2,
-          "formattedValue": "47.2 days",
+          "value": 45,
+          "formattedValue": "45.0 days",
           "valueLabel": "Therapy wait",
-          "sourceDate": "2026-01-31",
+          "sourceDate": "2026-03-31",
           "centroid": {
             "lon": -1.79286,
             "lat": 52.66255
@@ -4365,10 +4365,10 @@
           "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 05V",
           "localAuthorityName": "Sub Integrated Care Board",
           "localAuthorityCode": "E38000173",
-          "value": 51.3,
-          "formattedValue": "51.3 days",
+          "value": 49.2,
+          "formattedValue": "49.2 days",
           "valueLabel": "Therapy wait",
-          "sourceDate": "2026-01-31",
+          "sourceDate": "2026-03-31",
           "centroid": {
             "lon": -2.1747,
             "lat": 52.78951
@@ -4849,10 +4849,10 @@
           "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 05W",
           "localAuthorityName": "Sub Integrated Care Board",
           "localAuthorityCode": "E38000175",
-          "value": 38.5,
-          "formattedValue": "38.5 days",
+          "value": 38.3,
+          "formattedValue": "38.3 days",
           "valueLabel": "Therapy wait",
-          "sourceDate": "2026-01-31",
+          "sourceDate": "2026-03-31",
           "centroid": {
             "lon": -2.12355,
             "lat": 52.99022
@@ -6937,10 +6937,10 @@
           "areaName": "NHS Herefordshire and Worcestershire ICB - 18C",
           "localAuthorityName": "Sub Integrated Care Board",
           "localAuthorityCode": "E38000236",
-          "value": 31.2,
-          "formattedValue": "31.2 days",
+          "value": 24.1,
+          "formattedValue": "24.1 days",
           "valueLabel": "Therapy wait",
-          "sourceDate": "2026-01-31",
+          "sourceDate": "2026-03-31",
           "centroid": {
             "lon": -2.51986,
             "lat": 52.14057
@@ -8317,10 +8317,10 @@
           "areaName": "NHS Coventry and Warwickshire ICB - B2M3M",
           "localAuthorityName": "Sub Integrated Care Board",
           "localAuthorityCode": "E38000251",
-          "value": 14.5,
-          "formattedValue": "14.5 days",
+          "value": 16.5,
+          "formattedValue": "16.5 days",
           "valueLabel": "Therapy wait",
-          "sourceDate": "2026-01-31",
+          "sourceDate": "2026-03-31",
           "centroid": {
             "lon": -1.5676,
             "lat": 52.29786
@@ -9249,10 +9249,10 @@
           "areaName": "NHS Birmingham and Solihull ICB - 15E",
           "localAuthorityName": "Sub Integrated Care Board",
           "localAuthorityCode": "E38000258",
-          "value": 20.4,
-          "formattedValue": "20.4 days",
+          "value": 21.4,
+          "formattedValue": "21.4 days",
           "valueLabel": "Therapy wait",
-          "sourceDate": "2026-01-31",
+          "sourceDate": "2026-03-31",
           "centroid": {
             "lon": -1.81306,
             "lat": 52.4852
@@ -10141,10 +10141,10 @@
           "areaName": "NHS Black Country ICB - D2P2L",
           "localAuthorityName": "Sub Integrated Care Board",
           "localAuthorityCode": "E38000259",
-          "value": 53.5,
-          "formattedValue": "53.5 days",
+          "value": 54.1,
+          "formattedValue": "54.1 days",
           "valueLabel": "Therapy wait",
-          "sourceDate": "2026-01-31",
+          "sourceDate": "2026-03-31",
           "centroid": {
             "lon": -2.03966,
             "lat": 52.53043

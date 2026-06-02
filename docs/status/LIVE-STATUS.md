@@ -27,20 +27,22 @@
 - workspace header status is now scoped to the active workspace rather than inheriting the whole-product global status
 - Talking Therapies monthly layers now allow for publication lag before being treated as stale
 - GVA and fuel-poverty layers are now treated as structurally lagged context layers, with freshness tracked for visibility rather than as an operational defect
+- the June 2026 refresh brings Universal Credit in-work data forward to the latest complete BCO period (`2026-02`)
+- the June 2026 refresh brings Talking Therapies map layers forward to the NHS March 2026 publication (`2026-03-31`)
 
 ## In progress
 
-- reviewing live user feedback on the split workspaces after the `v0.2.0` release
-- deciding whether the next slice should focus on workspace-specific polish or the next SubICB health/service layer
+- reviewing the latest generated artifact refresh after deployment
+- deciding whether the next slice should focus on automated NHS latest-publication discovery or the next SubICB health/service layer
 
 ## Known operational signal
 
 The current live platform remains operational.
 
-The main active degradation is now narrower: the Universal Credit in-work layer still depends on an upstream source that is publishing an incomplete latest month.
+The main active degradation is now narrower: the Universal Credit in-work layer is refreshed to the latest complete BCO period but remains delayed against its monthly freshness policy.
 
-One current upstream also appears to publish a newer but incomplete source period for the Universal Credit in-work layer. The sync path now falls back to the latest complete month, while monitoring should continue to flag the incomplete latest release.
+BCO now exposes a complete `2026-02` period for Universal Credit in-work, so the earlier incomplete `2026-01` condition is no longer the current issue. The remaining issue is publication lag: `2026-02` is still older than the 60-day monthly freshness threshold on June 2, 2026.
 
 ## Next step
 
-Assess live feedback on the workspace-scoped status behavior, then choose the next delivery slice: additional workspace polish or the next health/service data layer.
+Verify the refreshed generated artifacts in production, then decide whether to automate NHS latest-publication discovery so future Talking Therapies releases do not require manually updating CSV URLs.
