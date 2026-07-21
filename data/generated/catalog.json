@@ -157,7 +157,7 @@
       "updateFrequency": "IRREG",
       "recordsFetched": 192,
       "latestSourceDate": "2025",
-      "fetchedAt": "2026-06-02T16:43:32.347Z"
+      "fetchedAt": "2026-07-21T07:57:10.406Z"
     },
     "summary": {
       "min": 4.4,
@@ -487,7 +487,7 @@
       "updateFrequency": "DECENNIAL",
       "recordsFetched": 192,
       "latestSourceDate": "2021",
-      "fetchedAt": "2026-06-02T16:43:38.223Z"
+      "fetchedAt": "2026-07-21T07:57:17.137Z"
     },
     "summary": {
       "min": 0.4,
@@ -562,7 +562,7 @@
     },
     "compareGroup": "sub-icb",
     "geographyLabel": "Sub Integrated Care Board",
-    "geographyVintage": "Sub ICB 2023",
+    "geographyVintage": "Sub ICB 2026",
     "unit": "days",
     "precision": 1,
     "cadenceLabel": "Monthly",
@@ -578,17 +578,18 @@
       "#224763"
     ],
     "legendBreaks": [
-      21.4,
-      38.3,
-      42.1,
-      45
+      22.5,
+      45.2,
+      46.1,
+      48.3
     ],
     "source": {
       "kind": "csv_download",
       "provider": "NHS England",
       "publisher": "NHS England",
-      "publicationUrl": "https://digital.nhs.uk/data-and-information/publications/statistical/nhs-talking-therapies-monthly-statistics-including-employment-advisors/performance-march-2026-and-quarter-4-2025-26-data",
-      "fileUrl": "https://files.digital.nhs.uk/C5/C280AE/nhstalkingtherapies_month_mar_2026_activity_performance.csv",
+      "publicationUrl": "https://digital.nhs.uk/data-and-information/publications/statistical/nhs-talking-therapies-monthly-statistics-including-employment-advisors/performance-may-2026",
+      "fileUrl": "https://files.digital.nhs.uk/50/96081C/nhstalkingtherapies_month_may_2026_activity_performance.csv",
+      "latestPublicationSeriesUrl": "https://digital.nhs.uk/data-and-information/publications/statistical/nhs-talking-therapies-monthly-statistics-including-employment-advisors",
       "fileFormat": "csv",
       "datasetTitle": "NHS Talking Therapies monthly activity and performance",
       "updateFrequency": "MONTHLY",
@@ -605,68 +606,68 @@
       "measureId": "M048",
       "licence": "Open Government Licence v3.0 unless stated otherwise by the publisher",
       "caveat": "This is a mean wait measure at Sub ICB geography, not a person-level guarantee. Local suppression and monthly operational variation can affect interpretation.",
-      "dataProcessedAt": "2026-06-02T16:44:04.540Z",
-      "recordsFetched": 10,
-      "latestSourceDate": "2026-03-31",
-      "fetchedAt": "2026-06-02T16:44:04.562Z"
+      "dataProcessedAt": "2026-07-21T07:57:39.474Z",
+      "recordsFetched": 11,
+      "latestSourceDate": "2026-05-31",
+      "fetchedAt": "2026-07-21T07:57:39.493Z"
     },
     "summary": {
-      "min": 16.5,
-      "max": 54.1,
-      "mean": 37.34,
-      "median": 40.2,
+      "min": 15.1,
+      "max": 79.4,
+      "mean": 42.70909090909092,
+      "median": 45.7,
       "topAreas": [
+        {
+          "areaId": "E38000257",
+          "areaName": "NHS Shropshire, Telford and Wrekin ICB - M2L0M",
+          "value": 79.4
+        },
         {
           "areaId": "E38000259",
           "areaName": "NHS Black Country ICB - D2P2L",
-          "value": 54.1
+          "value": 60
         },
         {
           "areaId": "E38000173",
           "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 05V",
-          "value": 49.2
-        },
-        {
-          "areaId": "E38000153",
-          "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 05Q",
-          "value": 45
+          "value": 48.3
         },
         {
           "areaId": "E38000053",
           "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 05D",
-          "value": 44.4
+          "value": 47.2
         },
         {
           "areaId": "E38000028",
           "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 04Y",
-          "value": 42.1
+          "value": 46.1
         }
       ],
       "bottomAreas": [
         {
           "areaId": "E38000251",
           "areaName": "NHS Coventry and Warwickshire ICB - B2M3M",
-          "value": 16.5
+          "value": 15.1
         },
         {
           "areaId": "E38000258",
           "areaName": "NHS Birmingham and Solihull ICB - 15E",
-          "value": 21.4
+          "value": 18.1
         },
         {
           "areaId": "E38000236",
           "areaName": "NHS Herefordshire and Worcestershire ICB - 18C",
-          "value": 24.1
+          "value": 22.5
         },
         {
           "areaId": "E38000126",
           "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 05G",
-          "value": 38.3
+          "value": 42.2
         },
         {
           "areaId": "E38000175",
           "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 05W",
-          "value": 38.3
+          "value": 45.2
         }
       ]
     }
@@ -683,7 +684,7 @@
     },
     "compareGroup": "sub-icb",
     "geographyLabel": "Sub Integrated Care Board",
-    "geographyVintage": "Sub ICB 2023",
+    "geographyVintage": "Sub ICB 2026",
     "unit": "%",
     "precision": 1,
     "cadenceLabel": "Monthly",
@@ -699,17 +700,18 @@
       "#185138"
     ],
     "legendBreaks": [
+      43,
       48,
-      59,
       82,
-      89
+      88
     ],
     "source": {
       "kind": "csv_download",
       "provider": "NHS England",
       "publisher": "NHS England",
-      "publicationUrl": "https://digital.nhs.uk/data-and-information/publications/statistical/nhs-talking-therapies-monthly-statistics-including-employment-advisors/performance-march-2026-and-quarter-4-2025-26-data",
-      "fileUrl": "https://files.digital.nhs.uk/C5/C280AE/nhstalkingtherapies_month_mar_2026_activity_performance.csv",
+      "publicationUrl": "https://digital.nhs.uk/data-and-information/publications/statistical/nhs-talking-therapies-monthly-statistics-including-employment-advisors/performance-may-2026",
+      "fileUrl": "https://files.digital.nhs.uk/50/96081C/nhstalkingtherapies_month_may_2026_activity_performance.csv",
+      "latestPublicationSeriesUrl": "https://digital.nhs.uk/data-and-information/publications/statistical/nhs-talking-therapies-monthly-statistics-including-employment-advisors",
       "fileFormat": "csv",
       "datasetTitle": "NHS Talking Therapies monthly activity and performance",
       "updateFrequency": "MONTHLY",
@@ -726,30 +728,25 @@
       "measureId": "M053",
       "licence": "Open Government Licence v3.0 unless stated otherwise by the publisher",
       "caveat": "This percentage is based on referrals completing a course of treatment in the month. It is a service-access performance indicator, not a population coverage rate.",
-      "dataProcessedAt": "2026-06-02T16:44:27.790Z",
-      "recordsFetched": 10,
-      "latestSourceDate": "2026-03-31",
-      "fetchedAt": "2026-06-02T16:44:27.812Z"
+      "dataProcessedAt": "2026-07-21T07:58:01.922Z",
+      "recordsFetched": 11,
+      "latestSourceDate": "2026-05-31",
+      "fetchedAt": "2026-07-21T07:58:01.940Z"
     },
     "summary": {
-      "min": 47,
-      "max": 98,
-      "mean": 72.3,
-      "median": 75.5,
+      "min": 24,
+      "max": 99,
+      "mean": 63.54545454545455,
+      "median": 63,
       "topAreas": [
         {
           "areaId": "E38000251",
           "areaName": "NHS Coventry and Warwickshire ICB - B2M3M",
-          "value": 98
+          "value": 99
         },
         {
           "areaId": "E38000258",
           "areaName": "NHS Birmingham and Solihull ICB - 15E",
-          "value": 90
-        },
-        {
-          "areaId": "E38000175",
-          "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 05W",
           "value": 89
         },
         {
@@ -760,34 +757,39 @@
         {
           "areaId": "E38000126",
           "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 05G",
+          "value": 83
+        },
+        {
+          "areaId": "E38000175",
+          "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 05W",
           "value": 82
         }
       ],
       "bottomAreas": [
         {
+          "areaId": "E38000257",
+          "areaName": "NHS Shropshire, Telford and Wrekin ICB - M2L0M",
+          "value": 24
+        },
+        {
+          "areaId": "E38000028",
+          "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 04Y",
+          "value": 36
+        },
+        {
+          "areaId": "E38000153",
+          "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 05Q",
+          "value": 43
+        },
+        {
           "areaId": "E38000053",
           "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 05D",
-          "value": 47
+          "value": 44
         },
         {
           "areaId": "E38000173",
           "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 05V",
           "value": 48
-        },
-        {
-          "areaId": "E38000153",
-          "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 05Q",
-          "value": 53
-        },
-        {
-          "areaId": "E38000028",
-          "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 04Y",
-          "value": 59
-        },
-        {
-          "areaId": "E38000259",
-          "areaName": "NHS Black Country ICB - D2P2L",
-          "value": 69
         }
       ]
     }

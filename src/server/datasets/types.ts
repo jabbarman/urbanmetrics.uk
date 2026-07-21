@@ -28,6 +28,7 @@ export type CsvDownloadSourceDefinition = {
   publisher: string;
   publicationUrl: string;
   fileUrl: string;
+  latestPublicationSeriesUrl?: string;
   fileFormat: "csv" | "zip_csv";
   datasetTitle: string;
   updateFrequency: string;

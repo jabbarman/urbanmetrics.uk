@@ -3,6 +3,9 @@ import type { RawRecord } from "@/server/datasets/normalization";
 import { buildReferenceGeographyLookup, fetchSubIcbReferenceGeography, normalizeNhsGeographyLookupValue } from "@/server/datasets/reference-geographies";
 
 const pageSize = 100;
+const csvTextCache = new Map<string, Promise<string>>();
+const resolvedCsvSourceCache = new Map<string, Promise<ResolvedCsvSource>>();
+let referenceGeographyCache: ReturnType<typeof fetchSubIcbReferenceGeography> | null = null;
 
 export type BcoDatasetMetadata = {
   dataset_id: string;
@@ -19,6 +22,15 @@ export type SourcePayload = {
   cacheKey: string;
   metadata: BcoDatasetMetadata;
   records: RawRecord[];
+  resolvedSource?: {
+    publicationUrl: string;
+    fileUrl: string;
+  };
+};
+
+type ResolvedCsvSource = {
+  publicationUrl: string;
+  fileUrl: string;
 };
 
 function parseCsvLine(line: string) {
@@ -91,15 +103,100 @@ async function fetchText(url: string, userAgent: string) {
   return response.text();
 }
 
+function fetchCsvText(url: string, userAgent: string) {
+  const cached = csvTextCache.get(url);
+  if (cached) {
+    return cached;
+  }
+
+  const request = fetchText(url, userAgent);
+  csvTextCache.set(url, request);
+  return request;
+}
+
+async function fetchHtml(url: string, userAgent: string) {
+  const response = await fetch(url, {
+    headers: {
+      Accept: "text/html, application/xhtml+xml",
+      "User-Agent": userAgent,
+    },
+  });
+
+  if (!response.ok) {
+    throw new Error(`Request failed (${response.status}) for ${url}`);
+  }
+
+  return response.text();
+}
+
+export function discoverLatestTalkingTherapiesUrls(seriesUrl: string, seriesHtml: string, publicationHtml: string) {
+  const latestPublicationMatch = seriesHtml.match(
+    /data-uipath="ps\.series\.publications-list\.latest"[\s\S]*?<a\s+href="([^"]+)"/i,
+  );
+  if (!latestPublicationMatch) {
+    throw new Error(`Could not discover the latest published Talking Therapies release from ${seriesUrl}`);
+  }
+
+  const publicationUrl = new URL(latestPublicationMatch[1], seriesUrl).toString();
+  const activityFileMatch = publicationHtml.match(
+    /href="([^"]*nhstalkingtherapies_month_[^"]+_activity_performance\.csv)"/i,
+  );
+  if (!activityFileMatch) {
+    throw new Error(`Could not discover the monthly activity and performance CSV from ${publicationUrl}`);
+  }
+
+  return {
+    publicationUrl,
+    fileUrl: new URL(activityFileMatch[1], publicationUrl).toString(),
+  };
+}
+
+async function resolveCsvSource(definition: LayerDefinition, userAgent: string): Promise<ResolvedCsvSource> {
+  if (definition.source.kind !== "csv_download") {
+    throw new Error(`Expected csv_download source for layer '${definition.id}'.`);
+  }
+
+  const source = definition.source;
+  if (!source.latestPublicationSeriesUrl) {
+    return { publicationUrl: source.publicationUrl, fileUrl: source.fileUrl };
+  }
+  const seriesUrl = source.latestPublicationSeriesUrl;
+
+  const cached = resolvedCsvSourceCache.get(seriesUrl);
+  if (cached) {
+    return cached;
+  }
+
+  const request = (async () => {
+    const seriesHtml = await fetchHtml(seriesUrl, userAgent);
+    const latestPublicationMatch = seriesHtml.match(
+      /data-uipath="ps\.series\.publications-list\.latest"[\s\S]*?<a\s+href="([^"]+)"/i,
+    );
+    if (!latestPublicationMatch) {
+      throw new Error(
+        `Could not discover the latest published Talking Therapies release from ${seriesUrl}`,
+      );
+    }
+
+    const publicationUrl = new URL(latestPublicationMatch[1], seriesUrl).toString();
+    const publicationHtml = await fetchHtml(publicationUrl, userAgent);
+    return discoverLatestTalkingTherapiesUrls(seriesUrl, seriesHtml, publicationHtml);
+  })();
+  resolvedCsvSourceCache.set(seriesUrl, request);
+  return request;
+}
+
 export async function buildCsvDownloadRecords(definition: LayerDefinition, userAgent: string): Promise<SourcePayload> {
   if (definition.source.kind !== "csv_download") {
     throw new Error(`Expected csv_download source for layer '${definition.id}'.`);
   }
 
   const source = definition.source;
-  const csvText = await fetchText(source.fileUrl, userAgent);
+  const resolvedSource = await resolveCsvSource(definition, userAgent);
+  const csvText = await fetchCsvText(resolvedSource.fileUrl, userAgent);
   const rows = parseCsv(csvText);
-  const referenceGeography = await fetchSubIcbReferenceGeography();
+  referenceGeographyCache ??= fetchSubIcbReferenceGeography();
+  const referenceGeography = await referenceGeographyCache;
   const lookup = buildReferenceGeographyLookup(
     referenceGeography.geography.id,
     "areaName",
@@ -183,6 +280,7 @@ export async function buildCsvDownloadRecords(definition: LayerDefinition, userA
       },
     },
     records,
+    resolvedSource,
   };
 }
 

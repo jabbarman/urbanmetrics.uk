@@ -229,7 +229,7 @@ export const layerDefinitions: LayerDefinition[] = [
     },
     compareGroup: "sub-icb",
     geographyLabel: "Sub Integrated Care Board",
-    geographyVintage: "Sub ICB 2023",
+    geographyVintage: "Sub ICB 2026",
     unit: "days",
     precision: 1,
     cadenceLabel: "Monthly",
@@ -240,8 +240,10 @@ export const layerDefinitions: LayerDefinition[] = [
       provider: "NHS England",
       publisher: "NHS England",
       publicationUrl:
-        "https://digital.nhs.uk/data-and-information/publications/statistical/nhs-talking-therapies-monthly-statistics-including-employment-advisors/performance-march-2026-and-quarter-4-2025-26-data",
-      fileUrl: "https://files.digital.nhs.uk/C5/C280AE/nhstalkingtherapies_month_mar_2026_activity_performance.csv",
+        "https://digital.nhs.uk/data-and-information/publications/statistical/nhs-talking-therapies-monthly-statistics-including-employment-advisors/performance-may-2026",
+      fileUrl: "https://files.digital.nhs.uk/50/96081C/nhstalkingtherapies_month_may_2026_activity_performance.csv",
+      latestPublicationSeriesUrl:
+        "https://digital.nhs.uk/data-and-information/publications/statistical/nhs-talking-therapies-monthly-statistics-including-employment-advisors",
       fileFormat: "csv",
       datasetTitle: "NHS Talking Therapies monthly activity and performance",
       updateFrequency: "MONTHLY",
@@ -283,7 +285,7 @@ export const layerDefinitions: LayerDefinition[] = [
     },
     compareGroup: "sub-icb",
     geographyLabel: "Sub Integrated Care Board",
-    geographyVintage: "Sub ICB 2023",
+    geographyVintage: "Sub ICB 2026",
     unit: "%",
     precision: 1,
     cadenceLabel: "Monthly",
@@ -294,8 +296,10 @@ export const layerDefinitions: LayerDefinition[] = [
       provider: "NHS England",
       publisher: "NHS England",
       publicationUrl:
-        "https://digital.nhs.uk/data-and-information/publications/statistical/nhs-talking-therapies-monthly-statistics-including-employment-advisors/performance-march-2026-and-quarter-4-2025-26-data",
-      fileUrl: "https://files.digital.nhs.uk/C5/C280AE/nhstalkingtherapies_month_mar_2026_activity_performance.csv",
+        "https://digital.nhs.uk/data-and-information/publications/statistical/nhs-talking-therapies-monthly-statistics-including-employment-advisors/performance-may-2026",
+      fileUrl: "https://files.digital.nhs.uk/50/96081C/nhstalkingtherapies_month_may_2026_activity_performance.csv",
+      latestPublicationSeriesUrl:
+        "https://digital.nhs.uk/data-and-information/publications/statistical/nhs-talking-therapies-monthly-statistics-including-employment-advisors",
       fileFormat: "csv",
       datasetTitle: "NHS Talking Therapies monthly activity and performance",
       updateFrequency: "MONTHLY",

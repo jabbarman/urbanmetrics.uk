@@ -1,4 +1,4 @@
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 import type { Feature, FeatureCollection, Geometry } from "geojson";
@@ -66,6 +66,7 @@ function buildLayer(
   definition: LayerDefinition,
   metadata: BcoDatasetMetadata,
   allRecords: RawRecord[],
+  resolvedSource?: { publicationUrl: string; fileUrl: string },
 ): GeneratedLayer {
   const expectedAreaIds = expectedAreaIdsByCompareGroup[definition.compareGroup as keyof typeof expectedAreaIdsByCompareGroup];
   const records = selectLatestRecordsByArea(allRecords, definition, expectedAreaIds);
@@ -166,6 +167,7 @@ function buildLayer(
       legendBreaks: quantileBreaks(values, definition.palette.length),
       source: {
         ...definition.source,
+        ...resolvedSource,
         datasetTitle: metadata.metas.default.title,
         dataProcessedAt: metadata.metas.default.data_processed,
         updateFrequency: metadata.metas.default.update_frequency,
@@ -236,28 +238,62 @@ async function main() {
   ]);
 
   const generatedLayers: GeneratedLayer[] = [];
+  const refreshFailures = new Map<string, string>();
 
   for (const definition of layerDefinitions) {
-    const sourcePayload = await fetchSourcePayload(definition, "urbanmetrics-uk-data-sync/0.1");
+    try {
+      const sourcePayload = await fetchSourcePayload(definition, "urbanmetrics-uk-data-sync/0.1");
 
-    await writeJson(path.join(sourceCacheDir, `${sourcePayload.cacheKey}.json`), {
-      fetchedAt: new Date().toISOString(),
-      metadata: sourcePayload.metadata,
-      records: sourcePayload.records,
-    });
+      await writeJson(path.join(sourceCacheDir, `${sourcePayload.cacheKey}.json`), {
+        fetchedAt: new Date().toISOString(),
+        metadata: sourcePayload.metadata,
+        records: sourcePayload.records,
+      });
 
-    const generated = buildLayer(definition, sourcePayload.metadata, sourcePayload.records);
-    generatedLayers.push(generated);
+      const generated = buildLayer(
+        definition,
+        sourcePayload.metadata,
+        sourcePayload.records,
+        sourcePayload.resolvedSource,
+      );
+      generatedLayers.push(generated);
 
-    const layerOutput = path.join(dataGeneratedDir, "layers", `${definition.id}.json`);
-    const publicLayerOutput = path.join(publicGeneratedDir, "layers", `${definition.id}.json`);
-    await Promise.all([writeJson(layerOutput, generated), writeJson(publicLayerOutput, generated)]);
+      const layerOutput = path.join(dataGeneratedDir, "layers", `${definition.id}.json`);
+      const publicLayerOutput = path.join(publicGeneratedDir, "layers", `${definition.id}.json`);
+      await Promise.all([writeJson(layerOutput, generated), writeJson(publicLayerOutput, generated)]);
+    } catch (error) {
+      const message = error instanceof Error ? error.message : String(error);
+      const fallbackPath = path.join(dataGeneratedDir, "layers", `${definition.id}.json`);
+
+      try {
+        const fallback = JSON.parse(await readFile(fallbackPath, "utf8")) as GeneratedLayer;
+        generatedLayers.push(fallback);
+        refreshFailures.set(definition.id, message);
+        console.warn(`${definition.id}: refresh failed; preserving the last successful artifact. ${message}`);
+      } catch {
+        throw new Error(`${definition.id}: refresh failed and no last successful artifact is available. ${message}`);
+      }
+    }
   }
 
   const catalog = generatedLayers.map((layer) => layer.layer);
   const status: GeneratedStatus = {
     generatedAt: new Date().toISOString(),
     layers: generatedLayers.map((layer) => {
+      const refreshFailure = refreshFailures.get(layer.layer.id);
+      if (refreshFailure) {
+        return {
+          id: layer.layer.id,
+          title: layer.layer.title,
+          status: layer.layer.freshnessPolicy.kind === "maxAgeDays" ? "stale" : "warning",
+          dataProcessedAt: layer.layer.source.dataProcessedAt,
+          latestSourceDate: layer.layer.source.latestSourceDate,
+          updateFrequency: layer.layer.source.updateFrequency,
+          recordsFetched: layer.layer.source.recordsFetched,
+          message: `Using the last successful artifact because refresh validation failed: ${refreshFailure}`,
+        } as const;
+      }
+
       const freshness = evaluateFreshness(layer.layer.freshnessPolicy, layer.layer.source.latestSourceDate);
       return {
         id: layer.layer.id,

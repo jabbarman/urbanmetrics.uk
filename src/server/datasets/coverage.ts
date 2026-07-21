@@ -202,6 +202,7 @@ export const expectedAreaIdsByCompareGroup = {
     "E38000175",
     "E38000236",
     "E38000251",
+    "E38000257",
     "E38000258",
     "E38000259",
   ],

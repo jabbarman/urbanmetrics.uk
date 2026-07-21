@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-06-02T16:43:18.170Z",
+  "generatedAt": "2026-07-21T07:56:52.442Z",
   "geographyId": "sub-icb",
   "lookupField": "areaName",
   "items": [
@@ -11,10 +11,10 @@
       "areaName": "NHS South Yorkshire ICB - 02P"
     },
     {
-      "lookupValue": "NHS Mid and South Essex ICB - 99E",
-      "normalizedLookupValue": "NHS MID AND SOUTH ESSEX ICB - 99E",
+      "lookupValue": "NHS Essex ICB - 99E",
+      "normalizedLookupValue": "NHS ESSEX ICB - 99E",
       "areaId": "E38000007",
-      "areaName": "NHS Mid and South Essex ICB - 99E"
+      "areaName": "NHS Essex ICB - 99E"
     },
     {
       "lookupValue": "NHS Nottingham and Nottinghamshire ICB - 02Q",
@@ -41,10 +41,10 @@
       "areaName": "NHS Greater Manchester ICB - 00T"
     },
     {
-      "lookupValue": "NHS Sussex ICB - 09D",
-      "normalizedLookupValue": "NHS SUSSEX ICB - 09D",
+      "lookupValue": "NHS Surrey and Sussex ICB - 09D",
+      "normalizedLookupValue": "NHS SURREY AND SUSSEX ICB - 09D",
       "areaId": "E38000021",
-      "areaName": "NHS Sussex ICB - 09D"
+      "areaName": "NHS Surrey and Sussex ICB - 09D"
     },
     {
       "lookupValue": "NHS Greater Manchester ICB - 00V",
@@ -65,10 +65,10 @@
       "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 04Y"
     },
     {
-      "lookupValue": "NHS Mid and South Essex ICB - 99F",
-      "normalizedLookupValue": "NHS MID AND SOUTH ESSEX ICB - 99F",
+      "lookupValue": "NHS Essex ICB - 99F",
+      "normalizedLookupValue": "NHS ESSEX ICB - 99F",
       "areaId": "E38000030",
-      "areaName": "NHS Mid and South Essex ICB - 99F"
+      "areaName": "NHS Essex ICB - 99F"
     },
     {
       "lookupValue": "NHS Lancashire and South Cumbria ICB - 00X",
@@ -89,10 +89,10 @@
       "areaName": "NHS Dorset ICB - 11J"
     },
     {
-      "lookupValue": "NHS Hertfordshire and West Essex ICB - 06K",
-      "normalizedLookupValue": "NHS HERTFORDSHIRE AND WEST ESSEX ICB - 06K",
+      "lookupValue": "NHS Central East ICB - 06K",
+      "normalizedLookupValue": "NHS CENTRAL EAST ICB - 06K",
       "areaId": "E38000049",
-      "areaName": "NHS Hertfordshire and West Essex ICB - 06K"
+      "areaName": "NHS Central East ICB - 06K"
     },
     {
       "lookupValue": "NHS Lancashire and South Cumbria ICB - 01A",
@@ -131,10 +131,10 @@
       "areaName": "NHS Cheshire and Merseyside ICB - 01F"
     },
     {
-      "lookupValue": "NHS Hertfordshire and West Essex ICB - 06N",
-      "normalizedLookupValue": "NHS HERTFORDSHIRE AND WEST ESSEX ICB - 06N",
+      "lookupValue": "NHS Central East ICB - 06N",
+      "normalizedLookupValue": "NHS CENTRAL EAST ICB - 06N",
       "areaId": "E38000079",
-      "areaName": "NHS Hertfordshire and West Essex ICB - 06N"
+      "areaName": "NHS Central East ICB - 06N"
     },
     {
       "lookupValue": "NHS Greater Manchester ICB - 01D",
@@ -149,10 +149,10 @@
       "areaName": "NHS Humber and North Yorkshire ICB - 03F"
     },
     {
-      "lookupValue": "NHS Suffolk and North East Essex ICB - 06L",
-      "normalizedLookupValue": "NHS SUFFOLK AND NORTH EAST ESSEX ICB - 06L",
+      "lookupValue": "NHS Norfolk and Suffolk ICB - 06L",
+      "normalizedLookupValue": "NHS NORFOLK AND SUFFOLK ICB - 06L",
       "areaId": "E38000086",
-      "areaName": "NHS Suffolk and North East Essex ICB - 06L"
+      "areaName": "NHS Norfolk and Suffolk ICB - 06L"
     },
     {
       "lookupValue": "NHS Cornwall and the Isles of Scilly ICB - 11N",
@@ -179,16 +179,16 @@
       "areaName": "NHS Cheshire and Merseyside ICB - 99A"
     },
     {
-      "lookupValue": "NHS Mid and South Essex ICB - 06Q",
-      "normalizedLookupValue": "NHS MID AND SOUTH ESSEX ICB - 06Q",
+      "lookupValue": "NHS Essex ICB - 06Q",
+      "normalizedLookupValue": "NHS ESSEX ICB - 06Q",
       "areaId": "E38000106",
-      "areaName": "NHS Mid and South Essex ICB - 06Q"
+      "areaName": "NHS Essex ICB - 06Q"
     },
     {
-      "lookupValue": "NHS Suffolk and North East Essex ICB - 06T",
-      "normalizedLookupValue": "NHS SUFFOLK AND NORTH EAST ESSEX ICB - 06T",
+      "lookupValue": "NHS Essex ICB - 06T",
+      "normalizedLookupValue": "NHS ESSEX ICB - 06T",
       "areaId": "E38000117",
-      "areaName": "NHS Suffolk and North East Essex ICB - 06T"
+      "areaName": "NHS Essex ICB - 06T"
     },
     {
       "lookupValue": "NHS Humber and North Yorkshire ICB - 03H",
@@ -227,10 +227,10 @@
       "areaName": "NHS Greater Manchester ICB - 00Y"
     },
     {
-      "lookupValue": "NHS Buckinghamshire, Oxfordshire and Berkshire West ICB - 10Q",
-      "normalizedLookupValue": "NHS BUCKINGHAMSHIRE, OXFORDSHIRE AND BERKSHIRE WEST ICB - 10Q",
+      "lookupValue": "NHS Thames Valley ICB - 10Q",
+      "normalizedLookupValue": "NHS THAMES VALLEY ICB - 10Q",
       "areaId": "E38000136",
-      "areaName": "NHS Buckinghamshire, Oxfordshire and Berkshire West ICB - 10Q"
+      "areaName": "NHS Thames Valley ICB - 10Q"
     },
     {
       "lookupValue": "NHS Hampshire and Isle of Wight ICB - 10R",
@@ -281,10 +281,10 @@
       "areaName": "NHS North East and North Cumbria ICB - 00N"
     },
     {
-      "lookupValue": "NHS Mid and South Essex ICB - 99G",
-      "normalizedLookupValue": "NHS MID AND SOUTH ESSEX ICB - 99G",
+      "lookupValue": "NHS Essex ICB - 99G",
+      "normalizedLookupValue": "NHS ESSEX ICB - 99G",
       "areaId": "E38000168",
-      "areaName": "NHS Mid and South Essex ICB - 99G"
+      "areaName": "NHS Essex ICB - 99G"
     },
     {
       "lookupValue": "NHS Cheshire and Merseyside ICB - 01V",
@@ -323,10 +323,10 @@
       "areaName": "NHS North East and North Cumbria ICB - 00P"
     },
     {
-      "lookupValue": "NHS Mid and South Essex ICB - 07G",
-      "normalizedLookupValue": "NHS MID AND SOUTH ESSEX ICB - 07G",
+      "lookupValue": "NHS Essex ICB - 07G",
+      "normalizedLookupValue": "NHS ESSEX ICB - 07G",
       "areaId": "E38000185",
-      "areaName": "NHS Mid and South Essex ICB - 07G"
+      "areaName": "NHS Essex ICB - 07G"
     },
     {
       "lookupValue": "NHS Greater Manchester ICB - 02A",
@@ -353,10 +353,10 @@
       "areaName": "NHS Cheshire and Merseyside ICB - 02E"
     },
     {
-      "lookupValue": "NHS Hertfordshire and West Essex ICB - 07H",
-      "normalizedLookupValue": "NHS HERTFORDSHIRE AND WEST ESSEX ICB - 07H",
+      "lookupValue": "NHS Essex ICB - 07H",
+      "normalizedLookupValue": "NHS ESSEX ICB - 07H",
       "areaId": "E38000197",
-      "areaName": "NHS Hertfordshire and West Essex ICB - 07H"
+      "areaName": "NHS Essex ICB - 07H"
     },
     {
       "lookupValue": "NHS Lancashire and South Cumbria ICB - 02G",
@@ -371,10 +371,10 @@
       "areaName": "NHS Leicester, Leicestershire and Rutland ICB - 04V"
     },
     {
-      "lookupValue": "NHS Suffolk and North East Essex ICB - 07K",
-      "normalizedLookupValue": "NHS SUFFOLK AND NORTH EAST ESSEX ICB - 07K",
+      "lookupValue": "NHS Norfolk and Suffolk ICB - 07K",
+      "normalizedLookupValue": "NHS NORFOLK AND SUFFOLK ICB - 07K",
       "areaId": "E38000204",
-      "areaName": "NHS Suffolk and North East Essex ICB - 07K"
+      "areaName": "NHS Norfolk and Suffolk ICB - 07K"
     },
     {
       "lookupValue": "NHS Greater Manchester ICB - 02H",
@@ -407,10 +407,10 @@
       "areaName": "NHS Greater Manchester ICB - 14L"
     },
     {
-      "lookupValue": "NHS Buckinghamshire, Oxfordshire and Berkshire West ICB - 15A",
-      "normalizedLookupValue": "NHS BUCKINGHAMSHIRE, OXFORDSHIRE AND BERKSHIRE WEST ICB - 15A",
+      "lookupValue": "NHS Thames Valley ICB - 15A",
+      "normalizedLookupValue": "NHS THAMES VALLEY ICB - 15A",
       "areaId": "E38000221",
-      "areaName": "NHS Buckinghamshire, Oxfordshire and Berkshire West ICB - 15A"
+      "areaName": "NHS Thames Valley ICB - 15A"
     },
     {
       "lookupValue": "NHS Bristol, North Somerset and South Gloucestershire ICB - 15C",
@@ -419,10 +419,10 @@
       "areaName": "NHS Bristol, North Somerset and South Gloucestershire ICB - 15C"
     },
     {
-      "lookupValue": "NHS Buckinghamshire, Oxfordshire and Berkshire West ICB - 14Y",
-      "normalizedLookupValue": "NHS BUCKINGHAMSHIRE, OXFORDSHIRE AND BERKSHIRE WEST ICB - 14Y",
+      "lookupValue": "NHS Thames Valley ICB - 14Y",
+      "normalizedLookupValue": "NHS THAMES VALLEY ICB - 14Y",
       "areaId": "E38000223",
-      "areaName": "NHS Buckinghamshire, Oxfordshire and Berkshire West ICB - 14Y"
+      "areaName": "NHS Thames Valley ICB - 14Y"
     },
     {
       "lookupValue": "NHS West Yorkshire ICB - 15F",
@@ -479,10 +479,10 @@
       "areaName": "NHS North East and North Cumbria ICB - 84H"
     },
     {
-      "lookupValue": "NHS Sussex ICB - 97R",
-      "normalizedLookupValue": "NHS SUSSEX ICB - 97R",
+      "lookupValue": "NHS Surrey and Sussex ICB - 97R",
+      "normalizedLookupValue": "NHS SURREY AND SUSSEX ICB - 97R",
       "areaId": "E38000235",
-      "areaName": "NHS Sussex ICB - 97R"
+      "areaName": "NHS Surrey and Sussex ICB - 97R"
     },
     {
       "lookupValue": "NHS Herefordshire and Worcestershire ICB - 18C",
@@ -503,16 +503,16 @@
       "areaName": "NHS Lincolnshire ICB - 71E"
     },
     {
-      "lookupValue": "NHS Norfolk and Waveney ICB - 26A",
-      "normalizedLookupValue": "NHS NORFOLK AND WAVENEY ICB - 26A",
+      "lookupValue": "NHS Norfolk and Suffolk ICB - 26A",
+      "normalizedLookupValue": "NHS NORFOLK AND SUFFOLK ICB - 26A",
       "areaId": "E38000239",
-      "areaName": "NHS Norfolk and Waveney ICB - 26A"
+      "areaName": "NHS Norfolk and Suffolk ICB - 26A"
     },
     {
-      "lookupValue": "NHS North Central London ICB - 93C",
-      "normalizedLookupValue": "NHS NORTH CENTRAL LONDON ICB - 93C",
+      "lookupValue": "NHS West and North London ICB - 93C",
+      "normalizedLookupValue": "NHS WEST AND NORTH LONDON ICB - 93C",
       "areaId": "E38000240",
-      "areaName": "NHS North Central London ICB - 93C"
+      "areaName": "NHS West and North London ICB - 93C"
     },
     {
       "lookupValue": "NHS Humber and North Yorkshire ICB - 42D",
@@ -545,28 +545,16 @@
       "areaName": "NHS North East and North Cumbria ICB - 16C"
     },
     {
-      "lookupValue": "NHS Bedfordshire, Luton and Milton Keynes ICB - M1J4Y",
-      "normalizedLookupValue": "NHS BEDFORDSHIRE, LUTON AND MILTON KEYNES ICB - M1J4Y",
+      "lookupValue": "NHS Central East ICB - M1J4Y",
+      "normalizedLookupValue": "NHS CENTRAL EAST ICB - M1J4Y",
       "areaId": "E38000249",
-      "areaName": "NHS Bedfordshire, Luton and Milton Keynes ICB - M1J4Y"
+      "areaName": "NHS Central East ICB - M1J4Y"
     },
     {
       "lookupValue": "NHS Coventry and Warwickshire ICB - B2M3M",
       "normalizedLookupValue": "NHS COVENTRY AND WARWICKSHIRE ICB - B2M3M",
       "areaId": "E38000251",
       "areaName": "NHS Coventry and Warwickshire ICB - B2M3M"
-    },
-    {
-      "lookupValue": "NHS Frimley ICB - D4U1Y",
-      "normalizedLookupValue": "NHS FRIMLEY ICB - D4U1Y",
-      "areaId": "E38000252",
-      "areaName": "NHS Frimley ICB - D4U1Y"
-    },
-    {
-      "lookupValue": "NHS Hampshire and Isle of Wight ICB - D9Y0V",
-      "normalizedLookupValue": "NHS HAMPSHIRE AND ISLE OF WIGHT ICB - D9Y0V",
-      "areaId": "E38000253",
-      "areaName": "NHS Hampshire and Isle of Wight ICB - D9Y0V"
     },
     {
       "lookupValue": "NHS West Yorkshire ICB - X2C4Y",
@@ -581,10 +569,10 @@
       "areaName": "NHS North East London ICB - A3A8R"
     },
     {
-      "lookupValue": "NHS North West London ICB - W2U3Z",
-      "normalizedLookupValue": "NHS NORTH WEST LONDON ICB - W2U3Z",
+      "lookupValue": "NHS West and North London ICB - W2U3Z",
+      "normalizedLookupValue": "NHS WEST AND NORTH LONDON ICB - W2U3Z",
       "areaId": "E38000256",
-      "areaName": "NHS North West London ICB - W2U3Z"
+      "areaName": "NHS West and North London ICB - W2U3Z"
     },
     {
       "lookupValue": "NHS Shropshire, Telford and Wrekin ICB - M2L0M",
@@ -605,10 +593,10 @@
       "areaName": "NHS Black Country ICB - D2P2L"
     },
     {
-      "lookupValue": "NHS Cambridgeshire and Peterborough ICB - 06H",
-      "normalizedLookupValue": "NHS CAMBRIDGESHIRE AND PETERBOROUGH ICB - 06H",
+      "lookupValue": "NHS Central East ICB - 06H",
+      "normalizedLookupValue": "NHS CENTRAL EAST ICB - 06H",
       "areaId": "E38000260",
-      "areaName": "NHS Cambridgeshire and Peterborough ICB - 06H"
+      "areaName": "NHS Central East ICB - 06H"
     },
     {
       "lookupValue": "NHS Derby and Derbyshire ICB - 15M",
@@ -629,16 +617,28 @@
       "areaName": "NHS Greater Manchester ICB - 01Y"
     },
     {
-      "lookupValue": "NHS Surrey Heartlands ICB - 92A",
-      "normalizedLookupValue": "NHS SURREY HEARTLANDS ICB - 92A",
-      "areaId": "E38000264",
-      "areaName": "NHS Surrey Heartlands ICB - 92A"
+      "lookupValue": "NHS Surrey and Sussex ICB - 70F",
+      "normalizedLookupValue": "NHS SURREY AND SUSSEX ICB - 70F",
+      "areaId": "E38000265",
+      "areaName": "NHS Surrey and Sussex ICB - 70F"
     },
     {
-      "lookupValue": "NHS Sussex ICB - 70F",
-      "normalizedLookupValue": "NHS SUSSEX ICB - 70F",
-      "areaId": "E38000265",
-      "areaName": "NHS Sussex ICB - 70F"
+      "lookupValue": "NHS Hampshire and Isle of Wight ICB - D9Y0V",
+      "normalizedLookupValue": "NHS HAMPSHIRE AND ISLE OF WIGHT ICB - D9Y0V",
+      "areaId": "E38000266",
+      "areaName": "NHS Hampshire and Isle of Wight ICB - D9Y0V"
+    },
+    {
+      "lookupValue": "NHS Surrey and Sussex ICB - 92A",
+      "normalizedLookupValue": "NHS SURREY AND SUSSEX ICB - 92A",
+      "areaId": "E38000267",
+      "areaName": "NHS Surrey and Sussex ICB - 92A"
+    },
+    {
+      "lookupValue": "NHS Thames Valley ICB - U2G6B",
+      "normalizedLookupValue": "NHS THAMES VALLEY ICB - U2G6B",
+      "areaId": "E38000268",
+      "areaName": "NHS Thames Valley ICB - U2G6B"
     }
   ]
 }

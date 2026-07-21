@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 
-import { buildCsvDownloadRecords } from "@/server/datasets/source-adapters";
+import { buildCsvDownloadRecords, discoverLatestTalkingTherapiesUrls } from "@/server/datasets/source-adapters";
 import type { LayerDefinition } from "@/server/datasets/types";
 
 vi.mock("@/server/datasets/reference-geographies", () => ({
@@ -12,8 +12,8 @@ vi.mock("@/server/datasets/reference-geographies", () => ({
       id: "sub-icb",
       title: "Sub Integrated Care Board Locations",
       sourceUrl: "https://example.com/sub-icb.geojson",
-      codeField: "SICBL23CD",
-      nameField: "SICBL23NM",
+      codeField: "SICBL26CD",
+      nameField: "SICBL26NM",
     },
     geojson: {
       type: "FeatureCollection",
@@ -68,7 +68,7 @@ const layerDefinition: LayerDefinition = {
   },
   compareGroup: "sub-icb",
   geographyLabel: "Sub Integrated Care Board",
-  geographyVintage: "Sub ICB 2023",
+  geographyVintage: "Sub ICB 2026",
   unit: "days",
   precision: 1,
   cadenceLabel: "Monthly",
@@ -138,5 +138,26 @@ describe("source adapters", () => {
       localAuthorityCode: "E38000001",
     });
     expect(payload.metadata.metas.default.title).toBe("Talking Therapies monthly activity and performance");
+  });
+
+  it("discovers the latest published Talking Therapies activity file", () => {
+    const seriesUrl =
+      "https://digital.nhs.uk/data-and-information/publications/statistical/nhs-talking-therapies-monthly-statistics-including-employment-advisors";
+    const result = discoverLatestTalkingTherapiesUrls(
+      seriesUrl,
+      `<ul data-uipath="ps.series.publications-list.latest"><li><a href="/data-and-information/publications/statistical/nhs-talking-therapies-monthly-statistics-including-employment-advisors/performance-may-2026">Latest</a></li></ul>`,
+      `<a href="https://files.digital.nhs.uk/50/96081C/nhstalkingtherapies_month_may_2026_activity_performance.csv">CSV</a>`,
+    );
+
+    expect(result).toEqual({
+      publicationUrl: `${seriesUrl}/performance-may-2026`,
+      fileUrl: "https://files.digital.nhs.uk/50/96081C/nhstalkingtherapies_month_may_2026_activity_performance.csv",
+    });
+  });
+
+  it("fails visibly when the latest publication markup changes", () => {
+    expect(() => discoverLatestTalkingTherapiesUrls("https://example.com/series", "<html />", "<html />")).toThrow(
+      "Could not discover the latest published Talking Therapies release",
+    );
   });
 });
