@@ -19,6 +19,9 @@ Date: 2026-07-21
 - `SITE_URL=http://127.0.0.1:3001 npm run test:e2e`: passed; verified overview navigation, Regional Context controls, Health Access, and the May 2026 source period
 - `SITE_URL=http://127.0.0.1:3001 npm run monitor:site`: expected failure because the global health endpoint remains `degraded` while UC is stale and its current BCO period fails completeness validation
 - `npm run monitor:upstreams`: expected failure for UC, fuel poverty, and GVA because BCO has moved changed areas to May 2026 ward codes without the geometry required by the layer contract; both NHS layers now pass
+- production artifact check at `https://urbanmetrics.uk/generated/layers/nhs-talking-therapies-wait-time.json`: passed with source period `2026-05-31`, geography vintage `Sub ICB 2026`, and 11 mapped features
+- `SITE_URL=https://urbanmetrics.uk npm run test:e2e`: passed against the deployed overview and both workspace routes
+- `SITE_URL=https://urbanmetrics.uk npm run monitor:site`: expected failure because production correctly retains the explicit global `degraded` status for the unresolved UC source condition
 
 ## Negative-path evidence
 

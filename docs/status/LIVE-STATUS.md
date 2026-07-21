@@ -34,10 +34,11 @@
 - health reference geometry now uses ONS April 2026 Sub ICB boundaries and includes all 11 West Midlands Sub ICB areas in the map contract
 - data sync now isolates failures per layer and preserves last successful artifacts without suppressing upstream-monitor alerts
 - 2024 fuel-poverty values were identified but intentionally not published because changed May 2026 ward codes do not yet have compatible validated geometry in the current source path
+- production verification confirms `urbanmetrics.uk` serves the May 2026 Talking Therapies period, April 2026 Sub ICB geography, and 11 West Midlands health features
+- the deployed overview, Regional Context, and Health Access browser journey passes
 
 ## In progress
 
-- deploying and verifying the July 2026 NHS and reference-geography refresh
 - tracking availability of matching May 2026 ward boundaries so UC, fuel poverty, and GVA can be migrated without misleading spatial joins
 
 ## Known operational signal
@@ -50,4 +51,4 @@ Fuel poverty and GVA also remain on their last complete artifacts. Their live BC
 
 ## Next step
 
-Verify the refreshed NHS source period and April 2026 Sub ICB geography in production, then monitor ONS/BCO for a compatible May 2026 ward boundary source.
+Monitor ONS and BCO for a compatible May 2026 ward boundary source, then migrate UC, fuel poverty, and GVA together with explicit geography validation.

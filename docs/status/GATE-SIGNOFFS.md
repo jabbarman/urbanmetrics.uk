@@ -26,7 +26,7 @@ Evidence:
 
 ## Review Remediation Gate
 
-Status: locally satisfied, awaiting live validation
+Status: technically validated; explicit gate approval remains outstanding
 
 Evidence:
 - `docs/qa/evidence/review-remediation-validation.md`
@@ -43,4 +43,5 @@ Evidence:
 Notes:
 - local validation passes for lint, typecheck, unit tests, build, and Playwright smoke coverage
 - operational monitors now fail correctly when source freshness is genuinely degraded
-- July 2026 source-refresh sign-off depends on live deployment validation; the degraded ward-source state remains explicit and is not treated as a passing monitor
+- July 2026 source-refresh deployment and browser journeys are live-validated; the degraded ward-source state remains explicit and is not treated as a passing monitor
+- no gate-pass claim is made without explicit approval evidence

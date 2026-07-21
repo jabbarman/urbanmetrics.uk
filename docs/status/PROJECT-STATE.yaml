@@ -22,11 +22,10 @@ summary: >-
   incompatible UC, fuel-poverty, and GVA ward feeds retain their last complete artifacts with visible status warnings.
 last_updated: 2026-07-21
 current_focus:
-  - validate the July 2026 NHS and Sub ICB generated-artifact refresh in the live environment after deployment
   - keep the shared generated-data and status architecture intact while the presentation layer evolves
   - monitor for compatible May 2026 WMCA ward geometry before migrating UC, fuel poverty, and GVA
   - keep CI and refresh behavior resilient when upstreams publish incomplete or delayed latest periods
-next_executable_step: verify the May 2026 Talking Therapies source period and April 2026 Sub ICB geography in production
+next_executable_step: monitor for compatible May 2026 ward geometry, then migrate UC, fuel poverty, and GVA together
 blockers:
   - current BCO UC, fuel-poverty, and GVA rows use changed May 2026 ward codes without geometry, and compatible ONS May 2026 ward boundaries were not yet available during the refresh
 risks:
