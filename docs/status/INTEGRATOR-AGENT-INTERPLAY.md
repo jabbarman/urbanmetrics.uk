@@ -14,6 +14,9 @@
 - validated the live route split, fixed a responsive legend overflow defect directly against production behavior, and prepared the resulting state as the `v0.2.0` release
 - investigated live degraded-status feedback against the official source publication schedules and adjusted workspace scoping plus freshness policy where the previous behavior overstated operational degradation
 - checked live upstreams on June 2, 2026, identified refreshable UC and Talking Therapies updates, repointed the NHS source config to March 2026, and regenerated the published artifacts through the normal sync path
+- audited active sources on July 21, 2026, implemented automated NHS latest-publication discovery, upgraded health layers to May 2026, moved reference geometry to April 2026 Sub ICB boundaries, and added Shropshire, Telford and Wrekin to the expected West Midlands health coverage
+- hardened sync publication so independent valid layers can advance while incompatible ward sources retain last successful artifacts and visible degraded status
+- updated the end-to-end walkthrough to match the split overview and workspace routes and verify the refreshed NHS source period
 
 ## Delegation status
 
@@ -23,5 +26,5 @@
 
 - route-level IA and UX verification for the live workspace split
 - workspace-specific copy and navigation polish if user feedback indicates remaining ambiguity
-- automated latest-publication discovery for NHS monthly downloads so future Talking Therapies updates do not require manually changing pinned CSV URLs
+- WMCA May 2026 ward boundary discovery and migration once compatible geometry is published
 - follow-on SubICB health/service layer work after the refreshed Talking Therapies layers are verified live

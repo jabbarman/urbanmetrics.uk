@@ -40,6 +40,7 @@ Responsibilities:
 - normalize source-specific shapes into a common internal layer model
 - join non-spatial measures onto reference geometry when the source does not ship polygons
 - emit generated artifacts plus source health metadata
+- isolate refresh failures per layer so one broken upstream cannot block independent validated updates; reuse the last successful layer artifact and surface the failure in generated status while monitoring remains alerting
 
 ### Monitoring and operations
 
@@ -80,11 +81,12 @@ Each normalized layer writes:
 
 ## Current extension path for health layers
 
-1. fetch the official publication file
-2. parse the structured CSV or ZIP-contained CSV
-3. filter to the target measure and geography
-4. match normalized geography names to a reference boundary lookup
-5. emit a standard generated layer artifact for the map and status surfaces
+1. discover the latest published NHS monthly release from the official series page
+2. resolve and fetch the official publication file
+3. parse the structured CSV or ZIP-contained CSV
+4. filter to the target measure and geography
+5. match normalized geography names to the April 2026 Sub ICB reference boundary lookup
+6. emit a standard generated layer artifact for the map and status surfaces
 
 ## Future database trigger
 

@@ -30,6 +30,7 @@ Status: locally satisfied, awaiting live validation
 
 Evidence:
 - `docs/qa/evidence/review-remediation-validation.md`
+- `docs/qa/evidence/source-refresh-2026-07-21.md`
 - `.github/workflows/refresh-data.yml`
 - `.github/workflows/monitor-upstreams.yml`
 - `scripts/sync-data.ts`
@@ -42,4 +43,4 @@ Evidence:
 Notes:
 - local validation passes for lint, typecheck, unit tests, build, and Playwright smoke coverage
 - operational monitors now fail correctly when source freshness is genuinely degraded
-- first-release sign-off depends on live deployment validation and an explicit decision on the degraded freshness state
+- July 2026 source-refresh sign-off depends on live deployment validation; the degraded ward-source state remains explicit and is not treated as a passing monitor

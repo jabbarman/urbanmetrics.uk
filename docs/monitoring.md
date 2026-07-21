@@ -32,6 +32,8 @@ After each refresh:
 - write refreshed artifacts into `data/generated` and `public/generated`
 - commit those artifacts back to `main` only when the refresh passes, so production can actually serve the new data
 
+Refresh is isolated per layer. If one source fails request, schema, completeness, or geography validation, the sync keeps that layer's last successful generated artifact, marks its status with the validation failure, and continues refreshing independent layers. The separate upstream monitor still fails and alerts for the affected source, so partial publication does not hide degradation.
+
 If a newer source period exists upstream but is structurally incomplete, the refresh path may fall back to the latest complete period so publication can continue. The upstream monitor should still fail in that situation so the partial release is visible rather than hidden.
 
 ### Live-site checks
@@ -94,6 +96,8 @@ For some structurally lagged context layers, the source period is expected to tr
 2. verify the expected geography and measure fields still exist
 3. inspect unmatched geography names before relaxing any lookup rules
 4. keep the previous artifact live until the join path is corrected
+
+For NHS Talking Therapies, also verify that the series page still exposes a latest-publication link and that the resolved publication page still links the monthly `activity_performance.csv` asset. Do not silently fall back to the pinned month when discovery markup changes.
 
 ### Stale data
 

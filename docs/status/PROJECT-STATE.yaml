@@ -17,18 +17,22 @@ summary: >-
   and structurally lagged annual context layers are tracked for visibility rather than driving degraded status. On
   June 2, 2026, upstream checks found newer complete Universal Credit in-work data in BCO and newer NHS Talking
   Therapies monthly data, so generated artifacts were refreshed to UC `2026-02` and Talking Therapies `2026-03-31`.
-last_updated: 2026-06-02
+  The July 21, 2026 refresh advances Talking Therapies to `2026-05-31`, discovers future latest NHS publications
+  automatically, moves reference geometry to April 2026 Sub ICB boundaries, and isolates layer refresh failures so
+  incompatible UC, fuel-poverty, and GVA ward feeds retain their last complete artifacts with visible status warnings.
+last_updated: 2026-07-21
 current_focus:
-  - validate the June 2026 generated-artifact refresh in the live environment after deployment
+  - validate the July 2026 NHS and Sub ICB generated-artifact refresh in the live environment after deployment
   - keep the shared generated-data and status architecture intact while the presentation layer evolves
-  - decide whether the next slice should automate NHS latest-publication discovery or add the next SubICB health/service layer
+  - monitor for compatible May 2026 WMCA ward geometry before migrating UC, fuel poverty, and GVA
   - keep CI and refresh behavior resilient when upstreams publish incomplete or delayed latest periods
-next_executable_step: verify the refreshed UC and Talking Therapies source periods in production
+next_executable_step: verify the May 2026 Talking Therapies source period and April 2026 Sub ICB geography in production
 blockers:
-  - no technical blocker
+  - current BCO UC, fuel-poverty, and GVA rows use changed May 2026 ward codes without geometry, and compatible ONS May 2026 ward boundaries were not yet available during the refresh
 risks:
   - some desired workforce datasets may only be usable at provider/trust geography, which is not suitable for a resident-area choropleth without extra methodology
   - supporting multiple geography groups increases UI and validation complexity and must not enable misleading comparisons
   - the route split improves information architecture, but copy and navigation may still need a follow-on polish pass once users interact with the live routes
   - freshness policy remains partly judgment-based for lagged official statistics, so thresholds will need occasional review against real publication timetables
-  - Talking Therapies source URLs are still manually pinned, so new monthly NHS releases require either manual catalog updates or a future latest-publication discovery adapter
+  - NHS latest-publication discovery depends on publisher page markup and must remain covered by monitoring and negative-path tests
+  - ward-based layers cannot move to newer values until all changed ward codes have compatible validated geometry

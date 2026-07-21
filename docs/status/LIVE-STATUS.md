@@ -2,7 +2,7 @@
 
 ## Current stage
 
-`Post-v0.2 release: split workspaces and live polish`
+`Post-v0.2 source refresh: current NHS data with guarded ward fallbacks`
 
 ## Completed
 
@@ -29,20 +29,25 @@
 - GVA and fuel-poverty layers are now treated as structurally lagged context layers, with freshness tracked for visibility rather than as an operational defect
 - the June 2026 refresh brings Universal Credit in-work data forward to the latest complete BCO period (`2026-02`)
 - the June 2026 refresh brings Talking Therapies map layers forward to the NHS March 2026 publication (`2026-03-31`)
+- the July 2026 refresh brings both Talking Therapies map layers forward to the NHS May 2026 publication (`2026-05-31`)
+- Talking Therapies ingestion now discovers the latest published monthly release from the official NHS series page
+- health reference geometry now uses ONS April 2026 Sub ICB boundaries and includes all 11 West Midlands Sub ICB areas in the map contract
+- data sync now isolates failures per layer and preserves last successful artifacts without suppressing upstream-monitor alerts
+- 2024 fuel-poverty values were identified but intentionally not published because changed May 2026 ward codes do not yet have compatible validated geometry in the current source path
 
 ## In progress
 
-- reviewing the latest generated artifact refresh after deployment
-- deciding whether the next slice should focus on automated NHS latest-publication discovery or the next SubICB health/service layer
+- deploying and verifying the July 2026 NHS and reference-geography refresh
+- tracking availability of matching May 2026 ward boundaries so UC, fuel poverty, and GVA can be migrated without misleading spatial joins
 
 ## Known operational signal
 
 The current live platform remains operational.
 
-The main active degradation is now narrower: the Universal Credit in-work layer is refreshed to the latest complete BCO period but remains delayed against its monthly freshness policy.
+The health workspace is current through May 2026. Global health remains degraded because Universal Credit is using its last complete February 2026 artifact and the live BCO feed now exposes an incomplete January 2026 period on a changed ward-code set.
 
-BCO now exposes a complete `2026-02` period for Universal Credit in-work, so the earlier incomplete `2026-01` condition is no longer the current issue. The remaining issue is publication lag: `2026-02` is still older than the 60-day monthly freshness threshold on June 2, 2026.
+Fuel poverty and GVA also remain on their last complete artifacts. Their live BCO records use changed May 2026 ward codes without geometry, so the sync reports warnings and refuses to create incompatible maps. The upstream monitor remains failing for all three ward feeds by design.
 
 ## Next step
 
-Verify the refreshed generated artifacts in production, then decide whether to automate NHS latest-publication discovery so future Talking Therapies releases do not require manually updating CSV URLs.
+Verify the refreshed NHS source period and April 2026 Sub ICB geography in production, then monitor ONS/BCO for a compatible May 2026 ward boundary source.

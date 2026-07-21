@@ -12,3 +12,4 @@
 | Operations | Upstream monitoring workflow exists | complete | `.github/workflows/monitor-upstreams.yml` |
 | Operations | Live smoke workflow exists | complete | `.github/workflows/smoke-live.yml` |
 | Operations | Local site smoke passes | complete | `docs/qa/evidence/phase-2-validation.md` |
+| Source refresh | July 2026 NHS and reference-geography refresh validated | complete | `docs/qa/evidence/source-refresh-2026-07-21.md` |
