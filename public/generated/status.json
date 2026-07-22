@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-21T07:58:01.943Z",
+  "generatedAt": "2026-07-22T07:37:28.928Z",
   "layers": [
     {
       "id": "uc-in-work-rate",
@@ -54,22 +54,22 @@
     {
       "id": "nhs-talking-therapies-wait-time",
       "title": "Talking Therapies Mean Wait",
-      "status": "ok",
+      "status": "stale",
       "dataProcessedAt": "2026-07-21T07:57:39.474Z",
       "latestSourceDate": "2026-05-31",
       "updateFrequency": "MONTHLY",
       "recordsFetched": 11,
-      "message": "Latest source period is within 90 days."
+      "message": "Using the last successful artifact because refresh validation failed: Request failed (403) for https://digital.nhs.uk/data-and-information/publications/statistical/nhs-talking-therapies-monthly-statistics-including-employment-advisors"
     },
     {
       "id": "nhs-talking-therapies-six-week-access",
       "title": "Talking Therapies Access Within 6 Weeks",
-      "status": "ok",
+      "status": "stale",
       "dataProcessedAt": "2026-07-21T07:58:01.922Z",
       "latestSourceDate": "2026-05-31",
       "updateFrequency": "MONTHLY",
       "recordsFetched": 11,
-      "message": "Latest source period is within 90 days."
+      "message": "Using the last successful artifact because refresh validation failed: Request failed (403) for https://digital.nhs.uk/data-and-information/publications/statistical/nhs-talking-therapies-monthly-statistics-including-employment-advisors"
     }
   ]
 }
