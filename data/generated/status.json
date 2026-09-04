@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-03T05:46:19.214Z",
+  "generatedAt": "2026-09-04T05:24:23.004Z",
   "layers": [
     {
       "id": "uc-in-work-rate",
@@ -9,7 +9,7 @@
       "latestSourceDate": "2026-02",
       "updateFrequency": "MONTHLY",
       "recordsFetched": 192,
-      "message": "Using the last successful artifact because refresh validation failed: uc-in-work-rate: no complete source period was found; latest observed period '2026-01' is incomplete."
+      "message": "Using the last successful artifact because refresh validation failed: uc-in-work-rate: no complete source period was found; latest observed period '2026-02' is incomplete."
     },
     {
       "id": "imd-employment-score",
