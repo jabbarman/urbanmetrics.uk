@@ -157,7 +157,7 @@
       "updateFrequency": "IRREG",
       "recordsFetched": 192,
       "latestSourceDate": "2025",
-      "fetchedAt": "2026-09-24T05:21:18.787Z"
+      "fetchedAt": "2026-09-25T05:21:42.028Z"
     },
     "summary": {
       "min": 4.4,
@@ -487,7 +487,7 @@
       "updateFrequency": "DECENNIAL",
       "recordsFetched": 192,
       "latestSourceDate": "2021",
-      "fetchedAt": "2026-09-24T05:21:27.666Z"
+      "fetchedAt": "2026-09-25T05:21:50.640Z"
     },
     "summary": {
       "min": 0.4,
