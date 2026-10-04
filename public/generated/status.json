@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-03T10:17:59.197Z",
+  "generatedAt": "2026-10-04T11:01:51.359Z",
   "layers": [
     {
       "id": "uc-in-work-rate",
@@ -39,7 +39,7 @@
       "latestSourceDate": "2023",
       "updateFrequency": "ANNUAL",
       "recordsFetched": 192,
-      "message": "Using the last successful artifact because refresh validation failed: gva-all-industries: no complete source period was found; latest observed period '2023' is incomplete."
+      "message": "Using the last successful artifact because refresh validation failed: gva-all-industries: no complete source period was found; latest observed period '2024' is incomplete."
     },
     {
       "id": "travel-to-work-bicycle-rate",
