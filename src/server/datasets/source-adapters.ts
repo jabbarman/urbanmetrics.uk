@@ -333,6 +333,8 @@ export async function fetchSourcePayload(definition: LayerDefinition, userAgent:
       return fetchBcoSourcePayload(definition, userAgent);
     case "csv_download":
       return buildCsvDownloadRecords(definition, userAgent);
+    case "reference_joined_file":
+      throw new Error(`Reference-joined source '${definition.id}' is generated through its dedicated adapter.`);
     default: {
       const exhaustiveCheck: never = definition.source;
       throw new Error(`Unsupported source adapter: ${String(exhaustiveCheck)}`);

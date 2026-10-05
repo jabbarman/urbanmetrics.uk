@@ -1,9 +1,9 @@
 "use client";
 
-import { useMemo } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import type { FeatureCollection, Point } from "geojson";
 import type { FillLayerSpecification, LineLayerSpecification, CircleLayerSpecification, MapLayerMouseEvent } from "maplibre-gl";
-import Map, { Layer, NavigationControl, Source } from "react-map-gl/maplibre";
+import Map, { Layer, NavigationControl, Source, type MapRef } from "react-map-gl/maplibre";
 
 import type { GeneratedLayer } from "@/server/datasets/types";
 
@@ -14,6 +14,7 @@ type MapViewProps = {
   showBoundaries: boolean;
   selectedAreaId: string | null;
   onSelectArea: (areaId: string | null) => void;
+  focusLocation?: { longitude: number; latitude: number; zoom: number } | null;
 };
 
 const mapStyle = "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json";
@@ -46,9 +47,14 @@ function buildComparePoints(layer: GeneratedLayer): FeatureCollection<Point> {
   };
 }
 
-export function MapView({ primaryLayer, compareLayer, opacity, showBoundaries, selectedAreaId, onSelectArea }: MapViewProps) {
+export function MapView({ primaryLayer, compareLayer, opacity, showBoundaries, selectedAreaId, onSelectArea, focusLocation }: MapViewProps) {
+  const mapRef = useRef<MapRef>(null);
   const comparePoints = useMemo(() => (compareLayer ? buildComparePoints(compareLayer) : null), [compareLayer]);
   const baseGeometryLabel = primaryLayer?.layer.geographyLabel ?? "Selected layer geography";
+
+  useEffect(() => {
+    if (focusLocation) mapRef.current?.flyTo({ center: [focusLocation.longitude, focusLocation.latitude], zoom: focusLocation.zoom, essential: true });
+  }, [focusLocation]);
 
   const primaryFill = useMemo<SourceFreeFillLayer | null>(() => {
     if (!primaryLayer) {
@@ -119,7 +125,8 @@ export function MapView({ primaryLayer, compareLayer, opacity, showBoundaries, s
       </div>
       <div className="h-[34rem] w-full">
         <Map
-          initialViewState={{ longitude: -1.88, latitude: 52.49, zoom: 8.7 }}
+          ref={mapRef}
+          initialViewState={primaryLayer?.layer.compareGroup === "midlands-lsoa-2021" ? { longitude: -1.78, latitude: 52.72, zoom: 7.1 } : { longitude: -1.88, latitude: 52.49, zoom: 8.7 }}
           interactiveLayerIds={["primary-fill", "compare-circles"]}
           mapStyle={mapStyle}
           onClick={handleClick}

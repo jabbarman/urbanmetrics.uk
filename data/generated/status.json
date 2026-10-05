@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-05T12:09:23.633Z",
+  "generatedAt": "2026-10-05T16:45:42.089Z",
   "layers": [
     {
       "id": "uc-in-work-rate",
@@ -54,22 +54,42 @@
     {
       "id": "nhs-talking-therapies-wait-time",
       "title": "Talking Therapies Mean Wait",
-      "status": "stale",
-      "dataProcessedAt": "2026-07-21T07:57:39.474Z",
-      "latestSourceDate": "2026-05-31",
+      "status": "ok",
+      "dataProcessedAt": "2026-10-05T16:45:19.608Z",
+      "latestSourceDate": "2026-07-31",
       "updateFrequency": "MONTHLY",
       "recordsFetched": 11,
-      "message": "Using the last successful artifact because refresh validation failed: Request failed (403) for https://digital.nhs.uk/data-and-information/publications/statistical/nhs-talking-therapies-monthly-statistics-including-employment-advisors"
+      "message": "Latest source period is within 90 days."
     },
     {
       "id": "nhs-talking-therapies-six-week-access",
       "title": "Talking Therapies Access Within 6 Weeks",
-      "status": "stale",
-      "dataProcessedAt": "2026-07-21T07:58:01.922Z",
-      "latestSourceDate": "2026-05-31",
+      "status": "ok",
+      "dataProcessedAt": "2026-10-05T16:45:40.784Z",
+      "latestSourceDate": "2026-07-31",
       "updateFrequency": "MONTHLY",
       "recordsFetched": 11,
-      "message": "Using the last successful artifact because refresh validation failed: Request failed (403) for https://digital.nhs.uk/data-and-information/publications/statistical/nhs-talking-therapies-monthly-statistics-including-employment-advisors"
+      "message": "Latest source period is within 90 days."
+    },
+    {
+      "id": "midlands-imd-2025",
+      "title": "IMD 2025 Overall Deprivation",
+      "status": "warning",
+      "dataProcessedAt": "2026-10-05T16:44:44.923Z",
+      "latestSourceDate": "2025-10-30",
+      "updateFrequency": "IRREGULAR",
+      "recordsFetched": 6421,
+      "message": "Reference dataset; freshness tracked for visibility only."
+    },
+    {
+      "id": "midlands-fuel-poverty-2024",
+      "title": "Households In Fuel Poverty",
+      "status": "stale",
+      "dataProcessedAt": "2026-10-05T16:44:47.547Z",
+      "latestSourceDate": "2024-03-31",
+      "updateFrequency": "ANNUAL",
+      "recordsFetched": 6421,
+      "message": "Latest source period exceeded 450 days (918 days observed)."
     }
   ]
 }

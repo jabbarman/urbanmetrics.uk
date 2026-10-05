@@ -7,6 +7,9 @@ import {
   selectLatestRecordsByArea,
 } from "../src/server/datasets/normalization";
 import { fetchSourcePayload } from "../src/server/datasets/source-adapters";
+import { fetchMidlandsFuelPovertyValues } from "../src/server/datasets/midlands-fuel-poverty";
+import { fetchMidlandsImdValues } from "../src/server/datasets/midlands-imd";
+import { fetchMidlandsLsoaReferenceGeography } from "../src/server/datasets/midlands-reference-geography";
 import { evaluateFreshness, sourceDateSortWeight } from "../src/server/datasets/utils";
 
 type FailureClass = "freshness" | "schema" | "request" | "runtime";
@@ -85,6 +88,22 @@ async function main() {
       const message = error instanceof Error ? error.message : String(error);
       failures.push(formatFailure(definition.id, classifyError(message), message));
     }
+  }
+
+  try {
+    const reference = await fetchMidlandsLsoaReferenceGeography("urbanmetrics-uk-monitor/0.1");
+    const [imd, fuelPoverty] = await Promise.all([
+      fetchMidlandsImdValues(reference, "urbanmetrics-uk-monitor/0.1"),
+      fetchMidlandsFuelPovertyValues(reference, "urbanmetrics-uk-monitor/0.1"),
+    ]);
+    for (const [id, values] of [["midlands-imd-2025", imd], ["midlands-fuel-poverty-2024", fuelPoverty]] as const) {
+      if (values.length !== reference.expectedAreaCount) {
+        failures.push(formatFailure(id, "schema", `Expected ${reference.expectedAreaCount} LSOAs but observed ${values.length}; boundary checksum ${reference.areaIdChecksum}.`));
+      }
+    }
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    failures.push(formatFailure("midlands-lsoa-2021", classifyError(message), message));
   }
 
   if (failures.length > 0) {

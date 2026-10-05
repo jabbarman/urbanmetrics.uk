@@ -10,9 +10,9 @@ export function AreaInspector({ selectedAreaId, layers }: AreaInspectorProps) {
     return (
       <aside className="rounded-[1.75rem] border border-slate-200/80 bg-white p-6 shadow-[0_12px_40px_rgba(15,23,42,0.08)]">
         <p className="text-xs uppercase tracking-[0.24em] text-slate-500">Area summary</p>
-        <h2 className="mt-2 text-lg font-semibold text-slate-950">Click a ward on the map</h2>
+        <h2 className="mt-2 text-lg font-semibold text-slate-950">Click an area on the map</h2>
         <p className="mt-3 text-sm leading-6 text-slate-600">
-          The side panel compares the selected ward across every loaded layer, including source dates and caveats.
+          The side panel compares the selected area across every loaded layer, including source dates and caveats.
         </p>
       </aside>
     );
@@ -36,6 +36,8 @@ export function AreaInspector({ selectedAreaId, layers }: AreaInspectorProps) {
       <p className="text-xs uppercase tracking-[0.24em] text-slate-500">Area summary</p>
       <h2 className="mt-2 text-2xl font-semibold text-slate-950">{first.areaName}</h2>
       <p className="mt-1 text-sm text-slate-500">{first.localAuthorityName}</p>
+      {first.regionName ? <p className="mt-1 text-sm text-slate-500">{first.regionName}</p> : null}
+      <p className="mt-1 text-xs text-slate-500">{first.areaId}</p>
       <div className="mt-6 space-y-3">
         {records.map(({ layer, feature }) => (
           <div key={layer.layer.id} className="rounded-2xl border border-slate-200/80 bg-slate-50/80 p-4">

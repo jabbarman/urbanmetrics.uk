@@ -10,7 +10,7 @@ import { TalkingTherapiesContextCard } from "@/features/dashboard/talking-therap
 import { Legend } from "@/features/map/legend";
 import { MapView } from "@/features/map/map-view";
 import { cn } from "@/components/cn";
-import type { CatalogEntry, GeneratedLayer, GeneratedStatus, TalkingTherapiesTherapyTypeContext } from "@/server/datasets/types";
+import type { CatalogEntry, GeneratedLayer, GeneratedLayerArtifact, GeneratedReferenceJoinedLayer, GeneratedStatus, TalkingTherapiesTherapyTypeContext } from "@/server/datasets/types";
 
 type MapExplorerProps = {
   catalog: CatalogEntry[];
@@ -26,6 +26,12 @@ type LayerLoadIssue = {
   message: string;
 };
 
+const midlandsPlaces = [
+  { id: "", label: "Whole approved Midlands scope", longitude: -1.78, latitude: 52.72, zoom: 7.1 },
+  { id: "nottingham", label: "Nottingham", longitude: -1.15, latitude: 52.95, zoom: 10.4 },
+  { id: "leicester", label: "Leicester", longitude: -1.13, latitude: 52.64, zoom: 10.4 },
+];
+
 async function fetchLayer(layerId: string) {
   const response = await fetch(`/generated/layers/${layerId}.json`);
 
@@ -33,7 +39,36 @@ async function fetchLayer(layerId: string) {
     throw new Error(`Failed to load layer '${layerId}'.`);
   }
 
-  return (await response.json()) as GeneratedLayer;
+  const artifact = (await response.json()) as GeneratedLayerArtifact;
+  if (artifact.schemaVersion === 1) return artifact;
+  return hydrateReferenceJoinedLayer(artifact);
+}
+
+async function hydrateReferenceJoinedLayer(layer: GeneratedReferenceJoinedLayer): Promise<GeneratedLayer> {
+  const response = await fetch(`/generated/reference-geographies/${layer.layer.referenceGeographyId}.geojson`);
+  if (!response.ok) throw new Error(`Failed to load reference geography '${layer.layer.referenceGeographyId}'.`);
+  const reference = (await response.json()) as {
+    features: Array<{
+      type: "Feature";
+      geometry: unknown;
+      properties: { areaId: string; areaName: string; localAuthorityName: string; localAuthorityCode: string; centroid: { lon: number; lat: number } };
+    }>;
+  };
+  const values = new Map(layer.values.map((entry) => [entry.areaId, entry]));
+  if (values.size !== reference.features.length) throw new Error(`Reference/value coverage mismatch for '${layer.layer.id}'.`);
+  return {
+    schemaVersion: 1,
+    generatedAt: layer.generatedAt,
+    layer: layer.layer,
+    geojson: {
+      type: "FeatureCollection",
+      features: reference.features.map((feature) => {
+        const value = values.get(feature.properties.areaId);
+        if (!value) throw new Error(`Missing value for '${feature.properties.areaId}'.`);
+        return { ...feature, properties: { ...feature.properties, value: value.value, formattedValue: value.formattedValue, valueLabel: layer.layer.shortLabel, sourceDate: value.sourceDate } };
+      }),
+    },
+  } as GeneratedLayer;
 }
 
 async function fetchTalkingTherapiesContext() {
@@ -75,6 +110,7 @@ export function MapExplorer({
   const [layerWarning, setLayerWarning] = useState<string | null>(null);
   const [talkingTherapiesContext, setTalkingTherapiesContext] = useState<TalkingTherapiesTherapyTypeContext | null>(null);
   const [loading, setLoading] = useState(true);
+  const [midlandsPlaceId, setMidlandsPlaceId] = useState("");
 
   useEffect(() => {
     let cancelled = false;
@@ -184,6 +220,8 @@ export function MapExplorer({
     [availableCatalog, primaryLayerId],
   );
   const showTalkingTherapiesContext = primaryLayer?.layer.id.startsWith("nhs-talking-therapies-") ?? false;
+  const isMidlandsWorkspace = selectedCatalogEntry?.compareGroup === "midlands-lsoa-2021";
+  const focusLocation = isMidlandsWorkspace ? midlandsPlaces.find((place) => place.id === midlandsPlaceId) ?? midlandsPlaces[0] : null;
 
   useEffect(() => {
     if (!showTalkingTherapiesContext) {
@@ -224,6 +262,22 @@ export function MapExplorer({
               <p className="text-xs uppercase tracking-[0.24em] text-slate-500">Layer controls</p>
               <h2 className="mt-2 text-xl font-semibold text-slate-950">Choose what the map emphasises</h2>
             </div>
+
+            {isMidlandsWorkspace ? (
+              <div>
+                <label className="text-sm font-medium text-slate-900" htmlFor="midlands-place">
+                  Jump to a Midlands place
+                </label>
+                <select
+                  className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-sky-400"
+                  id="midlands-place"
+                  onChange={(event) => setMidlandsPlaceId(event.target.value)}
+                  value={midlandsPlaceId}
+                >
+                  {midlandsPlaces.map((place) => <option key={place.id} value={place.id}>{place.label}</option>)}
+                </select>
+              </div>
+            ) : null}
             <Link className="text-sm font-medium text-sky-700 hover:text-sky-900" href="/status">
               Status
             </Link>
@@ -334,6 +388,7 @@ export function MapExplorer({
             primaryLayer={primaryLayer}
             selectedAreaId={selectedAreaId}
             showBoundaries={showBoundaries}
+            focusLocation={focusLocation}
           />
           <Legend compareLayer={compareLayer?.layer ?? null} primaryLayer={primaryLayer?.layer ?? null} />
           <RankingChart layer={primaryLayer} />

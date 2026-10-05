@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-21T07:58:01.940Z",
+  "generatedAt": "2026-10-05T16:45:41.750Z",
   "layer": {
     "id": "nhs-talking-therapies-six-week-access",
     "title": "Talking Therapies Access Within 6 Weeks",
@@ -29,17 +29,17 @@
       "#185138"
     ],
     "legendBreaks": [
-      43,
-      48,
-      82,
+      40,
+      45,
+      67,
       88
     ],
     "source": {
       "kind": "csv_download",
       "provider": "NHS England",
       "publisher": "NHS England",
-      "publicationUrl": "https://digital.nhs.uk/data-and-information/publications/statistical/nhs-talking-therapies-monthly-statistics-including-employment-advisors/performance-may-2026",
-      "fileUrl": "https://files.digital.nhs.uk/50/96081C/nhstalkingtherapies_month_may_2026_activity_performance.csv",
+      "publicationUrl": "https://digital.nhs.uk/data-and-information/publications/statistical/nhs-talking-therapies-monthly-statistics-including-employment-advisors/performance-july-2026",
+      "fileUrl": "https://files.digital.nhs.uk/4D/E4A025/nhstalkingtherapies_month_jul_2026_activity_performance.csv",
       "latestPublicationSeriesUrl": "https://digital.nhs.uk/data-and-information/publications/statistical/nhs-talking-therapies-monthly-statistics-including-employment-advisors",
       "fileFormat": "csv",
       "datasetTitle": "NHS Talking Therapies monthly activity and performance",
@@ -57,21 +57,21 @@
       "measureId": "M053",
       "licence": "Open Government Licence v3.0 unless stated otherwise by the publisher",
       "caveat": "This percentage is based on referrals completing a course of treatment in the month. It is a service-access performance indicator, not a population coverage rate.",
-      "dataProcessedAt": "2026-07-21T07:58:01.922Z",
+      "dataProcessedAt": "2026-10-05T16:45:40.784Z",
       "recordsFetched": 11,
-      "latestSourceDate": "2026-05-31",
-      "fetchedAt": "2026-07-21T07:58:01.940Z"
+      "latestSourceDate": "2026-07-31",
+      "fetchedAt": "2026-10-05T16:45:41.774Z"
     },
     "summary": {
-      "min": 24,
-      "max": 99,
-      "mean": 63.54545454545455,
-      "median": 63,
+      "min": 26,
+      "max": 98,
+      "mean": 60.36363636363637,
+      "median": 57,
       "topAreas": [
         {
           "areaId": "E38000251",
           "areaName": "NHS Coventry and Warwickshire ICB - B2M3M",
-          "value": 99
+          "value": 98
         },
         {
           "areaId": "E38000258",
@@ -86,39 +86,39 @@
         {
           "areaId": "E38000126",
           "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 05G",
-          "value": 83
+          "value": 74
         },
         {
           "areaId": "E38000175",
           "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 05W",
-          "value": 82
+          "value": 67
         }
       ],
       "bottomAreas": [
         {
           "areaId": "E38000257",
           "areaName": "NHS Shropshire, Telford and Wrekin ICB - M2L0M",
-          "value": 24
-        },
-        {
-          "areaId": "E38000028",
-          "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 04Y",
-          "value": 36
-        },
-        {
-          "areaId": "E38000153",
-          "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 05Q",
-          "value": 43
-        },
-        {
-          "areaId": "E38000053",
-          "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 05D",
-          "value": 44
+          "value": 26
         },
         {
           "areaId": "E38000173",
           "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 05V",
-          "value": 48
+          "value": 39
+        },
+        {
+          "areaId": "E38000028",
+          "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 04Y",
+          "value": 40
+        },
+        {
+          "areaId": "E38000153",
+          "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 05Q",
+          "value": 41
+        },
+        {
+          "areaId": "E38000053",
+          "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 05D",
+          "value": 45
         }
       ]
     }
@@ -420,10 +420,10 @@
           "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 04Y",
           "localAuthorityName": "Sub Integrated Care Board",
           "localAuthorityCode": "E38000028",
-          "value": 36,
-          "formattedValue": "36.0%",
+          "value": 40,
+          "formattedValue": "40.0%",
           "valueLabel": "6-week access",
-          "sourceDate": "2026-05-31",
+          "sourceDate": "2026-07-31",
           "centroid": {
             "lon": -1.980849,
             "lat": 52.70102
@@ -1224,10 +1224,10 @@
           "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 05D",
           "localAuthorityName": "Sub Integrated Care Board",
           "localAuthorityCode": "E38000053",
-          "value": 44,
-          "formattedValue": "44.0%",
+          "value": 45,
+          "formattedValue": "45.0%",
           "valueLabel": "6-week access",
-          "sourceDate": "2026-05-31",
+          "sourceDate": "2026-07-31",
           "centroid": {
             "lon": -1.81463,
             "lat": 52.79248
@@ -2160,10 +2160,10 @@
           "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 05G",
           "localAuthorityName": "Sub Integrated Care Board",
           "localAuthorityCode": "E38000126",
-          "value": 83,
-          "formattedValue": "83.0%",
+          "value": 74,
+          "formattedValue": "74.0%",
           "valueLabel": "6-week access",
-          "sourceDate": "2026-05-31",
+          "sourceDate": "2026-07-31",
           "centroid": {
             "lon": -1.934273,
             "lat": 53.05054
@@ -3018,10 +3018,10 @@
           "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 05Q",
           "localAuthorityName": "Sub Integrated Care Board",
           "localAuthorityCode": "E38000153",
-          "value": 43,
-          "formattedValue": "43.0%",
+          "value": 41,
+          "formattedValue": "41.0%",
           "valueLabel": "6-week access",
-          "sourceDate": "2026-05-31",
+          "sourceDate": "2026-07-31",
           "centroid": {
             "lon": -1.792866,
             "lat": 52.66255
@@ -3610,10 +3610,10 @@
           "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 05V",
           "localAuthorityName": "Sub Integrated Care Board",
           "localAuthorityCode": "E38000173",
-          "value": 48,
-          "formattedValue": "48.0%",
+          "value": 39,
+          "formattedValue": "39.0%",
           "valueLabel": "6-week access",
-          "sourceDate": "2026-05-31",
+          "sourceDate": "2026-07-31",
           "centroid": {
             "lon": -2.174707,
             "lat": 52.78952
@@ -3954,10 +3954,10 @@
           "areaName": "NHS Staffordshire and Stoke-on-Trent ICB - 05W",
           "localAuthorityName": "Sub Integrated Care Board",
           "localAuthorityCode": "E38000175",
-          "value": 82,
-          "formattedValue": "82.0%",
+          "value": 67,
+          "formattedValue": "67.0%",
           "valueLabel": "6-week access",
-          "sourceDate": "2026-05-31",
+          "sourceDate": "2026-07-31",
           "centroid": {
             "lon": -2.123559,
             "lat": 52.99023
@@ -5777,7 +5777,7 @@
           "value": 88,
           "formattedValue": "88.0%",
           "valueLabel": "6-week access",
-          "sourceDate": "2026-05-31",
+          "sourceDate": "2026-07-31",
           "centroid": {
             "lon": -2.519861,
             "lat": 52.14058
@@ -6918,10 +6918,10 @@
           "areaName": "NHS Coventry and Warwickshire ICB - B2M3M",
           "localAuthorityName": "Sub Integrated Care Board",
           "localAuthorityCode": "E38000251",
-          "value": 99,
-          "formattedValue": "99.0%",
+          "value": 98,
+          "formattedValue": "98.0%",
           "valueLabel": "6-week access",
-          "sourceDate": "2026-05-31",
+          "sourceDate": "2026-07-31",
           "centroid": {
             "lon": -1.5676,
             "lat": 52.29787
@@ -8542,10 +8542,10 @@
           "areaName": "NHS Shropshire, Telford and Wrekin ICB - M2L0M",
           "localAuthorityName": "Sub Integrated Care Board",
           "localAuthorityCode": "E38000257",
-          "value": 24,
-          "formattedValue": "24.0%",
+          "value": 26,
+          "formattedValue": "26.0%",
           "valueLabel": "6-week access",
-          "sourceDate": "2026-05-31",
+          "sourceDate": "2026-07-31",
           "centroid": {
             "lon": -2.736687,
             "lat": 52.62212
@@ -9093,7 +9093,7 @@
           "value": 89,
           "formattedValue": "89.0%",
           "valueLabel": "6-week access",
-          "sourceDate": "2026-05-31",
+          "sourceDate": "2026-07-31",
           "centroid": {
             "lon": -1.813065,
             "lat": 52.48521
@@ -9586,10 +9586,10 @@
           "areaName": "NHS Black Country ICB - D2P2L",
           "localAuthorityName": "Sub Integrated Care Board",
           "localAuthorityCode": "E38000259",
-          "value": 63,
-          "formattedValue": "63.0%",
+          "value": 57,
+          "formattedValue": "57.0%",
           "valueLabel": "6-week access",
-          "sourceDate": "2026-05-31",
+          "sourceDate": "2026-07-31",
           "centroid": {
             "lon": -2.039663,
             "lat": 52.53043

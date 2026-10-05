@@ -14,9 +14,13 @@ import {
 } from "../src/server/datasets/normalization";
 import { fetchSourcePayload, type BcoDatasetMetadata } from "../src/server/datasets/source-adapters";
 import { buildReferenceGeographyLookup, fetchSubIcbReferenceGeography } from "../src/server/datasets/reference-geographies";
+import { fetchMidlandsLsoaReferenceGeography } from "../src/server/datasets/midlands-reference-geography";
+import { fetchMidlandsImdValues } from "../src/server/datasets/midlands-imd";
+import { fetchMidlandsFuelPovertyValues } from "../src/server/datasets/midlands-fuel-poverty";
+import { buildMidlandsFuelPovertyLayer, buildMidlandsImdLayer } from "../src/server/datasets/midlands-generated-layers";
 import { buildTalkingTherapiesTherapyTypeContext } from "../src/server/datasets/talking-therapies-therapy-types";
 import { evaluateFreshness, formatValue, mean, median, quantileBreaks, sourceDateSortWeight } from "../src/server/datasets/utils";
-import type { GeneratedFeatureProperties, GeneratedLayer, GeneratedStatus, LayerDefinition } from "../src/server/datasets/types";
+import type { GeneratedFeatureProperties, GeneratedLayer, GeneratedReferenceJoinedLayer, GeneratedStatus, LayerDefinition } from "../src/server/datasets/types";
 
 const dataGeneratedDir = path.join(process.cwd(), "data", "generated");
 const publicGeneratedDir = path.join(process.cwd(), "public", "generated");
@@ -208,6 +212,8 @@ async function main() {
   await ensureDirectories();
 
   const subIcbReferenceGeography = await fetchSubIcbReferenceGeography();
+  const midlandsLsoaReferenceGeography = await fetchMidlandsLsoaReferenceGeography("urbanmetrics-uk-data-sync/0.1");
+  const { geojson: midlandsGeojson, ...midlandsLsoaLookup } = midlandsLsoaReferenceGeography;
   const subIcbLookup = buildReferenceGeographyLookup(
     subIcbReferenceGeography.geography.id,
     "areaName",
@@ -219,7 +225,40 @@ async function main() {
     writeJson(path.join(referenceGeographiesDir, "sub-icb.lookup.json"), subIcbLookup),
     writeJson(path.join(publicReferenceGeographiesDir, "sub-icb.geojson"), subIcbReferenceGeography.geojson),
     writeJson(path.join(publicReferenceGeographiesDir, "sub-icb.lookup.json"), subIcbLookup),
+    writeJson(path.join(referenceGeographiesDir, "midlands-lsoa-2021.geojson"), midlandsGeojson),
+    writeJson(path.join(referenceGeographiesDir, "midlands-lsoa-2021.lookup.json"), midlandsLsoaLookup),
+    writeJson(path.join(publicReferenceGeographiesDir, "midlands-lsoa-2021.geojson"), midlandsGeojson),
+    writeJson(path.join(publicReferenceGeographiesDir, "midlands-lsoa-2021.lookup.json"), midlandsLsoaLookup),
   ]);
+
+  const midlandsLayers: GeneratedReferenceJoinedLayer[] = [];
+  const midlandsRefreshFailures = new Map<string, string>();
+  const refreshMidlandsLayer = async (id: string, build: () => Promise<GeneratedReferenceJoinedLayer>) => {
+    try {
+      const layer = await build();
+      midlandsLayers.push(layer);
+      await Promise.all([
+        writeJson(path.join(dataGeneratedDir, "layers", `${id}.json`), layer),
+        writeJson(path.join(publicGeneratedDir, "layers", `${id}.json`), layer),
+      ]);
+    } catch (error) {
+      const message = error instanceof Error ? error.message : String(error);
+      try {
+        const fallback = JSON.parse(await readFile(path.join(dataGeneratedDir, "layers", `${id}.json`), "utf8")) as GeneratedReferenceJoinedLayer;
+        midlandsLayers.push(fallback);
+        midlandsRefreshFailures.set(id, message);
+        console.warn(`${id}: refresh failed; preserving the last successful artifact. ${message}`);
+      } catch {
+        throw new Error(`${id}: refresh failed and no last successful artifact is available. ${message}`);
+      }
+    }
+  };
+  await refreshMidlandsLayer("midlands-imd-2025", async () =>
+    buildMidlandsImdLayer(midlandsLsoaReferenceGeography, await fetchMidlandsImdValues(midlandsLsoaReferenceGeography, "urbanmetrics-uk-data-sync/0.1")),
+  );
+  await refreshMidlandsLayer("midlands-fuel-poverty-2024", async () =>
+    buildMidlandsFuelPovertyLayer(midlandsLsoaReferenceGeography, await fetchMidlandsFuelPovertyValues(midlandsLsoaReferenceGeography, "urbanmetrics-uk-data-sync/0.1")),
+  );
 
   const talkingTherapiesTherapyTypeContext = await buildTalkingTherapiesTherapyTypeContext(
     sourceCacheDir,
@@ -276,11 +315,11 @@ async function main() {
     }
   }
 
-  const catalog = generatedLayers.map((layer) => layer.layer);
+  const catalog = [...generatedLayers, ...midlandsLayers].map((layer) => layer.layer);
   const status: GeneratedStatus = {
     generatedAt: new Date().toISOString(),
-    layers: generatedLayers.map((layer) => {
-      const refreshFailure = refreshFailures.get(layer.layer.id);
+    layers: [...generatedLayers, ...midlandsLayers].map((layer) => {
+      const refreshFailure = refreshFailures.get(layer.layer.id) ?? midlandsRefreshFailures.get(layer.layer.id);
       if (refreshFailure) {
         return {
           id: layer.layer.id,

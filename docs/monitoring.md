@@ -22,6 +22,7 @@ Run on a schedule in GitHub Actions:
 - verify geometry-bearing datasets still provide the full expected WMCA ward coverage
 - verify reference-geometry joins still resolve every expected mapped area for file-based health layers
 - classify failures as `freshness`, `schema`, `request`, or `runtime`
+- for reference-joined layers, report the boundary vintage/checksum and expected, observed, missing, duplicate, and suppressed LSOA counts; any code-set change is a review gate
 
 ### Data refresh checks
 
@@ -96,6 +97,8 @@ For some structurally lagged context layers, the source period is expected to tr
 2. verify the expected geography and measure fields still exist
 3. inspect unmatched geography names before relaxing any lookup rules
 4. keep the previous artifact live until the join path is corrected
+
+For Midlands LSOA context, verify the ONS boundary and lookup still produce the same approved two-region code set, then verify each official source has exactly one valid value for every scoped LSOA. Do not fill gaps, join by name, or aggregate values into the existing ward workspace.
 
 For NHS Talking Therapies, also verify that the series page still exposes a latest-publication link and that the resolved publication page still links the monthly `activity_performance.csv` asset. Do not silently fall back to the pinned month when discovery markup changes.
 

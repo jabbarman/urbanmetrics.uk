@@ -13,6 +13,7 @@ The architecture now supports more than one ingestion shape:
 - geometry-rich API datasets such as Birmingham City Observatory
 - downloaded CSV-based official statistics joined onto reference boundary geometry
 - supporting non-map context artifacts for annual or non-map-ready official publications
+- reference-joined official files using one shared LSOA geometry artifact plus compact value-only layer artifacts
 
 ## Runtime components
 
@@ -95,3 +96,7 @@ Introduce `PostGIS` only if one or more of these become true:
 - artifact sizes become too large for cheap static delivery
 - live transport overlays require temporal persistence or derived spatial indexes
 - multiple upstreams need cross-source entity resolution at runtime
+
+## Midlands schema-2 map path
+
+The Midlands Context workspace uses the approved East Midlands + West Midlands LSOA 2021 scope. Its layers use schema 2: a browser loads the common reference GeoJSON once per layer load, validates that it has one value for every reference area, and hydrates the existing map contract in memory. Legacy schema-1 ward and Sub ICB layers continue unchanged. This avoids repeating the 6,421-feature geometry in every official LSOA overlay while retaining common map, inspector, legend, and accessibility behaviour.

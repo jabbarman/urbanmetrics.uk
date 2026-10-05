@@ -39,6 +39,12 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             </Link>
             <Link
               className="rounded-full px-3 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-100 hover:text-slate-950"
+              href={"/midlands-context" as Route}
+            >
+              Midlands Context
+            </Link>
+            <Link
+              className="rounded-full px-3 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-100 hover:text-slate-950"
               href={"/health-access" as Route}
             >
               Health Access

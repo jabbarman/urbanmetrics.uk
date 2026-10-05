@@ -13,3 +13,4 @@
 | Operations | Live smoke workflow exists | complete | `.github/workflows/smoke-live.yml` |
 | Operations | Local site smoke passes | complete | `docs/qa/evidence/phase-2-validation.md` |
 | Source refresh | July 2026 NHS and reference-geography refresh validated | complete | `docs/qa/evidence/source-refresh-2026-07-21.md` |
+| Midlands Context | Official LSOA reference, two source joins, workspace, and smoke journey | complete locally | `docs/qa/evidence/midlands-context-2026-10-05.md` |

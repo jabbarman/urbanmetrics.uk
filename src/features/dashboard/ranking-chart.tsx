@@ -32,7 +32,7 @@ export function RankingChart({ layer }: RankingChartProps) {
           <h2 className="mt-2 text-lg font-semibold text-slate-950">{layer.layer.interpretation.rankingTitle}</h2>
         </div>
         <p className="max-w-[15rem] text-right text-xs text-slate-500">
-          Top five areas in the active regional footprint for this layer.
+          Top five areas in the full approved scope for this layer.
         </p>
       </div>
       <div className="mt-6 h-72 w-full">

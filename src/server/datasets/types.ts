@@ -45,7 +45,20 @@ export type CsvDownloadSourceDefinition = {
   caveat: string;
 };
 
-export type LayerSourceDefinition = BcoApiSourceDefinition | CsvDownloadSourceDefinition;
+export type ReferenceJoinedFileSourceDefinition = {
+  kind: "reference_joined_file";
+  provider: string;
+  publisher: string;
+  publicationUrl: string;
+  fileUrl: string;
+  datasetTitle: string;
+  updateFrequency: string;
+  referenceGeographyId: string;
+  licence: string;
+  caveat: string;
+};
+
+export type LayerSourceDefinition = BcoApiSourceDefinition | CsvDownloadSourceDefinition | ReferenceJoinedFileSourceDefinition;
 
 export type LayerDefinition = {
   id: string;
@@ -79,6 +92,7 @@ export type GeneratedFeatureProperties = {
   areaName: string;
   localAuthorityName: string;
   localAuthorityCode: string;
+  regionName?: string;
   value: number;
   formattedValue: string;
   valueLabel: string;
@@ -125,6 +139,25 @@ export type GeneratedLayer = {
 };
 
 export type CatalogEntry = GeneratedLayer["layer"];
+
+/** Schema-2 layers reuse a separately generated reference geography by area id. */
+export type GeneratedReferenceJoinedLayer = {
+  schemaVersion: 2;
+  generatedAt: string;
+  layer: CatalogEntry & {
+    referenceGeographyId: string;
+    scopeId: string;
+  };
+  values: Array<{
+    areaId: string;
+    value: number;
+    formattedValue: string;
+    sourceDate: string;
+  }>;
+};
+
+/** Artifacts can either carry their own geometry (schema 1) or reuse a reference collection (schema 2). */
+export type GeneratedLayerArtifact = GeneratedLayer | GeneratedReferenceJoinedLayer;
 
 export type GeneratedStatus = {
   generatedAt: string;

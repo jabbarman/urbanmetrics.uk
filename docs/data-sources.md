@@ -33,6 +33,8 @@ The original publishing bodies remain important and are tracked below.
 | NHS Talking Therapies annual therapy-based outcomes | https://digital.nhs.uk/data-and-information/publications/statistical/nhs-talking-therapies-for-anxiety-and-depression-annual-reports/2024-25/therapy-based-outcomes | None | Published ZIP/XLSX downloads rather than an API; avoid repeated large fetches in CI | Open Government Licence v3.0 unless stated otherwise by the publisher | Annual | England, Commissioning Region, Provider | Companion context for therapy-type mix and outcomes on the Talking Therapies layers | Freeze the last successful supporting artifact and hide the companion panel if the annual file fails to download or parse |
 | Mental Health Services Monthly Statistics | https://digital.nhs.uk/data-and-information/data-collections-and-data-sets/data-sets/mental-health-services-data-set/statistics-and-reports | None | No explicit API rate limit because the implementation uses published ZIP/CSV downloads | Open Government Licence v3.0 unless stated otherwise by the publisher | Monthly | Sub ICB, ICB, region, England, more | Follow-on service-demand layer after the first Talking Therapies overlay | Hold last successful artifact and alert on schema/join failures |
 | Sub Integrated Care Board Locations (April 2026) Boundaries EN BSC | https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/Sub_Integrated_Care_Board_Locations_April_2026_Boundaries_EN_BSC/FeatureServer | None | ArcGIS query endpoint; avoid unnecessary repeated fetches in CI | OGL v3.0 via ONS Open Geography portal | Reference boundary | Sub ICB 2026 | Current reference geometry for the health compare group | Keep the last generated reference and health artifacts if the boundary request or matching fails |
+| English indices of deprivation 2025 | https://www.gov.uk/government/statistics/english-indices-of-deprivation-2025 | None | Published CSV download; cache during a sync | OGL v3.0 | Irregular | LSOA 2021, East Midlands + West Midlands | Official Midlands neighbourhood deprivation context | Require exact LSOA-code coverage; retain last complete artifact and alert on file/schema/reference drift |
+| DESNZ sub-regional fuel poverty data 2026 (2024 data) | https://www.gov.uk/government/statistics/sub-regional-fuel-poverty-data-2026-2024-data | None | Published XLSX download; cache during a sync | OGL v3.0 | Annual | LSOA 2021, East Midlands + West Midlands | Official modelled fuel-poverty context | Require exact LSOA-code coverage; retain last complete artifact and warn after 450 days |
 
 ## Phase 2 candidate sources
 
@@ -64,6 +66,14 @@ Assumptions:
 - the release page continues to link an `activity_performance.csv` file with the documented field contract
 - the pinned May 2026 URLs remain a documented fallback reference, but discovery failure is treated as visible source degradation rather than silently using an older month
 - the West Midlands health workspace currently includes 11 Sub ICB locations, including Shropshire, Telford and Wrekin
+
+### Midlands LSOA context
+
+- Uses ONS December 2021 generalised clipped LSOA boundaries, joined by code to the ONS December 2022 LSOA-to-region lookup; the approved scope is exactly `E12000004` and `E12000005`.
+- The reference adapter validates duplicate, missing, and out-of-scope codes before either layer is written. The generated lookup records the source URLs, expected count, boundary vintage, and checksum of the sorted LSOA codes.
+- IMD requires `LSOA code (2021)` and `Index of Multiple Deprivation (IMD) Decile (where 1 is most deprived 10% of LSOAs)`; valid values are integer deciles 1–10. Fuel poverty requires `Table 4` plus `LSOA Code` and `Proportion of households fuel poor (%)`; valid values are 0–100. Neither release has an adopted suppression code in this implementation: a missing or unusable scoped value blocks publication.
+- Unit fixtures cover complete, missing, duplicate, and malformed values for both official file formats. On any request, schema, boundary, or coverage failure the sync keeps the previous complete layer artifact and marks the failure in generated status.
+- IMD 2025 deciles are relative to England, not absolute conditions or a measure of change. Fuel-poverty values are modelled small-area estimates and should not be treated as precise household facts or trend estimates.
 
 ### TfWM API
 

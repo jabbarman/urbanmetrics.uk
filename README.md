@@ -15,6 +15,7 @@ See:
 - `docs/project-brief.md`
 - `docs/discovery-report.md`
 - `docs/implementation-plan.md`
+- `docs/midlands-geographic-expansion-spec.md`
 - `docs/repository-plan.md`
 - `docs/architecture.md`
 - `docs/data-sources.md`

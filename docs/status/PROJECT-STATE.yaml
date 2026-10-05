@@ -22,6 +22,7 @@ summary: >-
   incompatible UC, fuel-poverty, and GVA ward feeds retain their last complete artifacts with visible status warnings.
 last_updated: 2026-07-21
 current_focus:
+  - release the locally validated Midlands Context workspace with official LSOA 2021 IMD and fuel-poverty layers
   - keep the shared generated-data and status architecture intact while the presentation layer evolves
   - monitor for compatible May 2026 WMCA ward geometry before migrating UC, fuel poverty, and GVA
   - keep CI and refresh behavior resilient when upstreams publish incomplete or delayed latest periods

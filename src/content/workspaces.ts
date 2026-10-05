@@ -1,6 +1,6 @@
 import type { Route } from "next";
 
-export type WorkspaceId = "regional-context" | "health-access";
+export type WorkspaceId = "regional-context" | "midlands-context" | "health-access";
 
 export type WorkspaceDefinition = {
   id: WorkspaceId;
@@ -47,6 +47,23 @@ export const workspaceDefinitions: WorkspaceDefinition[] = [
     ],
     defaultPrimaryLayerId: "uc-in-work-rate",
     defaultCompareLayerId: "imd-employment-score",
+  },
+  {
+    id: "midlands-context",
+    href: "/midlands-context" as Route,
+    title: "Midlands Context",
+    shortTitle: "Midlands Context",
+    description: "Official neighbourhood context across the East Midlands and West Midlands.",
+    geographyLabel: "East Midlands + West Midlands; LSOA 2021",
+    introEyebrow: "Midlands Context",
+    introTitle: "Explore comparable neighbourhood context across the Midlands",
+    introDescription: "This workspace covers the two official English Midlands regions at LSOA 2021 geography. It includes Nottingham and Leicester while preserving the existing West Midlands ward workspace unchanged.",
+    mapHeading: "Compare official Midlands neighbourhood context at one geography",
+    mapDescription: "Both layers use the same approved LSOA 2021 reference geography. Legend breaks are calculated across the full two-region scope, not the visible map area.",
+    sourceCaveat: "IMD deciles are relative to England, and fuel-poverty figures are modelled small-area estimates. They provide contextual comparison, not precise household-level facts or trends.",
+    allowedLayerIds: ["midlands-imd-2025", "midlands-fuel-poverty-2024"],
+    defaultPrimaryLayerId: "midlands-imd-2025",
+    defaultCompareLayerId: "midlands-fuel-poverty-2024",
   },
   {
     id: "health-access",

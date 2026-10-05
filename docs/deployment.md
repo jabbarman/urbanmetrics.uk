@@ -88,6 +88,8 @@ Expected v1 total: comfortably inside `£20-£40/month`
 
 This avoids the original failure mode where refreshed artifacts only existed as workflow artifacts and never reached production.
 
+The Midlands LSOA reference geometry is intentionally deployed as a shared generated artifact; schema-2 layer artifacts contain values and metadata only. A production change must keep the reference GeoJSON and both generated layer artifacts in the same commit.
+
 ## `DEPLOYMENT_NOT_FOUND` runbook
 
 If `urbanmetrics.uk`, `www.urbanmetrics.uk`, and `urbanmetricsuk.vercel.app` all return Vercel `404` with `x-vercel-error: NOT_FOUND`, treat it as a deployment-alias problem before touching application code.

@@ -45,6 +45,12 @@ export default async function HomePage() {
               >
                 Open Health Access
               </Link>
+              <Link
+                className="rounded-full border border-slate-300 bg-white px-5 py-3 text-sm font-medium text-slate-900 transition hover:border-sky-500 hover:text-sky-700"
+                href={"/midlands-context" as Route}
+              >
+                Open Midlands Context
+              </Link>
             </div>
           </div>
           <div className="grid gap-3 md:grid-cols-3 lg:w-[34rem] lg:grid-cols-1">

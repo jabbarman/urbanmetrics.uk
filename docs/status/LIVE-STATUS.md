@@ -40,6 +40,7 @@
 ## In progress
 
 - tracking availability of matching May 2026 ward boundaries so UC, fuel poverty, and GVA can be migrated without misleading spatial joins
+- Midlands Context is prepared locally with two official LSOA 2021 layers; it awaits the normal CI and deployment flow before being described as live
 
 ## Known operational signal
 
