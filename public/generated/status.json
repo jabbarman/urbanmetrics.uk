@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-05T16:45:42.089Z",
+  "generatedAt": "2026-10-05T17:03:24.321Z",
   "layers": [
     {
       "id": "uc-in-work-rate",
@@ -55,7 +55,7 @@
       "id": "nhs-talking-therapies-wait-time",
       "title": "Talking Therapies Mean Wait",
       "status": "ok",
-      "dataProcessedAt": "2026-10-05T16:45:19.608Z",
+      "dataProcessedAt": "2026-10-05T17:02:58.477Z",
       "latestSourceDate": "2026-07-31",
       "updateFrequency": "MONTHLY",
       "recordsFetched": 11,
@@ -65,7 +65,7 @@
       "id": "nhs-talking-therapies-six-week-access",
       "title": "Talking Therapies Access Within 6 Weeks",
       "status": "ok",
-      "dataProcessedAt": "2026-10-05T16:45:40.784Z",
+      "dataProcessedAt": "2026-10-05T17:03:23.076Z",
       "latestSourceDate": "2026-07-31",
       "updateFrequency": "MONTHLY",
       "recordsFetched": 11,
@@ -75,7 +75,7 @@
       "id": "midlands-imd-2025",
       "title": "IMD 2025 Overall Deprivation",
       "status": "warning",
-      "dataProcessedAt": "2026-10-05T16:44:44.923Z",
+      "dataProcessedAt": "2026-10-05T17:02:19.936Z",
       "latestSourceDate": "2025-10-30",
       "updateFrequency": "IRREGULAR",
       "recordsFetched": 6421,
@@ -85,7 +85,7 @@
       "id": "midlands-fuel-poverty-2024",
       "title": "Households In Fuel Poverty",
       "status": "stale",
-      "dataProcessedAt": "2026-10-05T16:44:47.547Z",
+      "dataProcessedAt": "2026-10-05T17:02:22.832Z",
       "latestSourceDate": "2024-03-31",
       "updateFrequency": "ANNUAL",
       "recordsFetched": 6421,

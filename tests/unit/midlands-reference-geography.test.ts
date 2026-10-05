@@ -6,10 +6,10 @@ const polygon = {
   type: "Polygon" as const,
   coordinates: [
     [
-      [-2, 52],
-      [-1, 52],
-      [-1, 53],
-      [-2, 52],
+      [400000, 300000],
+      [401000, 300000],
+      [401000, 301000],
+      [400000, 300000],
     ],
   ],
 };
@@ -28,6 +28,8 @@ describe("Midlands LSOA reference geography", () => {
 
     expect(reference.expectedAreaIds).toEqual(["E01000001"]);
     expect(reference.geojson.features[0].properties).toMatchObject({ areaName: "Midlands 001A", regionName: "East Midlands" });
+    expect(reference.geojson.features[0].geometry.coordinates[0][0][0]).toBeGreaterThan(-3);
+    expect(reference.geojson.features[0].geometry.coordinates[0][0][0]).toBeLessThan(1);
   });
 
   it("rejects a lookup area that does not have a boundary", () => {

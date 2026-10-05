@@ -1,5 +1,6 @@
 import type { Feature, FeatureCollection, MultiPolygon, Polygon } from "geojson";
 import { createHash } from "node:crypto";
+import proj4 from "proj4";
 
 import { midlandsGeographyScope } from "@/server/datasets/geography-scopes";
 
@@ -7,6 +8,8 @@ export const MIDLANDS_LSOA_BOUNDARY_URL =
   "https://open-geography-portalx-ons.hub.arcgis.com/api/download/v1/items/68515293204e43ca8ab56fa13ae8a547/geojson?layers=0";
 export const MIDLANDS_LSOA_LOOKUP_URL =
   "https://open-geography-portalx-ons.hub.arcgis.com/api/download/v1/items/0352e811ec2c4fc5917f39aea2d1b8a3/csv?layers=0";
+
+const OSGB36_BNG = "+proj=tmerc +lat_0=49 +lon_0=-2 +k=0.9996012717 +x_0=400000 +y_0=-100000 +ellps=airy +towgs84=446.448,-125.157,542.06,0.1502,0.2470,0.8421,-20.4894 +units=m +no_defs";
 
 type LsoaBoundaryProperties = {
   LSOA21CD?: string;
@@ -43,6 +46,17 @@ export type MidlandsLsoaReferenceGeography = {
   geojson: FeatureCollection<Polygon | MultiPolygon, MidlandsLsoaReferenceFeatureProperties>;
   expectedAreaIds: string[];
 };
+
+function reprojectPosition([eastings, northings]: number[]) {
+  return proj4(OSGB36_BNG, "WGS84", [eastings, northings]) as [number, number];
+}
+
+function reprojectGeometry(geometry: Polygon | MultiPolygon): Polygon | MultiPolygon {
+  if (geometry.type === "Polygon") {
+    return { ...geometry, coordinates: geometry.coordinates.map((ring) => ring.map(reprojectPosition)) };
+  }
+  return { ...geometry, coordinates: geometry.coordinates.map((polygon) => polygon.map((ring) => ring.map(reprojectPosition))) };
+}
 
 function centroid(geometry: Polygon | MultiPolygon) {
   const coordinates = geometry.type === "Polygon" ? geometry.coordinates.flat(1) : geometry.coordinates.flat(2);
@@ -81,9 +95,10 @@ export function buildMidlandsLsoaReferenceGeography(
     if (!row) continue;
     if (seenAreaIds.has(areaId)) throw new Error(`Duplicate LSOA boundary code '${areaId}'.`);
     seenAreaIds.add(areaId);
+    const geometry = reprojectGeometry(feature.geometry);
     features.push({
       type: "Feature",
-      geometry: feature.geometry,
+      geometry,
       properties: {
         areaId,
         areaName: required(row.LSOA21NM, "LSOA21NM"),
@@ -91,7 +106,7 @@ export function buildMidlandsLsoaReferenceGeography(
         localAuthorityName: required(row.LAD22NM, "LAD22NM"),
         regionCode: required(row.RGN22CD, "RGN22CD"),
         regionName: required(row.RGN22NM, "RGN22NM"),
-        centroid: centroid(feature.geometry),
+        centroid: centroid(geometry),
       },
     });
   }
