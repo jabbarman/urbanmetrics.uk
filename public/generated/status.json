@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-05T17:03:24.321Z",
+  "generatedAt": "2026-10-06T11:53:37.611Z",
   "layers": [
     {
       "id": "uc-in-work-rate",
@@ -54,28 +54,28 @@
     {
       "id": "nhs-talking-therapies-wait-time",
       "title": "Talking Therapies Mean Wait",
-      "status": "ok",
+      "status": "stale",
       "dataProcessedAt": "2026-10-05T17:02:58.477Z",
       "latestSourceDate": "2026-07-31",
       "updateFrequency": "MONTHLY",
       "recordsFetched": 11,
-      "message": "Latest source period is within 90 days."
+      "message": "Using the last successful artifact because refresh validation failed: Request failed (403) for https://digital.nhs.uk/data-and-information/publications/statistical/nhs-talking-therapies-monthly-statistics-including-employment-advisors"
     },
     {
       "id": "nhs-talking-therapies-six-week-access",
       "title": "Talking Therapies Access Within 6 Weeks",
-      "status": "ok",
+      "status": "stale",
       "dataProcessedAt": "2026-10-05T17:03:23.076Z",
       "latestSourceDate": "2026-07-31",
       "updateFrequency": "MONTHLY",
       "recordsFetched": 11,
-      "message": "Latest source period is within 90 days."
+      "message": "Using the last successful artifact because refresh validation failed: Request failed (403) for https://digital.nhs.uk/data-and-information/publications/statistical/nhs-talking-therapies-monthly-statistics-including-employment-advisors"
     },
     {
       "id": "midlands-imd-2025",
       "title": "IMD 2025 Overall Deprivation",
       "status": "warning",
-      "dataProcessedAt": "2026-10-05T17:02:19.936Z",
+      "dataProcessedAt": "2026-10-06T11:53:01.405Z",
       "latestSourceDate": "2025-10-30",
       "updateFrequency": "IRREGULAR",
       "recordsFetched": 6421,
@@ -85,7 +85,7 @@
       "id": "midlands-fuel-poverty-2024",
       "title": "Households In Fuel Poverty",
       "status": "stale",
-      "dataProcessedAt": "2026-10-05T17:02:22.832Z",
+      "dataProcessedAt": "2026-10-06T11:53:04.278Z",
       "latestSourceDate": "2024-03-31",
       "updateFrequency": "ANNUAL",
       "recordsFetched": 6421,
