@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-06T11:53:37.388Z",
+  "generatedAt": "2026-10-07T11:38:43.413Z",
   "layer": {
     "id": "travel-to-work-bicycle-rate",
     "title": "Travel To Work By Bicycle",
@@ -48,7 +48,7 @@
       "updateFrequency": "DECENNIAL",
       "recordsFetched": 192,
       "latestSourceDate": "2021",
-      "fetchedAt": "2026-10-06T11:53:37.388Z"
+      "fetchedAt": "2026-10-07T11:38:43.413Z"
     },
     "summary": {
       "min": 0.4,
