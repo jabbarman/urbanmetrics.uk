@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-09T11:44:29.881Z",
+  "generatedAt": "2026-10-10T11:02:27.992Z",
   "layer": {
     "id": "midlands-imd-2025",
     "title": "IMD 2025 Overall Deprivation",
@@ -44,10 +44,10 @@
       "referenceGeographyId": "midlands-lsoa-2021",
       "licence": "Open Government Licence v3.0",
       "caveat": "Deciles are relative to England.",
-      "dataProcessedAt": "2026-10-09T11:44:29.881Z",
+      "dataProcessedAt": "2026-10-10T11:02:27.992Z",
       "recordsFetched": 6421,
       "latestSourceDate": "2025-10-30",
-      "fetchedAt": "2026-10-09T11:44:29.881Z"
+      "fetchedAt": "2026-10-10T11:02:27.992Z"
     },
     "summary": {
       "min": 1,

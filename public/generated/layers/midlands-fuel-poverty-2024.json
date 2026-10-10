@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-09T11:44:33.107Z",
+  "generatedAt": "2026-10-10T11:02:30.740Z",
   "layer": {
     "id": "midlands-fuel-poverty-2024",
     "title": "Households In Fuel Poverty",
@@ -45,10 +45,10 @@
       "referenceGeographyId": "midlands-lsoa-2021",
       "licence": "Open Government Licence v3.0",
       "caveat": "Small-area estimates are modelled and should not be used to infer precise differences or trends.",
-      "dataProcessedAt": "2026-10-09T11:44:33.107Z",
+      "dataProcessedAt": "2026-10-10T11:02:30.740Z",
       "recordsFetched": 6421,
       "latestSourceDate": "2024-03-31",
-      "fetchedAt": "2026-10-09T11:44:33.107Z"
+      "fetchedAt": "2026-10-10T11:02:30.740Z"
     },
     "summary": {
       "min": 2.5179856115107913,
