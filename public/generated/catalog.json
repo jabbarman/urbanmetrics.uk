@@ -157,7 +157,7 @@
       "updateFrequency": "IRREG",
       "recordsFetched": 192,
       "latestSourceDate": "2025",
-      "fetchedAt": "2026-10-10T11:02:58.531Z"
+      "fetchedAt": "2026-10-11T11:19:55.788Z"
     },
     "summary": {
       "min": 4.4,
@@ -487,7 +487,7 @@
       "updateFrequency": "DECENNIAL",
       "recordsFetched": 192,
       "latestSourceDate": "2021",
-      "fetchedAt": "2026-10-10T11:03:11.780Z"
+      "fetchedAt": "2026-10-11T11:20:04.103Z"
     },
     "summary": {
       "min": 0.4,
@@ -837,10 +837,10 @@
       "referenceGeographyId": "midlands-lsoa-2021",
       "licence": "Open Government Licence v3.0",
       "caveat": "Deciles are relative to England.",
-      "dataProcessedAt": "2026-10-10T11:02:27.992Z",
+      "dataProcessedAt": "2026-10-11T11:19:30.695Z",
       "recordsFetched": 6421,
       "latestSourceDate": "2025-10-30",
-      "fetchedAt": "2026-10-10T11:02:27.992Z"
+      "fetchedAt": "2026-10-11T11:19:30.695Z"
     },
     "summary": {
       "min": 1,
@@ -949,10 +949,10 @@
       "referenceGeographyId": "midlands-lsoa-2021",
       "licence": "Open Government Licence v3.0",
       "caveat": "Small-area estimates are modelled and should not be used to infer precise differences or trends.",
-      "dataProcessedAt": "2026-10-10T11:02:30.740Z",
+      "dataProcessedAt": "2026-10-11T11:19:33.321Z",
       "recordsFetched": 6421,
       "latestSourceDate": "2024-03-31",
-      "fetchedAt": "2026-10-10T11:02:30.740Z"
+      "fetchedAt": "2026-10-11T11:19:33.321Z"
     },
     "summary": {
       "min": 2.5179856115107913,
