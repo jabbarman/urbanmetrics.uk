@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-09T13:43:56.590Z",
+  "generatedAt": "2026-11-10T13:21:43.237Z",
   "layers": [
     {
       "id": "uc-in-work-rate",
@@ -75,7 +75,7 @@
       "id": "midlands-imd-2025",
       "title": "IMD 2025 Overall Deprivation",
       "status": "warning",
-      "dataProcessedAt": "2026-11-09T13:43:09.854Z",
+      "dataProcessedAt": "2026-11-10T13:21:09.253Z",
       "latestSourceDate": "2025-10-30",
       "updateFrequency": "IRREGULAR",
       "recordsFetched": 6421,
@@ -85,11 +85,11 @@
       "id": "midlands-fuel-poverty-2024",
       "title": "Households In Fuel Poverty",
       "status": "stale",
-      "dataProcessedAt": "2026-11-09T13:43:13.509Z",
+      "dataProcessedAt": "2026-11-10T13:21:12.027Z",
       "latestSourceDate": "2024-03-31",
       "updateFrequency": "ANNUAL",
       "recordsFetched": 6421,
-      "message": "Latest source period exceeded 450 days (953 days observed)."
+      "message": "Latest source period exceeded 450 days (954 days observed)."
     }
   ]
 }
